@@ -1499,10 +1499,43 @@ function setLevelHeader(level){
    RENDER QUESTIONS
 ============================================================ */
 
-function renderQuestionVisual(q,index){
-  if(!q.gambar_url) return '';
+function normalizeQuestionImageUrl(rawUrl){
+  const url = String(rawUrl || '').trim();
+  if(!url) return '';
 
-  if(q.gambar_url === 'diagram:awal012'){
+  // Mendukung URL langsung PNG/JPG/WebP dan link berbagi Google Drive.
+  // Jadi guru cukup mengganti kolom gambar_url pada BANK_SOAL.
+  const driveFile = url.match(/drive\.google\.com\/file\/d\/([^/]+)/i);
+  if(driveFile && driveFile[1]){
+    return `https://drive.google.com/uc?export=view&id=${driveFile[1]}`;
+  }
+  const driveId = url.match(/[?&]id=([^&]+)/i);
+  if(/drive\.google\.com/i.test(url) && driveId && driveId[1]){
+    return `https://drive.google.com/uc?export=view&id=${driveId[1]}`;
+  }
+  return url;
+}
+
+function renderQuestionVisual(q,index){
+  const imageUrl = normalizeQuestionImageUrl(q.gambar_url);
+
+  // Fallback hanya dipakai jika kolom gambar_url kosong.
+  // Begitu URL di Spreadsheet diisi/diganti, gambar dari URL selalu diprioritaskan.
+  if(!imageUrl && q.id_soal === 'AWAL-011'){
+    return `
+      <div class="inline-pictogram" role="img" aria-label="Piktogram hasil panen jagung Pak Hasan. Satu simbol jagung sama dengan tiga keranjang. Pak Hasan memiliki empat simbol jagung.">
+        <div class="chart-title">🌽 Hasil Panen Jagung Pak Hasan</div>
+        <div style="display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0;font-weight:900;color:#173f5f">
+          <span style="font-size:34px">🌽</span><span>= 3 keranjang</span>
+        </div>
+        <div style="background:#f2fff0;border:2px solid #9bdc8c;border-radius:14px;padding:14px;text-align:center">
+          <strong>Pak Hasan:</strong>
+          <div style="font-size:42px;letter-spacing:8px;margin-top:8px">🌽🌽🌽🌽</div>
+        </div>
+      </div>`;
+  }
+
+  if(!imageUrl && q.id_soal === 'AWAL-012'){
     const data = [
       ['Tomat',8,80],
       ['Jagung',6,60],
@@ -1523,10 +1556,19 @@ function renderQuestionVisual(q,index){
       </div>`;
   }
 
+  if(!imageUrl) return '';
+
   return `
     <div class="question-image-wrap">
       <div class="question-image-label">🖼️ Amati gambar berikut</div>
-      <img class="question-image" src="${escapeHtml(q.gambar_url)}" alt="Gambar stimulus soal ${index + 1}" loading="lazy">
+      <img
+        class="question-image"
+        src="${escapeHtml(imageUrl)}"
+        alt="Gambar stimulus soal ${index + 1}"
+        loading="lazy"
+        referrerpolicy="no-referrer"
+        onerror="this.closest('.question-image-wrap').innerHTML='<div class=&quot;remedial-box&quot;>⚠️ Gambar belum dapat dimuat. Periksa kolom gambar_url pada BANK_SOAL.</div>'"
+      >
     </div>`;
 }
 
