@@ -666,6 +666,60 @@
       .status-col,.score-col{grid-column:2}
       .ring{grid-column:3;grid-row:1/4}
     }
+  
+    /* ===== REVISI LEVEL AWAL: COBA KEMAMPUAN KAMU ===== */
+    .challenge-split{display:grid;gap:16px}
+    .ability-card{
+      border-radius:18px;padding:20px;border:1px solid #dbe6ef;
+      box-shadow:0 6px 18px rgba(35,69,104,.06);background:#fff;
+    }
+    .ability-card.diagnostic{
+      background:linear-gradient(145deg,#effcf4,#f7fff9);
+      border:2px solid #b9ebc9;
+    }
+    .ability-title{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+    .ability-title .icon{
+      width:52px;height:52px;border-radius:15px;display:flex;align-items:center;justify-content:center;
+      font-size:29px;background:#e2f8e9;
+    }
+    .ability-title h3{font-size:22px;color:#137d36;margin:0}
+    .ability-title p{font-size:13px;color:#4d6278;margin:3px 0 0}
+    .awal-standalone{
+      display:grid;grid-template-columns:86px minmax(0,1fr);gap:16px;align-items:center;
+      padding:16px;border-radius:16px;background:#fff;border:1px solid #d8eadf;
+    }
+    .awal-standalone .emoji{font-size:56px;text-align:center}
+    .awal-standalone h4{font-size:21px;color:#168a35;margin-bottom:5px}
+    .awal-standalone p{font-size:14px;line-height:1.5;color:#35516c}
+    .ability-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .ability-chip{padding:6px 10px;border-radius:999px;font-weight:900;font-size:12px}
+    .ability-chip.lit{background:#fff0d6;color:#aa6200}
+    .ability-chip.num{background:#e7f1ff;color:#0b61c6}
+    .advanced-levels{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+    .advanced-levels .level-preview{min-height:225px}
+    .diagnostic-btn{width:100%;margin-top:14px;background:linear-gradient(135deg,#19a64c,#0c8738);color:#fff}
+    .advanced-btn{width:100%;margin-top:14px;background:linear-gradient(135deg,#1677e8,#6b4bd8);color:#fff}
+    .score-breakdown{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px auto;max-width:620px}
+    .score-mini{padding:13px 10px;border-radius:15px;background:#f7fbff;border:1px solid #d6e6f5;text-align:center}
+    .score-mini span{display:block;font-size:12px;color:#5d7085;font-weight:800;margin-bottom:5px}
+    .score-mini strong{font-size:22px;color:#123f75}
+    .awal-score-detail{display:block;margin-top:4px;font-size:10px!important;color:#60758b!important;line-height:1.35}
+    .stimulus{white-space:pre-line}
+    .inline-bar-chart{
+      margin:15px 0 18px;padding:16px;border-radius:16px;background:#fbfdff;border:1px solid #d8e5f1;
+    }
+    .chart-title{font-weight:900;color:#183f68;text-align:center;margin-bottom:13px}
+    .bar-row{display:grid;grid-template-columns:74px 1fr 38px;gap:9px;align-items:center;margin:9px 0}
+    .bar-label{font-size:13px;font-weight:800;color:#38516b}
+    .bar-track{height:22px;border-radius:7px;background:#edf3f8;overflow:hidden;border:1px solid #dce7ef}
+    .bar-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,#36a7e8,#275fe4)}
+    .bar-value{font-weight:900;color:#183f68;text-align:right}
+    @media(max-width:700px){
+      .awal-standalone{grid-template-columns:1fr;text-align:center}
+      .advanced-levels{grid-template-columns:1fr}
+      .score-breakdown{grid-template-columns:1fr}
+    }
+
   </style>
 </head>
 
@@ -676,13 +730,13 @@
       <div class="brand-title">
         <span>P</span><span>I</span><span>K</span><span>T</span><span>O</span><span>-IPS</span>
       </div>
-      <div class="brand-sub">Belajar IPS Jadi Seru dan Mudah!  Created and develop by Sugeng Hidayat</div>
+      <div class="brand-sub">Belajar IPS Jadi Seru dan Mudah!</div>
     </div>
 
     <nav class="nav-menu">
       <a class="nav-link active" href="#beranda"><span class="nav-icon">🏠</span>Beranda</a>
       <a class="nav-link" href="literasi.html"><span class="nav-icon">📖</span>Belajar</a>
-      <a class="nav-link" href="#tantangan" onclick="setTimeout(bukaPemilihanLevel,0)"><span class="nav-icon">🏆</span>Tantangan</a>
+      <a class="nav-link" href="#tantangan"><span class="nav-icon">🏆</span>Tantangan</a>
       <a class="nav-link" href="#progres"><span class="nav-icon">📊</span>Progres</a>
     </nav>
 
@@ -775,42 +829,73 @@
         <!-- TANTANGAN -->
         <section class="panel" id="tantangan">
           <div class="panel-head">
-            <div class="panel-icon blue-circle">🏆</div>
+            <div class="panel-icon blue-circle">🎯</div>
             <div>
-              <h2>Mulai Tantangan</h2>
-              <p>Pilih level kompetensi dan buktikan kemampuanmu!</p>
+              <h2>Tantangan PIKTO-IPS</h2>
+              <p>Mulai dengan mengukur kemampuanmu, lalu lanjutkan ke tantangan berikutnya.</p>
             </div>
           </div>
 
-          <div class="levels-preview">
-            <article class="level-preview awal">
-              <div class="emoji">🌱</div>
-              <h3>AWAL</h3>
-              <p>Kompetensi Dasar</p>
-              <div class="availability available" id="previewAwal">TERSEDIA</div>
-              <p class="level-note">Level untuk memulai pemahaman dasar IPS.</p>
-            </article>
+          <div class="challenge-split">
+            <!-- LEVEL AWAL DIPISAHKAN -->
+            <div class="ability-card diagnostic">
+              <div class="ability-title">
+                <div class="icon">🧠</div>
+                <div>
+                  <h3>Coba Kemampuan Kamu</h3>
+                  <p>Kenali kemampuan literasi dan numerasimu sebelum melanjutkan.</p>
+                </div>
+              </div>
 
-            <article class="level-preview cakap">
-              <div class="lock-badge" id="lockCakap">🔒</div>
-              <div class="emoji">🚀</div>
-              <h3>CAKAP</h3>
-              <p>Kompetensi Menengah</p>
-              <div class="availability locked" id="previewCakap">TERKUNCI</div>
-              <p class="level-note">Selesaikan Level Awal dengan nilai minimal 60.</p>
-            </article>
+              <div class="awal-standalone">
+                <div class="emoji">🌱</div>
+                <div>
+                  <h4>Level Awal</h4>
+                  <p>12 soal: 6 soal Literasi membaca dan informasi IPS serta 6 soal Numerasi.</p>
+                  <div class="ability-chips">
+                    <span class="ability-chip lit">📖 6 Literasi</span>
+                    <span class="ability-chip num">🔢 6 Numerasi</span>
+                    <span class="availability available" id="previewAwal" style="width:auto;margin:0">TERSEDIA</span>
+                  </div>
+                </div>
+              </div>
 
-            <article class="level-preview mahir">
-              <div class="lock-badge" id="lockMahir">🔒</div>
-              <div class="emoji">🏆</div>
-              <h3>MAHIR</h3>
-              <p>Kompetensi Tinggi</p>
-              <div class="availability locked" id="previewMahir">TERKUNCI</div>
-              <p class="level-note">Selesaikan Level Cakap dengan nilai minimal 60.</p>
-            </article>
+              <button class="btn diagnostic-btn" onclick="mulaiLevelAwal()">🌱 Mulai Level Awal</button>
+            </div>
+
+            <!-- LEVEL CAKAP & MAHIR -->
+            <div class="ability-card">
+              <div class="ability-title">
+                <div class="icon" style="background:#e8f0ff">🏆</div>
+                <div>
+                  <h3 style="color:#135eae">Tantangan Lanjutan</h3>
+                  <p>Level Cakap dan Mahir dibuka sesuai progres belajarmu.</p>
+                </div>
+              </div>
+
+              <div class="advanced-levels">
+                <article class="level-preview cakap">
+                  <div class="lock-badge" id="lockCakap">🔒</div>
+                  <div class="emoji">🚀</div>
+                  <h3>CAKAP</h3>
+                  <p>Kompetensi Menengah</p>
+                  <div class="availability locked" id="previewCakap">TERKUNCI</div>
+                  <p class="level-note">Selesaikan Level Awal dengan nilai minimal 60.</p>
+                </article>
+
+                <article class="level-preview mahir">
+                  <div class="lock-badge" id="lockMahir">🔒</div>
+                  <div class="emoji">🏆</div>
+                  <h3>MAHIR</h3>
+                  <p>Kompetensi Tinggi</p>
+                  <div class="availability locked" id="previewMahir">TERKUNCI</div>
+                  <p class="level-note">Selesaikan Level Cakap dengan nilai minimal 60.</p>
+                </article>
+              </div>
+
+              <button class="btn advanced-btn" onclick="bukaPemilihanLevel()">🚀 Pilih Level Cakap / Mahir</button>
+            </div>
           </div>
-
-          <button class="btn big-challenge" onclick="bukaPemilihanLevel()">🏆 Mulai Tantangan</button>
         </section>
 
         <!-- PROGRES -->
@@ -828,7 +913,7 @@
               <div class="round-icon awal">🌱</div>
               <div class="progress-name"><strong style="color:#14943a">AWAL</strong><small>Kompetensi Dasar</small></div>
               <div class="status-col"><small>Status</small><span class="status-pill st-belum" id="statusAwal">BELUM</span></div>
-              <div class="score-col"><small>Nilai</small><div class="score-value" id="scoreAwal">-</div></div>
+              <div class="score-col"><small>Nilai Level</small><div class="score-value" id="scoreAwal">-</div><small class="awal-score-detail" id="scoreAwalDetail">Lit - • Num -</small></div>
               <div class="ring active" id="ringAwal">0/12</div>
             </div>
 
@@ -880,8 +965,7 @@
         <div>
           <strong>Informasi</strong>
           <p>
-            Nilai minimal untuk lulus setiap level adalah 60. Jika belum mencapai nilai tersebut,
-            kamu akan diminta belajar kembali dan mencoba lagi.
+            Level Awal terdiri dari 6 soal Literasi dan 6 soal Numerasi. Masing-masing nilai dihitung dari jumlah jawaban benar ÷ 6 × 100. Nilai level tetap digunakan untuk progres dan pembukaan Level Cakap.
           </p>
         </div>
       </div>
@@ -919,27 +1003,20 @@
     <footer>© 2026 PIKTO-IPS - Belajar IPS Jadi Seru dan Mudah!</footer>
   </main>
 
-  <!-- MODAL LEVEL -->
+  <!-- MODAL LEVEL LANJUTAN -->
   <div class="modal hidden" id="levelModal">
     <div class="modal-box">
       <div class="modal-head">
         <div>
-          <h2>🏆 Pilih Kompetensi Tantangan</h2>
+          <h2>🏆 Pilih Level Lanjutan</h2>
           <p class="subtitle" style="margin:5px 0 0">
-            Level berikutnya terbuka jika nilai level sebelumnya minimal 60.
+            Level Cakap terbuka setelah Level Awal lulus. Level Mahir terbuka setelah Level Cakap lulus.
           </p>
         </div>
         <button class="close" onclick="tutupPemilihanLevel()">✕</button>
       </div>
 
-      <div class="level-grid">
-        <button class="level-option" id="levelAwalBtn" onclick="pilihLevel('AWAL')">
-          <div class="level-icon">🌱</div>
-          <h3>Level Awal</h3>
-          <p>Membaca piktogram, memahami informasi langsung, membandingkan data sederhana, dan mengenali kegiatan ekonomi.</p>
-          <div class="level-meta" id="modalAwalMeta">Terbuka</div>
-        </button>
-
+      <div class="level-grid" style="grid-template-columns:repeat(2,1fr)">
         <button class="level-option" id="levelCakapBtn" onclick="pilihLevel('CAKAP')">
           <div class="level-icon">🚀</div>
           <h3>Level Cakap</h3>
@@ -1201,6 +1278,30 @@ function cryptoRandom(){
    LEVEL MODAL
 ============================================================ */
 
+async function mulaiLevelAwal(){
+  if(!localStorage.getItem(LS.ID) && apiConfigured() && navigator.onLine){
+    await masukAplikasi();
+  }
+  if(!localStorage.getItem(LS.ID)) return;
+
+  if(apiConfigured() && navigator.onLine){
+    try{
+      const res = await api({action:'getProgress', id_murid:localStorage.getItem(LS.ID)});
+      if(isStudentNotFoundResponse(res)){
+        kembaliKeHalamanIdentitas('Data murid sudah tidak ditemukan di Database PIKTO-IPS. Silakan masuk kembali.');
+        return;
+      }
+      if(res.success){
+        progressData = res.progress;
+        cacheProgress(progressData);
+      }
+    }catch(err){
+      loadProgressCache();
+    }
+  }
+  pilihLevel('AWAL');
+}
+
 async function bukaPemilihanLevel(){
   if(!localStorage.getItem(LS.ID) && apiConfigured() && navigator.onLine){
     await masukAplikasi();
@@ -1245,36 +1346,21 @@ function tutupPemilihanLevel(){
 function renderLevelModal(){
   const p = progressData || defaultProgress();
 
-  setLevelButton(
-    'AWAL',
-    true,
-    p.awal
-  );
-
   const cakapOpen =
     p.awal.status === 'LULUS' &&
     Number(p.awal.nilai || 0) >= KKM;
 
-  setLevelButton(
-    'CAKAP',
-    cakapOpen,
-    p.cakap
-  );
+  setLevelButton('CAKAP', cakapOpen, p.cakap);
 
   const mahirOpen =
     p.cakap.status === 'LULUS' &&
     Number(p.cakap.nilai || 0) >= KKM;
 
-  setLevelButton(
-    'MAHIR',
-    mahirOpen,
-    p.mahir
-  );
+  setLevelButton('MAHIR', mahirOpen, p.mahir);
 }
 
 function setLevelButton(level,open,data){
   const map = {
-    AWAL:['levelAwalBtn','modalAwalMeta'],
     CAKAP:['levelCakapBtn','modalCakapMeta'],
     MAHIR:['levelMahirBtn','modalMahirMeta']
   };
@@ -1392,7 +1478,7 @@ function setLevelHeader(level){
   const info = {
     AWAL:{
       title:'🌱 Tantangan Level Awal',
-      desc:'Membaca piktogram, memahami informasi dasar, dan membandingkan data.'
+      desc:'Coba kemampuan kamu: 6 soal Literasi membaca dan informasi IPS serta 6 soal Numerasi.'
     },
     CAKAP:{
       title:'🚀 Tantangan Level Cakap',
@@ -1413,6 +1499,37 @@ function setLevelHeader(level){
    RENDER QUESTIONS
 ============================================================ */
 
+function renderQuestionVisual(q,index){
+  if(!q.gambar_url) return '';
+
+  if(q.gambar_url === 'diagram:awal012'){
+    const data = [
+      ['Tomat',8,80],
+      ['Jagung',6,60],
+      ['Cabai',10,100],
+      ['Singkong',4,40]
+    ];
+    return `
+      <div class="inline-bar-chart" role="img" aria-label="Diagram batang hasil pertanian: tomat 8, jagung 6, cabai 10, singkong 4 keranjang">
+        <div class="chart-title">📊 Hasil Pertanian yang Dijual di Pasar Desa</div>
+        ${data.map(item=>`
+          <div class="bar-row">
+            <div class="bar-label">${item[0]}</div>
+            <div class="bar-track"><div class="bar-fill" style="width:${item[2]}%"></div></div>
+            <div class="bar-value">${item[1]}</div>
+          </div>
+        `).join('')}
+        <div style="font-size:11px;color:#65798e;text-align:center;margin-top:10px">Satuan: keranjang</div>
+      </div>`;
+  }
+
+  return `
+    <div class="question-image-wrap">
+      <div class="question-image-label">🖼️ Amati gambar berikut</div>
+      <img class="question-image" src="${escapeHtml(q.gambar_url)}" alt="Gambar stimulus soal ${index + 1}" loading="lazy">
+    </div>`;
+}
+
 function renderQuestions(){
   if(!currentQuestions.length){
     document.getElementById('questionsCard').innerHTML =
@@ -1431,7 +1548,7 @@ function renderQuestions(){
     html += `
       <div class="question" id="qbox-${escapeHtml(q.id_soal)}">
         <div class="q-meta">
-          SOAL ${index + 1} • ${escapeHtml(q.domain || '')}
+          SOAL ${index + 1}${q.kemampuan ? ' • ' + escapeHtml(q.kemampuan.toUpperCase()) : ''} • ${escapeHtml(q.domain || '')}
         </div>
 
         ${q.stimulus ? `
@@ -1440,12 +1557,7 @@ function renderQuestions(){
           </div>
         ` : ''}
 
-        ${q.gambar_url ? `
-          <div class="question-image-wrap">
-            <div class="question-image-label">🖼️ Amati gambar berikut</div>
-            <img class="question-image" src="${escapeHtml(q.gambar_url)}" alt="Gambar stimulus soal ${index + 1}" loading="lazy">
-          </div>
-        ` : ''}
+        ${renderQuestionVisual(q,index)}
 
         <div class="q-text">
           ${escapeHtml(q.pertanyaan)}
@@ -1729,6 +1841,14 @@ function tampilkanHasil(res){
       ${Number(res.nilai || 0)}
     </div>
 
+    ${currentLevel === 'AWAL' ? `
+      <div class="score-breakdown">
+        <div class="score-mini"><span>📖 Nilai Literasi</span><strong>${Number(res.nilai_literasi || 0)}</strong></div>
+        <div class="score-mini"><span>🔢 Nilai Numerasi</span><strong>${Number(res.nilai_numerasi || 0)}</strong></div>
+        <div class="score-mini"><span>🌱 Nilai Level Awal</span><strong>${Number(res.nilai || 0)}</strong></div>
+      </div>
+    ` : ''}
+
     <h3>
       ${escapeHtml(res.jumlah_benar)} dari ${escapeHtml(res.total_soal)} soal benar
     </h3>
@@ -1759,6 +1879,12 @@ function renderProgress(){
   const p = progressData || defaultProgress();
 
   renderProgressItem('Awal',p.awal);
+  const awalDetail = document.getElementById('scoreAwalDetail');
+  if(awalDetail){
+    const lit = p.awal && p.awal.nilai_literasi !== null && p.awal.nilai_literasi !== undefined ? p.awal.nilai_literasi : '-';
+    const num = p.awal && p.awal.nilai_numerasi !== null && p.awal.nilai_numerasi !== undefined ? p.awal.nilai_numerasi : '-';
+    awalDetail.textContent = `Lit ${lit} • Num ${num}`;
+  }
   renderProgressItem('Cakap',p.cakap);
   renderProgressItem('Mahir',p.mahir);
   updateDashboardLocks(p);
@@ -1948,7 +2074,7 @@ function formatDuration(seconds){
 
 function defaultProgress(){
   return {
-    awal:{status:'BELUM',nilai:null},
+    awal:{status:'BELUM',nilai:null,nilai_literasi:null,nilai_numerasi:null},
     cakap:{status:'TERKUNCI',nilai:null},
     mahir:{status:'TERKUNCI',nilai:null}
   };
