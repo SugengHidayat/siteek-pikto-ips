@@ -851,10 +851,10 @@
                 <div class="emoji">🌱</div>
                 <div>
                   <h4>Level Awal</h4>
-                  <p>12 soal: 6 soal Literasi membaca dan informasi IPS serta 6 soal Numerasi.</p>
+                  <p>20 soal: 10 soal Literasi membaca dan informasi IPS serta 10 soal Numerasi.</p>
                   <div class="ability-chips">
-                    <span class="ability-chip lit">📖 6 Literasi</span>
-                    <span class="ability-chip num">🔢 6 Numerasi</span>
+                    <span class="ability-chip lit">📖 10 Literasi</span>
+                    <span class="ability-chip num">🔢 10 Numerasi</span>
                     <span class="availability available" id="previewAwal" style="width:auto;margin:0">TERSEDIA</span>
                   </div>
                 </div>
@@ -914,7 +914,7 @@
               <div class="progress-name"><strong style="color:#14943a">AWAL</strong><small>Kompetensi Dasar</small></div>
               <div class="status-col"><small>Status</small><span class="status-pill st-belum" id="statusAwal">BELUM</span></div>
               <div class="score-col"><small>Nilai Level</small><div class="score-value" id="scoreAwal">-</div><small class="awal-score-detail" id="scoreAwalDetail">Lit - • Num -</small></div>
-              <div class="ring active" id="ringAwal">0/12</div>
+              <div class="ring active" id="ringAwal">0/20</div>
             </div>
 
             <div class="progress-row">
@@ -1885,8 +1885,8 @@ function tampilkanHasil(res){
 
     ${currentLevel === 'AWAL' ? `
       <div class="score-breakdown">
-        <div class="score-mini"><span>📖 Nilai Literasi</span><strong>${Number(res.nilai_literasi || 0)}</strong></div>
-        <div class="score-mini"><span>🔢 Nilai Numerasi</span><strong>${Number(res.nilai_numerasi || 0)}</strong></div>
+        <div class="score-mini"><span>📖 Nilai Literasi</span><strong>${Number(res.nilai_literasi || 0)}</strong><small>${Number(res.benar_literasi || 0)}/${Number(res.total_literasi || 10)} benar</small></div>
+        <div class="score-mini"><span>🔢 Nilai Numerasi</span><strong>${Number(res.nilai_numerasi || 0)}</strong><small>${Number(res.benar_numerasi || 0)}/${Number(res.total_numerasi || 10)} benar</small></div>
         <div class="score-mini"><span>🌱 Nilai Level Awal</span><strong>${Number(res.nilai || 0)}</strong></div>
       </div>
     ` : ''}
@@ -1944,9 +1944,9 @@ function updateDashboardLocks(p){
   setPreviewAvailability('previewCakap','lockCakap',cakapOpen);
   setPreviewAvailability('previewMahir','lockMahir',mahirOpen);
 
-  updateRing('ringAwal',p.awal,p.level_aktif === 'AWAL',p);
-  updateRing('ringCakap',p.cakap,p.level_aktif === 'CAKAP',p);
-  updateRing('ringMahir',p.mahir,p.level_aktif === 'MAHIR',p);
+  updateRing('ringAwal',p.awal,p.level_aktif === 'AWAL',p,20);
+  updateRing('ringCakap',p.cakap,p.level_aktif === 'CAKAP',p,12);
+  updateRing('ringMahir',p.mahir,p.level_aktif === 'MAHIR',p,12);
 }
 
 function setPreviewAvailability(labelId,lockId,open){
@@ -1963,23 +1963,25 @@ function setPreviewAvailability(labelId,lockId,open){
   }
 }
 
-function updateRing(id,data,isActive,p){
+function updateRing(id,data,isActive,p,defaultTotal){
   const el = document.getElementById(id);
   if(!el) return;
 
+  const fallbackTotal = Number(defaultTotal || 12);
+
   if(data && data.status === 'LULUS'){
-    el.textContent = '12/12';
+    el.textContent = fallbackTotal + '/' + fallbackTotal;
     el.classList.add('active');
     return;
   }
 
   if(isActive){
-    const total = Number(p.total_soal || 12);
+    const total = Number(p.total_soal || fallbackTotal);
     const answered = Math.min(Number(p.jumlah_terjawab || 0),total);
     el.textContent = answered + '/' + total;
     el.classList.add('active');
   }else{
-    el.textContent = '0/12';
+    el.textContent = '0/' + fallbackTotal;
     el.classList.remove('active');
   }
 }
