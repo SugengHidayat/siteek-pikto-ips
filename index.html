@@ -720,7 +720,33 @@
       .score-breakdown{grid-template-columns:1fr}
     }
 
-  </style>
+  
+    /* ============================================================
+       BERANDA BARU — GAYA SiTeek / PIKTO-IPS
+       ============================================================ */
+    .home-stage{margin-top:0;border-radius:0 0 26px 26px;overflow:hidden;position:relative;background:linear-gradient(180deg,rgba(209,239,255,.88),rgba(238,249,232,.94)),radial-gradient(circle at 18% 26%,rgba(66,165,245,.25),transparent 26%),radial-gradient(circle at 86% 72%,rgba(76,175,80,.24),transparent 28%);border:1px solid rgba(189,217,234,.85);box-shadow:0 14px 34px rgba(15,70,112,.10)}
+    .home-stage::before{content:"";position:absolute;inset:auto 0 0;height:155px;background:radial-gradient(ellipse at 5% 100%,#72b75f 0 31%,transparent 32%),radial-gradient(ellipse at 23% 100%,#8cc86f 0 34%,transparent 35%),radial-gradient(ellipse at 45% 100%,#6fae55 0 32%,transparent 33%),radial-gradient(ellipse at 67% 100%,#90ca72 0 34%,transparent 35%),radial-gradient(ellipse at 91% 100%,#73b159 0 31%,transparent 32%);opacity:.30;pointer-events:none}
+    .home-welcome{min-height:345px;display:grid;grid-template-columns:330px minmax(0,1fr);gap:20px;align-items:end;padding:22px 26px 0;position:relative;z-index:2}
+    .teacher-zone{height:100%;display:flex;align-items:flex-end;justify-content:center;position:relative;min-width:0}
+    .teacher-zone::before{content:"";position:absolute;width:255px;height:255px;border-radius:50%;background:rgba(255,255,255,.62);box-shadow:0 0 0 16px rgba(255,255,255,.18);top:34px;left:50%;transform:translateX(-50%)}
+    .teacher-img{position:relative;z-index:2;width:min(100%,275px);max-height:330px;object-fit:contain;object-position:bottom center;filter:drop-shadow(0 15px 15px rgba(10,55,84,.20))}
+    .speech-bubble{position:absolute;z-index:3;top:38px;left:4px;max-width:145px;background:#fff;color:#10437f;padding:13px 14px;border-radius:24px;font-weight:900;font-size:14px;line-height:1.35;box-shadow:0 8px 20px rgba(20,72,112,.13);border:1px solid #dbeaf5;text-align:center}
+    .speech-bubble::after{content:"";position:absolute;right:8px;bottom:-10px;border:11px solid transparent;border-top-color:#fff;transform:rotate(-18deg)}
+    .welcome-card{align-self:center;margin:0 0 20px;padding:27px 30px;border-radius:28px;border:1px solid rgba(255,255,255,.85);background:rgba(255,255,255,.80);backdrop-filter:blur(8px);box-shadow:0 12px 30px rgba(10,59,102,.14);position:relative;overflow:hidden}
+    .welcome-card::after{content:"IPS dekat dengan kehidupan kita!";position:absolute;right:22px;top:18px;width:142px;padding:12px 10px;border-radius:10px;background:#ffe36d;color:#17345b;font-size:12px;line-height:1.35;font-weight:900;transform:rotate(2deg);text-align:center;box-shadow:0 7px 16px rgba(119,89,0,.13)}
+    .welcome-card .welcome-eyebrow{font-size:22px;color:#0f4e84;margin-bottom:7px}.welcome-card h1{max-width:72%;font-size:40px;line-height:1.1;margin:0 0 10px;color:#123e67}
+    .welcome-card h1 .brand-accent{background:linear-gradient(90deg,#1677e8,#ff9900,#20a44c);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .welcome-card .hero-copy{max-width:72%;font-size:16px;line-height:1.6;color:#36536d}
+    .home-chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}.home-chip{padding:8px 13px;border-radius:999px;background:#fff;border:1px solid #dce8f1;box-shadow:0 5px 12px rgba(24,70,105,.07);font-size:12px;font-weight:900}
+    .cp-card{margin:0 26px 26px;position:relative;z-index:3;border-radius:24px;overflow:hidden;border:2px solid #149447;background:#fffef7;box-shadow:0 12px 28px rgba(19,126,62,.13)}
+    .cp-head{background:linear-gradient(90deg,#159b48,#087d35);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:15px 20px}.cp-title{display:flex;align-items:center;gap:12px;font-size:24px;font-weight:900}.cp-badge{padding:8px 13px;border-radius:999px;background:#ffd84a;color:#15436e;font-size:12px;font-weight:900;white-space:nowrap}
+    .cp-body{display:grid;grid-template-columns:155px minmax(0,1fr);gap:20px;align-items:center;padding:20px 22px;background:radial-gradient(circle at 8% 18%,rgba(255,212,71,.18),transparent 20%),linear-gradient(180deg,#fffef8,#fffdf1)}
+    .cp-visual{min-height:145px;display:flex;align-items:center;justify-content:center;font-size:78px;border-radius:20px;background:linear-gradient(145deg,#eef8ff,#f5fff2);border:1px solid #d8e9ef}.cp-text{font-size:16px;line-height:1.72;color:#203d59;font-weight:700}
+    .quick-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:22px 0 0}.quick-card{background:#fff;border-radius:18px;padding:17px;border:1px solid #dbe6ef;box-shadow:0 8px 18px rgba(18,66,100,.07);min-height:132px;display:flex;flex-direction:column;justify-content:space-between;transition:.2s ease}.quick-card:hover{transform:translateY(-3px)}.quick-card strong{font-size:17px}.quick-card p{font-size:12px;line-height:1.45;color:#5e718b;margin-top:7px}.quick-card .qc-icon{font-size:31px;margin-bottom:8px}.quick-card.blue{border-top:5px solid #1677e8}.quick-card.green{border-top:5px solid #159b48}.quick-card.orange{border-top:5px solid #ff9800}.quick-card.purple{border-top:5px solid #8247e5}
+    @media(max-width:980px){.home-welcome{grid-template-columns:240px minmax(0,1fr)}.welcome-card h1{font-size:33px}.welcome-card h1,.welcome-card .hero-copy{max-width:100%}.welcome-card::after{display:none}.quick-cards{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:700px){.home-welcome{grid-template-columns:1fr;align-items:start;padding:16px 16px 0}.teacher-zone{min-height:230px;order:2}.teacher-img{max-height:245px;width:205px}.teacher-zone::before{width:190px;height:190px;top:20px}.speech-bubble{top:18px;left:8px;font-size:12px;max-width:125px}.welcome-card{order:1;margin:0;padding:22px 18px}.welcome-card h1{font-size:30px}.welcome-card .hero-copy{font-size:14px}.cp-card{margin:0 16px 16px}.cp-head{align-items:flex-start;flex-direction:column}.cp-title{font-size:20px}.cp-body{grid-template-columns:1fr;padding:16px}.cp-visual{min-height:105px;font-size:58px}.cp-text{font-size:14px;line-height:1.65}.quick-cards{grid-template-columns:1fr}}
+
+</style>
 </head>
 
 <body>
@@ -735,9 +761,10 @@
 
     <nav class="nav-menu">
       <a class="nav-link active" href="#beranda"><span class="nav-icon">🏠</span>Beranda</a>
-      <a class="nav-link" href="literasi.html"><span class="nav-icon">📖</span>Belajar</a>
+      <a class="nav-link" href="literasi.html"><span class="nav-icon">📖</span>Literasi</a>
+      <a class="nav-link" href="numerasi.html"><span class="nav-icon">📊</span>Numerasi</a>
       <a class="nav-link" href="#tantangan"><span class="nav-icon">🏆</span>Tantangan</a>
-      <a class="nav-link" href="#progres"><span class="nav-icon">📊</span>Progres</a>
+      <a class="nav-link" href="#progres"><span class="nav-icon">⭐</span>Progres</a>
     </nav>
 
     <img
@@ -786,45 +813,42 @@
   <main id="appArea" class="hidden">
     <div class="page">
 
-      <section class="hero" id="beranda">
-        <div class="hero-grid">
-          <div>
-            <div class="welcome-eyebrow">Halo, 👋</div>
-            <h1>Selamat Datang di PIKTO-IPS!</h1>
-            <p class="hero-copy">
-              Belajar IPS menjadi lebih menyenangkan dengan piktogram, literasi,
-              numerasi, dan tantangan bertingkat.
-            </p>
-
-            <div class="topic-chips">
-              <span class="chip lit">⭐ Literasi</span>
-              <span class="chip num">🔢 Numerasi</span>
-              <span class="chip char">❤️ Karakter</span>
-            </div>
+      <section class="home-stage" id="beranda">
+        <div class="home-welcome">
+          <div class="teacher-zone">
+            <div class="speech-bubble">Ayo belajar IPS bersama PIKTO-IPS!</div>
+            <img src="img/guru-capaian.png" alt="Guru PIKTO-IPS" class="teacher-img" onerror="this.style.display='none'">
           </div>
-
-          <div class="profile-panel">
-            <div class="avatar">🧑‍🎓</div>
-
-            <div class="profile-data">
-              <div class="profile-field">
-                <label>Nama</label>
-                <strong id="profileName">Murid PIKTO</strong>
+          <div class="welcome-card">
+            <div class="welcome-eyebrow">👋 Halo, selamat datang!</div>
+            <h1>Selamat Datang di <span class="brand-accent">PIKTO-IPS</span></h1>
+            <p class="hero-copy">Jelajahi IPS melalui literasi, numerasi, piktogram, dan tantangan bertingkat dengan cara yang lebih seru, kontekstual, dan bermakna.</p>
+            <div class="home-chips"><span class="home-chip">📖 Literasi IPS</span><span class="home-chip">🔢 Numerasi IPS</span><span class="home-chip">🎯 Tantangan</span><span class="home-chip">🏆 Papan Nilai</span></div>
+            <div class="profile-panel" style="margin-top:18px;min-height:auto;padding:14px 16px;grid-template-columns:54px 1fr">
+              <div class="avatar" style="width:50px;height:50px;font-size:27px">🧑‍🎓</div>
+              <div class="profile-data">
+                <div class="profile-field"><label>Nama</label><strong id="profileName">Murid PIKTO</strong></div>
+                <div class="profile-field"><label>Kelas</label><strong id="profileClass">-</strong></div>
+                <div class="profile-field id"><label>ID Murid</label><strong class="profile-id" id="profileId">-</strong></div>
+                <div id="networkStatus" class="network online">🟢 Terhubung</div>
               </div>
-              <div class="profile-field">
-                <label>Kelas</label>
-                <strong id="profileClass">-</strong>
-              </div>
-              <div class="profile-field id">
-                <label>ID Murid</label>
-                <strong class="profile-id" id="profileId">-</strong>
-              </div>
-              <div id="networkStatus" class="network online">🟢 Terhubung</div>
             </div>
           </div>
         </div>
+        <section class="cp-card" aria-labelledby="cpTitle">
+          <div class="cp-head"><div class="cp-title" id="cpTitle">🎯 Capaian Pembelajaran</div><div class="cp-badge">🎓 Kelas 4 • Fase B • IPS</div></div>
+          <div class="cp-body">
+            <div class="cp-visual" aria-hidden="true">🌍🗺️</div>
+            <p class="cp-text">Menjelaskan peran, tugas, dan tanggung jawab serta interaksi sosial yang terjadi di sekitar tempat tinggal dan sekolah; mengenali letak kabupaten/kota dan provinsi tempat tinggalnya dengan menggunakan peta konvensional/digital; mengklasifikasikan ragam bentang alam dan keterkaitannya dengan profesi masyarakat, ragam budaya serta upaya untuk melestarikannya.</p>
+          </div>
+        </section>
       </section>
-
+      <div class="quick-cards">
+        <a class="quick-card blue" href="literasi.html"><div><div class="qc-icon">📖</div><strong>Literasi IPS</strong><p>Baca materi, pahami informasi, dan latih kemampuan literasimu.</p></div></a>
+        <a class="quick-card green" href="numerasi.html"><div><div class="qc-icon">📊</div><strong>Numerasi IPS</strong><p>Pelajari data, piktogram, grafik, dan soal numerasi kontekstual.</p></div></a>
+        <a class="quick-card orange" href="#tantangan"><div><div class="qc-icon">🏆</div><strong>Tantangan</strong><p>Uji kemampuanmu melalui Level Awal, Cakap, dan Mahir.</p></div></a>
+        <a class="quick-card purple" href="#leaderboard"><div><div class="qc-icon">⭐</div><strong>Papan Nilai</strong><p>Lihat hasil terbaik dan perkembangan belajar.</p></div></a>
+      </div>
       <div class="dashboard-grid">
         <!-- TANTANGAN -->
         <section class="panel" id="tantangan">
@@ -965,7 +989,7 @@
         <div>
           <strong>Informasi</strong>
           <p>
-            Level Awal terdiri dari 6 soal Literasi dan 6 soal Numerasi. Masing-masing nilai dihitung dari jumlah jawaban benar ÷ 6 × 100. Nilai level tetap digunakan untuk progres dan pembukaan Level Cakap.
+            Level Awal terdiri dari 10 soal Literasi dan 10 soal Numerasi. Masing-masing nilai dihitung dari jumlah jawaban benar ÷ 10 × 100. Nilai level tetap digunakan untuk progres dan pembukaan Level Cakap.
           </p>
         </div>
       </div>
