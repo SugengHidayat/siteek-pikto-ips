@@ -43,6 +43,27 @@
 @media(max-width:850px){.local-route{grid-template-columns:1fr}.mission-strip{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:650px){.mission-strip{grid-template-columns:1fr}.mini-map{grid-template-columns:1fr}.data-story h2{font-size:23px}}
 
+
+
+/* ===== COMPETITION EDITION — PETA PETUALANGAN NUMERASI ===== */
+.num-adventure{background:linear-gradient(135deg,#f2fff6,#fff9e8);border:2px solid #cfe9d8;overflow:hidden}
+.num-adventure-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;flex-wrap:wrap}
+.num-adventure-head h2{font-size:29px;margin:0 0 6px;color:#0f6f43}.num-adventure-head p{margin:0;color:#5c7184;line-height:1.6;max-width:760px}
+.num-score{min-width:220px;background:#fff;border:1px solid #d8e8dd;border-radius:18px;padding:14px;box-shadow:0 8px 20px rgba(22,91,58,.07)}
+.num-score-row{display:flex;justify-content:space-between;gap:12px;font-size:13px;font-weight:900;margin:5px 0}.num-score-row strong{color:#0f6f43}
+.num-map{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}.num-node{position:relative;border:2px solid #dce8e2;background:#fff;border-radius:18px;padding:15px 13px;text-align:left;cursor:pointer;min-height:148px;transition:.18s ease;box-shadow:0 8px 18px rgba(31,72,110,.06)}
+.num-node:hover{transform:translateY(-2px);border-color:#9ad2ae}.num-node.active{border-color:#198754;background:#f4fff7}.num-node.done{border-color:#42a56a;background:#eefaf3}.num-node.locked{opacity:.58;cursor:not-allowed;filter:grayscale(.25)}
+.num-node .nicon{font-size:31px}.num-node h3{margin:7px 0 4px;color:#173b2a;font-size:16px}.num-node p{margin:0;color:#667b8f;font-size:12px;line-height:1.45}.num-state{position:absolute;right:10px;top:10px;font-size:18px}.num-stars{display:inline-flex;gap:2px;margin-top:9px;font-size:14px}
+.num-progressbar{height:12px;background:#e8efe9;border-radius:999px;overflow:hidden;margin-top:16px}.num-progressfill{height:100%;width:0;background:linear-gradient(90deg,#198754,#ffb300);transition:.35s ease}
+.num-badge-board{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}.num-badge{padding:7px 10px;border-radius:999px;background:#fff;border:1px solid #d8e6de;color:#42624f;font-size:11px;font-weight:900}.num-badge.earned{background:#fff2b9;border-color:#efd063;color:#6b5000}
+.num-stage{display:none;margin-top:18px;border:2px solid #d9e8df;border-radius:20px;background:#fff;overflow:hidden}.num-stage.show{display:block}.num-stage-head{padding:18px 20px;background:linear-gradient(135deg,#eaf9ef,#fff9e9);display:flex;justify-content:space-between;gap:14px;align-items:flex-start;flex-wrap:wrap}.num-stage-head h3{margin:0 0 6px;color:#0f6f43;font-size:24px}.num-stage-head p{margin:0;color:#5f7285;line-height:1.55}.num-level-pill{padding:7px 10px;border-radius:999px;background:#198754;color:#fff;font-size:11px;font-weight:900;white-space:nowrap}
+.num-stage-body{padding:20px}.num-activity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.num-activity{border:1px solid #dce8e2;border-radius:16px;padding:15px;background:#fcfffd}.num-activity .aicon{font-size:28px}.num-activity h4{margin:7px 0 5px;color:#1f4934}.num-activity p{margin:0;color:#60758a;font-size:13px;line-height:1.55}
+.num-data-box{margin-top:15px;padding:15px;border-radius:15px;background:#f7fbff;border:1px solid #dbe7f2;line-height:1.65}.num-data-box strong{color:#174f7a}.num-mini-table{width:100%;border-collapse:collapse;margin-top:8px;font-size:13px}.num-mini-table th,.num-mini-table td{border:1px solid #dbe5eb;padding:8px;text-align:center}.num-mini-table th{background:#eef6fb}
+.num-mission{margin-top:16px;padding:16px;border-radius:16px;background:#fff8df;border:1px solid #f1d783}.num-mission h4{margin:0 0 7px;color:#745700}.num-mission p{margin:0 0 10px;color:#635d47;line-height:1.55}.num-mission-row{display:flex;gap:8px;flex-wrap:wrap}.num-mission input,.num-mission select{flex:1;min-width:180px;padding:11px 12px;border:2px solid #d7dfdf;border-radius:10px;font-weight:800;background:#fff}.num-mission .mfeedback{width:100%;min-height:22px;font-size:13px;font-weight:900;margin-top:8px}.num-mission .mfeedback.ok{color:#15803d}.num-mission .mfeedback.bad{color:#c62828}.num-next{margin-top:15px;display:flex;justify-content:flex-end}.num-next button:disabled{opacity:.45;cursor:not-allowed}
+.num-library-title{margin-top:26px;padding:16px 18px;border-radius:18px;background:linear-gradient(135deg,#eefaf3,#f8fbff);border:1px solid #d4e7db}.num-library-title h2{margin:0;color:#146c43}.num-library-title p{margin:5px 0 0;color:#60758a;line-height:1.55}
+@media(max-width:900px){.num-map{grid-template-columns:repeat(2,1fr)}.num-activity-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.num-map{grid-template-columns:1fr}.num-stage-head,.num-adventure-head{display:block}.num-score{margin-top:12px}.num-mission-row{display:block}.num-mission input,.num-mission select,.num-mission button{width:100%;margin-top:8px}}
+
 </style>
 </head>
 <body>
@@ -63,6 +84,85 @@
     untuk menyelesaikan masalah dan menarik kesimpulan berdasarkan data.</strong>
   </div>
 </section>
+
+<section class="card num-adventure" id="petaPetualanganNumerasi">
+  <div class="num-adventure-head">
+    <div>
+      <h2>🗺️ Peta Petualangan Numerasi IPS</h2>
+      <p>Selesaikan setiap pos secara berurutan. Setiap pos berisi materi singkat, tiga aktivitas, dan satu mini misi. Pos berikutnya akan terbuka setelah mini misi berhasil.</p>
+    </div>
+    <div class="num-score">
+      <div class="num-score-row"><span>⭐ Bintangku</span><strong id="numStarCount">0 / 24</strong></div>
+      <div class="num-score-row"><span>📊 Progres</span><strong id="numProgressText">0 / 8 Pos</strong></div>
+      <div class="num-score-row"><span>🏅 Badge Aktif</span><strong id="numBadgeText">Penjelajah Data</strong></div>
+    </div>
+  </div>
+  <div class="num-map" id="numMap">
+    <button class="num-node active" data-num-pos="1"><span class="num-state">⭐</span><div class="nicon">🔢</div><h3>Pos 1 — Mengenal Data</h3><p>Membedakan angka, data, dan informasi.</p><div class="num-stars">⭐⭐⭐</div></button>
+    <button class="num-node locked" data-num-pos="2"><span class="num-state">🔒</span><div class="nicon">🖼️</div><h3>Pos 2 — Piktogram</h3><p>Mengubah simbol menjadi jumlah.</p><div class="num-stars">⭐⭐⭐</div></button>
+    <button class="num-node locked" data-num-pos="3"><span class="num-state">🔒</span><div class="nicon">➕</div><h3>Pos 3 — Menghitung Data</h3><p>Jumlah, selisih, dan sisa.</p><div class="num-stars">⭐⭐⭐</div></button>
+    <button class="num-node locked" data-num-pos="4"><span class="num-state">🔒</span><div class="nicon">📋</div><h3>Pos 4 — Membaca Tabel</h3><p>Menemukan dan membandingkan data.</p><div class="num-stars">⭐⭐⭐</div></button>
+    <button class="num-node locked" data-num-pos="5"><span class="num-state">🔒</span><div class="nicon">📊</div><h3>Pos 5 — Diagram</h3><p>Membaca nilai tertinggi, terendah, dan selisih.</p><div class="num-stars">⭐⭐⭐</div></button>
+    <button class="num-node locked" data-num-pos="6"><span class="num-state">🔒</span><div class="nicon">💰</div><h3>Pos 6 — Numerasi Ekonomi</h3><p>Harga, jumlah barang, dan hasil penjualan.</p><div class="num-stars">⭐⭐⭐</div></button>
+    <button class="num-node locked" data-num-pos="7"><span class="num-state">🔒</span><div class="nicon">🧩</div><h3>Pos 7 — Masalah Multilangkah</h3><p>Menyelesaikan masalah dengan lebih dari satu langkah.</p><div class="num-stars">⭐⭐⭐</div></button>
+    <button class="num-node locked" data-num-pos="8"><span class="num-state">🔒</span><div class="nicon">🧠</div><h3>Pos 8 — Keputusan Data</h3><p>Menalar dan memilih keputusan berdasarkan data.</p><div class="num-stars">⭐⭐⭐</div></button>
+  </div>
+  <div class="num-progressbar"><div class="num-progressfill" id="numProgressFill"></div></div>
+  <div class="num-badge-board">
+    <span class="num-badge" data-badge="1">🔎 Penjelajah Data</span>
+    <span class="num-badge" data-badge="2">🖼️ Pembaca Piktogram</span>
+    <span class="num-badge" data-badge="4">📋 Detektif Tabel</span>
+    <span class="num-badge" data-badge="6">💰 Ekonom Cilik</span>
+    <span class="num-badge" data-badge="8">🏆 Ahli Numerasi IPS</span>
+  </div>
+
+  <article class="num-stage show" data-num-stage="1">
+    <div class="num-stage-head"><div><h3>🔢 Pos 1 — Mengenal Data</h3><p>Mulai dari lingkungan sekitar: angka menjadi bermakna ketika menjelaskan suatu keadaan.</p></div><span class="num-level-pill">MEMAHAMI</span></div>
+    <div class="num-stage-body">
+      <div class="num-activity-grid"><div class="num-activity"><div class="aicon">👀</div><h4>Amati</h4><p>Temukan angka yang ada pada informasi sederhana tentang kehidupan masyarakat.</p></div><div class="num-activity"><div class="aicon">🏷️</div><h4>Beri Makna</h4><p>Bedakan angka tanpa konteks dengan data yang memiliki keterangan.</p></div><div class="num-activity"><div class="aicon">💬</div><h4>Ceritakan</h4><p>Ubah data menjadi kalimat informasi yang mudah dipahami.</p></div></div>
+      <div class="num-data-box"><strong>Contoh:</strong> “8 keranjang” adalah data karena angka 8 memiliki keterangan, yaitu jumlah keranjang.</div>
+      <div class="num-mission"><h4>🎯 Mini Misi Pos 1</h4><p>Manakah yang merupakan data lengkap?</p><div class="num-mission-row"><select id="numAns1"><option value="">Pilih jawaban</option><option value="a">12</option><option value="b">12 keranjang sayur</option><option value="c">banyak</option></select><button class="btn green" onclick="checkNumMission(1)">Periksa</button></div><div class="mfeedback" id="numFb1"></div></div>
+      <div class="num-next"><button class="btn green" id="numNext1" onclick="openNumPos(2)" disabled>Lanjut ke Pos 2 →</button></div>
+    </div>
+  </article>
+
+  <article class="num-stage" data-num-stage="2">
+    <div class="num-stage-head"><div><h3>🖼️ Pos 2 — Membaca Piktogram</h3><p>Piktogram mengubah gambar atau simbol menjadi data yang dapat dihitung.</p></div><span class="num-level-pill">MEMAHAMI</span></div>
+    <div class="num-stage-body"><div class="num-activity-grid"><div class="num-activity"><div class="aicon">🔍</div><h4>Baca Keterangan</h4><p>Periksa nilai setiap simbol sebelum menghitung.</p></div><div class="num-activity"><div class="aicon">✖️</div><h4>Ubah ke Angka</h4><p>Jumlah simbol × nilai tiap simbol.</p></div><div class="num-activity"><div class="aicon">🗣️</div><h4>Interpretasikan</h4><p>Jelaskan arti hasil hitungan dengan kalimat.</p></div></div><div class="num-data-box"><strong>Data simulasi:</strong> 1 🧺 = 5 kg. Jika terdapat 🧺🧺🧺🧺, maka jumlahnya 4 × 5 = 20 kg.</div><div class="num-mission"><h4>🎯 Mini Misi Pos 2</h4><p>Jika 1 🌽 mewakili 3 keranjang, berapa keranjang yang ditunjukkan oleh 🌽🌽🌽🌽?</p><div class="num-mission-row"><input id="numAns2" inputmode="numeric" placeholder="Tulis angka"><button class="btn green" onclick="checkNumMission(2)">Periksa</button></div><div class="mfeedback" id="numFb2"></div></div><div class="num-next"><button class="btn green" id="numNext2" onclick="openNumPos(3)" disabled>Lanjut ke Pos 3 →</button></div></div>
+  </article>
+
+  <article class="num-stage" data-num-stage="3">
+    <div class="num-stage-head"><div><h3>➕ Pos 3 — Menghitung Data</h3><p>Gunakan operasi hitung untuk mencari jumlah, selisih, dan sisa.</p></div><span class="num-level-pill">MENERAPKAN</span></div>
+    <div class="num-stage-body"><div class="num-activity-grid"><div class="num-activity"><div class="aicon">➕</div><h4>Jumlah</h4><p>Gabungkan dua atau lebih data.</p></div><div class="num-activity"><div class="aicon">➖</div><h4>Selisih</h4><p>Bandingkan data besar dan kecil.</p></div><div class="num-activity"><div class="aicon">📦</div><h4>Sisa</h4><p>Kurangi data awal dengan bagian yang telah digunakan atau dijual.</p></div></div><div class="num-data-box">Data simulasi: Pisang 45 kg. Sebanyak 15 kg dijual. Sisa = 45 − 15 = 30 kg.</div><div class="num-mission"><h4>🎯 Mini Misi Pos 3</h4><p>Hasil panen 35 kg mangga dan 45 kg pisang. Berapa jumlah seluruhnya?</p><div class="num-mission-row"><input id="numAns3" inputmode="numeric" placeholder="... kg"><button class="btn green" onclick="checkNumMission(3)">Periksa</button></div><div class="mfeedback" id="numFb3"></div></div><div class="num-next"><button class="btn green" id="numNext3" onclick="openNumPos(4)" disabled>Lanjut ke Pos 4 →</button></div></div>
+  </article>
+
+  <article class="num-stage" data-num-stage="4">
+    <div class="num-stage-head"><div><h3>📋 Pos 4 — Membaca Tabel</h3><p>Tabel membantu kita menemukan, membandingkan, dan merangkum data dengan cepat.</p></div><span class="num-level-pill">MENGHUBUNGKAN</span></div>
+    <div class="num-stage-body"><div class="num-activity-grid"><div class="num-activity"><div class="aicon">↔️</div><h4>Baca Baris</h4><p>Hubungkan nama objek dengan nilainya.</p></div><div class="num-activity"><div class="aicon">⬆️</div><h4>Cari Terbesar</h4><p>Temukan nilai paling tinggi pada tabel.</p></div><div class="num-activity"><div class="aicon">⚖️</div><h4>Bandingkan</h4><p>Hitung selisih dua data.</p></div></div><div class="num-data-box"><table class="num-mini-table"><tr><th>Hari</th><th>Penjualan (bungkus)</th></tr><tr><td>Senin</td><td>18</td></tr><tr><td>Selasa</td><td>25</td></tr><tr><td>Rabu</td><td>21</td></tr></table></div><div class="num-mission"><h4>🎯 Mini Misi Pos 4</h4><p>Berdasarkan tabel, berapa selisih penjualan tertinggi dan terendah?</p><div class="num-mission-row"><input id="numAns4" inputmode="numeric" placeholder="Tulis angka"><button class="btn green" onclick="checkNumMission(4)">Periksa</button></div><div class="mfeedback" id="numFb4"></div></div><div class="num-next"><button class="btn green" id="numNext4" onclick="openNumPos(5)" disabled>Lanjut ke Pos 5 →</button></div></div>
+  </article>
+
+  <article class="num-stage" data-num-stage="5">
+    <div class="num-stage-head"><div><h3>📊 Pos 5 — Membaca Diagram</h3><p>Diagram membantu melihat perbandingan data secara visual.</p></div><span class="num-level-pill">MENGINTERPRETASI</span></div>
+    <div class="num-stage-body"><div class="num-activity-grid"><div class="num-activity"><div class="aicon">📏</div><h4>Baca Skala</h4><p>Perhatikan angka pada sumbu sebelum membaca batang.</p></div><div class="num-activity"><div class="aicon">🔝</div><h4>Tertinggi & Terendah</h4><p>Temukan batang paling tinggi dan paling rendah.</p></div><div class="num-activity"><div class="aicon">🧾</div><h4>Simpulkan</h4><p>Ubah tampilan diagram menjadi kalimat informasi.</p></div></div><div class="num-data-box"><strong>Data simulasi diagram:</strong> Tomat 8, Jagung 6, Cabai 10, Singkong 4 keranjang.</div><div class="num-mission"><h4>🎯 Mini Misi Pos 5</h4><p>Berapa selisih data cabai dan singkong?</p><div class="num-mission-row"><input id="numAns5" inputmode="numeric" placeholder="Tulis angka"><button class="btn green" onclick="checkNumMission(5)">Periksa</button></div><div class="mfeedback" id="numFb5"></div></div><div class="num-next"><button class="btn green" id="numNext5" onclick="openNumPos(6)" disabled>Lanjut ke Pos 6 →</button></div></div>
+  </article>
+
+  <article class="num-stage" data-num-stage="6">
+    <div class="num-stage-head"><div><h3>💰 Pos 6 — Numerasi Ekonomi</h3><p>Gunakan perkalian dan perbandingan untuk memahami aktivitas ekonomi.</p></div><span class="num-level-pill">MENERAPKAN</span></div>
+    <div class="num-stage-body"><div class="num-activity-grid"><div class="num-activity"><div class="aicon">🏷️</div><h4>Harga × Jumlah</h4><p>Hitung nilai penjualan dari harga satuan dan jumlah barang.</p></div><div class="num-activity"><div class="aicon">💵</div><h4>Bandingkan Pendapatan</h4><p>Tentukan produk dengan hasil penjualan terbesar.</p></div><div class="num-activity"><div class="aicon">🛒</div><h4>Belanja Bijak</h4><p>Gunakan data harga untuk membuat pilihan sesuai kebutuhan.</p></div></div><div class="num-data-box">Data simulasi: 20 bungkus keripik pisang × Rp5.000 = Rp100.000.</div><div class="num-mission"><h4>🎯 Mini Misi Pos 6</h4><p>15 bungkus keripik singkong dijual Rp4.000 per bungkus. Berapa hasil penjualannya?</p><div class="num-mission-row"><input id="numAns6" inputmode="numeric" placeholder="Tulis angka tanpa titik"><button class="btn green" onclick="checkNumMission(6)">Periksa</button></div><div class="mfeedback" id="numFb6"></div></div><div class="num-next"><button class="btn green" id="numNext6" onclick="openNumPos(7)" disabled>Lanjut ke Pos 7 →</button></div></div>
+  </article>
+
+  <article class="num-stage" data-num-stage="7">
+    <div class="num-stage-head"><div><h3>🧩 Pos 7 — Masalah Multilangkah</h3><p>Masalah nyata sering membutuhkan lebih dari satu operasi hitung.</p></div><span class="num-level-pill">MENALAR</span></div>
+    <div class="num-stage-body"><div class="num-activity-grid"><div class="num-activity"><div class="aicon">1️⃣</div><h4>Tentukan Data</h4><p>Pilih angka yang diperlukan dari soal.</p></div><div class="num-activity"><div class="aicon">2️⃣</div><h4>Susun Langkah</h4><p>Tentukan operasi pertama dan kedua.</p></div><div class="num-activity"><div class="aicon">3️⃣</div><h4>Periksa Hasil</h4><p>Cocokkan jawaban dengan konteks pertanyaan.</p></div></div><div class="num-data-box">Contoh: 4 keranjang × 5 kg = 20 kg. Jika 7 kg digunakan, sisanya 13 kg.</div><div class="num-mission"><h4>🎯 Mini Misi Pos 7</h4><p>Ada 5 keranjang, tiap keranjang 4 kg. Sebanyak 6 kg dijual. Berapa kg sisanya?</p><div class="num-mission-row"><input id="numAns7" inputmode="numeric" placeholder="... kg"><button class="btn green" onclick="checkNumMission(7)">Periksa</button></div><div class="mfeedback" id="numFb7"></div></div><div class="num-next"><button class="btn green" id="numNext7" onclick="openNumPos(8)" disabled>Lanjut ke Pos 8 →</button></div></div>
+  </article>
+
+  <article class="num-stage" data-num-stage="8">
+    <div class="num-stage-head"><div><h3>🧠 Pos 8 — Mengambil Keputusan Berdasarkan Data</h3><p>Numerasi tidak berhenti pada jawaban angka. Gunakan data untuk menentukan pilihan dan memberikan alasan.</p></div><span class="num-level-pill">MENALAR & MEMUTUSKAN</span></div>
+    <div class="num-stage-body"><div class="num-activity-grid"><div class="num-activity"><div class="aicon">🔍</div><h4>Baca Bukti</h4><p>Temukan data yang mendukung keputusan.</p></div><div class="num-activity"><div class="aicon">⚖️</div><h4>Bandingkan Pilihan</h4><p>Bandingkan jumlah, harga, atau hasil.</p></div><div class="num-activity"><div class="aicon">✅</div><h4>Beri Alasan</h4><p>Jelaskan keputusan menggunakan angka yang tersedia.</p></div></div><div class="num-data-box"><table class="num-mini-table"><tr><th>Produk</th><th>Jumlah</th><th>Harga</th><th>Hasil</th></tr><tr><td>Keripik Pisang</td><td>20</td><td>Rp5.000</td><td>Rp100.000</td></tr><tr><td>Keripik Singkong</td><td>15</td><td>Rp4.000</td><td>Rp60.000</td></tr><tr><td>Keripik Ubi</td><td>10</td><td>Rp6.000</td><td>Rp60.000</td></tr></table></div><div class="num-mission"><h4>🏆 Misi Akhir Numerasi</h4><p>Produk mana yang memberikan hasil penjualan tertinggi?</p><div class="num-mission-row"><select id="numAns8"><option value="">Pilih jawaban</option><option value="pisang">Keripik Pisang</option><option value="singkong">Keripik Singkong</option><option value="ubi">Keripik Ubi</option></select><button class="btn green" onclick="checkNumMission(8)">Periksa</button></div><div class="mfeedback" id="numFb8"></div></div><div class="num-next"><a class="btn orange" id="numFinishBtn" href="#latihan" style="display:none">🏆 Lanjut ke Latihan Numerasi</a></div></div>
+  </article>
+</section>
+<div class="num-library-title"><h2>📚 Materi Pendalaman Numerasi</h2><p>Setelah menjelajahi peta petualangan, gunakan materi berikut untuk memperdalam piktogram, operasi data, konteks ekonomi, latihan, dan video interaktif.</p></div>
+
 <section class="card local-journey">
   <div class="local-journey-head">
     <div><h2>🧭 Petualangan Numerasi di Sekitarku</h2><p class="subtitle" style="margin:5px 0 0">Kita belajar numerasi dari tempat yang dekat dengan kehidupan sehari-hari.</p></div>
@@ -94,6 +194,19 @@
 </div><div class="summary"><strong>🏁 Status Penyelesaian</strong><p id="videoSummary">Selesaikan kedua video dan 4 pertanyaan interaktif pada masing-masing video.</p><div class="cbar"><div class="cfill" id="completeFill"></div></div></div><div class="next"><p id="nextMessage">🔒 Tantangan terbuka setelah kedua video selesai.</p><a id="nextChallenge" class="btn light" href="javascript:void(0)">🏆 Kembali ke Tantangan</a></div></section>
 <section class="card"><h2>💡 Pesan Penting</h2><p class="subtitle" style="margin-bottom:0">Numerasi membantu kita membaca kehidupan melalui angka dan data. Dari Ranuklindungan, Danau Ranu, hingga Pasar Brandong, data dapat membantu kita memahami lingkungan, kegiatan masyarakat, dan membuat keputusan berdasarkan bukti.</p></section><div class="btnrow" style="margin-top:20px"><a class="btn light" href="literasi.html">← Kembali ke Literasi</a><a class="btn green" href="#videoInteraktif">🎬 Ke Video Interaktif</a></div><footer><strong>PIKTO-IPS</strong><br>Media Pembelajaran IPS Berbasis Literasi, Numerasi, Piktogram, dan Video Interaktif</footer></main>
 <div class="modal hidden" id="interactiveModal"><div class="modalbox"><div class="mhead"><div><h3 id="interactiveTitle">🎬 Video Numerasi Interaktif</h3><p class="source">Video akan berhenti 4 kali untuk memberikan pertanyaan.</p></div><button class="close" onclick="closeInteractiveModal()">✕</button></div><div class="ipwrap"><div id="interactivePlayer"></div><div class="qoverlay hidden" id="questionOverlay"><div class="qcard"><span class="qnum" id="questionNumber">PERTANYAAN 1 DARI 4</span><h4 id="questionText">Pertanyaan</h4><div class="opts" id="quizOptions"></div><div class="feedback" id="quizFeedback"></div></div></div></div><div class="istatus"><span id="interactiveCheckpoint">Checkpoint: 0/4</span><span>✅ Benar = lanjut • ❌ Salah = kembali ke awal</span></div></div></div>
+
+<script>
+const NUM_KEY='pikto_numerasi_adventure_v1';
+const NUM_ANS={1:'b',2:'12',3:'80',4:'7',5:'6',6:'60000',7:'14',8:'pisang'};
+function getNumState(){try{const s=JSON.parse(localStorage.getItem(NUM_KEY)||'{}');return {done:Array.isArray(s.done)?s.done:[]};}catch(e){return {done:[]}}}
+function saveNumState(s){localStorage.setItem(NUM_KEY,JSON.stringify(s));}
+function normNum(v){return String(v||'').toLowerCase().replace(/rp|kg|bungkus|keranjang|\.|\s/g,'').replace(',','');}
+function openNumPos(pos){const s=getNumState();if(pos>1 && !s.done.includes(pos-1)){alert('🔒 Selesaikan Mini Misi Pos '+(pos-1)+' terlebih dahulu.');return;}document.querySelectorAll('.num-stage').forEach(el=>el.classList.toggle('show',Number(el.dataset.numStage)===pos));document.querySelectorAll('.num-node').forEach(el=>el.classList.toggle('active',Number(el.dataset.numPos)===pos));const target=document.querySelector('[data-num-stage="'+pos+'"]');if(target)target.scrollIntoView({behavior:'smooth',block:'start'});}
+function checkNumMission(pos){const el=document.getElementById('numAns'+pos),fb=document.getElementById('numFb'+pos);if(!el||!fb)return;const ok=normNum(el.value)===normNum(NUM_ANS[pos]);fb.className='mfeedback '+(ok?'ok':'bad');if(!ok){fb.textContent='Belum tepat. Baca kembali data dan coba lagi.';return;}fb.textContent=pos===8?'🎉 Hebat! Semua pos Numerasi selesai. Kamu siap menguji kemampuanmu.':'✅ Benar! Pos '+pos+' selesai dan pos berikutnya terbuka.';const s=getNumState();if(!s.done.includes(pos)){s.done.push(pos);s.done.sort((a,b)=>a-b);saveNumState(s);}updateNumAdventure();if(pos===8){document.getElementById('numFinishBtn').style.display='inline-flex';}}
+function updateNumAdventure(){const s=getNumState();const completed=s.done.length;document.getElementById('numStarCount').textContent=(completed*3)+' / 24';document.getElementById('numProgressText').textContent=completed+' / 8 Pos';document.getElementById('numProgressFill').style.width=(completed/8*100)+'%';let badge='Penjelajah Data';if(completed>=8)badge='Ahli Numerasi IPS';else if(completed>=6)badge='Ekonom Cilik';else if(completed>=4)badge='Detektif Tabel';else if(completed>=2)badge='Pembaca Piktogram';document.getElementById('numBadgeText').textContent=badge;document.querySelectorAll('.num-node').forEach(node=>{const p=Number(node.dataset.numPos),unlocked=p===1||s.done.includes(p-1),done=s.done.includes(p);node.classList.toggle('locked',!unlocked);node.classList.toggle('done',done);const state=node.querySelector('.num-state');if(state)state.textContent=done?'✅':unlocked?'⭐':'🔒';node.disabled=!unlocked;});document.querySelectorAll('.num-badge').forEach(b=>b.classList.toggle('earned',completed>=Number(b.dataset.badge)));for(let p=1;p<=7;p++){const b=document.getElementById('numNext'+p);if(b)b.disabled=!s.done.includes(p);}const f=document.getElementById('numFinishBtn');if(f)f.style.display=s.done.includes(8)?'inline-flex':'none';}
+document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.num-node').forEach(node=>node.addEventListener('click',()=>openNumPos(Number(node.dataset.numPos))));updateNumAdventure();});
+</script>
+
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
 
