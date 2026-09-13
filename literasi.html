@@ -353,6 +353,35 @@
       .modal-box{padding:13px;border-radius:17px}
       .question-card{padding:16px}
     }
+
+    /* ===== COMPETITION EDITION TAHAP 2: PETUALANGAN LITERASI LOKAL ===== */
+    .local-journey{
+      background:linear-gradient(145deg,#ffffff,#f5fbff);
+      border:1px solid #d7e8f4;
+      overflow:hidden;
+      position:relative;
+    }
+    .local-journey::before{
+      content:"";position:absolute;left:-60px;top:-70px;width:190px;height:190px;border-radius:50%;
+      background:rgba(50,168,255,.09);pointer-events:none;
+    }
+    .journey-head{display:flex;align-items:center;gap:14px;margin-bottom:16px;position:relative;z-index:1}
+    .journey-icon{width:58px;height:58px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:31px;background:linear-gradient(145deg,#e8f6ff,#dff7e7);border:1px solid #cfe5ee;flex-shrink:0}
+    .journey-head h2{margin:0 0 4px;color:#0b4f91}.journey-head p{margin:0;color:#58708a;line-height:1.5}
+    .place-route{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px;position:relative;z-index:1}
+    .place-card{border-radius:20px;padding:18px;background:#fff;border:1px solid #dce8ef;box-shadow:0 7px 17px rgba(24,70,105,.07);position:relative;min-height:190px}
+    .place-card .place-no{position:absolute;right:13px;top:12px;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#eef6ff;color:#0b5fb9;font-weight:900}
+    .place-emoji{font-size:42px;margin-bottom:10px}.place-card h3{margin:0 0 7px;color:#173f68}.place-card p{margin:0;color:#526b82;line-height:1.6;font-size:14px}
+    .place-card.home{border-top:5px solid #3c8ee6}.place-card.lake{border-top:5px solid #25a9c7}.place-card.market{border-top:5px solid #f39b22}
+    .mission-box{margin-top:16px;border-radius:18px;padding:17px 18px;background:linear-gradient(135deg,#fff8df,#fffdf5);border:1px solid #f5dfa1}
+    .mission-box h3{margin:0 0 11px;color:#9a6500}.mission-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}
+    .mission-step{padding:11px 8px;border-radius:13px;background:#fff;text-align:center;border:1px solid #f0e3bd;font-weight:900;font-size:12px;color:#4c5c68}
+    .mission-step span{display:block;font-size:25px;margin-bottom:5px}
+    .local-story-badge{display:inline-flex;align-items:center;gap:7px;padding:7px 11px;border-radius:999px;background:#eaf7ff;color:#0b5ea8;font-weight:900;font-size:12px;margin-bottom:12px}
+    .fact-note{margin-top:14px;padding:12px 14px;border-radius:13px;background:#f4f8fb;border-left:5px solid #6d879c;color:#4a6074;font-size:12px;line-height:1.55}
+    .learning-pictogram-title{margin:17px 0 8px;font-weight:900;color:#184a74}
+    @media(max-width:760px){.place-route{grid-template-columns:1fr}.mission-steps{grid-template-columns:1fr 1fr}.mission-step:last-child{grid-column:1/-1}.journey-head{align-items:flex-start}}
+
   </style>
 </head>
 <body>
@@ -367,6 +396,7 @@
   </div>
   <nav class="nav">
     <a href="index.html">🏠 Beranda</a>
+    <a href="#petualanganLokal">🗺️ Petualangan Lokal</a>
     <a href="#latihan">✏️ Latihan</a>
     <a href="#videoInteraktif">🎬 Video Interaktif</a>
     <a href="numerasi.html">🔢 Numerasi</a>
@@ -381,8 +411,51 @@
     <p>
       Literasi IPS adalah kemampuan membaca, memahami, menemukan informasi,
       menghubungkan fakta, dan membuat kesimpulan tentang kehidupan masyarakat.
+      Di PIKTO-IPS, kita belajar dari lingkungan yang dekat dengan kehidupan murid: <strong>Desa Ranuklindungan, Danau Ranu, dan Pasar Brandong di Desa Dawe</strong>.
       Informasi dapat berasal dari cerita, gambar, simbol, tabel, peta, grafik, piktogram, maupun video.
     </p>
+  </section>
+
+  <section class="card local-journey" id="petualanganLokal">
+    <div class="journey-head">
+      <div class="journey-icon">🗺️</div>
+      <div>
+        <h2>Petualangan Literasi di Sekitarku</h2>
+        <p>Mulai dari tempat yang kamu kenal, lalu baca informasi, hubungkan fakta, dan buat kesimpulan.</p>
+      </div>
+    </div>
+
+    <div class="place-route">
+      <article class="place-card home">
+        <div class="place-no">1</div>
+        <div class="place-emoji">🏡</div>
+        <h3>Desa Ranuklindungan</h3>
+        <p>Titik awal petualangan. Kita belajar mengamati lingkungan tempat tinggal dan menemukan informasi IPS dari kehidupan sehari-hari.</p>
+      </article>
+      <article class="place-card lake">
+        <div class="place-no">2</div>
+        <div class="place-emoji">🌊</div>
+        <h3>Danau Ranu</h3>
+        <p>Digunakan sebagai konteks belajar untuk mengenali lingkungan, bentang alam, serta hubungan manusia dengan ruang di sekitarnya.</p>
+      </article>
+      <article class="place-card market">
+        <div class="place-no">3</div>
+        <div class="place-emoji">🏪</div>
+        <h3>Pasar Brandong • Desa Dawe</h3>
+        <p>Menjadi konteks belajar kegiatan ekonomi: memahami peran penjual dan pembeli serta hubungan produksi, distribusi, dan konsumsi.</p>
+      </article>
+    </div>
+
+    <div class="mission-box">
+      <h3>🎯 Misi Literasimu</h3>
+      <div class="mission-steps">
+        <div class="mission-step"><span>👀</span>Amati</div>
+        <div class="mission-step"><span>🔎</span>Temukan Informasi</div>
+        <div class="mission-step"><span>🧩</span>Hubungkan</div>
+        <div class="mission-step"><span>💡</span>Tafsirkan</div>
+        <div class="mission-step"><span>✅</span>Simpulkan</div>
+      </div>
+    </div>
   </section>
 
   <section class="card">
@@ -431,22 +504,29 @@
   </section>
 
   <section class="card story">
-    <h2>🛒 Cerita IPS: Pasar Desa Sukamaju</h2>
+    <div class="local-story-badge">📍 Konteks Lokal PIKTO-IPS</div>
+    <h2>🏪 Cerita IPS: Petualangan ke Pasar Brandong</h2>
     <p>
-      Setiap pagi, Pasar Desa Sukamaju ramai dikunjungi warga. Bu Sari menjual tomat,
-      Pak Budi menjual jagung, Pak Hasan menjual cabai, dan Bu Rina menjual singkong.
-      Para pedagang membawa hasil kebun mereka untuk dijual kepada pembeli.
-      Pembeli datang untuk memperoleh barang yang dibutuhkan keluarga.
-      Kegiatan di pasar menunjukkan adanya hubungan antara penjual dan pembeli dalam kegiatan ekonomi.
+      Pada pembelajaran IPS, murid kelas IV memulai petualangan literasi dari lingkungan yang mereka kenal, yaitu
+      <strong>Desa Ranuklindungan</strong>. Mereka kemudian mempelajari <strong>Danau Ranu</strong> sebagai bagian dari
+      lingkungan sekitar dan <strong>Pasar Brandong yang terletak di Desa Dawe</strong> sebagai konteks untuk memahami
+      kegiatan ekonomi. Melalui cerita, gambar, dan data latihan, murid mengenali peran penjual dan pembeli serta
+      menghubungkan kegiatan produksi, distribusi, dan konsumsi. Dari informasi tersebut, murid belajar bahwa
+      memahami kehidupan masyarakat memerlukan kemampuan membaca informasi dengan teliti dan membuat kesimpulan.
     </p>
 
+    <div class="learning-pictogram-title">📊 Contoh piktogram untuk latihan membaca informasi</div>
     <div class="pictogram">
-      <div class="pic-label">Bu Sari — Tomat</div><div class="pics">🧺 🧺 🧺 🧺</div>
-      <div class="pic-label">Pak Budi — Jagung</div><div class="pics">🧺 🧺 🧺</div>
-      <div class="pic-label">Pak Hasan — Cabai</div><div class="pics">🧺 🧺 🧺 🧺 🧺</div>
-      <div class="pic-label">Bu Rina — Singkong</div><div class="pics">🧺 🧺</div>
+      <div class="pic-label">Tomat</div><div class="pics">🧺 🧺 🧺 🧺</div>
+      <div class="pic-label">Jagung</div><div class="pics">🧺 🧺 🧺</div>
+      <div class="pic-label">Cabai</div><div class="pics">🧺 🧺 🧺 🧺 🧺</div>
+      <div class="pic-label">Singkong</div><div class="pics">🧺 🧺</div>
     </div>
-    <div class="legend">Keterangan: 1 🧺 = 2 keranjang barang.</div>
+    <div class="legend">Keterangan latihan: 1 🧺 = 2 keranjang barang.</div>
+    <div class="fact-note">
+      ℹ️ <strong>Catatan:</strong> Desa Ranuklindungan, Danau Ranu, serta lokasi Pasar Brandong di Desa Dawe digunakan sebagai konteks lokal.
+      Nama dan jumlah komoditas pada piktogram di atas adalah <strong>data simulasi pembelajaran</strong>, bukan data resmi Pasar Brandong.
+    </div>
   </section>
 
   <section class="card">
@@ -455,8 +535,7 @@
       Ide pokok adalah gagasan utama yang dibicarakan dalam sebuah paragraf atau cerita.
     </p>
     <div class="highlight">
-      Ide pokok cerita Pasar Desa Sukamaju adalah: <strong>kegiatan jual beli antara pedagang
-      dan pembeli di pasar sebagai bagian dari kegiatan ekonomi masyarakat.</strong>
+      Ide pokok cerita adalah: <strong>belajar memahami kehidupan masyarakat melalui informasi tentang lingkungan sekitar dan kegiatan ekonomi dengan konteks Ranuklindungan, Danau Ranu, dan Pasar Brandong.</strong>
     </div>
   </section>
 
@@ -466,12 +545,12 @@
       <div class="info-box">
         <div class="icon">📌</div>
         <h3>Tersurat</h3>
-        <p>Informasi yang disebutkan langsung. Contoh: Bu Sari menjual tomat.</p>
+        <p>Informasi yang disebutkan langsung. Contoh: Pasar Brandong terletak di Desa Dawe.</p>
       </div>
       <div class="info-box">
         <div class="icon">💭</div>
         <h3>Tersirat</h3>
-        <p>Informasi yang disimpulkan. Contoh: masyarakat membutuhkan pasar untuk memenuhi kebutuhan.</p>
+        <p>Informasi yang disimpulkan. Contoh: dari kegiatan jual beli kita dapat menyimpulkan bahwa penjual dan pembeli saling berhubungan dalam kegiatan ekonomi.</p>
       </div>
       <div class="info-box">
         <div class="icon">🔗</div>
@@ -495,14 +574,14 @@
     <section class="card" id="latihan">
     <h2>✏️ Latihan Literasi</h2>
     <p class="subtitle">
-      Jawablah berdasarkan cerita dan piktogram Pasar Desa Sukamaju. Ketik jawaban pada kotak
+      Jawablah berdasarkan cerita petualangan literasi lokal dan informasi pada halaman. Ketik jawaban pada kotak
       yang tersedia lalu tekan tombol <strong>Simpan</strong>. Jika jawaban benar tombol berubah
       <strong style="color:#198754">hijau</strong>, sedangkan jika salah berubah
       <strong style="color:#dc3545">merah</strong>.
     </p>
     <div class="exercise-list">
       <div class="exercise">
-        <strong>1.</strong> Apa ide pokok cerita Pasar Desa Sukamaju?
+        <strong>1.</strong> Apa ide pokok cerita petualangan literasi lokal di atas?
         <div class="answer-area">
           <input class="answer-input" id="jawaban-literasi-1" type="text"
                  placeholder="Ketik jawaban..." autocomplete="off">
@@ -512,17 +591,17 @@
         </div>
       </div>
       <div class="exercise">
-        <strong>2.</strong> Siapa yang menjual cabai di pasar?
+        <strong>2.</strong> Pasar Brandong terletak di desa apa?
         <div class="answer-area">
           <input class="answer-input" id="jawaban-literasi-2" type="text"
-                 placeholder="Ketik nama..." autocomplete="off">
+                 placeholder="Ketik nama desa..." autocomplete="off">
           <button class="btn save-answer" id="simpan-literasi-2" type="button"
                   onclick="simpanJawabanLiterasi(2)">💾 Simpan</button>
           <div class="answer-feedback" id="feedback-literasi-2"></div>
         </div>
       </div>
       <div class="exercise">
-        <strong>3.</strong> Mengapa pembeli datang ke pasar?
+        <strong>3.</strong> Tempat apa yang digunakan sebagai konteks untuk mengenali lingkungan dan bentang alam?
         <div class="answer-area">
           <input class="answer-input" id="jawaban-literasi-3" type="text"
                  placeholder="Ketik jawaban..." autocomplete="off">
@@ -532,7 +611,7 @@
         </div>
       </div>
       <div class="exercise">
-        <strong>4.</strong> Apa hubungan antara pedagang dan pembeli dalam kegiatan ekonomi?
+        <strong>4.</strong> Apa hubungan antara penjual dan pembeli dalam kegiatan ekonomi?
         <div class="answer-area">
           <input class="answer-input" id="jawaban-literasi-4" type="text"
                  placeholder="Ketik jawaban..." autocomplete="off">
@@ -542,7 +621,7 @@
         </div>
       </div>
       <div class="exercise">
-        <strong>5.</strong> Kesimpulan apa yang dapat kamu buat tentang fungsi pasar bagi masyarakat?
+        <strong>5.</strong> Mengapa piktogram membantu kita memahami informasi IPS?
         <div class="answer-area">
           <input class="answer-input" id="jawaban-literasi-5" type="text"
                  placeholder="Ketik jawaban..." autocomplete="off">
@@ -750,34 +829,34 @@
 
   const KUNCI_LATIHAN_LITERASI = {
     1:[
-      'kegiatan jual beli di pasar',
-      'kegiatan ekonomi di pasar',
-      'kegiatan jual beli antara pedagang dan pembeli',
-      'kegiatan jual beli antara pedagang dan pembeli di pasar'
+      'belajar memahami kehidupan masyarakat dari lingkungan sekitar',
+      'memahami kehidupan masyarakat melalui informasi lingkungan dan kegiatan ekonomi',
+      'petualangan literasi dari ranuklindungan danau ranu dan pasar brandong',
+      'membaca informasi lingkungan sekitar dan kegiatan ekonomi'
     ],
     2:[
-      'pak hasan'
+      'desa dawe',
+      'dawe'
     ],
     3:[
-      'untuk membeli kebutuhan',
-      'untuk memenuhi kebutuhan',
-      'untuk memperoleh barang yang dibutuhkan',
-      'untuk memperoleh barang yang dibutuhkan keluarga',
-      'untuk membeli barang yang dibutuhkan'
+      'danau ranu',
+      'ranu',
+      'danau ranu untuk mengenali lingkungan dan bentang alam'
     ],
     4:[
-      'pedagang menjual barang dan pembeli membeli barang',
-      'pedagang menjual dan pembeli membeli',
-      'pedagang menyediakan barang dan pembeli membeli',
-      'pedagang dan pembeli melakukan jual beli',
+      'penjual menjual barang dan pembeli membeli barang',
+      'penjual menjual dan pembeli membeli',
+      'penjual menyediakan barang dan pembeli membeli',
+      'penjual dan pembeli melakukan jual beli',
       'saling membutuhkan dalam kegiatan jual beli'
     ],
     5:[
-      'pasar tempat jual beli',
-      'pasar membantu masyarakat memenuhi kebutuhan',
-      'pasar tempat masyarakat memenuhi kebutuhan',
-      'pasar mempertemukan penjual dan pembeli',
-      'pasar merupakan tempat penjual dan pembeli melakukan jual beli'
+      'piktogram membantu membaca data',
+      'piktogram membantu memahami data',
+      'piktogram memudahkan memahami jumlah barang',
+      'piktogram memudahkan membandingkan informasi',
+      'piktogram mengubah informasi menjadi gambar dan data',
+      'untuk membaca dan membandingkan data dengan mudah'
     ]
   };
 
