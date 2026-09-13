@@ -746,6 +746,77 @@
     @media(max-width:980px){.home-welcome{grid-template-columns:240px minmax(0,1fr)}.welcome-card h1{font-size:33px}.welcome-card h1,.welcome-card .hero-copy{max-width:100%}.welcome-card::after{display:none}.quick-cards{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:700px){.home-welcome{grid-template-columns:1fr;align-items:start;padding:16px 16px 0}.teacher-zone{min-height:230px;order:2}.teacher-img{max-height:245px;width:205px}.teacher-zone::before{width:190px;height:190px;top:20px}.speech-bubble{top:18px;left:8px;font-size:12px;max-width:125px}.welcome-card{order:1;margin:0;padding:22px 18px}.welcome-card h1{font-size:30px}.welcome-card .hero-copy{font-size:14px}.cp-card{margin:0 16px 16px}.cp-head{align-items:flex-start;flex-direction:column}.cp-title{font-size:20px}.cp-body{grid-template-columns:1fr;padding:16px}.cp-visual{min-height:105px;font-size:58px}.cp-text{font-size:14px;line-height:1.65}.quick-cards{grid-template-columns:1fr}}
 
+
+
+    /* ============================================================
+       PIKTO-IPS COMPETITION EDITION — RAMAH ANAK SD
+       ============================================================ */
+    :root{
+      --kid-sky:#eaf7ff;
+      --kid-blue:#1473e6;
+      --kid-green:#19a552;
+      --kid-yellow:#ffd84d;
+      --kid-orange:#ff9f1c;
+      --kid-purple:#7b5be7;
+      --kid-ink:#173a59;
+    }
+    body{background:linear-gradient(180deg,#eef9ff 0%,#fafffd 42%,#fffaf0 100%)}
+    .topbar{height:96px;padding:0 24px;background:linear-gradient(90deg,#073b73 0%,#0b5a9d 58%,#0a477b 100%)}
+    .brand{width:285px}.brand-title{font-size:31px}.brand-sub{font-size:13px}
+    .nav-menu{gap:8px}.nav-link{min-width:112px;border-radius:14px;height:64px;align-self:center}.nav-link:hover{background:rgba(255,255,255,.12)}
+    .top-logo{width:165px;height:88px}
+    .page{width:min(1380px,96%)}
+
+    .home-stage{margin-top:14px;border-radius:28px;background:linear-gradient(180deg,#dff4ff 0%,#effbed 100%);border:1px solid #cfe7f2}
+    .home-welcome{min-height:330px;grid-template-columns:290px minmax(0,1fr);padding:18px 24px 0}
+    .teacher-zone::before{width:225px;height:225px;background:rgba(255,255,255,.74)}
+    .teacher-img{width:min(100%,245px);max-height:300px}
+    .speech-bubble{top:26px;left:0;max-width:150px;background:#fffdf5;border:2px solid #ffe083;font-size:13px}
+    .welcome-card{padding:24px 28px;border-radius:26px;background:rgba(255,255,255,.92)}
+    .welcome-card h1{font-size:37px}.welcome-card .hero-copy{font-size:15px;max-width:75%}
+    .welcome-card::after{content:"Baca • Hitung • Pahami!";background:#fff07a;width:150px;font-size:12px}
+    .home-chip{font-size:12px;padding:8px 12px;border:2px solid #e5edf4}
+    .profile-panel{border:2px solid #e3edf5!important;box-shadow:none!important;background:#fff!important}
+
+    .cp-card{margin:0 22px 22px;border-radius:22px;border-width:2px}.cp-head{padding:13px 18px}.cp-title{font-size:21px}.cp-body{grid-template-columns:120px minmax(0,1fr);padding:17px 20px}.cp-visual{min-height:116px;font-size:61px}.cp-text{font-size:14px;line-height:1.65}
+
+    .quick-cards{gap:12px;margin:18px 0}.quick-card{min-height:118px;padding:15px;border-radius:20px;border-width:2px}.quick-card .qc-icon{font-size:33px}.quick-card strong{font-size:16px}.quick-card p{font-size:11.5px}.quick-card:hover{transform:translateY(-5px);box-shadow:0 12px 24px rgba(25,77,115,.12)}
+
+    .kid-section-title{display:flex;align-items:center;gap:12px;margin:22px 0 12px;padding:0 4px}.kid-section-title .kid-title-icon{width:46px;height:46px;border-radius:15px;display:flex;align-items:center;justify-content:center;background:#fff;border:2px solid #dbeaf4;font-size:25px;box-shadow:0 5px 12px rgba(32,77,111,.07)}.kid-section-title h2{font-size:22px;color:#143f68}.kid-section-title p{font-size:12px;color:#60758b;margin-top:2px}
+
+    .local-journey{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px}
+    .local-card{position:relative;overflow:hidden;min-height:150px;border-radius:22px;padding:18px;background:#fff;border:2px solid #dfeaf3;box-shadow:0 8px 20px rgba(33,77,112,.07)}
+    .local-card::after{content:"";position:absolute;right:-26px;bottom:-34px;width:105px;height:105px;border-radius:50%;background:rgba(76,175,80,.10)}
+    .local-card .local-icon{font-size:36px;margin-bottom:10px}.local-card strong{display:block;font-size:17px;color:#163f68;margin-bottom:6px}.local-card p{font-size:12px;line-height:1.55;color:#60758b}.local-card:nth-child(1){border-top:6px solid #2b8de5}.local-card:nth-child(2){border-top:6px solid #34a853}.local-card:nth-child(3){border-top:6px solid #ff9f1c}
+
+    .dashboard-grid{grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:18px;margin-top:12px}.leaderboard-panel{grid-column:1/-1;position:relative;top:auto}.leaderboard-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-height:500px}
+    .panel{border-radius:24px;padding:20px;border:2px solid #e0eaf2}.panel-head{margin-bottom:15px}.panel-icon{width:52px;height:52px;font-size:27px}.panel h2{font-size:21px}.panel-head p{font-size:12px}
+    .ability-card{border-radius:20px;padding:17px}.ability-title h3{font-size:20px}.awal-standalone{padding:14px}.awal-standalone .emoji{font-size:50px}.advanced-levels .level-preview{min-height:205px;padding:16px 12px}.level-preview .emoji{font-size:42px}.level-preview h3{font-size:20px}
+    .progress-row{min-height:82px}.detail-progress{border-radius:14px}
+    .info-strip{border-radius:18px;background:#f8fcff;border:2px dashed #c9dfef}
+
+    .challenge-shell .card{border-radius:22px;border-width:2px}.question{border-radius:20px;padding:18px}.q-meta{display:inline-block;background:#fff3dd;border-radius:999px;padding:6px 10px}.stimulus{border-radius:16px;background:#fffaf0}.q-text{font-size:18px}.option{border-radius:15px;padding:13px 14px}.option:hover{transform:translateX(2px)}
+
+    /* Hasil & refleksi */
+    .result-box{padding:26px!important;background:linear-gradient(180deg,#ffffff,#f8fcff)!important}
+    .result-hero{max-width:760px;margin:0 auto 16px;padding:20px;border-radius:24px;background:linear-gradient(135deg,#eaf7ff,#effcef);border:2px solid #d6e9f3}
+    .result-hero h2{font-size:27px;color:#123f75;margin-bottom:7px}.result-hero p{color:#5c7289;font-size:13px;line-height:1.5}
+    .score-circle{width:128px;height:128px;font-size:34px;margin:14px auto;background:linear-gradient(135deg,#1473e6,#24b06a)}
+    .score-breakdown{max-width:720px}.score-mini{border-radius:18px;padding:14px;border-width:2px}.score-mini:nth-child(1){background:#fff8e8;border-color:#ffe3aa}.score-mini:nth-child(2){background:#eef8ff;border-color:#cde5ff}.score-mini:nth-child(3){background:#effaf2;border-color:#ccebd5}
+    .diagnosis-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:820px;margin:16px auto}.diagnosis-card{padding:17px;border-radius:18px;text-align:left;border:2px solid #dde9f1;background:#fff}.diagnosis-card h3{font-size:17px;margin-bottom:7px;color:#173f68}.diagnosis-card p{font-size:13px;line-height:1.55;color:#4e667c}.diagnosis-card.strength{background:#effaf3;border-color:#bfe5cc}.diagnosis-card.focus{background:#fff8e8;border-color:#ffe0a1}
+    .recommend-box{max-width:820px;margin:14px auto;padding:18px;border-radius:20px;background:linear-gradient(135deg,#f2efff,#eef7ff);border:2px solid #d9d0ff;text-align:left}.recommend-box h3{color:#5d42c6;margin-bottom:7px}.recommend-box p{font-size:13px;line-height:1.55;color:#485f76}
+    .reflection-box{max-width:820px;margin:16px auto 0;padding:20px;border-radius:22px;background:#fffdf5;border:2px solid #ffe08a;text-align:left}.reflection-head{display:flex;gap:12px;align-items:center;margin-bottom:14px}.reflection-head .bubble-icon{width:48px;height:48px;border-radius:15px;background:#fff0a6;display:flex;align-items:center;justify-content:center;font-size:26px}.reflection-head h3{font-size:19px;color:#704f00}.reflection-head p{font-size:12px;color:#75684d;margin-top:2px}.reflection-grid{display:grid;gap:11px}.reflection-item label{display:block;font-size:13px;font-weight:900;color:#314c63;margin-bottom:6px}.reflection-item textarea{width:100%;min-height:72px;resize:vertical;border:2px solid #e1e9ef;border-radius:14px;padding:11px 12px;font:inherit;font-size:13px;outline:none;background:#fff}.reflection-item textarea:focus{border-color:#ffc740;box-shadow:0 0 0 3px rgba(255,199,64,.15)}.reflection-save{margin-top:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}.reflection-status{font-size:12px;font-weight:900;color:#198754}
+    .result-actions{justify-content:center;max-width:820px;margin:16px auto 0}.result-actions .btn{min-width:180px}
+
+    .kid-bottom-nav{display:none}
+
+    @media(max-width:1100px){.dashboard-grid{grid-template-columns:1fr}.leaderboard-panel{grid-column:auto}.leaderboard-list{grid-template-columns:repeat(2,minmax(0,1fr))}.local-journey{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:760px){
+      body{padding-bottom:72px}.topbar{min-height:84px;padding:10px 14px}.brand{width:62%}.brand-title{font-size:23px}.brand-sub{font-size:10px}.top-logo{width:95px;height:65px}.nav-menu{display:none}
+      .page{width:94%}.home-stage{border-radius:22px}.home-welcome{grid-template-columns:1fr;padding:14px 14px 0}.welcome-card{order:1;margin:0;padding:19px 16px}.welcome-card h1{font-size:28px}.welcome-card .hero-copy{max-width:100%;font-size:13px}.welcome-card::after{display:none}.teacher-zone{order:2;min-height:215px}.teacher-img{max-height:225px;width:185px}.speech-bubble{top:12px;left:5px}.cp-card{margin:0 14px 14px}.cp-body{grid-template-columns:1fr}.cp-visual{min-height:90px;font-size:52px}.quick-cards{grid-template-columns:repeat(2,1fr);gap:10px}.quick-card{min-height:112px}.quick-card p{display:none}.local-journey{grid-template-columns:1fr}.dashboard-grid{grid-template-columns:1fr}.leaderboard-list{display:flex;max-height:430px}.diagnosis-grid{grid-template-columns:1fr}.score-breakdown{grid-template-columns:1fr}.result-box{padding:16px!important}.result-hero{padding:16px}.result-actions .btn{width:100%}
+      .kid-bottom-nav{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;left:8px;right:8px;bottom:8px;z-index:1200;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border:1px solid #dce8f2;border-radius:18px;padding:7px 6px;box-shadow:0 10px 30px rgba(12,55,86,.20)}.kid-bottom-nav a{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:9px;font-weight:900;color:#47627a;padding:4px 2px}.kid-bottom-nav a span{font-size:20px}.kid-bottom-nav a:active{transform:scale(.96)}
+    }
+
 </style>
 </head>
 
@@ -848,6 +919,21 @@
         <a class="quick-card green" href="numerasi.html"><div><div class="qc-icon">📊</div><strong>Numerasi IPS</strong><p>Pelajari data, piktogram, grafik, dan soal numerasi kontekstual.</p></div></a>
         <a class="quick-card orange" href="#tantangan"><div><div class="qc-icon">🏆</div><strong>Tantangan</strong><p>Uji kemampuanmu melalui Level Awal, Cakap, dan Mahir.</p></div></a>
         <a class="quick-card purple" href="#leaderboard"><div><div class="qc-icon">⭐</div><strong>Papan Nilai</strong><p>Lihat hasil terbaik dan perkembangan belajar.</p></div></a>
+      </div>
+
+      <div class="kid-section-title" aria-label="Belajar dari lingkungan sekitar">
+        <div class="kid-title-icon">🗺️</div>
+        <div><h2>Belajar dari Lingkungan Sekitar</h2><p>PIKTO-IPS mengajakmu memahami IPS dari tempat yang kamu kenal.</p></div>
+      </div>
+      <section class="local-journey" aria-label="Konteks lokal PIKTO-IPS">
+        <article class="local-card"><div class="local-icon">🏘️</div><strong>Desa Ranuklindungan</strong><p>Lingkungan tempat belajar memahami kehidupan masyarakat, peran, tanggung jawab, dan interaksi sosial.</p></article>
+        <article class="local-card"><div class="local-icon">🌊</div><strong>Danau Ranu</strong><p>Konteks lingkungan sekitar untuk mengamati bentang alam dan keterkaitannya dengan kehidupan masyarakat.</p></article>
+        <article class="local-card"><div class="local-icon">🛍️</div><strong>Pasar Brandong • Desa Dawe</strong><p>Konteks nyata untuk belajar membaca informasi dan data tentang aktivitas masyarakat.</p></article>
+      </section>
+
+      <div class="kid-section-title" aria-label="Petualangan belajar">
+        <div class="kid-title-icon">🚀</div>
+        <div><h2>Petualangan Belajarmu</h2><p>Mulai tantangan, pantau progres, dan lihat pencapaianmu.</p></div>
       </div>
       <div class="dashboard-grid">
         <!-- TANTANGAN -->
@@ -1024,7 +1110,15 @@
 
     </div>
 
-    <footer>© 2026 PIKTO-IPS - Belajar IPS Jadi Seru dan Mudah!</footer>
+
+    <nav class="kid-bottom-nav" aria-label="Navigasi cepat PIKTO-IPS">
+      <a href="#beranda"><span>🏠</span>Beranda</a>
+      <a href="literasi.html"><span>📖</span>Literasi</a>
+      <a href="numerasi.html"><span>🔢</span>Numerasi</a>
+      <a href="#tantangan"><span>🎯</span>Tantangan</a>
+      <a href="#progres"><span>⭐</span>Progres</a>
+    </nav>
+    <footer>© 2026 PIKTO-IPS - Baca Informasinya • Olah Datanya • Pahami Masyarakatnya</footer>
   </main>
 
   <!-- MODAL LEVEL LANJUTAN -->
@@ -1123,6 +1217,9 @@ function isStudentNotFoundResponse(res){
 }
 
 function bersihkanDataMuridLokal(){
+  const oldStudentId = localStorage.getItem(LS.ID) || 'lokal';
+  ['AWAL','CAKAP','MAHIR'].forEach(level=>localStorage.removeItem(`pikto_refleksi_${oldStudentId}_${level}`));
+
   // Identitas murid
   localStorage.removeItem(LS.ID);
   localStorage.removeItem(LS.NAME);
@@ -1502,7 +1599,7 @@ function setLevelHeader(level){
   const info = {
     AWAL:{
       title:'🌱 Tantangan Level Awal',
-      desc:'Coba kemampuan kamu: 6 soal Literasi membaca dan informasi IPS serta 6 soal Numerasi.'
+      desc:'Coba kemampuan kamu: 10 soal Literasi membaca dan informasi IPS serta 10 soal Numerasi.'
     },
     CAKAP:{
       title:'🚀 Tantangan Level Cakap',
@@ -1857,81 +1954,155 @@ function tampilkanFeedback(feedback){
   });
 }
 
+
+function reflectionKey(level){
+  const id = localStorage.getItem(LS.ID) || 'lokal';
+  return `pikto_refleksi_${id}_${level}`;
+}
+
+function getDiagnosisAwal(res){
+  const lit = Number(res.nilai_literasi || 0);
+  const num = Number(res.nilai_numerasi || 0);
+  const label = v => v >= 75 ? 'kuat' : (v >= 60 ? 'berkembang' : 'perlu dikuatkan');
+
+  let strength = '';
+  let focus = '';
+  let recommendation = '';
+  let targetUrl = '';
+  let targetLabel = '';
+
+  if(lit >= num){
+    strength = `Literasimu ${label(lit)}. Kamu lebih siap dalam memahami dan menggunakan informasi IPS.`;
+  }else{
+    strength = `Numerasimu ${label(num)}. Kamu lebih siap dalam membaca dan menggunakan data untuk menyelesaikan masalah.`;
+  }
+
+  if(lit < num){
+    focus = `Prioritas berikutnya adalah Literasi IPS (nilai ${lit}). Latih kembali kemampuan menemukan, menghubungkan, dan menyimpulkan informasi.`;
+    recommendation = 'Kembali ke materi Literasi IPS, baca stimulus dengan teliti, lalu coba latihan sebelum mengulang tantangan.';
+    targetUrl = 'literasi.html';
+    targetLabel = '📖 Belajar Literasi Lagi';
+  }else if(num < lit){
+    focus = `Prioritas berikutnya adalah Numerasi IPS (nilai ${num}). Latih kembali kemampuan membaca piktogram, membandingkan, dan mengolah data.`;
+    recommendation = 'Kembali ke materi Numerasi IPS, pelajari piktogram dan diagram, lalu coba latihan sebelum mengulang tantangan.';
+    targetUrl = 'numerasi.html';
+    targetLabel = '🔢 Belajar Numerasi Lagi';
+  }else{
+    focus = `Nilai Literasi dan Numerasimu seimbang (${lit}). Pertahankan keduanya dan terus latih penalaranmu.`;
+    recommendation = lit >= KKM ? 'Kamu siap melanjutkan petualangan ke Level Cakap.' : 'Pelajari kembali Literasi dan Numerasi, lalu coba Level Awal sekali lagi.';
+    targetUrl = lit >= KKM ? '#tantangan' : 'literasi.html';
+    targetLabel = lit >= KKM ? '🚀 Lanjutkan Petualangan' : '📚 Belajar Kembali';
+  }
+
+  return {strength,focus,recommendation,targetUrl,targetLabel};
+}
+
+function muatRefleksi(level){
+  return readJSON(reflectionKey(level),{paham:'',sulit:'',rencana:'',saved_at:''});
+}
+
+function simpanRefleksi(level){
+  const paham = (document.getElementById('refPaham')?.value || '').trim();
+  const sulit = (document.getElementById('refSulit')?.value || '').trim();
+  const rencana = (document.getElementById('refRencana')?.value || '').trim();
+  const status = document.getElementById('reflectionStatus');
+
+  if(!paham && !sulit && !rencana){
+    if(status){ status.textContent='⚠️ Tulis minimal satu jawaban refleksi.'; status.style.color='#b26a00'; }
+    return;
+  }
+
+  const data={paham,sulit,rencana,saved_at:new Date().toISOString()};
+  writeJSON(reflectionKey(level),data);
+  if(status){ status.textContent='✅ Refleksimu sudah tersimpan di perangkat.'; status.style.color='#198754'; }
+}
+
 function tampilkanHasil(res){
   const card = document.getElementById('resultCard');
   card.classList.remove('hidden');
   card.className = 'card result-box';
 
   const lulus = !!res.lulus;
+  const isAwal = currentLevel === 'AWAL';
+  const refleksi = muatRefleksi(currentLevel);
+  const diagnosis = isAwal ? getDiagnosisAwal(res) : null;
 
   let actions = '';
-
   if(lulus){
     if(currentLevel === 'AWAL'){
-      actions = `
-        <button class="btn btn-green" onclick="pilihLevel('CAKAP')">
-          🚀 Lanjut Level Cakap
-        </button>
-      `;
+      actions = `<button class="btn btn-green" onclick="pilihLevel('CAKAP')">🚀 Lanjut Level Cakap</button>`;
     }else if(currentLevel === 'CAKAP'){
-      actions = `
-        <button class="btn btn-purple" onclick="pilihLevel('MAHIR')">
-          🏆 Lanjut Level Mahir
-        </button>
-      `;
+      actions = `<button class="btn btn-purple" onclick="pilihLevel('MAHIR')">🏆 Lanjut Level Mahir</button>`;
     }else{
-      actions = `
-        <button class="btn btn-orange" onclick="bukaPemilihanLevel()">
-          🏅 Lihat Semua Level
-        </button>
-      `;
+      actions = `<button class="btn btn-orange" onclick="bukaPemilihanLevel()">🏅 Lihat Semua Level</button>`;
     }
   }else{
     actions = `
-      <a class="btn btn-primary" href="literasi.html">
-        📖 Belajar Literasi Lagi
-      </a>
-      <a class="btn btn-green" href="numerasi.html">
-        🔢 Belajar Numerasi Lagi
-      </a>
-      <button class="btn btn-orange" onclick="pilihLevel('${currentLevel}')">
-        🔄 Coba Level Ini Lagi
-      </button>
-    `;
+      <a class="btn btn-primary" href="literasi.html">📖 Belajar Literasi Lagi</a>
+      <a class="btn btn-green" href="numerasi.html">🔢 Belajar Numerasi Lagi</a>
+      <button class="btn btn-orange" onclick="pilihLevel('${currentLevel}')">🔄 Coba Lagi</button>`;
   }
 
-  card.innerHTML = `
-    <h2>${lulus ? '🎉 Level Selesai!' : '📚 Ayo Belajar Memahami Lagi'}</h2>
+  const diagnosisHtml = isAwal ? `
+    <div class="diagnosis-grid">
+      <div class="diagnosis-card strength">
+        <h3>💪 Kekuatan Belajarmu</h3>
+        <p>${escapeHtml(diagnosis.strength)}</p>
+      </div>
+      <div class="diagnosis-card focus">
+        <h3>🎯 Fokus Berikutnya</h3>
+        <p>${escapeHtml(diagnosis.focus)}</p>
+      </div>
+    </div>
+    <div class="recommend-box">
+      <h3>🧭 Rekomendasi PIKTO-IPS</h3>
+      <p>${escapeHtml(diagnosis.recommendation)}</p>
+      <div class="btn-row" style="margin-top:12px">
+        <a class="btn btn-purple" href="${escapeHtml(diagnosis.targetUrl)}">${escapeHtml(diagnosis.targetLabel)}</a>
+      </div>
+    </div>` : '';
 
-    <div class="score-circle">
-      ${Number(res.nilai || 0)}
+  card.innerHTML = `
+    <div class="result-hero">
+      <h2>${lulus ? '🎉 Hebat! Petualanganmu Selesai' : '🌱 Kamu Sudah Berusaha dengan Baik'}</h2>
+      <p>${lulus ? 'Lihat hasilmu, kenali kekuatanmu, lalu tentukan petualangan belajar berikutnya.' : 'Hasil ini membantu kita mengetahui bagian yang perlu dilatih lagi. Kamu bisa belajar dan mencoba kembali.'}</p>
     </div>
 
-    ${currentLevel === 'AWAL' ? `
+    <div class="score-circle">${Number(res.nilai || 0)}</div>
+
+    ${isAwal ? `
       <div class="score-breakdown">
         <div class="score-mini"><span>📖 Nilai Literasi</span><strong>${Number(res.nilai_literasi || 0)}</strong><small>${Number(res.benar_literasi || 0)}/${Number(res.total_literasi || 10)} benar</small></div>
         <div class="score-mini"><span>🔢 Nilai Numerasi</span><strong>${Number(res.nilai_numerasi || 0)}</strong><small>${Number(res.benar_numerasi || 0)}/${Number(res.total_numerasi || 10)} benar</small></div>
-        <div class="score-mini"><span>🌱 Nilai Level Awal</span><strong>${Number(res.nilai || 0)}</strong></div>
+        <div class="score-mini"><span>🌱 Nilai Level Awal</span><strong>${Number(res.nilai || 0)}</strong><small>${escapeHtml(res.jumlah_benar)} dari ${escapeHtml(res.total_soal)} benar</small></div>
       </div>
-    ` : ''}
+    ` : `<h3>${escapeHtml(res.jumlah_benar)} dari ${escapeHtml(res.total_soal)} soal benar</h3>`}
 
-    <h3>
-      ${escapeHtml(res.jumlah_benar)} dari ${escapeHtml(res.total_soal)} soal benar
-    </h3>
-
-    <div class="${lulus ? 'pass-box' : 'remedial-box'}">
-      <strong>
-        ${lulus ? '✅ LULUS' : '⚠️ BELUM LULUS'}
-      </strong>
-      <br>
-      ${escapeHtml(res.message || '')}
-      <br><br>
+    <div class="${lulus ? 'pass-box' : 'remedial-box'}" style="max-width:820px;margin:14px auto;text-align:left">
+      <strong>${lulus ? '✅ LULUS' : '📚 MASIH PERLU LATIHAN'}</strong><br>
+      ${escapeHtml(res.message || '')}<br><br>
       Nilai minimum untuk membuka level berikutnya adalah <strong>${KKM}</strong>.
     </div>
 
-    <div class="btn-row" style="justify-content:center">
-      ${actions}
+    ${diagnosisHtml}
+
+    <div class="reflection-box">
+      <div class="reflection-head">
+        <div class="bubble-icon">💭</div>
+        <div><h3>Refleksi Belajarku</h3><p>Tulis dengan bahasamu sendiri. Tidak ada jawaban salah.</p></div>
+      </div>
+      <div class="reflection-grid">
+        <div class="reflection-item"><label for="refPaham">1. Apa yang sudah kamu pahami?</label><textarea id="refPaham" placeholder="Contoh: Saya sudah bisa membaca piktogram.">${escapeHtml(refleksi.paham || '')}</textarea></div>
+        <div class="reflection-item"><label for="refSulit">2. Bagian apa yang masih terasa sulit?</label><textarea id="refSulit" placeholder="Contoh: Saya masih bingung membandingkan data.">${escapeHtml(refleksi.sulit || '')}</textarea></div>
+        <div class="reflection-item"><label for="refRencana">3. Apa yang akan kamu lakukan agar lebih paham?</label><textarea id="refRencana" placeholder="Contoh: Saya akan belajar Numerasi lagi dan mencoba latihan.">${escapeHtml(refleksi.rencana || '')}</textarea></div>
+      </div>
+      <div class="reflection-save">
+        <button class="btn btn-orange" onclick="simpanRefleksi('${currentLevel}')">💾 Simpan Refleksi</button>
+        <span class="reflection-status" id="reflectionStatus">${refleksi.saved_at ? '✅ Refleksi sebelumnya sudah tersimpan.' : ''}</span>
+      </div>
     </div>
+
+    <div class="btn-row result-actions">${actions}</div>
   `;
 
   card.scrollIntoView({behavior:'smooth'});
