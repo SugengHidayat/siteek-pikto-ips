@@ -382,6 +382,36 @@
     .learning-pictogram-title{margin:17px 0 8px;font-weight:900;color:#184a74}
     @media(max-width:760px){.place-route{grid-template-columns:1fr}.mission-steps{grid-template-columns:1fr 1fr}.mission-step:last-child{grid-column:1/-1}.journey-head{align-items:flex-start}}
 
+  
+
+    /* ===== COMPETITION EDITION: PETA PETUALANGAN LITERASI PROGRESIF ===== */
+    .adventure-map{margin:18px 0 22px;padding:22px;border-radius:24px;background:linear-gradient(145deg,#0b5aa6,#1679d6 55%,#14a56a);color:#fff;box-shadow:0 14px 30px rgba(11,90,166,.18);position:relative;overflow:hidden}
+    .adventure-map::after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;right:-75px;top:-90px;background:rgba(255,255,255,.10)}
+    .adventure-map-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;position:relative;z-index:2}
+    .adventure-map h2{margin:0 0 6px;font-size:25px}.adventure-map p{margin:0;opacity:.93;line-height:1.55}
+    .adventure-stats{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.adv-stat{padding:8px 11px;border-radius:999px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.22);font-size:12px;font-weight:900;white-space:nowrap}
+    .adventure-route{display:grid;grid-template-columns:repeat(8,minmax(95px,1fr));gap:10px;margin-top:20px;position:relative;z-index:2}
+    .adventure-pos{border:0;border-radius:17px;padding:12px 8px;background:rgba(255,255,255,.14);color:#fff;text-align:center;min-height:106px;transition:.2s;position:relative}
+    .adventure-pos:not(:disabled):hover{transform:translateY(-3px);background:rgba(255,255,255,.24)}
+    .adventure-pos:disabled{opacity:.48;cursor:not-allowed;filter:grayscale(.2)}
+    .adventure-pos.done{background:#fff;color:#0b5d3e;box-shadow:0 7px 16px rgba(3,40,77,.13)}
+    .adventure-pos.active{background:#fff5c9;color:#765400;box-shadow:0 7px 16px rgba(3,40,77,.13)}
+    .pos-icon{display:block;font-size:29px;margin-bottom:5px}.pos-no{display:block;font-size:10px;font-weight:900;opacity:.8}.pos-label{display:block;font-size:11px;font-weight:900;line-height:1.25;margin-top:3px}.pos-state{display:block;font-size:9px;margin-top:5px;font-weight:900}
+    .learning-pos{scroll-margin-top:95px;position:relative;border-left:5px solid transparent}
+    .learning-pos.pos-unlocked{border-left-color:#2e91e5}.learning-pos.pos-completed{border-left-color:#16a34a}
+    .pos-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:-2px 0 14px;padding:10px 12px;border-radius:14px;background:#f3f9ff;border:1px solid #dcecf8}
+    .pos-heading strong{color:#0b5da8}.pos-heading span{font-size:11px;font-weight:900;padding:5px 9px;border-radius:999px;background:#e5f2ff;color:#0b5da8}
+    .mini-mission{margin-top:17px;padding:16px;border-radius:17px;background:linear-gradient(145deg,#fffaf0,#fff);border:1px solid #f0ddb4}
+    .mini-mission h3{margin:0 0 7px;color:#8a5a00;font-size:17px}.mini-mission p{margin:0 0 11px;color:#54697c;line-height:1.5;font-size:13px}
+    .mission-options{display:grid;gap:8px}.mission-option{width:100%;text-align:left;padding:11px 12px;border:2px solid #e4eaf0;border-radius:11px;background:#fff;font-weight:800;color:#29455f}
+    .mission-option:hover{border-color:#79b7ef;background:#f5fbff}.mission-option.good{border-color:#28a745;background:#edf9f0;color:#146c2e}.mission-option.bad{border-color:#e35d5d;background:#fff1f1;color:#a32222}
+    .mission-feedback{min-height:22px;margin-top:9px;font-size:12px;font-weight:900}.mission-feedback.ok{color:#14813b}.mission-feedback.no{color:#b42318}
+    .pos-complete-btn{margin-top:12px;border:0;border-radius:12px;padding:11px 15px;background:linear-gradient(135deg,#16a34a,#0f8d3c);color:#fff;font-weight:900;display:none}.pos-complete-btn.show{display:inline-flex}
+    .badge-shelf{margin:16px 0 0;display:flex;gap:8px;flex-wrap:wrap}.earned-badge{padding:7px 10px;border-radius:999px;background:#fff;border:1px solid #dce9f2;color:#36516c;font-size:11px;font-weight:900}.earned-badge.locked{opacity:.45;filter:grayscale(1)}
+    .adventure-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(30px);background:#123e67;color:#fff;padding:12px 18px;border-radius:999px;font-weight:900;font-size:13px;box-shadow:0 12px 28px rgba(0,0,0,.22);opacity:0;pointer-events:none;transition:.25s;z-index:3000}.adventure-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+    @media(max-width:1050px){.adventure-route{grid-template-columns:repeat(4,1fr)}}
+    @media(max-width:650px){.adventure-map{padding:17px}.adventure-map-head{flex-direction:column}.adventure-stats{justify-content:flex-start}.adventure-route{grid-template-columns:repeat(2,1fr)}.adventure-pos{min-height:94px}.pos-heading{align-items:flex-start;flex-direction:column}}
+
   </style>
 </head>
 <body>
@@ -416,7 +446,38 @@
     </p>
   </section>
 
-  <section class="card local-journey" id="petualanganLokal">
+  <section class="adventure-map" id="petaPetualangan" aria-labelledby="judulPetualangan">
+    <div class="adventure-map-head">
+      <div>
+        <h2 id="judulPetualangan">🗺️ Peta Petualangan Literasi IPS</h2>
+        <p>Selesaikan pos secara berurutan. Setiap pos berisi materi singkat, aktivitas, dan misi kecil sebelum pos berikutnya terbuka.</p>
+      </div>
+      <div class="adventure-stats">
+        <span class="adv-stat" id="advProgress">📖 Progres 0/8</span>
+        <span class="adv-stat" id="advStars">⭐ Bintang 0</span>
+        <span class="adv-stat" id="advBadge">🏅 Penjelajah Baru</span>
+      </div>
+    </div>
+    <div class="adventure-route" id="adventureRoute">
+      <button class="adventure-pos" data-target="pos1"><span class="pos-icon">🔎</span><span class="pos-no">POS 1</span><span class="pos-label">Menemukan Informasi</span><span class="pos-state">⭐ MULAI</span></button>
+      <button class="adventure-pos" data-target="pos2"><span class="pos-icon">🧠</span><span class="pos-no">POS 2</span><span class="pos-label">Memahami Makna</span><span class="pos-state">🔒 TERKUNCI</span></button>
+      <button class="adventure-pos" data-target="pos3"><span class="pos-icon">💡</span><span class="pos-no">POS 3</span><span class="pos-label">Ide Pokok</span><span class="pos-state">🔒 TERKUNCI</span></button>
+      <button class="adventure-pos" data-target="pos4"><span class="pos-icon">🖼️</span><span class="pos-no">POS 4</span><span class="pos-label">Informasi Visual</span><span class="pos-state">🔒 TERKUNCI</span></button>
+      <button class="adventure-pos" data-target="pos5"><span class="pos-icon">📊</span><span class="pos-no">POS 5</span><span class="pos-label">Tabel & Piktogram</span><span class="pos-state">🔒 TERKUNCI</span></button>
+      <button class="adventure-pos" data-target="pos6"><span class="pos-icon">🔗</span><span class="pos-no">POS 6</span><span class="pos-label">Menghubungkan Informasi</span><span class="pos-state">🔒 TERKUNCI</span></button>
+      <button class="adventure-pos" data-target="pos7"><span class="pos-icon">🕵️</span><span class="pos-no">POS 7</span><span class="pos-label">Menafsirkan</span><span class="pos-state">🔒 TERKUNCI</span></button>
+      <button class="adventure-pos" data-target="pos8"><span class="pos-icon">🎯</span><span class="pos-no">POS 8</span><span class="pos-label">Menyimpulkan</span><span class="pos-state">🔒 TERKUNCI</span></button>
+    </div>
+    <div class="badge-shelf" id="badgeShelf">
+      <span class="earned-badge locked" data-badge="1">🔍 Pemburu Informasi</span>
+      <span class="earned-badge locked" data-badge="3">💡 Penemu Ide Pokok</span>
+      <span class="earned-badge locked" data-badge="5">📊 Detektif Data</span>
+      <span class="earned-badge locked" data-badge="8">🏆 Ahli Literasi IPS</span>
+    </div>
+  </section>
+
+  <section class="card local-journey learning-pos" id="pos1" data-pos="1">
+    <div class="pos-heading"><strong>🔎 POS 1 • Menemukan Informasi</strong><span>🏡 Ranuklindungan • Danau Ranu • Pasar Brandong</span></div>
     <div class="journey-head">
       <div class="journey-icon">🗺️</div>
       <div>
@@ -456,9 +517,14 @@
         <div class="mission-step"><span>✅</span>Simpulkan</div>
       </div>
     </div>
+    <div class="mini-mission" data-mission="1">
+      <h3>🎯 Misi Pos 1</h3><p>Manakah tiga tempat yang menjadi konteks petualangan literasi kita?</p>
+      <div class="mission-options"><button class="mission-option" data-correct="1">Desa Ranuklindungan, Danau Ranu, dan Pasar Brandong</button><button class="mission-option">Terminal, bandara, dan pelabuhan</button><button class="mission-option">Kebun binatang, museum, dan stadion</button></div><div class="mission-feedback"></div>
+    </div>
   </section>
 
-  <section class="card">
+  <section class="card learning-pos" id="pos2" data-pos="2">
+    <div class="pos-heading"><strong>🧠 POS 2 • Memahami Makna</strong><span>Literasi bukan sekadar membaca</span></div>
     <h2>📚 Apa Itu Literasi?</h2>
     <p class="subtitle">
       Literasi bukan hanya kemampuan membaca tulisan. Murid juga perlu memahami makna informasi
@@ -481,9 +547,11 @@
         <p>Menentukan pesan atau keputusan yang masuk akal berdasarkan informasi yang tersedia.</p>
       </div>
     </div>
+    <div class="mini-mission" data-mission="2"><h3>🎯 Misi Pos 2</h3><p>Literasi IPS yang baik berarti...</p><div class="mission-options"><button class="mission-option">hanya membaca teks dengan cepat</button><button class="mission-option" data-correct="1">memahami informasi dan menggunakannya untuk menjawab atau mengambil keputusan</button><button class="mission-option">menghafalkan semua kalimat</button></div><div class="mission-feedback"></div></div>
   </section>
 
-  <section class="card">
+  <section class="card learning-pos" id="pos3" data-pos="3">
+    <div class="pos-heading"><strong>💡 POS 3 • Menemukan Ide Pokok</strong><span>Dari informasi menuju gagasan utama</span></div>
     <h2>🌍 Literasi dalam Pelajaran IPS</h2>
     <p class="subtitle">
       Pada pelajaran IPS, literasi membantu kita memahami kegiatan manusia dalam memenuhi kebutuhan,
@@ -501,9 +569,11 @@
         <strong>mengidentifikasi, memahami, menginterpretasikan, menghubungkan, dan menyimpulkan informasi tentang aktivitas ekonomi masyarakat yang berkaitan dengan pemanfaatan sumber daya alam lokal, meliputi kegiatan produksi, distribusi, dan konsumsi.</strong>
       </p>
     </div>
+    <div class="mini-mission" data-mission="3"><h3>🎯 Misi Pos 3</h3><p>Kalimat manakah yang paling tepat menjadi ide pokok tentang literasi IPS?</p><div class="mission-options"><button class="mission-option" data-correct="1">Literasi IPS membantu memahami kehidupan masyarakat melalui berbagai informasi.</button><button class="mission-option">Semua informasi harus berbentuk angka.</button><button class="mission-option">IPS hanya mempelajari nama tempat.</button></div><div class="mission-feedback"></div></div>
   </section>
 
-  <section class="card story">
+  <section class="card story learning-pos" id="pos4" data-pos="4">
+    <div class="pos-heading"><strong>🖼️ POS 4 • Membaca Informasi Kontekstual</strong><span>🏪 Misi Pasar Brandong</span></div>
     <div class="local-story-badge">📍 Konteks Lokal PIKTO-IPS</div>
     <h2>🏪 Cerita IPS: Petualangan ke Pasar Brandong</h2>
     <p>
@@ -527,9 +597,11 @@
       ℹ️ <strong>Catatan:</strong> Desa Ranuklindungan, Danau Ranu, serta lokasi Pasar Brandong di Desa Dawe digunakan sebagai konteks lokal.
       Nama dan jumlah komoditas pada piktogram di atas adalah <strong>data simulasi pembelajaran</strong>, bukan data resmi Pasar Brandong.
     </div>
+    <div class="mini-mission" data-mission="4"><h3>🎯 Misi Pos 4</h3><p>Dari cerita Pasar Brandong, hubungan utama antara penjual dan pembeli adalah...</p><div class="mission-options"><button class="mission-option" data-correct="1">penjual menawarkan barang dan pembeli memperoleh barang yang dibutuhkan</button><button class="mission-option">keduanya tidak memiliki hubungan dalam kegiatan ekonomi</button><button class="mission-option">pembeli selalu menjadi produsen</button></div><div class="mission-feedback"></div></div>
   </section>
 
-  <section class="card">
+  <section class="card learning-pos" id="pos5" data-pos="5">
+    <div class="pos-heading"><strong>📊 POS 5 • Tabel & Piktogram</strong><span>Ubah informasi menjadi data visual</span></div>
     <h2>🎯 Menemukan Ide Pokok</h2>
     <p class="subtitle">
       Ide pokok adalah gagasan utama yang dibicarakan dalam sebuah paragraf atau cerita.
@@ -537,9 +609,11 @@
     <div class="highlight">
       Ide pokok cerita adalah: <strong>belajar memahami kehidupan masyarakat melalui informasi tentang lingkungan sekitar dan kegiatan ekonomi dengan konteks Ranuklindungan, Danau Ranu, dan Pasar Brandong.</strong>
     </div>
+    <div class="mini-mission" data-mission="5"><h3>🎯 Misi Pos 5</h3><p>Saat membaca piktogram, langkah pertama yang paling penting adalah...</p><div class="mission-options"><button class="mission-option" data-correct="1">membaca keterangan nilai setiap simbol</button><button class="mission-option">langsung menjumlah tanpa melihat keterangan</button><button class="mission-option">memilih gambar yang paling menarik</button></div><div class="mission-feedback"></div></div>
   </section>
 
-  <section class="card">
+  <section class="card learning-pos" id="pos6" data-pos="6">
+    <div class="pos-heading"><strong>🔗 POS 6 • Menghubungkan Informasi</strong><span>Tersurat + tersirat + bukti</span></div>
     <h2>📝 Informasi Tersurat dan Tersirat</h2>
     <div class="info-grid">
       <div class="info-box">
@@ -558,9 +632,11 @@
         <p>Cerita dapat dihubungkan dengan piktogram untuk memahami jumlah barang dagangan.</p>
       </div>
     </div>
+    <div class="mini-mission" data-mission="6"><h3>🎯 Misi Pos 6</h3><p>Informasi tersirat diperoleh dengan cara...</p><div class="mission-options"><button class="mission-option">menyalin kalimat tanpa berpikir</button><button class="mission-option" data-correct="1">menghubungkan petunjuk dalam teks untuk memperoleh makna yang tidak ditulis langsung</button><button class="mission-option">mengabaikan bukti dari teks</button></div><div class="mission-feedback"></div></div>
   </section>
 
-  <section class="card">
+  <section class="card learning-pos" id="pos7" data-pos="7">
+    <div class="pos-heading"><strong>🕵️ POS 7 • Menafsirkan Informasi</strong><span>📊 Piktogram + latihan</span></div>
     <h2>📊 Cara Membaca Piktogram</h2>
     <div class="steps">
       <div class="step">Baca judul atau konteks data yang ditampilkan.</div>
@@ -569,6 +645,7 @@
       <div class="step">Hubungkan data dengan informasi dalam cerita.</div>
       <div class="step">Gunakan informasi tersebut untuk membuat kesimpulan.</div>
     </div>
+    <div class="mini-mission" data-mission="7"><h3>🎯 Misi Pos 7</h3><p>Jika 1 simbol mewakili 5 barang dan ada 4 simbol, jumlah barang adalah...</p><div class="mission-options"><button class="mission-option">9 barang</button><button class="mission-option" data-correct="1">20 barang</button><button class="mission-option">25 barang</button></div><div class="mission-feedback"></div></div>
   </section>
 
     <section class="card" id="latihan">
@@ -636,7 +713,9 @@
   <!-- ======================================================
        VIDEO INTERAKTIF - DILETAKKAN DI BAWAH LATIHAN LITERASI
   ======================================================= -->
-  <section class="card video-section" id="videoInteraktif">
+  <span id="videoInteraktif" style="display:block;position:relative;top:-95px"></span>
+  <section class="card video-section learning-pos" id="pos8" data-pos="8">
+    <div class="pos-heading"><strong>🎯 POS 8 • Menyimpulkan & Membuktikan</strong><span>🎬 Video Interaktif</span></div>
     <div class="video-title-row">
       <div class="video-title-icon">▶</div>
       <div>
@@ -1380,6 +1459,7 @@
       link.setAttribute('aria-disabled','false');
       link.textContent = '✅ Lanjut ke Materi Numerasi';
       message.textContent = '🎉 Semua video selesai. Kamu sudah boleh melanjutkan ke materi Numerasi.';
+      if(typeof completeAdventurePos === 'function') completeAdventurePos(8);
     }else{
       link.href = 'javascript:void(0)';
       link.className = 'btn btn-light';
@@ -1402,6 +1482,78 @@
       closeInteractiveModal();
     }
   });
+
+
+  /* ===== PETA PETUALANGAN LITERASI PROGRESIF ===== */
+  const ADV_KEY = 'pikto_literasi_adventure_v1';
+  const ADV_TOTAL = 8;
+
+  function getAdventureState(){
+    try{
+      const raw = JSON.parse(localStorage.getItem(ADV_KEY) || '{}');
+      const completed = Array.isArray(raw.completed) ? raw.completed.filter(n=>Number.isInteger(n) && n>=1 && n<=ADV_TOTAL) : [];
+      return {completed:[...new Set(completed)].sort((a,b)=>a-b)};
+    }catch(e){ return {completed:[]}; }
+  }
+  function saveAdventureState(state){ localStorage.setItem(ADV_KEY, JSON.stringify(state)); }
+  function isPosUnlocked(no,state){ return no===1 || state.completed.includes(no-1) || state.completed.includes(no); }
+  function highestBadge(done){
+    if(done>=8) return '🏆 Ahli Literasi IPS';
+    if(done>=5) return '📊 Detektif Data';
+    if(done>=3) return '💡 Penemu Ide Pokok';
+    if(done>=1) return '🔍 Pemburu Informasi';
+    return '🏅 Penjelajah Baru';
+  }
+  function renderAdventure(){
+    const state=getAdventureState();
+    const done=state.completed.length;
+    const progress=document.getElementById('advProgress'); if(progress) progress.textContent=`📖 Progres ${done}/${ADV_TOTAL}`;
+    const stars=document.getElementById('advStars'); if(stars) stars.textContent=`⭐ Bintang ${done*3}`;
+    const badge=document.getElementById('advBadge'); if(badge) badge.textContent=highestBadge(done);
+    document.querySelectorAll('.adventure-pos').forEach((btn,i)=>{
+      const no=i+1, complete=state.completed.includes(no), unlocked=isPosUnlocked(no,state);
+      btn.disabled=!unlocked; btn.classList.toggle('done',complete); btn.classList.toggle('active',unlocked&&!complete);
+      const st=btn.querySelector('.pos-state'); if(st) st.textContent=complete?'✅ SELESAI':(unlocked?'⭐ TERBUKA':'🔒 TERKUNCI');
+    });
+    document.querySelectorAll('.learning-pos').forEach(sec=>{
+      const no=Number(sec.dataset.pos); sec.classList.toggle('pos-unlocked',isPosUnlocked(no,state)); sec.classList.toggle('pos-completed',state.completed.includes(no));
+    });
+    document.querySelectorAll('[data-badge]').forEach(el=>{
+      el.classList.toggle('locked',done < Number(el.dataset.badge));
+    });
+  }
+  function showAdventureToast(msg){
+    const t=document.getElementById('adventureToast'); if(!t) return; t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2200);
+  }
+  function completeAdventurePos(no){
+    const state=getAdventureState(); if(!state.completed.includes(no)) state.completed.push(no); state.completed.sort((a,b)=>a-b); saveAdventureState(state); renderAdventure();
+    showAdventureToast(no===8?'🏆 Hebat! Semua Pos Literasi selesai!':`⭐ Pos ${no} selesai. Pos berikutnya terbuka!`);
+  }
+  function setupAdventureMissions(){
+    document.querySelectorAll('.mini-mission').forEach(box=>{
+      const no=Number(box.dataset.mission), feedback=box.querySelector('.mission-feedback');
+      box.querySelectorAll('.mission-option').forEach(btn=>btn.addEventListener('click',()=>{
+        box.querySelectorAll('.mission-option').forEach(b=>b.classList.remove('good','bad'));
+        if(btn.dataset.correct==='1'){
+          btn.classList.add('good'); if(feedback){feedback.textContent='✅ Tepat! Kamu berhasil menyelesaikan misi pos ini.';feedback.className='mission-feedback ok';}
+          completeAdventurePos(no);
+        }else{
+          btn.classList.add('bad'); if(feedback){feedback.textContent='🔁 Belum tepat. Baca kembali materi pada pos ini lalu coba lagi.';feedback.className='mission-feedback no';}
+        }
+      }));
+    });
+    document.querySelectorAll('.adventure-pos').forEach(btn=>btn.addEventListener('click',()=>{
+      if(btn.disabled) return; const id=btn.dataset.target; const el=document.getElementById(id); if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+    }));
+  }
+  function syncFinalAdventureFromVideo(){
+    try{
+      if(typeof requiredState!=='undefined' && Array.isArray(requiredState) && requiredState.length && requiredState.every(x=>x.interactiveDone)) completeAdventurePos(8);
+    }catch(e){}
+  }
+  document.addEventListener('DOMContentLoaded',()=>{renderAdventure();setupAdventureMissions();});
+
 </script>
+<div class="adventure-toast" id="adventureToast">⭐ Pos selesai!</div>
 </body>
 </html>
