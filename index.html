@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PIKTO-IPS | Literasi dan Numerasi SD</title>
+  <title>SITEEk-PIKTO-IPS | Literasi dan Numerasi SD</title>
 
   <style>
     :root{
@@ -722,7 +722,7 @@
 
   
     /* ============================================================
-       BERANDA BARU — GAYA SiTeek / PIKTO-IPS
+       BERANDA BARU — GAYA SiTeek / SITEEk-PIKTO-IPS
        ============================================================ */
     .home-stage{margin-top:0;border-radius:0 0 26px 26px;overflow:hidden;position:relative;background:linear-gradient(180deg,rgba(209,239,255,.88),rgba(238,249,232,.94)),radial-gradient(circle at 18% 26%,rgba(66,165,245,.25),transparent 26%),radial-gradient(circle at 86% 72%,rgba(76,175,80,.24),transparent 28%);border:1px solid rgba(189,217,234,.85);box-shadow:0 14px 34px rgba(15,70,112,.10)}
     .home-stage::before{content:"";position:absolute;inset:auto 0 0;height:155px;background:radial-gradient(ellipse at 5% 100%,#72b75f 0 31%,transparent 32%),radial-gradient(ellipse at 23% 100%,#8cc86f 0 34%,transparent 35%),radial-gradient(ellipse at 45% 100%,#6fae55 0 32%,transparent 33%),radial-gradient(ellipse at 67% 100%,#90ca72 0 34%,transparent 35%),radial-gradient(ellipse at 91% 100%,#73b159 0 31%,transparent 32%);opacity:.30;pointer-events:none}
@@ -749,7 +749,7 @@
 
 
     /* ============================================================
-       PIKTO-IPS COMPETITION EDITION — RAMAH ANAK SD
+       SITEEk-PIKTO-IPS COMPETITION EDITION — RAMAH ANAK SD
        ============================================================ */
     :root{
       --kid-sky:#eaf7ff;
@@ -817,6 +817,36 @@
       .kid-bottom-nav{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;left:8px;right:8px;bottom:8px;z-index:1200;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border:1px solid #dce8f2;border-radius:18px;padding:7px 6px;box-shadow:0 10px 30px rgba(12,55,86,.20)}.kid-bottom-nav a{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:9px;font-weight:900;color:#47627a;padding:4px 2px}.kid-bottom-nav a span{font-size:20px}.kid-bottom-nav a:active{transform:scale(.96)}
     }
 
+
+    /* ===== LAYOUT BARU SITEEk-PIKTO-IPS =====
+       Kiri  : Tantangan (termasuk Tantangan Lanjutan)
+       Kanan : Progres Belajarmu, lalu Papan Peringkat tepat di bawahnya
+    */
+    @media (min-width:1101px){
+      .dashboard-grid{
+        grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);
+        grid-template-rows:auto auto;
+        align-items:start;
+        gap:18px;
+      }
+      #tantangan{grid-column:1;grid-row:1 / span 2;}
+      #progres{grid-column:2;grid-row:1;}
+      .leaderboard-panel{
+        grid-column:2;
+        grid-row:2;
+        position:relative;
+        top:auto;
+        width:100%;
+      }
+      .leaderboard-list{
+        display:flex;
+        flex-direction:column;
+        max-height:420px;
+      }
+    }
+    @media (max-width:1100px){
+      #tantangan,#progres,.leaderboard-panel{grid-column:auto;grid-row:auto;}
+    }
 </style>
 </head>
 
@@ -840,7 +870,7 @@
 
     <img
       src="img/logo-pikto-ips.png"
-      alt="Logo PIKTO-IPS"
+      alt="Logo SITEEk-PIKTO-IPS"
       class="top-logo"
       onerror="this.style.visibility='hidden';"
     >
@@ -850,8 +880,8 @@
   <section class="identity-wrap" id="identityCard">
     <div class="identity-card">
       <div class="identity-head">
-        <img src="img/logo-pikto-ips.png" alt="Logo PIKTO-IPS" class="identity-logo" onerror="this.style.display='none'">
-        <h2>👋 Selamat Datang di PIKTO-IPS!</h2>
+        <img src="img/logo-pikto-ips.png" alt="Logo SITEEk-PIKTO-IPS" class="identity-logo" onerror="this.style.display='none'">
+        <h2>👋 Selamat Datang di SITEEk-PIKTO-IPS!</h2>
         <p>
           Masukkan identitasmu terlebih dahulu. Progres dan jawaban akan disimpan
           agar kamu dapat melanjutkan belajar meskipun sempat berhenti atau jaringan terputus.
@@ -887,12 +917,12 @@
       <section class="home-stage" id="beranda">
         <div class="home-welcome">
           <div class="teacher-zone">
-            <div class="speech-bubble">Ayo belajar IPS bersama PIKTO-IPS!</div>
-            <img src="img/guru-capaian.png" alt="Guru PIKTO-IPS" class="teacher-img" onerror="this.style.display='none'">
+            <div class="speech-bubble">Ayo belajar IPS bersama SITEEk-PIKTO-IPS!</div>
+            <img src="img/guru-capaian.png" alt="Guru SITEEk-PIKTO-IPS" class="teacher-img" onerror="this.style.display='none'">
           </div>
           <div class="welcome-card">
             <div class="welcome-eyebrow">👋 Halo, selamat datang!</div>
-            <h1>Selamat Datang di <span class="brand-accent">PIKTO-IPS</span></h1>
+            <h1>Selamat Datang di <span class="brand-accent">SITEEk-PIKTO-IPS</span></h1>
             <p class="hero-copy">Jelajahi IPS melalui literasi, numerasi, piktogram, dan tantangan bertingkat dengan cara yang lebih seru, kontekstual, dan bermakna.</p>
             <div class="home-chips"><span class="home-chip">📖 Literasi IPS</span><span class="home-chip">🔢 Numerasi IPS</span><span class="home-chip">🎯 Tantangan</span><span class="home-chip">🏆 Papan Nilai</span></div>
             <div class="profile-panel" style="margin-top:18px;min-height:auto;padding:14px 16px;grid-template-columns:54px 1fr">
@@ -923,9 +953,9 @@
 
       <div class="kid-section-title" aria-label="Belajar dari lingkungan sekitar">
         <div class="kid-title-icon">🗺️</div>
-        <div><h2>Belajar dari Lingkungan Sekitar</h2><p>PIKTO-IPS mengajakmu memahami IPS dari tempat yang kamu kenal.</p></div>
+        <div><h2>Belajar dari Lingkungan Sekitar</h2><p>SITEEk-PIKTO-IPS mengajakmu memahami IPS dari tempat yang kamu kenal.</p></div>
       </div>
-      <section class="local-journey" aria-label="Konteks lokal PIKTO-IPS">
+      <section class="local-journey" aria-label="Konteks lokal SITEEk-PIKTO-IPS">
         <article class="local-card"><div class="local-icon">🏘️</div><strong>Desa Ranuklindungan</strong><p>Lingkungan tempat belajar memahami kehidupan masyarakat, peran, tanggung jawab, dan interaksi sosial.</p></article>
         <article class="local-card"><div class="local-icon">🌊</div><strong>Danau Ranu</strong><p>Konteks lingkungan sekitar untuk mengamati bentang alam dan keterkaitannya dengan kehidupan masyarakat.</p></article>
         <article class="local-card"><div class="local-icon">🛍️</div><strong>Pasar Brandong • Desa Dawe</strong><p>Konteks nyata untuk belajar membaca informasi dan data tentang aktivitas masyarakat.</p></article>
@@ -941,7 +971,7 @@
           <div class="panel-head">
             <div class="panel-icon blue-circle">🎯</div>
             <div>
-              <h2>Tantangan PIKTO-IPS</h2>
+              <h2>Tantangan SITEEk-PIKTO-IPS</h2>
               <p>Mulai dengan mengukur kemampuanmu, lalu lanjutkan ke tantangan berikutnya.</p>
             </div>
           </div>
@@ -1111,14 +1141,14 @@
     </div>
 
 
-    <nav class="kid-bottom-nav" aria-label="Navigasi cepat PIKTO-IPS">
+    <nav class="kid-bottom-nav" aria-label="Navigasi cepat SITEEk-PIKTO-IPS">
       <a href="#beranda"><span>🏠</span>Beranda</a>
       <a href="literasi.html"><span>📖</span>Literasi</a>
       <a href="numerasi.html"><span>🔢</span>Numerasi</a>
       <a href="#tantangan"><span>🎯</span>Tantangan</a>
       <a href="#progres"><span>⭐</span>Progres</a>
     </nav>
-    <footer>© 2026 PIKTO-IPS - Baca Informasinya • Olah Datanya • Pahami Masyarakatnya</footer>
+    <footer>© 2026 SITEEk-PIKTO-IPS - Baca Informasinya • Olah Datanya • Pahami Masyarakatnya</footer>
   </main>
 
   <!-- MODAL LEVEL LANJUTAN -->
@@ -1285,7 +1315,7 @@ async function validasiMuridDatabase(idMurid){
 
   if(isStudentNotFoundResponse(res)){
     kembaliKeHalamanIdentitas(
-      'Data murid sudah tidak ditemukan di Database PIKTO-IPS. Silakan tulis nama dan pilih kelas kembali.'
+      'Data murid sudah tidak ditemukan di Database SITEEk-PIKTO-IPS. Silakan tulis nama dan pilih kelas kembali.'
     );
     return {valid:false, reset:true};
   }
@@ -1409,7 +1439,7 @@ async function mulaiLevelAwal(){
     try{
       const res = await api({action:'getProgress', id_murid:localStorage.getItem(LS.ID)});
       if(isStudentNotFoundResponse(res)){
-        kembaliKeHalamanIdentitas('Data murid sudah tidak ditemukan di Database PIKTO-IPS. Silakan masuk kembali.');
+        kembaliKeHalamanIdentitas('Data murid sudah tidak ditemukan di Database SITEEk-PIKTO-IPS. Silakan masuk kembali.');
         return;
       }
       if(res.success){
@@ -1437,7 +1467,7 @@ async function bukaPemilihanLevel(){
 
       if(isStudentNotFoundResponse(res)){
         kembaliKeHalamanIdentitas(
-          'Data murid sudah tidak ditemukan di Database PIKTO-IPS. Silakan masuk kembali.'
+          'Data murid sudah tidak ditemukan di Database SITEEk-PIKTO-IPS. Silakan masuk kembali.'
         );
         return;
       }
@@ -2055,7 +2085,7 @@ function tampilkanHasil(res){
       </div>
     </div>
     <div class="recommend-box">
-      <h3>🧭 Rekomendasi PIKTO-IPS</h3>
+      <h3>🧭 Rekomendasi SITEEk-PIKTO-IPS</h3>
       <p>${escapeHtml(diagnosis.recommendation)}</p>
       <div class="btn-row" style="margin-top:12px">
         <a class="btn btn-purple" href="${escapeHtml(diagnosis.targetUrl)}">${escapeHtml(diagnosis.targetLabel)}</a>
@@ -2414,7 +2444,7 @@ window.addEventListener('online',async()=>{
       });
       if(isStudentNotFoundResponse(res)){
         kembaliKeHalamanIdentitas(
-          'Data murid sudah dihapus dari Database PIKTO-IPS. Silakan tulis nama dan pilih kelas kembali.'
+          'Data murid sudah dihapus dari Database SITEEk-PIKTO-IPS. Silakan tulis nama dan pilih kelas kembali.'
         );
         return;
       }
