@@ -2046,20 +2046,77 @@ function muatRefleksi(level){
   return readJSON(reflectionKey(level),{paham:'',sulit:'',rencana:'',saved_at:''});
 }
 
-function simpanRefleksi(level){
+async function simpanRefleksi(level){
   const paham = (document.getElementById('refPaham')?.value || '').trim();
   const sulit = (document.getElementById('refSulit')?.value || '').trim();
   const rencana = (document.getElementById('refRencana')?.value || '').trim();
   const status = document.getElementById('reflectionStatus');
+  const idMurid = localStorage.getItem(LS.ID) || '';
+  const btn = document.getElementById('btnSimpanRefleksi');
 
   if(!paham && !sulit && !rencana){
     if(status){ status.textContent='⚠️ Tulis minimal satu jawaban refleksi.'; status.style.color='#b26a00'; }
     return;
   }
 
-  const data={paham,sulit,rencana,saved_at:new Date().toISOString()};
-  writeJSON(reflectionKey(level),data);
-  if(status){ status.textContent='✅ Refleksimu sudah tersimpan di perangkat.'; status.style.color='#198754'; }
+  if(!idMurid){
+    if(status){ status.textContent='❌ ID murid tidak ditemukan. Silakan masuk kembali.'; status.style.color='#b42318'; }
+    return;
+  }
+
+  // Simpan salinan lokal terlebih dahulu agar tulisan murid tidak hilang.
+  const localData={paham,sulit,rencana,saved_at:new Date().toISOString(),synced:false};
+  writeJSON(reflectionKey(level),localData);
+
+  if(!apiConfigured()){
+    if(status){ status.textContent='⚠️ Refleksi tersimpan di perangkat, tetapi API belum dikonfigurasi.'; status.style.color='#b26a00'; }
+    return;
+  }
+
+  if(!navigator.onLine){
+    if(status){ status.textContent='⚠️ Refleksi tersimpan di perangkat. Sambungkan internet lalu tekan Simpan Refleksi lagi.'; status.style.color='#b26a00'; }
+    return;
+  }
+
+  const oldText = btn ? btn.innerHTML : '';
+  if(btn){ btn.disabled=true; btn.innerHTML='⏳ Menyimpan...'; }
+  if(status){ status.textContent='⏳ Menyimpan refleksi ke database...'; status.style.color='#0b61c3'; }
+
+  try{
+    const res = await api({
+      action:'saveReflection',
+      id_murid:idMurid,
+      level:String(level || currentLevel || 'AWAL').toUpperCase(),
+      paham:paham,
+      sulit:sulit,
+      rencana:rencana
+    });
+
+    if(!res || !res.success){
+      if(isStudentNotFoundResponse(res)){
+        bersihkanDataMuridLokal();
+        return;
+      }
+      throw new Error((res && res.message) || 'Refleksi belum berhasil disimpan ke database.');
+    }
+
+    writeJSON(reflectionKey(level),{
+      paham,sulit,rencana,
+      saved_at:res.waktu_refleksi || new Date().toISOString(),
+      synced:true,
+      id_refleksi:res.id_refleksi || ''
+    });
+
+    if(status){ status.textContent='✅ Refleksimu berhasil tersimpan di database.'; status.style.color='#198754'; }
+  }catch(err){
+    console.error('Gagal menyimpan refleksi:',err);
+    if(status){
+      status.textContent='⚠️ Refleksi tersimpan di perangkat, tetapi belum masuk ke sheet REFLEKSI. ' + (err.message || 'Coba lagi.');
+      status.style.color='#b42318';
+    }
+  }finally{
+    if(btn){ btn.disabled=false; btn.innerHTML=oldText || '💾 Simpan Refleksi'; }
+  }
 }
 
 function tampilkanHasil(res){
@@ -2142,8 +2199,8 @@ function tampilkanHasil(res){
         <div class="reflection-item"><label for="refRencana">3. Apa yang akan kamu lakukan agar lebih paham?</label><textarea id="refRencana" placeholder="Contoh: Saya akan belajar Numerasi lagi dan mencoba latihan.">${escapeHtml(refleksi.rencana || '')}</textarea></div>
       </div>
       <div class="reflection-save">
-        <button class="btn btn-orange" onclick="simpanRefleksi('${currentLevel}')">💾 Simpan Refleksi</button>
-        <span class="reflection-status" id="reflectionStatus">${refleksi.saved_at ? '✅ Refleksi sebelumnya sudah tersimpan.' : ''}</span>
+        <button class="btn btn-orange" id="btnSimpanRefleksi" onclick="simpanRefleksi('${currentLevel}')">💾 Simpan Refleksi</button>
+        <span class="reflection-status" id="reflectionStatus">${refleksi.saved_at ? (refleksi.synced ? '✅ Refleksi sebelumnya sudah tersimpan di database.' : '⚠️ Refleksi sebelumnya baru tersimpan di perangkat.') : ''}</span>
       </div>
     </div>
 
