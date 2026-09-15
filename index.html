@@ -2006,19 +2006,33 @@ async function selesaikanLevel(){
       );
     }
 
+    showSync('⏳ Mengirim hasil level ke server...',true);
+
     const res = await api({
       action:'submitLevel',
       id_murid:localStorage.getItem(LS.ID),
       level:currentLevel,
       session_id:currentSessionId.id,
       waktu_mulai:currentStartTime,
-      // FIX sinkronisasi final: kirim ulang seluruh jawaban lokal ketika level diselesaikan.
-      // Backend akan melakukan upsert sebelum menghitung nilai.
+      // Kirim ulang seluruh jawaban lokal ketika level diselesaikan.
+      // Backend melakukan upsert, sehingga retry aman dan tidak menghilangkan jawaban.
       answers: currentQuestions.map(q => ({
         id_soal:q.id_soal,
         jawaban:currentAnswers[q.id_soal] || ''
       }))
+    },{
+      maxAttempts:3,
+      baseDelay:1000,
+      onRetry:(attempt,maxAttempts,delay,err)=>{
+        const nextAttempt = attempt + 1;
+        showSync(
+          `⚠️ Server belum merespons (${err.message}). Mencoba lagi otomatis ${nextAttempt}/${maxAttempts}...`,
+          false
+        );
+      }
     });
+
+    showSync('✅ Hasil level berhasil tersimpan di server.',true);
 
     if(!res.success){
       throw new Error(res.message || 'Gagal menghitung nilai.');
@@ -2036,7 +2050,14 @@ async function selesaikanLevel(){
     localStorage.removeItem(sessionKey(currentLevel));
 
   }catch(err){
-    alert(err.message);
+    showSync(
+      '⚠️ Server belum dapat dihubungi setelah beberapa percobaan. Jawaban tetap aman di perangkat. Silakan tekan "Selesaikan Level" lagi tanpa mengulang soal.',
+      false
+    );
+    alert(
+      (err && err.message ? err.message : 'Server belum dapat dihubungi.') +
+      '\n\nJawabanmu tetap aman di perangkat. Tidak perlu mengulang soal.'
+    );
   }finally{
     btns.forEach(b=>b.disabled=false);
   }
@@ -2517,21 +2538,68 @@ function apiConfigured(){
   );
 }
 
-async function api(payload){
-  const response = await fetch(APP_SCRIPT_URL,{
-    method:'POST',
-    headers:{
-      'Content-Type':'text/plain;charset=utf-8'
-    },
-    body:JSON.stringify(payload),
-    redirect:'follow'
-  });
+function tunggu(ms){
+  return new Promise(resolve => setTimeout(resolve,ms));
+}
 
-  if(!response.ok){
-    throw new Error('Server merespons HTTP ' + response.status);
+function apiBolehRetry(status){
+  // Retry hanya untuk kegagalan sementara / gateway / deployment yang sesekali belum terjangkau.
+  return status === 0 || status === 404 || status === 408 || status === 429 || status >= 500;
+}
+
+async function api(payload,options={}){
+  const maxAttempts = Math.max(1,Number(options.maxAttempts || 3));
+  const baseDelay = Math.max(300,Number(options.baseDelay || 900));
+  let lastError = null;
+
+  for(let attempt=1; attempt<=maxAttempts; attempt++){
+    try{
+      const response = await fetch(APP_SCRIPT_URL,{
+        method:'POST',
+        headers:{
+          'Content-Type':'text/plain;charset=utf-8'
+        },
+        body:JSON.stringify(payload),
+        redirect:'follow',
+        cache:'no-store'
+      });
+
+      if(!response.ok){
+        const err = new Error('Server merespons HTTP ' + response.status);
+        err.httpStatus = response.status;
+        err.retryable = apiBolehRetry(response.status);
+        throw err;
+      }
+
+      const data = await response.json();
+      return data;
+
+    }catch(err){
+      lastError = err;
+
+      const status = Number(err && err.httpStatus || 0);
+      const retryable =
+        err && err.retryable === true ||
+        status === 0 ||
+        apiBolehRetry(status) ||
+        err instanceof TypeError;
+
+      if(!retryable || attempt >= maxAttempts){
+        break;
+      }
+
+      const delay = baseDelay * attempt;
+      if(options.onRetry){
+        try{
+          options.onRetry(attempt,maxAttempts,delay,err);
+        }catch(_){}
+      }
+
+      await tunggu(delay);
+    }
   }
 
-  return await response.json();
+  throw lastError || new Error('Server belum dapat dihubungi.');
 }
 
 /* ============================================================
