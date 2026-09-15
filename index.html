@@ -1026,7 +1026,7 @@
                   <h3>CAKAP</h3>
                   <p>Kompetensi Menengah</p>
                   <div class="availability locked" id="previewCakap">TERKUNCI</div>
-                  <p class="level-note">Selesaikan Level Awal dengan nilai minimal 70.</p>
+                  <p class="level-note">Selesaikan Level Awal dengan nilai minimal <span class="kkm-level-text">70</span>.</p>
                 </article>
 
                 <article class="level-preview mahir">
@@ -1035,7 +1035,7 @@
                   <h3>MAHIR</h3>
                   <p>Kompetensi Tinggi</p>
                   <div class="availability locked" id="previewMahir">TERKUNCI</div>
-                  <p class="level-note">Selesaikan Level Cakap dengan nilai minimal 70.</p>
+                  <p class="level-note">Selesaikan Level Cakap dengan nilai minimal <span class="kkm-level-text">70</span>.</p>
                 </article>
               </div>
 
@@ -1199,7 +1199,7 @@
 // GANTI dengan URL Web App Google Apps Script berakhiran /exec
 const APP_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx42nnGeJnV0DVNT3HnhE5bVsFp-sPmY-qD4St9EScmN1Uml6CLKS690aWTxEl0ZsyFDg/exec';
 
-const KKM = 60;
+let KKM = 70; // fallback lokal; nilai utama dibaca dari PENGATURAN > KKM_LEVEL
 
 let currentLevel = '';
 let currentQuestions = [];
@@ -1218,6 +1218,7 @@ const LS = {
   NAME: 'pikto_nama',
   CLASS: 'pikto_kelas',
   DEVICE: 'pikto_device_id',
+  KKM: 'pikto_kkm_level',
   PROGRESS: 'pikto_progress_cache',
   QUEUE: 'pikto_sync_queue'
 };
@@ -1337,6 +1338,61 @@ async function validasiMuridDatabase(idMurid){
 }
 
 
+
+/* ============================================================
+   PENGATURAN DINAMIS
+   KKM dibaca dari sheet PENGATURAN -> KKM_LEVEL
+============================================================ */
+
+function terapkanKKM(nilai){
+  const parsed = Number(nilai);
+  if(!Number.isFinite(parsed) || parsed < 0 || parsed > 100) return false;
+
+  KKM = parsed;
+  localStorage.setItem(LS.KKM,String(KKM));
+
+  document.querySelectorAll('.kkm-level-text').forEach(el=>{
+    el.textContent = String(KKM);
+  });
+
+  return true;
+}
+
+function muatKKMLokal(){
+  const cached = Number(localStorage.getItem(LS.KKM));
+  if(Number.isFinite(cached) && cached >= 0 && cached <= 100){
+    KKM = cached;
+  }
+  document.querySelectorAll('.kkm-level-text').forEach(el=>{
+    el.textContent = String(KKM);
+  });
+}
+
+async function muatPengaturan(){
+  muatKKMLokal();
+
+  if(!apiConfigured() || !navigator.onLine){
+    return {success:false, offline:true, kkm_level:KKM};
+  }
+
+  const res = await api({action:'getSettings'});
+  if(!res || !res.success){
+    throw new Error((res && res.message) || 'Gagal membaca pengaturan aplikasi.');
+  }
+
+  const nilaiKKM =
+    res.kkm_level !== undefined ? res.kkm_level :
+    (res.settings && res.settings.KKM_LEVEL !== undefined
+      ? res.settings.KKM_LEVEL
+      : null);
+
+  if(!terapkanKKM(nilaiKKM)){
+    throw new Error('Nilai KKM_LEVEL dari server tidak valid.');
+  }
+
+  return {success:true, kkm_level:KKM};
+}
+
 /* ============================================================
    START / IDENTITY
 ============================================================ */
@@ -1379,6 +1435,7 @@ async function masukAplikasi(){
       if(!res.success) throw new Error(res.message || 'Gagal masuk.');
 
       idMurid = res.id_murid;
+      if(res.kkm_level !== undefined) terapkanKKM(res.kkm_level);
       localStorage.setItem(LS.ID,idMurid);
       tampilkanProfil();
 
@@ -2506,6 +2563,13 @@ function showSync(message,success){
 window.addEventListener('online',async()=>{
   updateNetworkStatus();
   showSync('🌐 Internet kembali. Menyinkronkan jawaban...',true);
+
+  try{
+    await muatPengaturan();
+  }catch(err){
+    console.warn('KKM server belum dapat dimuat:',err);
+  }
+
   await syncQueue();
 
   if(localStorage.getItem(LS.ID) && apiConfigured()){
@@ -2572,6 +2636,15 @@ function jsSafe(value){
 
 window.addEventListener('load',async()=>{
   updateNetworkStatus();
+  muatKKMLokal();
+
+  if(apiConfigured() && navigator.onLine){
+    try{
+      await muatPengaturan();
+    }catch(err){
+      console.warn('KKM server belum dapat dimuat:',err);
+    }
+  }
 
   const nama = localStorage.getItem(LS.NAME) || '';
   const kelas = localStorage.getItem(LS.CLASS) || '';
