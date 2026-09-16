@@ -113,11 +113,65 @@
 .mini-bars{display:grid;gap:8px}.mini-bar{display:grid;grid-template-columns:100px 1fr 40px;gap:8px;align-items:center}.mini-bar-track{height:20px;background:#e9eef2;border-radius:7px;overflow:hidden}.mini-bar-fill{height:100%;background:#56a675}
 @media(max-width:800px){.pos-nav{grid-template-columns:repeat(4,1fr)}.pos-options{grid-template-columns:1fr}} 
 
+
+/* ===== V14: PETUALANGAN NUMERASI IPS 3D ===== */
+:root{--v14-blue:#0d5fc7;--v14-green:#18a558;--v14-yellow:#ffc93c;--v14-ink:#173f68}
+body{
+  background:
+    radial-gradient(circle at 8% 5%,rgba(104,206,255,.28),transparent 25%),
+    radial-gradient(circle at 90% 12%,rgba(124,230,154,.25),transparent 24%),
+    linear-gradient(180deg,#eaf9ff 0%,#f6fff8 48%,#eef9ff 100%);
+}
+.container{max-width:1180px}
+.v14-hero{position:relative;overflow:hidden;border-radius:28px;margin:18px 0 22px;min-height:390px;
+  background:#c9f0ff url('numerasi-petualangan-3d.png') center 23%/cover no-repeat;
+  box-shadow:0 18px 45px rgba(28,91,124,.20);border:4px solid rgba(255,255,255,.9)}
+.v14-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,54,92,.58),rgba(4,54,92,.08) 58%,rgba(255,255,255,.03))}
+.v14-hero-copy{position:relative;z-index:2;max-width:560px;padding:45px 34px;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.22)}
+.v14-badge{display:inline-block;padding:8px 13px;border-radius:999px;background:#fff;color:#1166a8;font-weight:1000;font-size:12px;text-shadow:none;box-shadow:0 7px 18px rgba(0,0,0,.12)}
+.v14-hero h1{font-size:clamp(34px,5vw,60px);line-height:.98;margin:14px 0 12px;color:#fff}
+.v14-hero h1 span{color:#ffd64d}.v14-hero p{font-size:16px;line-height:1.65;font-weight:800;max-width:510px}
+.v14-hero-steps{display:flex;gap:7px;flex-wrap:wrap;margin-top:17px}.v14-hero-steps span{background:rgba(255,255,255,.92);color:#14557e;padding:7px 10px;border-radius:999px;font-size:11px;font-weight:1000;text-shadow:none}
+.v14-adventure-map{padding:20px;border-radius:24px;background:rgba(255,255,255,.94);box-shadow:0 12px 30px rgba(35,92,119,.12);border:2px solid #d6edf7;margin:18px 0}
+.v14-map-title{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.v14-map-title h2{margin:0;color:#115c9d}.v14-map-title p{margin:0;color:#688096;font-size:12px}
+#posNavNumerasi{grid-template-columns:repeat(8,1fr);gap:10px;margin:16px 0 0}
+#posNavNumerasi .pos-chip{position:relative;min-height:84px;display:flex;align-items:center;justify-content:center;flex-direction:column;border-radius:18px;background:linear-gradient(#fff,#f1f7fb);border:2px solid #d8e6ee;box-shadow:0 7px 15px rgba(36,88,116,.08);font-size:11px}
+#posNavNumerasi .pos-chip:before{display:block;font-size:27px;margin-bottom:4px}
+#posNavNumerasi .pos-chip:nth-child(1):before{content:"🧺"}#posNavNumerasi .pos-chip:nth-child(2):before{content:"🐟"}#posNavNumerasi .pos-chip:nth-child(3):before{content:"🧮"}#posNavNumerasi .pos-chip:nth-child(4):before{content:"📋"}#posNavNumerasi .pos-chip:nth-child(5):before{content:"📊"}#posNavNumerasi .pos-chip:nth-child(6):before{content:"🪙"}#posNavNumerasi .pos-chip:nth-child(7):before{content:"💡"}#posNavNumerasi .pos-chip:nth-child(8):before{content:"🏁"}
+#posNavNumerasi .pos-chip.open{background:linear-gradient(180deg,#edfff3,#dff8e8);border-color:#79d79d;color:#137543}
+#posNavNumerasi .pos-chip.done{background:linear-gradient(180deg,#25b66b,#138d50);color:#fff;border-color:#118348;transform:translateY(-2px)}
+.num-concept{background:rgba(255,255,255,.96);box-shadow:0 12px 28px rgba(28,88,118,.10);border-radius:24px}
+.num-concept:before{content:"🧭  MULAI PETUALANGAN";display:inline-block;background:#ffdf68;color:#654b00;font-weight:1000;font-size:11px;padding:7px 11px;border-radius:999px;margin-bottom:9px}
+.card.learning-pos{border-radius:26px;border:3px solid #dcecf4;box-shadow:0 14px 30px rgba(32,86,115,.12);background:rgba(255,255,255,.97);position:relative;overflow:hidden}
+.card.learning-pos:before{content:"";position:absolute;width:130px;height:130px;border-radius:50%;right:-55px;top:-55px;background:rgba(255,211,69,.16)}
+.card.learning-pos h2{font-size:27px;color:#114f91}
+.pos-intro{background:linear-gradient(90deg,#edf8ff,#f4fff6);border-left-color:#25a55f}
+.pos-visual{box-shadow:inset 0 0 0 1px #eef5f8;background:linear-gradient(180deg,#fff,#fbfeff)}
+.pos-question{border:2px solid #f0d483;background:linear-gradient(180deg,#fffdf6,#fff9e7)}
+.pos-options button{font-size:14px;transition:.18s ease;box-shadow:0 4px 9px rgba(39,80,104,.07)}
+.pos-options button:hover{transform:translateY(-2px);border-color:#83bfe3}
+.btn.green,.next-pos{border-radius:999px!important;box-shadow:0 8px 17px rgba(24,165,88,.22)}
+.v14-stars{position:fixed;inset:0;pointer-events:none;z-index:9999;overflow:hidden}.v14-star{position:absolute;font-size:25px;animation:v14Pop 1.2s ease-out forwards}
+@keyframes v14Pop{0%{opacity:0;transform:translateY(10px) scale(.3) rotate(0)}30%{opacity:1}100%{opacity:0;transform:translateY(-120px) scale(1.4) rotate(180deg)}}
+.v14-motivation{margin:22px 0;padding:18px 22px;border-radius:22px;background:linear-gradient(135deg,#fff2b9,#e8fff0);border:2px solid #ead98d;text-align:center;font-weight:1000;color:#36586b;box-shadow:0 9px 22px rgba(50,91,105,.08)}
+@media(max-width:850px){.v14-hero{min-height:330px;background-position:55% 20%}.v14-hero-copy{padding:32px 22px;max-width:72%}#posNavNumerasi{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:600px){.v14-hero{min-height:390px;background-position:61% 20%}.v14-hero:after{background:linear-gradient(180deg,rgba(5,54,87,.22),rgba(5,54,87,.82))}.v14-hero-copy{position:absolute;left:0;right:0;bottom:0;max-width:none;padding:20px}.v14-hero h1{font-size:36px}.v14-hero p{font-size:13px}#posNavNumerasi{grid-template-columns:repeat(2,1fr)}}
+
 </style>
 </head>
 <body>
 <header class="topbar"><div class="brand"><img src="img/logo-pikto-ips.png" alt="Logo PIKTO-IPS"><div><h1>🔢 NUMERASI IPS</h1><p>Menggunakan angka dan data untuk memahami kehidupan masyarakat</p></div></div><nav class="nav"><a href="index.html">🏠 Beranda</a><a href="literasi.html">📖 Literasi</a><a href="#latihan">✏️ Latihan</a><a href="#videoInteraktif">🎬 Video</a></nav></header>
 <main class="container">
+
+
+<section class="v14-hero" aria-label="Petualangan Numerasi IPS">
+  <div class="v14-hero-copy">
+    <span class="v14-badge">🌿 SITEEk–PIKTO-IPS • Petualangan Data Anak SD</span>
+    <h1>Petualangan<br><span>Numerasi IPS</span></h1>
+    <p>Ayo menjadi Penjelajah Data! Kita akan mengamati lingkungan, membaca piktogram, menghitung, memahami data, lalu mengambil keputusan yang masuk akal.</p>
+    <div class="v14-hero-steps"><span>👀 Amati</span><span>🧮 Hitung</span><span>🧠 Pahami</span><span>💬 Simpulkan</span><span>🏁 Ambil Keputusan</span></div>
+  </div>
+</section>
 
 <section class="num-concept" id="konsepNumerasiIPS">
 <h2>🔢 Apa Itu Numerasi IPS?</h2>
@@ -133,8 +187,8 @@
 <li>Menyelesaikan masalah bertahap dan mengambil keputusan berdasarkan data.</li>
 </ul>
 </section>
-<div class="pos-nav" id="posNavNumerasi">
-<div class="pos-chip open" data-chip="1">Pos 1<br>Data</div>
+<section class="v14-adventure-map"><div class="v14-map-title"><h2>🗺️ Peta Perjalanan Numerasi IPS — 8 Pos</h2><p>Selesaikan setiap pos untuk membuka petualangan berikutnya.</p></div><div class="pos-nav" id="posNavNumerasi">
+<div class="pos-chip open" data-chip="1">Pos 1<br>Data</div></section>
 <div class="pos-chip" data-chip="2">Pos 2<br>Piktogram</div>
 <div class="pos-chip" data-chip="3">Pos 3<br>Menghitung</div>
 <div class="pos-chip" data-chip="4">Pos 4<br>Tabel</div>
@@ -331,6 +385,7 @@
 <article class="video-card"><div class="video-head"><div><h3>Video 2 — Diagram Batang</h3><div class="source">Membaca dan Menafsirkan Data Kelas 4 SD • Dihubungkan dengan konteks lokal PIKTO-IPS</div></div><span class="status" id="status-video-1">BELUM DITONTON</span></div><div class="player-shell"><div id="player-1" class="yt"></div><div class="lock" id="lock-1"><div><div class="play">▶️</div><h4>Belajar membaca diagram batang</h4><p>Amati kategori, tinggi batang, skala, lalu buat kesimpulan.</p><button class="btn green" onclick="startRequiredVideo(1)">Mulai Menonton</button></div></div></div><div class="progress"><div class="prow"><span>Progres menonton</span><span id="watch-percent-1">0%</span></div><div class="ptrack"><div class="pfill" id="watch-progress-1"></div></div></div><div class="storyline"><h4>📖 Alur materi video</h4><ol><li>Mengenal diagram batang sebagai penyajian data.</li><li>Membaca judul, kategori, sumbu, dan skala.</li><li>Membaca nilai dari tinggi atau panjang batang.</li><li>Membandingkan nilai tertinggi, terendah, dan selisih.</li><li>Menafsirkan data untuk membuat kesimpulan.</li></ol></div><div class="under hidden" id="understanding-1"><h4>🤔 Apakah kamu paham?</h4><p>Pilih Ya untuk mengerjakan 4 pertanyaan interaktif.</p><div class="btnrow"><button class="btn green" onclick="confirmUnderstand(1,true)">✅ Ya</button><button class="btn red" onclick="confirmUnderstand(1,false)">🔁 Tidak</button></div></div></article>
 </div><div class="summary"><strong>🏁 Status Penyelesaian</strong><p id="videoSummary">Selesaikan kedua video dan 4 pertanyaan interaktif pada masing-masing video.</p><div class="cbar"><div class="cfill" id="completeFill"></div></div></div><div class="next"><p id="nextMessage">🔒 Tantangan terbuka setelah kedua video selesai.</p><a id="nextChallenge" class="btn light" href="javascript:void(0)">🏆 Kembali ke Tantangan</a></div></section>
 <section class="card"><h2>💡 Pesan Penting</h2><p class="subtitle" style="margin-bottom:0">Numerasi membantu kita membaca kehidupan melalui angka dan data. Dari Ranuklindungan, Danau Ranu, hingga Pasar Brandong, data dapat membantu kita memahami lingkungan, kegiatan masyarakat, dan membuat keputusan berdasarkan bukti.</p></section><div class="btnrow" style="margin-top:20px"><a class="btn light" href="literasi.html">← Kembali ke Literasi</a><a class="btn green" href="#videoInteraktif">🎬 Ke Video Interaktif</a></div>
+<div class="v14-motivation">🌟 “Data kecil hari ini bisa menjadi keputusan besar untuk masa depan.” — Teruslah menjadi penjelajah data yang hebat!</div>
 <section class="profile6" id="profilLulusan">
 <h2>🌟 Profil Lulusan yang Dilatih di Numerasi</h2>
 <p>Aktivitas numerasi melatih murid membaca data, melakukan perhitungan, membandingkan hasil, mengambil keputusan berdasarkan bukti, dan membawa hasilnya ke Misi Profil Lulusan.</p>
@@ -349,6 +404,33 @@
 <div class="modal hidden" id="interactiveModal"><div class="modalbox"><div class="mhead"><div><h3 id="interactiveTitle">🎬 Video Numerasi Interaktif</h3><p class="source">Video akan berhenti 4 kali untuk memberikan pertanyaan.</p></div><button class="close" onclick="closeInteractiveModal()">✕</button></div><div class="ipwrap"><div id="interactivePlayer"></div><div class="qoverlay hidden" id="questionOverlay"><div class="qcard"><span class="qnum" id="questionNumber">PERTANYAAN 1 DARI 4</span><h4 id="questionText">Pertanyaan</h4><div class="opts" id="quizOptions"></div><div class="feedback" id="quizFeedback"></div></div></div></div><div class="istatus"><span id="interactiveCheckpoint">Checkpoint: 0/4</span><span>✅ Benar = lanjut • ❌ Salah = kembali ke awal</span></div></div></div>
 
 <script>
+
+/* ===== V14: EFEK BINTANG KETIKA POS BENAR ===== */
+function efekBintangV14(){
+  let layer=document.querySelector('.v14-stars');
+  if(!layer){layer=document.createElement('div');layer.className='v14-stars';document.body.appendChild(layer);}
+  const symbols=['⭐','✨','🌟','🎉'];
+  for(let i=0;i<18;i++){
+    const s=document.createElement('span');s.className='v14-star';
+    s.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+    s.style.left=(15+Math.random()*70)+'%';
+    s.style.top=(45+Math.random()*30)+'%';
+    s.style.animationDelay=(Math.random()*.25)+'s';
+    layer.appendChild(s);
+    setTimeout(()=>s.remove(),1500);
+  }
+}
+const _jawabPosV13Visual=jawabPosV13;
+jawabPosV13=function(btn,pos,benar){
+  _jawabPosV13Visual(btn,pos,benar);
+  if(benar) efekBintangV14();
+};
+const _jawabPos1Visual=jawabPos1;
+jawabPos1=function(btn,benar){
+  _jawabPos1Visual(btn,benar);
+  if(benar) efekBintangV14();
+};
+
 
 /* ===== V13: 8 POS NUMERASI BERJENJANG ===== */
 const NUM_POS_KEY='pikto_numerasi_pos_selesai';
