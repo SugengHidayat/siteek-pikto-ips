@@ -80,12 +80,29 @@
 .upload-panel{margin-top:16px;padding:18px;border-radius:18px;background:#f7fbff;border:2px dashed #9fc6e8}.upload-panel h3{margin:0 0 6px;color:#145a8d}.upload-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}.upload-field label{display:block;font-size:12px;font-weight:900;color:#45657d;margin-bottom:5px}.upload-field input,.upload-field textarea{width:100%;padding:11px 12px;border:2px solid #d8e4ed;border-radius:11px;font:inherit;background:#fff}.upload-field textarea{min-height:78px;resize:vertical}.upload-field.full{grid-column:1/-1}.upload-help{font-size:11px;color:#667b8f;margin-top:5px;line-height:1.5}.upload-status{margin-top:11px;min-height:22px;font-size:13px;font-weight:900;color:#45657d}.upload-status.ok{color:#15803d}.upload-status.bad{color:#c62828}
 @media(max-width:760px){.fish-picto{grid-template-columns:105px 1fr 50px}.group-flow,.upload-grid{grid-template-columns:1fr}.upload-field.full{grid-column:auto}.demo-chart-row{grid-template-columns:90px 1fr 38px}}
 
+
+/* ===== V12: FEEDBACK POS 1 WARNA + SUARA ===== */
+#pos1-mengenal-data .opts button.pos1-benar{
+  background:#198754 !important;color:#fff !important;border-color:#146c43 !important;
+  box-shadow:0 0 0 4px rgba(25,135,84,.15),0 8px 18px rgba(25,135,84,.20);
+  transform:translateY(-1px)
+}
+#pos1-mengenal-data .opts button.pos1-salah{
+  background:#dc3545 !important;color:#fff !important;border-color:#b02a37 !important;
+  box-shadow:0 0 0 4px rgba(220,53,69,.13);
+  animation:pos1Shake .28s linear 1
+}
+#pos1-mengenal-data .pos1-feedback{margin-top:12px;padding:12px 14px;border-radius:12px;font-weight:900;line-height:1.5;display:none}
+#pos1-mengenal-data .pos1-feedback.ok{display:block;background:#e9f8ef;color:#146c43;border:1px solid #a8dcb9}
+#pos1-mengenal-data .pos1-feedback.bad{display:block;background:#fff0f1;color:#b02a37;border:1px solid #efb1b8}
+@keyframes pos1Shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+
 </style>
 </head>
 <body>
 <header class="topbar"><div class="brand"><img src="img/logo-pikto-ips.png" alt="Logo PIKTO-IPS"><div><h1>🔢 NUMERASI IPS</h1><p>Menggunakan angka dan data untuk memahami kehidupan masyarakat</p></div></div><nav class="nav"><a href="index.html">🏠 Beranda</a><a href="literasi.html">📖 Literasi</a><a href="#latihan">✏️ Latihan</a><a href="#videoInteraktif">🎬 Video</a></nav></header>
 <main class="container">
-<section class="card">
+<section class="card" id="pos1-mengenal-data">
 <h2>🧭 Pos 1 — Mengenal Data</h2>
 <p class="subtitle">Sebelum membaca tabel, piktogram, atau diagram, kita perlu memahami apa yang disebut <strong>data lengkap</strong>. Data lengkap menyebutkan <strong>jumlah</strong> dan <strong>objek yang dihitung</strong>.</p>
 
@@ -105,12 +122,12 @@
 <div class="practice">
   <div class="q"><strong>🎯 Misi 1 — Baca Piktogram</strong><p>Perhatikan piktogram dan keterangannya di atas. <strong>Manakah yang merupakan data lengkap?</strong></p></div>
   <div class="opts">
-    <button onclick="check(this,false)">12</button>
-    <button onclick="check(this,false)">Keranjang sayur</button>
-    <button onclick="check(this,true)">12 keranjang sayur</button>
-    <button onclick="check(this,false)">6 keranjang sayur</button>
+    <button onclick="jawabPos1(this,false)">12</button>
+    <button onclick="jawabPos1(this,false)">Keranjang sayur</button>
+    <button onclick="jawabPos1(this,true)">12 keranjang sayur</button>
+    <button onclick="jawabPos1(this,false)">6 keranjang sayur</button>
   </div>
-  <div class="feedback"></div>
+  <div class="feedback pos1-feedback" aria-live="polite"></div>
 </div>
 
 <div class="reading-guide"><strong>Kesimpulan Pos 1:</strong> untuk membaca data dengan benar, murid perlu mengetahui <strong>apa yang dihitung</strong>, <strong>berapa jumlahnya</strong>, dan jika menggunakan piktogram, <strong>berapa nilai yang diwakili setiap simbol</strong>. Dengan tiga informasi tersebut, data dapat dibaca secara utuh.</div>
@@ -241,6 +258,48 @@
 <div class="modal hidden" id="interactiveModal"><div class="modalbox"><div class="mhead"><div><h3 id="interactiveTitle">🎬 Video Numerasi Interaktif</h3><p class="source">Video akan berhenti 4 kali untuk memberikan pertanyaan.</p></div><button class="close" onclick="closeInteractiveModal()">✕</button></div><div class="ipwrap"><div id="interactivePlayer"></div><div class="qoverlay hidden" id="questionOverlay"><div class="qcard"><span class="qnum" id="questionNumber">PERTANYAAN 1 DARI 4</span><h4 id="questionText">Pertanyaan</h4><div class="opts" id="quizOptions"></div><div class="feedback" id="quizFeedback"></div></div></div></div><div class="istatus"><span id="interactiveCheckpoint">Checkpoint: 0/4</span><span>✅ Benar = lanjut • ❌ Salah = kembali ke awal</span></div></div></div>
 
 <script>
+
+/* ===== V12: Umpan balik Pos 1 ===== */
+function bicaraPos1(teks){
+  try{
+    if(!('speechSynthesis' in window)) return;
+    window.speechSynthesis.cancel();
+    const u=new SpeechSynthesisUtterance(teks);
+    u.lang='id-ID';
+    u.rate=0.92;
+    u.pitch=1.08;
+    u.volume=1;
+    window.speechSynthesis.speak(u);
+  }catch(_){}
+}
+
+function jawabPos1(btn, benar){
+  const section=document.getElementById('pos1-mengenal-data');
+  if(!section) return;
+  const feedback=section.querySelector('.pos1-feedback');
+
+  // Hapus warna pilihan sebelumnya agar umpan balik mengikuti jawaban terakhir.
+  section.querySelectorAll('.opts button').forEach(b=>{
+    b.classList.remove('pos1-benar','pos1-salah');
+  });
+
+  if(benar){
+    btn.classList.add('pos1-benar');
+    if(feedback){
+      feedback.className='feedback pos1-feedback ok';
+      feedback.textContent='🎉 Selamat, Adik sudah benar dan hebat! 6 gambar × 2 keranjang = 12 keranjang sayur.';
+    }
+    bicaraPos1('Selamat, Adik sudah benar dan hebat!');
+  }else{
+    btn.classList.add('pos1-salah');
+    if(feedback){
+      feedback.className='feedback pos1-feedback bad';
+      feedback.textContent='😊 Mohon maaf, Adik. Jawaban belum tepat. Ayo baca dengan teliti lagi petunjuk piktogramnya.';
+    }
+    bicaraPos1('Mohon maaf, Adik. Jawaban belum tepat. Ayo baca dengan teliti lagi.');
+  }
+}
+
 
 const NUMERASI_API_URL = 'https://script.google.com/macros/s/AKfycbx42nnGeJnV0DVNT3HnhE5bVsFp-sPmY-qD4St9EScmN1Uml6CLKS690aWTxEl0ZsyFDg/exec';
 const MAX_PENGAMATAN_FILE = 8 * 1024 * 1024;
