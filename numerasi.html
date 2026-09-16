@@ -157,6 +157,45 @@ body{
 @media(max-width:850px){.v14-hero{min-height:330px;background-position:55% 20%}.v14-hero-copy{padding:32px 22px;max-width:72%}#posNavNumerasi{grid-template-columns:repeat(4,1fr)}}
 @media(max-width:600px){.v14-hero{min-height:390px;background-position:61% 20%}.v14-hero:after{background:linear-gradient(180deg,rgba(5,54,87,.22),rgba(5,54,87,.82))}.v14-hero-copy{position:absolute;left:0;right:0;bottom:0;max-width:none;padding:20px}.v14-hero h1{font-size:36px}.v14-hero p{font-size:13px}#posNavNumerasi{grid-template-columns:repeat(2,1fr)}}
 
+
+/* ===== V15 FULL REDESIGN: PETUALANGAN NUMERASI IPS ===== */
+body{background:linear-gradient(180deg,#dff5ff 0,#f7fff7 34%,#eaf8ff 100%)!important}
+header{background:rgba(236,248,255,.96)!important;border-bottom:3px solid #c6e5f5!important;box-shadow:0 6px 20px rgba(25,81,123,.12)!important}
+.brand h1{color:#123e85!important}.nav a{border-radius:14px!important;background:#e7f1ff!important;color:#173f76!important;font-weight:900!important}.nav a.active,.nav a:hover{background:linear-gradient(135deg,#18ad68,#087ec4)!important;color:white!important}
+.v14-hero{min-height:465px!important;border-radius:30px!important;border:5px solid white!important;background-position:center 15%!important}
+.v14-hero:after{background:linear-gradient(90deg,rgba(7,57,98,.66),rgba(7,57,98,.05) 65%)!important}
+.v14-hero-copy{padding:58px 42px!important;max-width:610px!important}.v14-hero h1{font-size:64px!important;text-shadow:0 5px 0 rgba(0,55,112,.28),0 9px 18px rgba(0,0,0,.2)!important}
+.v15-ribbon{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(180deg,#1c78d5,#0c55ad);color:#fff;padding:10px 18px;border-radius:16px 16px 6px 6px;font-size:18px;font-weight:1000;box-shadow:0 8px 15px rgba(11,79,143,.2)}
+.v14-adventure-map{border:4px solid #fff!important;background:linear-gradient(180deg,#f5fcff,#dff6ff)!important;box-shadow:0 15px 30px rgba(26,100,142,.16)!important}
+#posNavNumerasi{position:relative;padding:14px 5px!important}
+#posNavNumerasi:before{content:"";position:absolute;left:5%;right:5%;top:55%;border-top:4px dashed #164e7b;z-index:0}
+#posNavNumerasi .pos-chip{z-index:1;min-height:112px!important;border:3px solid #cfe1ea!important;border-radius:22px!important;background:white!important;font-size:12px!important}
+#posNavNumerasi .pos-chip:before{font-size:34px!important}
+#posNavNumerasi .pos-chip.open{border-color:#3bc36e!important;background:linear-gradient(#f4fff6,#dff9e6)!important}
+#posNavNumerasi .pos-chip.done{border-color:#14984f!important;background:linear-gradient(#31c96f,#14984f)!important}
+.v15-concept-grid{display:grid;grid-template-columns:1fr 1.45fr .9fr;gap:15px;margin:18px 0}
+.v15-concept-card{position:relative;overflow:hidden;padding:22px;border-radius:24px;background:#fff;border:4px solid #fff;box-shadow:0 12px 26px rgba(35,88,116,.13);min-height:265px}
+.v15-concept-card h2{color:#164c8c!important;font-size:23px!important}.v15-concept-card p,.v15-concept-card li{line-height:1.6}
+.v15-concept-card.goal{background:linear-gradient(135deg,#fff,#f5fff7)}.v15-concept-card.scene{padding:0;background:url('numerasi-petualangan-3d.png') 84% 37%/310% auto no-repeat;min-height:300px}
+.v15-scene-caption{position:absolute;left:12px;right:12px;bottom:12px;background:rgba(255,255,255,.94);padding:12px;border-radius:15px;text-align:center;font-weight:1000;color:#174e81}
+.num-concept{display:none!important}
+.card.learning-pos{padding:24px!important;border:4px solid #fff!important;box-shadow:0 16px 35px rgba(28,83,113,.16)!important}
+.card.learning-pos h2{display:inline-block;background:linear-gradient(90deg,#eaffef,#fff);padding:10px 18px;border-radius:18px;color:#134f91!important}
+.pos-intro{border:2px solid #bde4c9!important;border-left:8px solid #20ad60!important;border-radius:16px!important}
+.pos-visual{border:3px solid #dce9ef!important;border-radius:20px!important}
+.pos-question{border:3px solid #f0c96c!important;border-radius:20px!important;box-shadow:0 9px 20px rgba(129,93,19,.08)}
+.pos-question:before{content:"🎯 MISI POS";display:inline-block;background:#ffe0e5;color:#8e2436;padding:6px 12px;border-radius:999px;font-size:11px;font-weight:1000;margin-bottom:8px}
+.pos-options button{min-height:50px!important;border-radius:15px!important;font-size:15px!important}
+#pos1-mengenal-data .explain-box{display:grid;grid-template-columns:1fr 1.15fr;gap:16px;background:linear-gradient(135deg,#fff9e7,#fff)!important;border:3px solid #f0d18a!important}
+#pos1-mengenal-data .explain-box h3,#pos1-mengenal-data .explain-box>p:first-of-type{grid-column:1/-1}
+#pos1-mengenal-data .picto-legend{align-self:center}
+#pos1-mengenal-data .kid-tip{border-radius:20px!important;background:#f0fbff!important;border:2px solid #b9e0f1!important}
+.v15-footer-adventure{margin:25px 0 10px;min-height:180px;border-radius:26px;position:relative;overflow:hidden;background:url('numerasi-petualangan-3d.png') center 74%/cover no-repeat;border:4px solid white;box-shadow:0 12px 28px rgba(31,86,113,.14)}
+.v15-footer-adventure:after{content:"“Data kecil hari ini bisa menjadi keputusan besar untuk masa depan.”";position:absolute;left:50%;bottom:20px;transform:translateX(-50%);width:min(700px,80%);background:rgba(255,248,218,.95);padding:15px 20px;border-radius:16px;text-align:center;font-weight:1000;color:#5b4617;box-shadow:0 6px 14px rgba(0,0,0,.12)}
+.data-story,.profile6,.group-task,.upload-panel,.num-concept,.card:not(.learning-pos){border-radius:24px!important;box-shadow:0 12px 28px rgba(34,87,113,.10)}
+@media(max-width:900px){.v15-concept-grid{grid-template-columns:1fr 1fr}.v15-concept-card.scene{grid-column:1/-1;min-height:260px}.v14-hero h1{font-size:48px!important}}
+@media(max-width:650px){.v15-concept-grid{grid-template-columns:1fr}.v15-concept-card.scene{grid-column:auto}.v14-hero h1{font-size:38px!important}.v14-hero-copy{padding:22px!important}#pos1-mengenal-data .explain-box{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -166,12 +205,34 @@ body{
 
 <section class="v14-hero" aria-label="Petualangan Numerasi IPS">
   <div class="v14-hero-copy">
-    <span class="v14-badge">🌿 SITEEk–PIKTO-IPS • Petualangan Data Anak SD</span>
+    <span class="v14-badge">🌿 SITEEk–PIKTO-IPS • Petualangan Data Anak SD</span><br><span class="v15-ribbon">🗺️ Jelajahi • Hitung • Pahami • Putuskan</span>
     <h1>Petualangan<br><span>Numerasi IPS</span></h1>
     <p>Ayo menjadi Penjelajah Data! Kita akan mengamati lingkungan, membaca piktogram, menghitung, memahami data, lalu mengambil keputusan yang masuk akal.</p>
     <div class="v14-hero-steps"><span>👀 Amati</span><span>🧮 Hitung</span><span>🧠 Pahami</span><span>💬 Simpulkan</span><span>🏁 Ambil Keputusan</span></div>
   </div>
 </section>
+<section class="v15-concept-grid">
+  <article class="v15-concept-card">
+    <h2>💡 Apa Itu Numerasi IPS?</h2>
+    <p><strong>Numerasi IPS</strong> adalah kemampuan menggunakan angka, data, tabel, piktogram, diagram, dan perhitungan sederhana untuk memahami kehidupan masyarakat.</p>
+    <p>Murid belajar bukan hanya <strong>menghitung</strong>, tetapi juga memahami arti hasil hitungan dan menggunakannya untuk menyelesaikan masalah.</p>
+    <div class="picto-legend">👀 Amati → 🧮 Hitung → 🧠 Pahami → 🏁 Putuskan</div>
+  </article>
+  <article class="v15-concept-card goal">
+    <h2>🎯 Tujuan Pembelajaran Numerasi IPS</h2>
+    <p>Melalui data dan informasi visual kontekstual seperti tabel, piktogram, dan diagram, peserta didik mampu membaca, menginterpretasikan, membandingkan, dan mengolah data kuantitatif tentang kondisi lingkungan, bentang alam, profesi, serta aktivitas masyarakat di lingkungan sekitar untuk menyelesaikan masalah dan menarik kesimpulan berdasarkan data.</p>
+    <ul>
+      <li>✅ Membaca dan memahami data.</li>
+      <li>✅ Mengolah dan membandingkan data.</li>
+      <li>✅ Menyelesaikan masalah numerasi IPS.</li>
+      <li>✅ Mengambil keputusan berdasarkan data.</li>
+    </ul>
+  </article>
+  <article class="v15-concept-card scene">
+    <div class="v15-scene-caption">🌊 Lingkungan sekitar kita menyimpan data yang menarik untuk dipelajari!</div>
+  </article>
+</section>
+
 
 <section class="num-concept" id="konsepNumerasiIPS">
 <h2>🔢 Apa Itu Numerasi IPS?</h2>
@@ -385,6 +446,7 @@ body{
 <article class="video-card"><div class="video-head"><div><h3>Video 2 — Diagram Batang</h3><div class="source">Membaca dan Menafsirkan Data Kelas 4 SD • Dihubungkan dengan konteks lokal PIKTO-IPS</div></div><span class="status" id="status-video-1">BELUM DITONTON</span></div><div class="player-shell"><div id="player-1" class="yt"></div><div class="lock" id="lock-1"><div><div class="play">▶️</div><h4>Belajar membaca diagram batang</h4><p>Amati kategori, tinggi batang, skala, lalu buat kesimpulan.</p><button class="btn green" onclick="startRequiredVideo(1)">Mulai Menonton</button></div></div></div><div class="progress"><div class="prow"><span>Progres menonton</span><span id="watch-percent-1">0%</span></div><div class="ptrack"><div class="pfill" id="watch-progress-1"></div></div></div><div class="storyline"><h4>📖 Alur materi video</h4><ol><li>Mengenal diagram batang sebagai penyajian data.</li><li>Membaca judul, kategori, sumbu, dan skala.</li><li>Membaca nilai dari tinggi atau panjang batang.</li><li>Membandingkan nilai tertinggi, terendah, dan selisih.</li><li>Menafsirkan data untuk membuat kesimpulan.</li></ol></div><div class="under hidden" id="understanding-1"><h4>🤔 Apakah kamu paham?</h4><p>Pilih Ya untuk mengerjakan 4 pertanyaan interaktif.</p><div class="btnrow"><button class="btn green" onclick="confirmUnderstand(1,true)">✅ Ya</button><button class="btn red" onclick="confirmUnderstand(1,false)">🔁 Tidak</button></div></div></article>
 </div><div class="summary"><strong>🏁 Status Penyelesaian</strong><p id="videoSummary">Selesaikan kedua video dan 4 pertanyaan interaktif pada masing-masing video.</p><div class="cbar"><div class="cfill" id="completeFill"></div></div></div><div class="next"><p id="nextMessage">🔒 Tantangan terbuka setelah kedua video selesai.</p><a id="nextChallenge" class="btn light" href="javascript:void(0)">🏆 Kembali ke Tantangan</a></div></section>
 <section class="card"><h2>💡 Pesan Penting</h2><p class="subtitle" style="margin-bottom:0">Numerasi membantu kita membaca kehidupan melalui angka dan data. Dari Ranuklindungan, Danau Ranu, hingga Pasar Brandong, data dapat membantu kita memahami lingkungan, kegiatan masyarakat, dan membuat keputusan berdasarkan bukti.</p></section><div class="btnrow" style="margin-top:20px"><a class="btn light" href="literasi.html">← Kembali ke Literasi</a><a class="btn green" href="#videoInteraktif">🎬 Ke Video Interaktif</a></div>
+<div class="v15-footer-adventure"></div>
 <div class="v14-motivation">🌟 “Data kecil hari ini bisa menjadi keputusan besar untuk masa depan.” — Teruslah menjadi penjelajah data yang hebat!</div>
 <section class="profile6" id="profilLulusan">
 <h2>🌟 Profil Lulusan yang Dilatih di Numerasi</h2>
@@ -404,6 +466,21 @@ body{
 <div class="modal hidden" id="interactiveModal"><div class="modalbox"><div class="mhead"><div><h3 id="interactiveTitle">🎬 Video Numerasi Interaktif</h3><p class="source">Video akan berhenti 4 kali untuk memberikan pertanyaan.</p></div><button class="close" onclick="closeInteractiveModal()">✕</button></div><div class="ipwrap"><div id="interactivePlayer"></div><div class="qoverlay hidden" id="questionOverlay"><div class="qcard"><span class="qnum" id="questionNumber">PERTANYAAN 1 DARI 4</span><h4 id="questionText">Pertanyaan</h4><div class="opts" id="quizOptions"></div><div class="feedback" id="quizFeedback"></div></div></div></div><div class="istatus"><span id="interactiveCheckpoint">Checkpoint: 0/4</span><span>✅ Benar = lanjut • ❌ Salah = kembali ke awal</span></div></div></div>
 
 <script>
+
+/* ===== V15: STATUS PETUALANGAN ===== */
+function updatePetualanganV15(){
+  const done=getPosSelesaiV13();
+  document.querySelectorAll('#posNavNumerasi .pos-chip').forEach(ch=>{
+    const p=Number(ch.dataset.chip);
+    const label=ch.innerHTML.replace(/<small class="v15-state">.*?<\/small>/g,'');
+    let state=done.includes(p)?'✓ Selesai':(p===1||done.includes(p-1)?'Ayo mulai':'🔒 Terkunci');
+    ch.innerHTML=label+'<small class="v15-state" style="display:block;margin-top:5px;font-size:9px;opacity:.85">'+state+'</small>';
+  });
+}
+const _setPosSelesaiV15=setPosSelesaiV13;
+setPosSelesaiV13=function(pos){_setPosSelesaiV15(pos);updatePetualanganV15();}
+document.addEventListener('DOMContentLoaded',updatePetualanganV15);
+
 
 /* ===== V14: EFEK BINTANG KETIKA POS BENAR ===== */
 function efekBintangV14(){
