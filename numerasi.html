@@ -198,7 +198,7 @@ header{background:rgba(236,248,255,.96)!important;border-bottom:3px solid #c6e5f
 
 
 /* ==========================================================
-   V17 — 3D ADVENTURE UI
+   V18 — 3D ADVENTURE UI
    Rebuild visual mengikuti mockup Petualangan Numerasi IPS
 ========================================================== */
 body{background:#eaf7ff!important;background-image:linear-gradient(#eaf7ff 0,#f9fff5 40%,#edf9ff 100%)!important}
@@ -260,7 +260,7 @@ footer{background:linear-gradient(180deg,#e8f7ff,#d7f0ff)!important;border-top:3
 
 
 /* =========================================================
-   V17 — REBUILD FROM MOCKUP
+   V18 — REBUILD FROM MOCKUP
    Desktop composition rebuilt to closely follow the approved
    3D Petualangan Numerasi IPS mockup while retaining live UI.
 ========================================================= */
@@ -322,6 +322,76 @@ body{background:linear-gradient(180deg,#dff5ff 0 34%,#eaf8ef 34% 100%)!important
  #posNavNumerasi{grid-template-columns:repeat(2,1fr)!important}
  .pos-options{grid-template-columns:1fr!important}
  .card.learning-pos:after{font-size:32px!important;right:12px!important}
+}
+
+
+/* =========================================================
+ V18 PIXEL-CLOSE 3D UI — based directly on approved master visual
+ ========================================================= */
+:root{--ink:#063b82;--sky:#e9f8ff;--green:#13a75a;--lime:#76df75;--wood:#9b5528;--cream:#fff9ee}
+body{background:linear-gradient(180deg,#dff5ff,#effbef 44%,#dff5ff)!important;color:#173c64!important}
+header{border-radius:0 0 22px 22px!important;background:linear-gradient(180deg,#f0fbff,#dcefff)!important;box-shadow:0 7px 18px rgba(16,68,108,.16)!important}
+.brand h1{font-size:22px!important;font-weight:1000!important;letter-spacing:-.5px!important}
+.nav a{font-weight:1000!important;border-radius:13px!important;padding:11px 15px!important;background:linear-gradient(#edf5ff,#d9e9ff)!important;box-shadow:inset 0 1px #fff,0 4px 8px rgba(30,73,119,.08)!important}
+.nav a.active{background:linear-gradient(#35c48c,#0e9c75)!important}
+
+.v14-hero{min-height:520px!important;border-radius:0 0 28px 28px!important;margin-top:0!important;border:0!important;border-bottom:7px solid #fff!important;background-image:url('numerasi-master-visual-v18.png')!important;background-size:100% auto!important;background-position:center top!important;background-repeat:no-repeat!important;box-shadow:0 13px 28px rgba(20,76,105,.20)!important}
+.v14-hero:after{background:linear-gradient(90deg,rgba(4,48,84,.32),transparent 54%)!important}
+.v14-hero-copy{padding:120px 0 0 28%!important;max-width:720px!important;text-align:center!important}
+.v14-hero-copy .v14-badge,.v14-hero-copy .v15-ribbon,.v14-hero-copy h1,.v14-hero-copy p,.v14-hero-copy .v14-hero-steps{visibility:hidden!important}
+.v17-mockup-band{display:none!important}
+
+.v14-adventure-map{margin:14px 0!important;border:5px solid #fff!important;border-radius:25px!important;background:linear-gradient(180deg,#eafaff,#dff5ff)!important;padding:20px 22px 24px!important}
+.v14-adventure-map:before{content:"🏝️  Peta Perjalanan Numerasi IPS (8 Pos)"!important;left:18px!important;top:-18px!important;transform:none!important;background:linear-gradient(#1978ca,#0b5aa9)!important;border:3px solid #fff!important;border-radius:16px!important;padding:8px 17px!important;font-size:16px!important}
+.v14-map-title{padding-top:14px!important}.v14-map-title h2{display:none!important}.v14-map-title p{margin-left:auto!important;background:#fff!important;padding:10px 14px!important;border-radius:15px!important;font-weight:900!important;color:#174a7d!important}
+#posNavNumerasi{padding:14px 0 8px!important;gap:8px!important}
+#posNavNumerasi:before{border-top:3px dashed #163f66!important;top:57%!important}
+#posNavNumerasi .pos-chip{min-height:108px!important;border-radius:18px!important;outline:none!important;border:2px solid transparent!important;background:transparent!important;box-shadow:none!important;font-size:11px!important;color:#123d6d!important}
+#posNavNumerasi .pos-chip:before{font-size:32px!important;background:#fff!important;width:54px;height:54px;display:flex!important;align-items:center;justify-content:center;border-radius:50%;border:2px solid #c9e0eb;box-shadow:0 5px 10px rgba(20,65,89,.13)}
+#posNavNumerasi .pos-chip.open{background:#e8ffe9!important;border-color:#4bca5b!important}
+#posNavNumerasi .pos-chip.done{background:#d7f9df!important;color:#0b6335!important;border-color:#21a857!important;transform:none!important}
+#posNavNumerasi .pos-chip:nth-child(even){transform:none!important}
+
+.v15-concept-grid{grid-template-columns:.9fr 1.55fr .9fr!important;gap:10px!important;margin:12px 0!important}
+.v15-concept-card{min-height:275px!important;padding:20px!important;border:5px solid #fff!important;border-radius:22px!important;background:linear-gradient(180deg,#fff,#fffdf7)!important;box-shadow:0 9px 20px rgba(30,78,103,.13)!important}
+.v15-concept-card h2{font-size:21px!important;color:#073f89!important;margin-bottom:10px!important}
+.v15-concept-card p,.v15-concept-card li{font-size:13px!important;line-height:1.48!important}
+.v15-concept-card.scene{min-height:275px!important;background-image:url('numerasi-master-visual-v18.png')!important;background-size:330% auto!important;background-position:94% 47%!important}
+.v15-scene-caption{background:rgba(255,255,255,.88)!important;color:#073f89!important;font-size:14px!important}
+.num-concept{display:none!important}
+
+.card.learning-pos{border-radius:28px!important;border:6px solid #fff!important;padding:22px!important;background:linear-gradient(180deg,#fff,#f9fdff)!important;box-shadow:0 14px 30px rgba(24,75,104,.16)!important}
+.card.learning-pos:after{content:""!important}
+.card.learning-pos h2{display:block!important;font-size:25px!important;background:transparent!important;border:0!important;box-shadow:none!important;color:#073f89!important;padding:0!important;margin:0 0 8px!important}
+.card.learning-pos h2:before{content:"🧺 ";font-size:31px}
+.pos-intro{display:inline-block!important;border:2px solid #6bd26d!important;border-radius:999px!important;background:#dfffdc!important;padding:7px 15px!important;font-weight:900!important;color:#17693b!important}
+#pos1-mengenal-data .explain-box{grid-template-columns:.95fr 1.15fr!important;background:#fff8ea!important;border:3px solid #e4c38d!important;border-radius:20px!important;padding:18px!important}
+#pos1-mengenal-data .explain-box:before{content:"Petunjuk";display:inline-block;grid-column:1/-1;width:max-content;background:linear-gradient(#b96f37,#7c3f1e);color:#fff;padding:7px 24px;border-radius:7px;font-weight:1000;font-size:17px;box-shadow:0 4px 7px rgba(80,39,15,.2)}
+#pos1-mengenal-data .picto-legend{background:#fff0c5!important;border:0!important;border-radius:13px!important}
+.pos-question{background:transparent!important;border:0!important;padding:4px 8px!important;box-shadow:none!important}
+.pos-question:before{content:"🎯  Misi — Baca Data"!important;background:#ffe3e7!important;color:#742235!important;border:0!important;font-size:14px!important}
+.pos-question strong,.pos-question b{color:#063f88!important}
+.pos-options{grid-template-columns:1fr!important;gap:8px!important}
+.pos-options button{min-height:45px!important;border-radius:14px!important;background:#ffe1e4!important;border:1px solid #f3c4ca!important;box-shadow:0 4px 8px rgba(105,45,54,.08)!important}
+.pos-options button.correct,.pos-options button.ok{background:#bfffc2!important;border:2px solid #16a34a!important}
+.v13-feedback.ok{background:#e5ffdf!important;border:2px solid #7cd47e!important;border-radius:17px!important;font-weight:800!important}
+.next-pos,.btn.green{background:linear-gradient(#16c766,#079c4c)!important;color:#fff!important;border-radius:999px!important;font-weight:1000!important;padding:13px 24px!important}
+
+.v15-footer-adventure{background-image:url('numerasi-master-visual-v18.png')!important;background-size:100% auto!important;background-position:center 91%!important;min-height:170px!important;border-radius:24px!important}
+.v15-footer-adventure:after{background:rgba(255,245,211,.95)!important;border:2px solid #d6a86b!important}
+.v14-motivation{display:none!important}
+footer{background:#e8f6ff!important;border-radius:24px 24px 0 0!important}
+
+@media(max-width:900px){
+ .v14-hero{min-height:410px!important;background-size:cover!important;background-position:center top!important}
+ .v15-concept-grid{grid-template-columns:1fr 1fr!important}.v15-concept-card.scene{grid-column:1/-1!important}
+ #posNavNumerasi{grid-template-columns:repeat(4,1fr)!important}
+}
+@media(max-width:620px){
+ .v14-hero{min-height:300px!important;background-size:cover!important;background-position:center top!important}
+ .v15-concept-grid{grid-template-columns:1fr!important}.v15-concept-card.scene{grid-column:auto!important}
+ #posNavNumerasi{grid-template-columns:repeat(2,1fr)!important}
+ #pos1-mengenal-data .explain-box{grid-template-columns:1fr!important}
 }
 
 </style>
