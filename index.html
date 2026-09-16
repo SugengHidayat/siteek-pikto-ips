@@ -3,1582 +3,2934 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Literasi IPS | SITEEK-PIKTO-IPS</title>
+  <title>SITEEk-PIKTO-IPS | Literasi dan Numerasi SD</title>
+
   <style>
     :root{
-      --blue:#0b5ed7;
-      --blue-dark:#083b78;
+      --navy:#073b73;
+      --navy-2:#0a4b8f;
+      --blue:#0d6efd;
       --blue-soft:#eaf4ff;
-      --green:#198754;
-      --green-soft:#eaf8ef;
-      --orange:#ff9800;
-      --orange-soft:#fff4df;
-      --purple:#7b4bc2;
-      --red:#d93c3c;
-      --text:#17324d;
-      --muted:#61758b;
-      --line:#dbe6ef;
+      --green:#139b43;
+      --green-soft:#eaf8ee;
+      --orange:#ff9f0a;
+      --yellow:#ffc328;
+      --purple:#8247e5;
+      --red:#e53935;
+      --text:#17345b;
+      --muted:#5e718b;
+      --line:#d9e4ef;
       --card:#ffffff;
-      --shadow:0 12px 30px rgba(31,72,110,.10);
+      --shadow:0 12px 30px rgba(26,71,113,.10);
       --radius:20px;
     }
 
-    *{box-sizing:border-box}
+    *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{
-      margin:0;
       font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;
       color:var(--text);
+      min-height:100vh;
       background:
-        radial-gradient(circle at 15% 10%,rgba(77,171,247,.14),transparent 28%),
-        radial-gradient(circle at 85% 80%,rgba(81,207,102,.13),transparent 25%),
-        linear-gradient(135deg,#eef8ff,#f9fcff 52%,#f2fff3);
+        radial-gradient(circle at 18% 18%,rgba(105,190,255,.22),transparent 26%),
+        radial-gradient(circle at 86% 70%,rgba(123,220,112,.20),transparent 28%),
+        linear-gradient(135deg,#eef9ff 0%,#f8fcff 52%,#effbf1 100%);
     }
 
-    button,a{font:inherit}
+    button,input,select{font:inherit}
     button{cursor:pointer}
     a{text-decoration:none;color:inherit}
     .hidden{display:none!important}
 
+    /* ===================== TOP NAV ===================== */
     .topbar{
-      min-height:92px;
-      padding:14px 28px;
-      background:linear-gradient(90deg,#073567,#074b91);
+      height:112px;
+      background:linear-gradient(90deg,#073567,#063f7c 55%,#073567);
       color:#fff;
       display:flex;
       align-items:center;
-      gap:24px;
-      box-shadow:0 5px 18px rgba(4,40,78,.18);
+      padding:0 30px;
+      box-shadow:0 4px 18px rgba(1,37,75,.20);
+      position:relative;
+      z-index:20;
     }
-    .brand{display:flex;align-items:center;gap:14px;min-width:0}
-    .brand img{
-      width:82px;height:82px;object-fit:contain;
-      filter:drop-shadow(0 5px 6px rgba(0,0,0,.18));
-    }
-    .brand h1{margin:0;font-size:29px;line-height:1.05}
-    .brand p{margin:5px 0 0;font-size:13px;opacity:.92}
-    .nav{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
-    .nav a{
-      color:#fff;font-weight:900;padding:10px 14px;border-radius:10px;
-      background:rgba(255,255,255,.08);
-    }
-    .nav a:hover{background:rgba(255,255,255,.16)}
 
-    .container{width:min(1180px,94%);margin:24px auto 42px}
-    .hero{
-      padding:28px;
-      border-radius:24px;
-      background:linear-gradient(135deg,#0f69d8,#0b4fa3);
+    .brand{
+      width:315px;
+      flex-shrink:0;
+    }
+    .brand-title{
+      font-size:34px;
+      font-weight:900;
+      letter-spacing:1px;
+      line-height:1;
+    }
+    .brand-title span:nth-child(1){color:#ff4b55}
+    .brand-title span:nth-child(2){color:#ffc400}
+    .brand-title span:nth-child(3){color:#73d13d}
+    .brand-title span:nth-child(4){color:#32a8ff}
+    .brand-title span:nth-child(5){color:#a167ed}
+    .brand-title span:nth-child(6){color:#ffbd21}
+    .brand-sub{font-size:14px;font-weight:700;margin-top:8px;opacity:.96}
+
+    .nav-menu{
+      display:flex;
+      align-self:stretch;
+      align-items:center;
+      gap:16px;
+      flex:1;
+      justify-content:center;
+    }
+    .nav-link{
+      position:relative;
+      min-width:126px;
+      height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      font-size:16px;
+      font-weight:800;
       color:#fff;
-      box-shadow:var(--shadow);
+      opacity:.95;
+    }
+    .nav-link:hover{background:rgba(255,255,255,.06)}
+    .nav-link.active::after{
+      content:"";
+      position:absolute;
+      left:20px;right:20px;bottom:19px;
+      height:4px;border-radius:9px;background:#ffc400;
+    }
+    .nav-icon{font-size:22px}
+
+    .top-logo{
+      width:205px;
+      height:104px;
+      object-fit:contain;
+      flex-shrink:0;
+      filter:drop-shadow(0 6px 7px rgba(0,0,0,.28));
+    }
+
+    /* ===================== LAYOUT ===================== */
+    .page{
+      width:min(1500px,97%);
+      margin:0 auto;
+      padding:0 0 24px;
+    }
+
+    .hero{
+      margin-top:0;
+      min-height:270px;
+      border-radius:0 0 22px 22px;
+      background:
+        linear-gradient(90deg,rgba(255,255,255,.94),rgba(255,255,255,.78)),
+        linear-gradient(135deg,#dff3ff,#f2fff1);
       position:relative;
       overflow:hidden;
+      padding:35px 38px;
+      border:1px solid rgba(205,224,238,.7);
     }
-    .hero::after{
-      content:"📖";
+    .hero::before{
+      content:"";
       position:absolute;
-      right:28px;bottom:-22px;
-      font-size:126px;opacity:.12;transform:rotate(-7deg);
+      left:-5%;right:-5%;bottom:-28px;
+      height:100px;
+      background:
+        radial-gradient(ellipse at 20% 100%,#dcefdc 0 45%,transparent 46%),
+        radial-gradient(ellipse at 50% 100%,#d3e9d1 0 48%,transparent 49%),
+        radial-gradient(ellipse at 80% 100%,#dff2da 0 44%,transparent 45%);
+      opacity:.65;
     }
-    .hero .badge{
-      display:inline-block;background:#fff;color:#0b4fa3;
-      padding:7px 12px;border-radius:999px;font-weight:900;font-size:12px;
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.12fr .78fr;
+      gap:44px;
+      align-items:center;
+      position:relative;
+      z-index:2;
     }
-    .hero h2{font-size:34px;margin:13px 0 8px}
-    .hero p{max-width:780px;line-height:1.7;margin:0;font-size:16px}
+    .welcome-eyebrow{
+      font-size:26px;
+      font-weight:900;
+      margin-bottom:4px;
+      color:#103f80;
+    }
+    .hero h1{
+      font-size:34px;
+      line-height:1.2;
+      color:#103f80;
+      margin-bottom:10px;
+    }
+    .hero-copy{
+      max-width:720px;
+      color:#344c68;
+      font-size:17px;
+      line-height:1.7;
+    }
+    .topic-chips{
+      display:flex;gap:14px;flex-wrap:wrap;margin-top:18px;
+    }
+    .chip{
+      display:inline-flex;align-items:center;gap:9px;
+      padding:10px 19px;border-radius:999px;
+      background:#fff;
+      border:1px solid #d9e4ef;
+      font-weight:900;
+      box-shadow:0 5px 12px rgba(23,52,91,.06);
+    }
+    .chip.lit{color:#9a5710;background:#fff9ea}
+    .chip.num{color:#17345b}
+    .chip.char{color:#0c7d32;background:#effbef}
 
-    .card{
-      background:rgba(255,255,255,.96);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
+    .profile-panel{
+      background:rgba(255,255,255,.88);
+      border:1px solid #dce7f0;
+      border-radius:18px;
+      padding:20px 22px;
+      box-shadow:var(--shadow);
+      display:grid;
+      grid-template-columns:68px 1fr;
+      gap:16px;
+      min-height:164px;
+      align-items:start;
+    }
+    .avatar{
+      width:62px;height:62px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(145deg,#ffddb0,#ffad42);
+      font-size:34px;
+      border:5px solid #fff;
+      box-shadow:0 4px 13px rgba(0,0,0,.10);
+    }
+    .profile-data{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px}
+    .profile-field label{
+      display:block;font-size:12px;color:var(--muted);margin-bottom:2px;
+    }
+    .profile-field strong{font-size:17px;color:#0d2f60}
+    .profile-field.id{grid-column:1/-1}
+    .profile-id{
+      display:block;overflow-wrap:anywhere;
+      font-size:14px!important;
+    }
+    .network{
+      grid-column:1/-1;
+      width:max-content;
+      padding:6px 11px;border-radius:999px;
+      font-size:12px;font-weight:900;
+    }
+    .online{background:#e8f9ed;color:#087a2c;border:1px solid #afe4bd}
+    .offline{background:#fff0f0;color:#b42318;border:1px solid #ffc9c9}
+
+    /* ===================== IDENTITY ===================== */
+    .identity-wrap{
+      min-height:calc(100vh - 112px);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:35px 20px;
+    }
+    .identity-card{
+      width:min(780px,100%);
+      background:#fff;
+      border-radius:24px;
+      padding:30px;
+      box-shadow:0 18px 50px rgba(17,71,118,.16);
+      border:1px solid #dce7f0;
+    }
+    .identity-head{text-align:center;margin-bottom:22px}
+    .identity-logo{width:180px;height:180px;object-fit:contain;margin:-16px auto 4px;display:block}
+    .identity-head h2{font-size:30px;color:#103f80;margin-bottom:8px}
+    .identity-head p{color:var(--muted);line-height:1.6}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .field-label{display:block;font-weight:900;margin-bottom:7px}
+    input,select{
+      width:100%;padding:13px 14px;border-radius:12px;
+      border:1px solid #cbd9e6;background:#fff;font-size:16px;outline:none;
+    }
+    input:focus,select:focus{border-color:#4285f4;box-shadow:0 0 0 3px rgba(66,133,244,.12)}
+
+    /* ===================== MAIN DASHBOARD ===================== */
+    .dashboard-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr) minmax(300px,.62fr);
+      gap:22px;
+      margin-top:24px;
+      align-items:start;
+    }
+    .panel{
+      background:rgba(255,255,255,.94);
+      border:1px solid #dbe6ef;
+      border-radius:20px;
       padding:24px;
-      margin-top:20px;
       box-shadow:var(--shadow);
     }
-    .card h2{margin:0 0 8px;color:#0b4fa3;font-size:25px}
-    .card h3{color:#16436f}
-    .subtitle{margin:0 0 18px;color:var(--muted);line-height:1.65}
-    .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .info-box{
-      border:1px solid #dce7ef;border-radius:16px;padding:18px;
-      background:#fbfdff;
+    .panel-head{
+      display:flex;gap:14px;align-items:center;margin-bottom:18px;
     }
-    .info-box .icon{font-size:34px}
-    .info-box h3{margin:8px 0 6px}
-    .info-box p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}
+    .panel-icon{
+      width:58px;height:58px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      color:#fff;font-size:30px;flex-shrink:0;
+    }
+    .blue-circle{background:linear-gradient(145deg,#1577e8,#0455bd)}
+    .green-circle{background:linear-gradient(145deg,#24b653,#0c8a37)}
+    .panel h2{font-size:24px;margin-bottom:4px}
+    .panel-head p{color:#344c68;font-size:14px;line-height:1.5}
 
-    .story{
-      background:linear-gradient(135deg,#fff8e7,#fff);
-      border-left:6px solid var(--orange);
+    .levels-preview{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:15px;
     }
-    .story p{line-height:1.8}
-    .highlight{
-      padding:14px 16px;border-radius:14px;background:#edf7ff;
-      border:1px solid #cfe5f7;margin:14px 0;line-height:1.7;
+    .level-preview{
+      position:relative;
+      min-height:270px;
+      border:1px solid #d8e2ea;
+      border-radius:17px;
+      background:#fff;
+      padding:20px 15px;
+      text-align:center;
+      display:flex;flex-direction:column;align-items:center;
+      box-shadow:0 5px 14px rgba(35,69,104,.05);
     }
-
-    .pictogram{
-      display:grid;grid-template-columns:180px 1fr;gap:8px 16px;
-      margin-top:14px;align-items:center;
+    .level-preview .emoji{font-size:48px;line-height:1;margin:8px 0 12px}
+    .level-preview h3{font-size:23px;margin-bottom:6px}
+    .level-preview.awal h3{color:#168a35}
+    .level-preview.cakap h3{color:#0861c9}
+    .level-preview.mahir h3{color:#7d35d8}
+    .level-preview p{font-size:14px;line-height:1.45;color:#24425e}
+    .availability{
+      width:80%;margin:12px auto 8px;padding:6px 10px;border-radius:999px;
+      font-size:12px;font-weight:900;
     }
-    .pic-label{font-weight:900}
-    .pics{font-size:27px;letter-spacing:3px}
-    .legend{
-      margin-top:14px;padding:11px 14px;border-radius:12px;
-      background:#fff7e8;border:1px solid #ffe1a9;font-weight:900;
-    }
-
-    .steps{counter-reset:step;display:grid;gap:11px}
-    .step{
-      position:relative;padding:14px 16px 14px 56px;
-      border:1px solid #dfe8ef;border-radius:14px;background:#fff;
-      line-height:1.55;
-    }
-    .step::before{
-      counter-increment:step;content:counter(step);
-      position:absolute;left:14px;top:12px;width:30px;height:30px;
-      border-radius:50%;display:flex;align-items:center;justify-content:center;
-      background:var(--blue);color:#fff;font-weight:900;
-    }
-
-    .exercise-list{display:grid;gap:12px;margin-top:16px}
-    .exercise{
-      padding:14px 16px;border:1px solid #dce6ed;border-radius:14px;
-      background:#fff;line-height:1.6;
+    .available{background:#ebfaee;color:#07822c}
+    .locked{background:#eef1f4;color:#607080}
+    .level-note{font-size:12px!important;color:#4d6278!important;margin-top:auto;padding-top:8px}
+    .lock-badge{
+      position:absolute;right:10px;top:-9px;
+      width:44px;height:44px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      background:#e9edf1;border:1px solid #d5dde5;font-size:20px;
     }
 
+    .progress-list{
+      border:1px solid #d9e4ec;border-radius:15px;overflow:hidden;
+    }
+    .progress-row{
+      display:grid;
+      grid-template-columns:54px 1.25fr .62fr .45fr 70px;
+      gap:12px;
+      align-items:center;
+      min-height:92px;
+      padding:13px 16px;
+      border-bottom:1px solid #dfe7ed;
+    }
+    .progress-row:last-child{border-bottom:0}
+    .round-icon{
+      width:48px;height:48px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;color:#fff;font-size:26px;
+    }
+    .round-icon.awal{background:#15963c}
+    .round-icon.cakap{background:#0b68d7}
+    .round-icon.mahir{background:#8544dc}
+    .progress-name strong{font-size:18px;display:block}
+    .progress-name small{font-size:12px;color:#4f6378}
+    .status-col small,.score-col small{display:block;color:#52657b;font-size:11px;margin-bottom:4px}
+    .score-value{font-weight:900;font-size:16px}
+    .status-pill{
+      display:inline-block;padding:5px 9px;border-radius:7px;
+      font-size:11px;font-weight:900;
+    }
+    .st-lulus{background:#e6f8eb;color:#087c2c}
+    .st-remedial{background:#ffeded;color:#bf2424}
+    .st-proses{background:#eaf8ee;color:#118536}
+    .st-belum{background:#edf5ff;color:#0a5ebd}
+    .st-terkunci{background:#eceff2;color:#617080}
+    .ring{
+      width:55px;height:55px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      border:7px solid #e5e9ed;font-size:14px;font-weight:900;color:#324d6c;
+      position:relative;
+    }
+    .ring.active{border-color:#dff2e4;border-top-color:#15963c}
+    .detail-progress{
+      margin-top:18px;text-align:center;padding:11px;border-radius:10px;
+      background:#f1fbf3;border:1px solid #cdebd5;color:#118536;font-weight:900;
+    }
 
-    .answer-area{
-      display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:12px;
-    }
-    .answer-input{
-      flex:1;min-width:210px;padding:12px 14px;border:2px solid #dce6ed;
-      border-radius:11px;background:#fff;color:#263f59;font-weight:800;
-      outline:none;transition:.2s;
-    }
-    .answer-input:focus{
-      border-color:#0d6efd;
-      box-shadow:0 0 0 3px rgba(13,110,253,.10);
-    }
-    .answer-input.correct{
-      border-color:#198754;background:#eefaf3;color:#116b3b;
-    }
-    .answer-input.wrong{
-      border-color:#dc3545;background:#fff1f2;color:#a92532;
-    }
-    .answer-feedback{
-      width:100%;min-height:20px;font-size:13px;font-weight:900;line-height:1.45;
-    }
-    .answer-feedback.correct{color:#15803d}
-    .answer-feedback.wrong{color:#c62828}
-    .save-answer{
-      background:#0d6efd!important;color:#fff!important;
-    }
-    .save-answer.correct{
-      background:#198754!important;color:#fff!important;
-    }
-    .save-answer.wrong{
-      background:#dc3545!important;color:#fff!important;
-    }
 
-    /* VIDEO SECTION */
-    .video-section{
-      background:
-        radial-gradient(circle at 100% 0,rgba(255,193,7,.12),transparent 25%),
-        #fff;
+    /* ===================== LEADERBOARD ===================== */
+    .leaderboard-panel{
+      position:sticky;
+      top:18px;
+      padding:20px 16px 16px;
+      background:linear-gradient(180deg,#ffffff 0%,#fbfdff 100%);
+      overflow:hidden;
     }
-    .video-title-row{
-      display:flex;align-items:center;gap:14px;margin-bottom:8px;
+    .leaderboard-panel::before{
+      content:"";
+      position:absolute;
+      top:0;left:0;right:0;height:6px;
+      background:linear-gradient(90deg,#ffc107,#ff8f00,#7e57c2);
     }
-    .video-title-icon{
+    .leaderboard-head{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:4px 4px 14px;
+      border-bottom:1px solid #e5edf4;
+      margin-bottom:12px;
+    }
+    .leaderboard-trophy{
       width:52px;height:52px;border-radius:16px;
       display:flex;align-items:center;justify-content:center;
-      font-size:28px;background:#ffeded;color:#d71920;
+      font-size:29px;
+      background:linear-gradient(145deg,#fff6c7,#ffd54f);
+      box-shadow:0 6px 14px rgba(255,193,7,.25);
+      flex-shrink:0;
     }
-    .video-intro{
-      padding:14px 16px;border-radius:14px;background:#eef7ff;
-      border:1px solid #d2e8fa;color:#234a70;line-height:1.65;margin:16px 0 18px;
+    .leaderboard-head h2{
+      font-size:20px;
+      color:#0b4e9d;
+      margin-bottom:2px;
     }
-    .video-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .video-card{
-      border:1px solid #dce6ee;border-radius:18px;background:#fff;overflow:hidden;
-      box-shadow:0 8px 20px rgba(36,74,107,.07);
+    .leaderboard-head p{
+      color:#687a8f;
+      font-size:11px;
+      line-height:1.4;
     }
-    .video-card-head{
-      padding:17px 18px 12px;
-      display:flex;align-items:flex-start;justify-content:space-between;gap:10px;
+    .leaderboard-list{
+      display:flex;
+      flex-direction:column;
+      gap:9px;
+      max-height:630px;
+      overflow:auto;
+      padding:2px 3px 3px;
+      scrollbar-width:thin;
     }
-    .video-card-head h3{margin:0 0 5px;font-size:19px}
-    .video-source{font-size:12px;color:var(--muted)}
-    .watch-status{
-      flex-shrink:0;padding:5px 8px;border-radius:999px;font-size:10px;font-weight:900;
-      background:#eef1f4;color:#5d6a78;
+    .leader-row{
+      display:grid;
+      grid-template-columns:34px 1fr auto;
+      gap:9px;
+      align-items:center;
+      padding:10px 9px;
+      border:1px solid #e1eaf1;
+      border-radius:13px;
+      background:#fff;
+      transition:.2s ease;
     }
-    .watch-status.done{background:#e8f8ed;color:#087c2d}
-    .player-shell{
-      position:relative;
-      aspect-ratio:16/9;
-      background:#071b2e;
-      overflow:hidden;
+    .leader-row:hover{
+      transform:translateY(-1px);
+      border-color:#bdd6eb;
+      box-shadow:0 6px 14px rgba(35,69,104,.08);
     }
-    .yt-player{position:absolute;inset:0;width:100%;height:100%}
-    .player-lock{
-      position:absolute;inset:0;z-index:3;
+    .leader-row.me{
+      border-color:#67b7ff;
+      background:#eef8ff;
+      box-shadow:0 0 0 2px rgba(13,110,253,.06);
+    }
+    .rank-medal{
+      width:32px;height:32px;border-radius:50%;
       display:flex;align-items:center;justify-content:center;
-      padding:18px;background:linear-gradient(135deg,rgba(4,29,54,.92),rgba(9,61,116,.88));
-      color:#fff;text-align:center;
+      font-size:14px;font-weight:900;
+      background:#edf2f6;color:#38536d;
     }
-    .player-lock-inner{max-width:360px}
-    .player-lock .play-icon{font-size:48px;margin-bottom:8px}
-    .player-lock h4{font-size:18px;margin:0 0 7px}
-    .player-lock p{font-size:12px;line-height:1.5;opacity:.9;margin:0 0 13px}
-    .progress-wrap{padding:12px 18px 0}
-    .progress-label{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:6px}
-    .progress-track{height:9px;border-radius:999px;background:#e6ebef;overflow:hidden}
-    .progress-fill{height:100%;width:0;background:linear-gradient(90deg,#0d6efd,#20c997);transition:.3s}
-    .storyline{padding:16px 18px 18px}
-    .storyline h4{margin:0 0 8px;color:#0b4fa3}
-    .storyline ol{margin:0;padding-left:20px;color:#425b75}
-    .storyline li{margin:6px 0;line-height:1.5}
-    .understanding{
-      margin:0 18px 18px;padding:15px;border-radius:14px;
-      border:1px solid #d8e4ed;background:#f8fbfd;text-align:center;
+    .rank-1{background:linear-gradient(145deg,#fff1a8,#ffc107);color:#7a5200}
+    .rank-2{background:linear-gradient(145deg,#f8fbfd,#cfd8dc);color:#43515b}
+    .rank-3{background:linear-gradient(145deg,#ffe0bf,#cd7f32);color:#70421d}
+    .leader-main{min-width:0}
+    .leader-name{
+      display:block;
+      color:#17345b;
+      font-size:13px;
+      font-weight:900;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
     }
-    .understanding h4{margin:0 0 7px;font-size:17px}
-    .understanding p{font-size:12px;color:var(--muted);margin:0 0 12px}
-    .btn-row{display:flex;gap:9px;justify-content:center;flex-wrap:wrap}
+    .leader-meta{
+      display:flex;
+      gap:5px;
+      align-items:center;
+      flex-wrap:wrap;
+      margin-top:4px;
+      color:#6a7c90;
+      font-size:10px;
+    }
+    .mini-level{
+      padding:2px 6px;
+      border-radius:999px;
+      font-weight:900;
+      background:#edf5ff;
+      color:#0b61c3;
+    }
+    .leader-score{
+      text-align:right;
+      min-width:48px;
+    }
+    .leader-score strong{
+      display:block;
+      color:#128a3a;
+      font-size:18px;
+      line-height:1;
+    }
+    .leader-score small{
+      display:block;
+      color:#718195;
+      font-size:9px;
+      margin-top:4px;
+      white-space:nowrap;
+    }
+    .leaderboard-empty{
+      text-align:center;
+      padding:30px 10px;
+      color:#718195;
+      font-size:13px;
+      line-height:1.6;
+    }
+    .leaderboard-note{
+      margin-top:12px;
+      padding:9px 10px;
+      border-radius:10px;
+      background:#fff8e1;
+      color:#805b00;
+      font-size:10px;
+      line-height:1.45;
+      border:1px solid #ffecb3;
+    }
+
+    .info-strip{
+      margin-top:20px;
+      border:1px solid #d7e5ef;
+      border-radius:17px;
+      padding:13px 20px;
+      display:flex;gap:14px;align-items:flex-start;
+      background:rgba(244,250,255,.92);
+    }
+    .info-icon{
+      width:36px;height:36px;border-radius:50%;background:#0f67d3;color:#fff;
+      display:flex;align-items:center;justify-content:center;font-weight:900;flex-shrink:0;
+    }
+    .info-strip strong{display:block;color:#0b4e9d;margin-bottom:4px}
+    .info-strip p{font-size:13px;line-height:1.55;color:#465b73}
+
+    /* ===================== BUTTONS ===================== */
+    .btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
     .btn{
-      border:0;border-radius:10px;padding:11px 15px;font-weight:900;
-      display:inline-flex;align-items:center;justify-content:center;gap:7px;
+      border:0;border-radius:11px;padding:13px 20px;font-weight:900;
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      transition:.2s;text-decoration:none;
     }
-    .btn:disabled{opacity:.48;cursor:not-allowed}
-    .btn-blue{background:#0d6efd;color:#fff}
-    .btn-green{background:#198754;color:#fff}
-    .btn-red{background:#dc3545;color:#fff}
-    .btn-light{background:#edf1f4;color:#28445f}
-    .btn-orange{background:#ff9800;color:#fff}
+    .btn:hover{transform:translateY(-2px)}
+    .btn:disabled{opacity:.55;transform:none;cursor:not-allowed}
+    .btn-primary{background:#0d6efd;color:#fff}
+    .btn-green{background:#149b43;color:#fff}
+    .btn-orange{background:#ff9900;color:#fff}
+    .btn-purple{background:#7e42d7;color:#fff}
+    .btn-light{background:#edf1f5;color:#26415e}
+    .btn-red{background:#d83a3a;color:#fff}
+    .btn-block{width:100%}
+    .big-challenge{
+      width:55%;margin:20px auto 0;padding:15px 22px;
+      background:linear-gradient(90deg,#0f65dc,#0d79ed);color:#fff;font-size:20px;
+      border-radius:10px;
+    }
 
-    .video-complete{
-      margin-top:18px;border-radius:15px;padding:16px;
-      background:#fff7df;border:1px solid #ffe0a3;
-    }
-    .video-complete strong{display:block;color:#825a00;margin-bottom:5px}
-    .video-complete p{margin:0;color:#725d2a;font-size:13px;line-height:1.6}
-    .complete-bar{
-      margin-top:10px;height:11px;border-radius:999px;background:#f1e5bd;overflow:hidden;
-    }
-    .complete-fill{height:100%;width:0;background:linear-gradient(90deg,#ffb300,#29a94a);transition:.35s}
-
-    .next-lock{
-      text-align:center;margin-top:18px;padding:18px;border-radius:16px;
-      border:1px dashed #b9c9d7;background:#fbfdff;
-    }
-    .next-lock p{margin:0 0 12px;color:var(--muted);line-height:1.55}
-
-    /* MODAL INTERAKTIF */
+    /* ===================== MODAL LEVEL ===================== */
     .modal{
-      position:fixed;inset:0;z-index:2000;
-      background:rgba(3,22,42,.78);
-      display:flex;align-items:center;justify-content:center;padding:18px;
+      position:fixed;inset:0;background:rgba(4,25,47,.68);
+      display:flex;align-items:center;justify-content:center;padding:18px;z-index:1000;
     }
     .modal-box{
-      width:min(920px,100%);max-height:94vh;overflow:auto;
-      background:#fff;border-radius:24px;padding:20px;
-      box-shadow:0 24px 70px rgba(0,0,0,.30);
+      width:min(900px,100%);max-height:92vh;overflow:auto;
+      background:#fff;border-radius:24px;padding:24px;box-shadow:0 24px 70px rgba(0,0,0,.28);
     }
-    .modal-head{
-      display:flex;justify-content:space-between;align-items:flex-start;gap:14px;
-      margin-bottom:14px;
+    .modal-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:18px}
+    .modal-head h2{color:#0c4f9f}
+    .modal-head .subtitle{color:var(--muted);line-height:1.5}
+    .close{
+      border:0;background:#eef1f4;width:38px;height:38px;border-radius:50%;font-size:19px;
     }
-    .modal-head h3{margin:0;color:#0b4fa3;font-size:22px}
-    .modal-head p{margin:5px 0 0;color:var(--muted);font-size:13px}
-    .close-btn{
-      width:38px;height:38px;border:0;border-radius:50%;
-      background:#edf1f4;font-weight:900;color:#36516e;
+    .level-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .level-option{
+      border:2px solid #dae5ee;border-radius:18px;padding:18px;background:#fff;
+      text-align:left;transition:.2s;
     }
-    .interactive-player-wrap{
-      position:relative;aspect-ratio:16/9;background:#061b2f;border-radius:16px;overflow:hidden;
+    .level-option:not(:disabled):hover{border-color:#0d6efd;transform:translateY(-3px)}
+    .level-option:disabled{cursor:not-allowed;background:#f5f6f7;opacity:.68}
+    .level-icon{font-size:40px}
+    .level-option h3{margin:10px 0 7px}
+    .level-option p{color:var(--muted);font-size:13px;line-height:1.55}
+    .level-meta{margin-top:12px;font-weight:900;font-size:13px}
+
+    /* ===================== CHALLENGE ===================== */
+    .challenge-shell{margin-top:24px}
+    .card{
+      background:#fff;border:1px solid var(--line);border-radius:18px;
+      padding:22px;margin-bottom:18px;box-shadow:var(--shadow);
     }
-    #interactivePlayer{position:absolute;inset:0;width:100%;height:100%}
-    .question-overlay{
-      position:absolute;inset:0;z-index:5;
-      display:flex;align-items:center;justify-content:center;
-      background:rgba(5,27,48,.88);padding:20px;
+    .subtitle{color:var(--muted);line-height:1.6;margin-bottom:18px}
+    .challenge-header{background:linear-gradient(135deg,#fff7e6,#fff);border-left:7px solid #ff9f0a}
+    .challenge-top{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+    .level-badge{background:#ff9f0a;color:#fff;padding:8px 13px;border-radius:999px;font-weight:900;font-size:13px}
+    .progress-info{display:flex;justify-content:space-between;margin-bottom:7px;font-weight:900;font-size:14px}
+    .progress-track{height:14px;background:#e0e5e9;border-radius:999px;overflow:hidden}
+    .progress-bar{height:100%;width:0;background:linear-gradient(90deg,#ff9800,#fbc02d);transition:.3s}
+    .sync-message{margin-top:12px;padding:10px 12px;border-radius:10px;font-size:13px;background:#f5f7f9;color:var(--muted)}
+    .question{border:1px solid var(--line);border-radius:18px;padding:20px;margin-bottom:18px}
+    .q-meta{color:#e97400;font-size:13px;font-weight:900;margin-bottom:8px}
+    .stimulus{background:#fff8e1;border-left:5px solid #ff9800;padding:14px;border-radius:12px;margin-bottom:13px;line-height:1.65}
+    .question-image-wrap{
+      margin:12px 0 15px;padding:10px;border:1px solid #dce7ef;border-radius:16px;
+      background:linear-gradient(145deg,#f8fbff,#ffffff);text-align:center;
     }
-    .question-card{
-      width:min(620px,100%);background:#fff;border-radius:20px;padding:22px;
-      box-shadow:0 16px 40px rgba(0,0,0,.2);
+    .question-image-label{font-size:12px;font-weight:900;color:#526b82;margin-bottom:8px}
+    .question-image{
+      width:min(100%,620px);max-height:350px;object-fit:cover;border-radius:12px;
+      display:block;margin:0 auto;box-shadow:0 8px 20px rgba(13,64,111,.12);
     }
-    .question-number{
-      display:inline-block;padding:5px 9px;border-radius:999px;
-      background:#eaf4ff;color:#0b5ed7;font-size:11px;font-weight:900;
-      margin-bottom:9px;
+    .q-text{font-weight:900;font-size:17px;line-height:1.6;margin-bottom:14px}
+    .option{display:flex;align-items:flex-start;gap:10px;border:2px solid #eceff1;border-radius:12px;padding:12px;margin-bottom:9px;cursor:pointer;transition:.2s}
+    .option:hover{border-color:#90caf9;background:#f7fcff}
+    .option input{width:auto;margin-top:3px}
+    .option.selected{border-color:#0d6efd;background:#eaf4ff}
+    .feedback{margin-top:12px;padding:12px;border-radius:11px;line-height:1.6;font-size:14px}
+    .feedback.good{background:#e8f5e9;color:#1b5e20}
+    .feedback.bad{background:#ffebee;color:#b71c1c}
+    .result-box{text-align:center;background:linear-gradient(145deg,#fff,#f8fbff)}
+    .score-circle{
+      width:145px;height:145px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+      margin:18px auto;font-size:38px;font-weight:900;color:#fff;
+      background:linear-gradient(135deg,#1565c0,#29b6f6);box-shadow:0 12px 28px rgba(21,101,192,.25);
     }
-    .question-card h4{font-size:20px;line-height:1.5;margin:0 0 14px;color:#17324d}
-    .quiz-options{display:grid;gap:9px}
-    .quiz-option{
-      width:100%;text-align:left;padding:12px 13px;border-radius:11px;
-      border:2px solid #e1e8ee;background:#fff;color:#263f59;font-weight:800;
-    }
-    .quiz-option:hover{border-color:#83bafa;background:#f5faff}
-    .quiz-feedback{
-      min-height:24px;margin-top:11px;font-size:13px;font-weight:900;line-height:1.5;
-    }
-    .feedback-ok{color:#15803d}
-    .feedback-bad{color:#c62828}
-    .interactive-status{
-      display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
-      padding:12px 4px 0;color:#536b82;font-size:12px;font-weight:900;
-    }
+    .remedial-box{background:#ffebee;border:1px solid #ffcdd2;border-radius:15px;padding:16px;margin-top:16px;color:#b71c1c;text-align:left;line-height:1.65}
+    .pass-box{background:#e8f5e9;border:1px solid #c8e6c9;border-radius:15px;padding:16px;margin-top:16px;color:#1b5e20;text-align:left;line-height:1.65}
+    .loading{padding:28px;text-align:center;color:var(--muted)}
+    .spinner{width:34px;height:34px;border:4px solid #e0e0e0;border-top-color:#0d6efd;border-radius:50%;margin:0 auto 10px;animation:spin .8s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
 
     footer{
-      text-align:center;color:#60758a;font-size:12px;line-height:1.7;margin-top:26px;
+      margin-top:14px;background:linear-gradient(90deg,#073567,#063f7c);
+      color:#fff;text-align:center;padding:17px;font-size:13px;line-height:1.7;
     }
     .developer-info{
-      margin-top:10px;padding-top:10px;border-top:1px solid #dce6ee;
-      color:#45657f;font-size:12px;
+      margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,.24);
+      font-size:12px;color:#e8f3ff;
     }
-    .developer-info a{color:#0b5ed7;font-weight:900;text-decoration:none}
+    .developer-info a{color:#fff;font-weight:900;text-decoration:none}
     .developer-info a:hover{text-decoration:underline}
 
-    @media(max-width:850px){
-      .info-grid,.video-grid{grid-template-columns:1fr}
-      .pictogram{grid-template-columns:135px 1fr}
+    @media(max-width:1100px){
+      .brand{width:260px}
+      .brand-title{font-size:29px}
+      .nav-link{min-width:105px}
+      .top-logo{width:170px}
+      .dashboard-grid{grid-template-columns:1fr 1fr}
+      .leaderboard-panel{
+        grid-column:1/-1;
+        position:relative;
+        top:auto;
+      }
+      .leaderboard-list{
+        display:grid;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        max-height:none;
+      }
     }
-    @media(max-width:650px){
-      .topbar{padding:11px 14px;align-items:flex-start}
-      .brand img{width:64px;height:64px}
-      .brand h1{font-size:22px}
-      .nav{display:none}
-      .container{width:94%;margin-top:16px}
-      .hero,.card{padding:18px}
-      .hero h2{font-size:28px}
-      .pictogram{grid-template-columns:1fr}
-      .pics{margin-bottom:7px}
-      .modal{padding:8px}
-      .modal-box{padding:13px;border-radius:17px}
-      .question-card{padding:16px}
+    @media(max-width:860px){
+      .topbar{height:auto;min-height:100px;flex-wrap:wrap;padding:12px 20px}
+      .brand{width:50%}
+      .top-logo{width:145px;height:85px;margin-left:auto}
+      .nav-menu{order:3;width:100%;height:55px;overflow:auto;justify-content:flex-start}
+      .nav-link{height:55px;min-width:110px}
+      .nav-link.active::after{bottom:2px}
+      .hero-grid{grid-template-columns:1fr}
+      .levels-preview{grid-template-columns:1fr}
+      .progress-row{grid-template-columns:48px 1fr .6fr .45fr 58px}
     }
-
-    /* ===== COMPETITION EDITION TAHAP 2: PETUALANGAN LITERASI LOKAL ===== */
-    .local-journey{
-      background:linear-gradient(145deg,#ffffff,#f5fbff);
-      border:1px solid #d7e8f4;
-      overflow:hidden;
-      position:relative;
+    @media(max-width:620px){
+      .brand{width:65%}
+      .brand-title{font-size:24px}
+      .brand-sub{font-size:11px}
+      .top-logo{width:110px}
+      .page{width:94%}
+      .hero{padding:24px 18px}
+      .hero h1{font-size:29px}
+      .welcome-eyebrow{font-size:22px}
+      .profile-panel{grid-template-columns:54px 1fr;padding:16px}
+      .profile-data{grid-template-columns:1fr}
+      .profile-field.id{grid-column:auto}
+      .dashboard-grid{grid-template-columns:1fr;gap:18px}
+      .leaderboard-panel{grid-column:auto}
+      .leaderboard-list{display:flex;max-height:520px}
+      .panel{padding:17px}
+      .level-grid{grid-template-columns:1fr}
+      .form-grid{grid-template-columns:1fr}
+      .big-challenge{width:100%;font-size:17px}
+      .progress-row{
+        grid-template-columns:44px 1fr 55px;
+        gap:9px;padding:12px 10px;
+      }
+      .status-col,.score-col{grid-column:2}
+      .ring{grid-column:3;grid-row:1/4}
     }
-    .local-journey::before{
-      content:"";position:absolute;left:-60px;top:-70px;width:190px;height:190px;border-radius:50%;
-      background:rgba(50,168,255,.09);pointer-events:none;
+  
+    /* ===== REVISI LEVEL AWAL: COBA KEMAMPUAN KAMU ===== */
+    .challenge-split{display:grid;gap:16px}
+    .ability-card{
+      border-radius:18px;padding:20px;border:1px solid #dbe6ef;
+      box-shadow:0 6px 18px rgba(35,69,104,.06);background:#fff;
     }
-    .journey-head{display:flex;align-items:center;gap:14px;margin-bottom:16px;position:relative;z-index:1}
-    .journey-icon{width:58px;height:58px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:31px;background:linear-gradient(145deg,#e8f6ff,#dff7e7);border:1px solid #cfe5ee;flex-shrink:0}
-    .journey-head h2{margin:0 0 4px;color:#0b4f91}.journey-head p{margin:0;color:#58708a;line-height:1.5}
-    .place-route{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px;position:relative;z-index:1}
-    .place-card{border-radius:20px;padding:18px;background:#fff;border:1px solid #dce8ef;box-shadow:0 7px 17px rgba(24,70,105,.07);position:relative;min-height:190px}
-    .place-card .place-no{position:absolute;right:13px;top:12px;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#eef6ff;color:#0b5fb9;font-weight:900}
-    .place-emoji{font-size:42px;margin-bottom:10px}.place-card h3{margin:0 0 7px;color:#173f68}.place-card p{margin:0;color:#526b82;line-height:1.6;font-size:14px}
-    .place-card.home{border-top:5px solid #3c8ee6}.place-card.lake{border-top:5px solid #25a9c7}.place-card.market{border-top:5px solid #f39b22}
-    .mission-box{margin-top:16px;border-radius:18px;padding:17px 18px;background:linear-gradient(135deg,#fff8df,#fffdf5);border:1px solid #f5dfa1}
-    .mission-box h3{margin:0 0 11px;color:#9a6500}.mission-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}
-    .mission-step{padding:11px 8px;border-radius:13px;background:#fff;text-align:center;border:1px solid #f0e3bd;font-weight:900;font-size:12px;color:#4c5c68}
-    .mission-step span{display:block;font-size:25px;margin-bottom:5px}
-    .local-story-badge{display:inline-flex;align-items:center;gap:7px;padding:7px 11px;border-radius:999px;background:#eaf7ff;color:#0b5ea8;font-weight:900;font-size:12px;margin-bottom:12px}
-    .fact-note{margin-top:14px;padding:12px 14px;border-radius:13px;background:#f4f8fb;border-left:5px solid #6d879c;color:#4a6074;font-size:12px;line-height:1.55}
-    .learning-pictogram-title{margin:17px 0 8px;font-weight:900;color:#184a74}
-    @media(max-width:760px){.place-route{grid-template-columns:1fr}.mission-steps{grid-template-columns:1fr 1fr}.mission-step:last-child{grid-column:1/-1}.journey-head{align-items:flex-start}}
+    .ability-card.diagnostic{
+      background:linear-gradient(145deg,#effcf4,#f7fff9);
+      border:2px solid #b9ebc9;
+    }
+    .ability-title{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+    .ability-title .icon{
+      width:52px;height:52px;border-radius:15px;display:flex;align-items:center;justify-content:center;
+      font-size:29px;background:#e2f8e9;
+    }
+    .ability-title h3{font-size:22px;color:#137d36;margin:0}
+    .ability-title p{font-size:13px;color:#4d6278;margin:3px 0 0}
+    .awal-standalone{
+      display:grid;grid-template-columns:86px minmax(0,1fr);gap:16px;align-items:center;
+      padding:16px;border-radius:16px;background:#fff;border:1px solid #d8eadf;
+    }
+    .awal-standalone .emoji{font-size:56px;text-align:center}
+    .awal-standalone h4{font-size:21px;color:#168a35;margin-bottom:5px}
+    .awal-standalone p{font-size:14px;line-height:1.5;color:#35516c}
+    .ability-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .ability-chip{padding:6px 10px;border-radius:999px;font-weight:900;font-size:12px}
+    .ability-chip.lit{background:#fff0d6;color:#aa6200}
+    .ability-chip.num{background:#e7f1ff;color:#0b61c6}
+    .advanced-levels{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+    .advanced-levels .level-preview{min-height:225px}
+    .diagnostic-btn{width:100%;margin-top:14px;background:linear-gradient(135deg,#19a64c,#0c8738);color:#fff}
+    .advanced-btn{width:100%;margin-top:14px;background:linear-gradient(135deg,#1677e8,#6b4bd8);color:#fff}
+    .score-breakdown{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px auto;max-width:620px}
+    .score-mini{padding:13px 10px;border-radius:15px;background:#f7fbff;border:1px solid #d6e6f5;text-align:center}
+    .score-mini span{display:block;font-size:12px;color:#5d7085;font-weight:800;margin-bottom:5px}
+    .score-mini strong{font-size:22px;color:#123f75}
+    .awal-score-detail{display:block;margin-top:4px;font-size:10px!important;color:#60758b!important;line-height:1.35}
+    .stimulus{white-space:pre-line}
+    .inline-bar-chart{
+      margin:15px 0 18px;padding:16px;border-radius:16px;background:#fbfdff;border:1px solid #d8e5f1;
+    }
+    .chart-title{font-weight:900;color:#183f68;text-align:center;margin-bottom:13px}
+    .bar-row{display:grid;grid-template-columns:74px 1fr 38px;gap:9px;align-items:center;margin:9px 0}
+    .bar-label{font-size:13px;font-weight:800;color:#38516b}
+    .bar-track{height:22px;border-radius:7px;background:#edf3f8;overflow:hidden;border:1px solid #dce7ef}
+    .bar-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,#36a7e8,#275fe4)}
+    .bar-value{font-weight:900;color:#183f68;text-align:right}
+    @media(max-width:700px){
+      .awal-standalone{grid-template-columns:1fr;text-align:center}
+      .advanced-levels{grid-template-columns:1fr}
+      .score-breakdown{grid-template-columns:1fr}
+    }
 
   
+    /* ============================================================
+       BERANDA BARU — GAYA SiTeek / SITEEk-PIKTO-IPS
+       ============================================================ */
+    .home-stage{margin-top:0;border-radius:0 0 26px 26px;overflow:hidden;position:relative;background:linear-gradient(180deg,rgba(209,239,255,.88),rgba(238,249,232,.94)),radial-gradient(circle at 18% 26%,rgba(66,165,245,.25),transparent 26%),radial-gradient(circle at 86% 72%,rgba(76,175,80,.24),transparent 28%);border:1px solid rgba(189,217,234,.85);box-shadow:0 14px 34px rgba(15,70,112,.10)}
+    .home-stage::before{content:"";position:absolute;inset:auto 0 0;height:155px;background:radial-gradient(ellipse at 5% 100%,#72b75f 0 31%,transparent 32%),radial-gradient(ellipse at 23% 100%,#8cc86f 0 34%,transparent 35%),radial-gradient(ellipse at 45% 100%,#6fae55 0 32%,transparent 33%),radial-gradient(ellipse at 67% 100%,#90ca72 0 34%,transparent 35%),radial-gradient(ellipse at 91% 100%,#73b159 0 31%,transparent 32%);opacity:.30;pointer-events:none}
+    .home-welcome{min-height:345px;display:grid;grid-template-columns:330px minmax(0,1fr);gap:20px;align-items:end;padding:22px 26px 0;position:relative;z-index:2}
+    .teacher-zone{height:100%;display:flex;align-items:flex-end;justify-content:center;position:relative;min-width:0}
+    .teacher-zone::before{content:"";position:absolute;width:255px;height:255px;border-radius:50%;background:rgba(255,255,255,.62);box-shadow:0 0 0 16px rgba(255,255,255,.18);top:34px;left:50%;transform:translateX(-50%)}
+    .teacher-img{position:relative;z-index:2;width:min(100%,275px);max-height:330px;object-fit:contain;object-position:bottom center;filter:drop-shadow(0 15px 15px rgba(10,55,84,.20))}
+    .speech-bubble{position:absolute;z-index:3;top:38px;left:4px;max-width:145px;background:#fff;color:#10437f;padding:13px 14px;border-radius:24px;font-weight:900;font-size:14px;line-height:1.35;box-shadow:0 8px 20px rgba(20,72,112,.13);border:1px solid #dbeaf5;text-align:center}
+    .speech-bubble::after{content:"";position:absolute;right:8px;bottom:-10px;border:11px solid transparent;border-top-color:#fff;transform:rotate(-18deg)}
+    .welcome-card{align-self:center;margin:0 0 20px;padding:27px 30px;border-radius:28px;border:1px solid rgba(255,255,255,.85);background:rgba(255,255,255,.80);backdrop-filter:blur(8px);box-shadow:0 12px 30px rgba(10,59,102,.14);position:relative;overflow:hidden}
+    .welcome-card::after{content:"IPS dekat dengan kehidupan kita!";position:absolute;right:22px;top:18px;width:142px;padding:12px 10px;border-radius:10px;background:#ffe36d;color:#17345b;font-size:12px;line-height:1.35;font-weight:900;transform:rotate(2deg);text-align:center;box-shadow:0 7px 16px rgba(119,89,0,.13)}
+    .welcome-card .welcome-eyebrow{font-size:22px;color:#0f4e84;margin-bottom:7px}.welcome-card h1{max-width:72%;font-size:40px;line-height:1.1;margin:0 0 10px;color:#123e67}
+    .welcome-card h1 .brand-accent{background:linear-gradient(90deg,#1677e8,#ff9900,#20a44c);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .welcome-card .hero-copy{max-width:72%;font-size:16px;line-height:1.6;color:#36536d}
+    .home-chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}.home-chip{padding:8px 13px;border-radius:999px;background:#fff;border:1px solid #dce8f1;box-shadow:0 5px 12px rgba(24,70,105,.07);font-size:12px;font-weight:900}
+    .cp-card{margin:0 26px 26px;position:relative;z-index:3;border-radius:24px;overflow:hidden;border:2px solid #149447;background:#fffef7;box-shadow:0 12px 28px rgba(19,126,62,.13)}
+    .cp-head{background:linear-gradient(90deg,#159b48,#087d35);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:15px 20px}.cp-title{display:flex;align-items:center;gap:12px;font-size:24px;font-weight:900}.cp-badge{padding:8px 13px;border-radius:999px;background:#ffd84a;color:#15436e;font-size:12px;font-weight:900;white-space:nowrap}
+    .cp-body{display:grid;grid-template-columns:155px minmax(0,1fr);gap:20px;align-items:center;padding:20px 22px;background:radial-gradient(circle at 8% 18%,rgba(255,212,71,.18),transparent 20%),linear-gradient(180deg,#fffef8,#fffdf1)}
+    .cp-visual{min-height:145px;display:flex;align-items:center;justify-content:center;font-size:78px;border-radius:20px;background:linear-gradient(145deg,#eef8ff,#f5fff2);border:1px solid #d8e9ef}.cp-text{font-size:16px;line-height:1.72;color:#203d59;font-weight:700}
+    .quick-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:22px 0 0}.quick-card{background:#fff;border-radius:18px;padding:17px;border:1px solid #dbe6ef;box-shadow:0 8px 18px rgba(18,66,100,.07);min-height:132px;display:flex;flex-direction:column;justify-content:space-between;transition:.2s ease}.quick-card:hover{transform:translateY(-3px)}.quick-card strong{font-size:17px}.quick-card p{font-size:12px;line-height:1.45;color:#5e718b;margin-top:7px}.quick-card .qc-icon{font-size:31px;margin-bottom:8px}.quick-card.blue{border-top:5px solid #1677e8}.quick-card.green{border-top:5px solid #159b48}.quick-card.orange{border-top:5px solid #ff9800}.quick-card.purple{border-top:5px solid #8247e5}
+    @media(max-width:980px){.home-welcome{grid-template-columns:240px minmax(0,1fr)}.welcome-card h1{font-size:33px}.welcome-card h1,.welcome-card .hero-copy{max-width:100%}.welcome-card::after{display:none}.quick-cards{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:700px){.home-welcome{grid-template-columns:1fr;align-items:start;padding:16px 16px 0}.teacher-zone{min-height:230px;order:2}.teacher-img{max-height:245px;width:205px}.teacher-zone::before{width:190px;height:190px;top:20px}.speech-bubble{top:18px;left:8px;font-size:12px;max-width:125px}.welcome-card{order:1;margin:0;padding:22px 18px}.welcome-card h1{font-size:30px}.welcome-card .hero-copy{font-size:14px}.cp-card{margin:0 16px 16px}.cp-head{align-items:flex-start;flex-direction:column}.cp-title{font-size:20px}.cp-body{grid-template-columns:1fr;padding:16px}.cp-visual{min-height:105px;font-size:58px}.cp-text{font-size:14px;line-height:1.65}.quick-cards{grid-template-columns:1fr}}
 
-    /* ===== COMPETITION EDITION: PETA PETUALANGAN LITERASI PROGRESIF ===== */
-    .adventure-map{margin:18px 0 22px;padding:22px;border-radius:24px;background:linear-gradient(145deg,#0b5aa6,#1679d6 55%,#14a56a);color:#fff;box-shadow:0 14px 30px rgba(11,90,166,.18);position:relative;overflow:hidden}
-    .adventure-map::after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;right:-75px;top:-90px;background:rgba(255,255,255,.10)}
-    .adventure-map-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;position:relative;z-index:2}
-    .adventure-map h2{margin:0 0 6px;font-size:25px}.adventure-map p{margin:0;opacity:.93;line-height:1.55}
-    .adventure-stats{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.adv-stat{padding:8px 11px;border-radius:999px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.22);font-size:12px;font-weight:900;white-space:nowrap}
-    .adventure-route{display:grid;grid-template-columns:repeat(8,minmax(95px,1fr));gap:10px;margin-top:20px;position:relative;z-index:2}
-    .adventure-pos{border:0;border-radius:17px;padding:12px 8px;background:rgba(255,255,255,.14);color:#fff;text-align:center;min-height:106px;transition:.2s;position:relative}
-    .adventure-pos:not(:disabled):hover{transform:translateY(-3px);background:rgba(255,255,255,.24)}
-    .adventure-pos:disabled{opacity:.48;cursor:not-allowed;filter:grayscale(.2)}
-    .adventure-pos.done{background:#fff;color:#0b5d3e;box-shadow:0 7px 16px rgba(3,40,77,.13)}
-    .adventure-pos.active{background:#fff5c9;color:#765400;box-shadow:0 7px 16px rgba(3,40,77,.13)}
-    .pos-icon{display:block;font-size:29px;margin-bottom:5px}.pos-no{display:block;font-size:10px;font-weight:900;opacity:.8}.pos-label{display:block;font-size:11px;font-weight:900;line-height:1.25;margin-top:3px}.pos-state{display:block;font-size:9px;margin-top:5px;font-weight:900}
-    .learning-pos{scroll-margin-top:95px;position:relative;border-left:5px solid transparent}
-    .learning-pos.pos-unlocked{border-left-color:#2e91e5}.learning-pos.pos-completed{border-left-color:#16a34a}
-    .pos-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:-2px 0 14px;padding:10px 12px;border-radius:14px;background:#f3f9ff;border:1px solid #dcecf8}
-    .pos-heading strong{color:#0b5da8}.pos-heading span{font-size:11px;font-weight:900;padding:5px 9px;border-radius:999px;background:#e5f2ff;color:#0b5da8}
-    .mini-mission{margin-top:17px;padding:16px;border-radius:17px;background:linear-gradient(145deg,#fffaf0,#fff);border:1px solid #f0ddb4}
-    .mini-mission h3{margin:0 0 7px;color:#8a5a00;font-size:17px}.mini-mission p{margin:0 0 11px;color:#54697c;line-height:1.5;font-size:13px}
-    .mission-options{display:grid;gap:8px}.mission-option{width:100%;text-align:left;padding:11px 12px;border:2px solid #e4eaf0;border-radius:11px;background:#fff;font-weight:800;color:#29455f}
-    .mission-option:hover{border-color:#79b7ef;background:#f5fbff}.mission-option.good{border-color:#28a745;background:#edf9f0;color:#146c2e}.mission-option.bad{border-color:#e35d5d;background:#fff1f1;color:#a32222}
-    .mission-feedback{min-height:22px;margin-top:9px;font-size:12px;font-weight:900}.mission-feedback.ok{color:#14813b}.mission-feedback.no{color:#b42318}
-    .pos-complete-btn{margin-top:12px;border:0;border-radius:12px;padding:11px 15px;background:linear-gradient(135deg,#16a34a,#0f8d3c);color:#fff;font-weight:900;display:none}.pos-complete-btn.show{display:inline-flex}
-    .badge-shelf{margin:16px 0 0;display:flex;gap:8px;flex-wrap:wrap}.earned-badge{padding:7px 10px;border-radius:999px;background:#fff;border:1px solid #dce9f2;color:#36516c;font-size:11px;font-weight:900}.earned-badge.locked{opacity:.45;filter:grayscale(1)}
-    .adventure-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(30px);background:#123e67;color:#fff;padding:12px 18px;border-radius:999px;font-weight:900;font-size:13px;box-shadow:0 12px 28px rgba(0,0,0,.22);opacity:0;pointer-events:none;transition:.25s;z-index:3000}.adventure-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-    @media(max-width:1050px){.adventure-route{grid-template-columns:repeat(4,1fr)}}
-    @media(max-width:650px){.adventure-map{padding:17px}.adventure-map-head{flex-direction:column}.adventure-stats{justify-content:flex-start}.adventure-route{grid-template-columns:repeat(2,1fr)}.adventure-pos{min-height:94px}.pos-heading{align-items:flex-start;flex-direction:column}}
 
-  
-.profile6{margin-top:20px;padding:22px;border-radius:20px;background:linear-gradient(135deg,#f4f9ff,#f4fff8);border:2px solid #dce9f2}.profile6 h2{margin:0 0 7px}.profile6>p{color:var(--m);line-height:1.6}.p6grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}.p6item{background:#fff;border:1px solid #dce7ef;border-radius:15px;padding:14px}.p6item b{display:block;margin:5px 0;color:var(--t)}.p6item span{font-size:12px;line-height:1.5;color:var(--m)}.p6icon{font-size:27px}@media(max-width:800px){.p6grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:550px){.p6grid{grid-template-columns:1fr}}
 
-</style>
+    /* ============================================================
+       SITEEk-PIKTO-IPS COMPETITION EDITION — RAMAH ANAK SD
+       ============================================================ */
+    :root{
+      --kid-sky:#eaf7ff;
+      --kid-blue:#1473e6;
+      --kid-green:#19a552;
+      --kid-yellow:#ffd84d;
+      --kid-orange:#ff9f1c;
+      --kid-purple:#7b5be7;
+      --kid-ink:#173a59;
+    }
+    body{background:linear-gradient(180deg,#eef9ff 0%,#fafffd 42%,#fffaf0 100%)}
+    .topbar{height:96px;padding:0 24px;background:linear-gradient(90deg,#073b73 0%,#0b5a9d 58%,#0a477b 100%)}
+    .brand{width:285px}.brand-title{font-size:31px}.brand-sub{font-size:13px}
+    .nav-menu{gap:8px}.nav-link{min-width:112px;border-radius:14px;height:64px;align-self:center}.nav-link:hover{background:rgba(255,255,255,.12)}
+    .top-logo{width:165px;height:88px}
+    .page{width:min(1380px,96%)}
+
+    .home-stage{margin-top:14px;border-radius:28px;background:linear-gradient(180deg,#dff4ff 0%,#effbed 100%);border:1px solid #cfe7f2}
+    .home-welcome{min-height:330px;grid-template-columns:290px minmax(0,1fr);padding:18px 24px 0}
+    .teacher-zone::before{width:225px;height:225px;background:rgba(255,255,255,.74)}
+    .teacher-img{width:min(100%,245px);max-height:300px}
+    .speech-bubble{top:26px;left:0;max-width:150px;background:#fffdf5;border:2px solid #ffe083;font-size:13px}
+    .welcome-card{padding:24px 28px;border-radius:26px;background:rgba(255,255,255,.92)}
+    .welcome-card h1{font-size:37px}.welcome-card .hero-copy{font-size:15px;max-width:75%}
+    .welcome-card::after{content:"Baca • Hitung • Pahami!";background:#fff07a;width:150px;font-size:12px}
+    .home-chip{font-size:12px;padding:8px 12px;border:2px solid #e5edf4}
+    .profile-panel{border:2px solid #e3edf5!important;box-shadow:none!important;background:#fff!important}
+
+    .cp-card{margin:0 22px 22px;border-radius:22px;border-width:2px}.cp-head{padding:13px 18px}.cp-title{font-size:21px}.cp-body{grid-template-columns:120px minmax(0,1fr);padding:17px 20px}.cp-visual{min-height:116px;font-size:61px}.cp-text{font-size:14px;line-height:1.65}
+
+    .quick-cards{gap:12px;margin:18px 0}.quick-card{min-height:118px;padding:15px;border-radius:20px;border-width:2px}.quick-card .qc-icon{font-size:33px}.quick-card strong{font-size:16px}.quick-card p{font-size:11.5px}.quick-card:hover{transform:translateY(-5px);box-shadow:0 12px 24px rgba(25,77,115,.12)}
+
+    .kid-section-title{display:flex;align-items:center;gap:12px;margin:22px 0 12px;padding:0 4px}.kid-section-title .kid-title-icon{width:46px;height:46px;border-radius:15px;display:flex;align-items:center;justify-content:center;background:#fff;border:2px solid #dbeaf4;font-size:25px;box-shadow:0 5px 12px rgba(32,77,111,.07)}.kid-section-title h2{font-size:22px;color:#143f68}.kid-section-title p{font-size:12px;color:#60758b;margin-top:2px}
+
+    .local-journey{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px}
+    .local-card{position:relative;overflow:hidden;min-height:150px;border-radius:22px;padding:18px;background:#fff;border:2px solid #dfeaf3;box-shadow:0 8px 20px rgba(33,77,112,.07)}
+    .local-card::after{content:"";position:absolute;right:-26px;bottom:-34px;width:105px;height:105px;border-radius:50%;background:rgba(76,175,80,.10)}
+    .local-card .local-icon{font-size:36px;margin-bottom:10px}.local-card strong{display:block;font-size:17px;color:#163f68;margin-bottom:6px}.local-card p{font-size:12px;line-height:1.55;color:#60758b}.local-card:nth-child(1){border-top:6px solid #2b8de5}.local-card:nth-child(2){border-top:6px solid #34a853}.local-card:nth-child(3){border-top:6px solid #ff9f1c}
+
+    .dashboard-grid{grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:18px;margin-top:12px}.leaderboard-panel{grid-column:1/-1;position:relative;top:auto}.leaderboard-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-height:500px}
+    .panel{border-radius:24px;padding:20px;border:2px solid #e0eaf2}.panel-head{margin-bottom:15px}.panel-icon{width:52px;height:52px;font-size:27px}.panel h2{font-size:21px}.panel-head p{font-size:12px}
+    .ability-card{border-radius:20px;padding:17px}.ability-title h3{font-size:20px}.awal-standalone{padding:14px}.awal-standalone .emoji{font-size:50px}.advanced-levels .level-preview{min-height:205px;padding:16px 12px}.level-preview .emoji{font-size:42px}.level-preview h3{font-size:20px}
+    .progress-row{min-height:82px}.detail-progress{border-radius:14px}
+    .info-strip{border-radius:18px;background:#f8fcff;border:2px dashed #c9dfef}
+
+    .challenge-shell .card{border-radius:22px;border-width:2px}.question{border-radius:20px;padding:18px}.q-meta{display:inline-block;background:#fff3dd;border-radius:999px;padding:6px 10px}.stimulus{border-radius:16px;background:#fffaf0}.q-text{font-size:18px}.option{border-radius:15px;padding:13px 14px}.option:hover{transform:translateX(2px)}
+
+    /* Hasil & refleksi */
+    .result-box{padding:26px!important;background:linear-gradient(180deg,#ffffff,#f8fcff)!important}
+    .result-hero{max-width:760px;margin:0 auto 16px;padding:20px;border-radius:24px;background:linear-gradient(135deg,#eaf7ff,#effcef);border:2px solid #d6e9f3}
+    .result-hero h2{font-size:27px;color:#123f75;margin-bottom:7px}.result-hero p{color:#5c7289;font-size:13px;line-height:1.5}
+    .score-circle{width:128px;height:128px;font-size:34px;margin:14px auto;background:linear-gradient(135deg,#1473e6,#24b06a)}
+    .score-breakdown{max-width:720px}.score-mini{border-radius:18px;padding:14px;border-width:2px}.score-mini:nth-child(1){background:#fff8e8;border-color:#ffe3aa}.score-mini:nth-child(2){background:#eef8ff;border-color:#cde5ff}.score-mini:nth-child(3){background:#effaf2;border-color:#ccebd5}
+    .diagnosis-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:820px;margin:16px auto}.diagnosis-card{padding:17px;border-radius:18px;text-align:left;border:2px solid #dde9f1;background:#fff}.diagnosis-card h3{font-size:17px;margin-bottom:7px;color:#173f68}.diagnosis-card p{font-size:13px;line-height:1.55;color:#4e667c}.diagnosis-card.strength{background:#effaf3;border-color:#bfe5cc}.diagnosis-card.focus{background:#fff8e8;border-color:#ffe0a1}
+    .recommend-box{max-width:820px;margin:14px auto;padding:18px;border-radius:20px;background:linear-gradient(135deg,#f2efff,#eef7ff);border:2px solid #d9d0ff;text-align:left}.recommend-box h3{color:#5d42c6;margin-bottom:7px}.recommend-box p{font-size:13px;line-height:1.55;color:#485f76}
+    .reflection-box{max-width:820px;margin:16px auto 0;padding:20px;border-radius:22px;background:#fffdf5;border:2px solid #ffe08a;text-align:left}.reflection-head{display:flex;gap:12px;align-items:center;margin-bottom:14px}.reflection-head .bubble-icon{width:48px;height:48px;border-radius:15px;background:#fff0a6;display:flex;align-items:center;justify-content:center;font-size:26px}.reflection-head h3{font-size:19px;color:#704f00}.reflection-head p{font-size:12px;color:#75684d;margin-top:2px}.reflection-grid{display:grid;gap:11px}.reflection-item label{display:block;font-size:13px;font-weight:900;color:#314c63;margin-bottom:6px}.reflection-item textarea{width:100%;min-height:72px;resize:vertical;border:2px solid #e1e9ef;border-radius:14px;padding:11px 12px;font:inherit;font-size:13px;outline:none;background:#fff}.reflection-item textarea:focus{border-color:#ffc740;box-shadow:0 0 0 3px rgba(255,199,64,.15)}.reflection-save{margin-top:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}.reflection-status{font-size:12px;font-weight:900;color:#198754}
+    .result-actions{justify-content:center;max-width:820px;margin:16px auto 0}.result-actions .btn{min-width:180px}
+
+    .kid-bottom-nav{display:none}
+
+    @media(max-width:1100px){.dashboard-grid{grid-template-columns:1fr}.leaderboard-panel{grid-column:auto}.leaderboard-list{grid-template-columns:repeat(2,minmax(0,1fr))}.local-journey{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:760px){
+      body{padding-bottom:72px}.topbar{min-height:84px;padding:10px 14px}.brand{width:62%}.brand-title{font-size:23px}.brand-sub{font-size:10px}.top-logo{width:95px;height:65px}.nav-menu{display:none}
+      .page{width:94%}.home-stage{border-radius:22px}.home-welcome{grid-template-columns:1fr;padding:14px 14px 0}.welcome-card{order:1;margin:0;padding:19px 16px}.welcome-card h1{font-size:28px}.welcome-card .hero-copy{max-width:100%;font-size:13px}.welcome-card::after{display:none}.teacher-zone{order:2;min-height:215px}.teacher-img{max-height:225px;width:185px}.speech-bubble{top:12px;left:5px}.cp-card{margin:0 14px 14px}.cp-body{grid-template-columns:1fr}.cp-visual{min-height:90px;font-size:52px}.quick-cards{grid-template-columns:repeat(2,1fr);gap:10px}.quick-card{min-height:112px}.quick-card p{display:none}.local-journey{grid-template-columns:1fr}.dashboard-grid{grid-template-columns:1fr}.leaderboard-list{display:flex;max-height:430px}.diagnosis-grid{grid-template-columns:1fr}.score-breakdown{grid-template-columns:1fr}.result-box{padding:16px!important}.result-hero{padding:16px}.result-actions .btn{width:100%}
+      .kid-bottom-nav{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;left:8px;right:8px;bottom:8px;z-index:1200;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border:1px solid #dce8f2;border-radius:18px;padding:7px 6px;box-shadow:0 10px 30px rgba(12,55,86,.20)}.kid-bottom-nav a{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:9px;font-weight:900;color:#47627a;padding:4px 2px}.kid-bottom-nav a span{font-size:20px}.kid-bottom-nav a:active{transform:scale(.96)}
+    }
+
+
+    /* ===== LAYOUT BARU SITEEk-PIKTO-IPS =====
+       Kiri  : Tantangan (termasuk Tantangan Lanjutan)
+       Kanan : Progres Belajarmu, lalu Papan Peringkat tepat di bawahnya
+    */
+    @media (min-width:1101px){
+      .dashboard-grid{
+        grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);
+        grid-template-rows:auto auto;
+        align-items:start;
+        gap:18px;
+      }
+      #tantangan{grid-column:1;grid-row:1 / span 2;}
+      #progres{grid-column:2;grid-row:1;}
+      .leaderboard-panel{
+        grid-column:2;
+        grid-row:2;
+        position:relative;
+        top:auto;
+        width:100%;
+      }
+      .leaderboard-list{
+        display:flex;
+        flex-direction:column;
+        max-height:420px;
+      }
+    }
+    @media (max-width:1100px){
+      #tantangan,#progres,.leaderboard-panel{grid-column:auto;grid-row:auto;}
+    }
+
+    /* ===== V9: 6 DIMENSI PROFIL LULUSAN ===== */
+    .profile6-section{margin:22px 0;padding:22px;border-radius:24px;background:linear-gradient(135deg,#f4f9ff,#f4fff8);border:2px solid #dbe9f3;box-shadow:0 10px 24px rgba(27,76,112,.08)}
+    .profile6-head{text-align:center;max-width:820px;margin:0 auto 18px}.profile6-head h2{color:#123f75;font-size:25px;margin:0 0 7px}.profile6-head p{color:#5d7287;font-size:13px;line-height:1.6;margin:0}
+    .profile6-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.profile6-card{background:#fff;border:2px solid #e1ebf2;border-radius:18px;padding:16px;min-height:145px}.profile6-card .dicon{font-size:30px}.profile6-card strong{display:block;color:#173f68;font-size:16px;margin:7px 0 5px}.profile6-card p{margin:0;color:#60758b;font-size:12px;line-height:1.5}
+    .profile6-card.active-mission{border-color:#bcd9ff;background:#f8fbff}.profile6-card.active-mission strong:after{content:" • Misi";font-size:10px;color:#0d6efd;background:#e7f1ff;border-radius:999px;padding:3px 6px;margin-left:5px}
+    .mission-shell{margin:18px 0 0;padding:20px;border-radius:22px;background:#fff;border:2px solid #dce9f3}.mission-shell h3{margin:0;color:#123f75;font-size:21px}.mission-shell>p{color:#5e7389;font-size:13px;line-height:1.6}
+    .mission-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}.mission-card{padding:16px;border-radius:18px;border:2px solid #e0eaf2;background:#fbfdff}.mission-card h4{margin:0 0 6px;color:#17456f}.mission-card p{font-size:12px;line-height:1.5;color:#60758b;min-height:54px}
+    .mission-card textarea,.mission-card input,.mission-card select{width:100%;border:2px solid #dbe6ee;border-radius:11px;padding:10px;margin-top:8px;font:inherit;background:#fff}.mission-card textarea{min-height:92px;resize:vertical}.mission-card label{display:block;font-size:11px;font-weight:900;color:#48647d;margin-top:9px}
+    .mission-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:14px}.mission-status{font-size:12px;font-weight:900;color:#527087}
+    @media(max-width:900px){.profile6-grid,.mission-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.profile6-grid,.mission-grid{grid-template-columns:1fr}.profile6-section{padding:16px}.mission-card p{min-height:auto}}
+
+  </style>
 </head>
+
 <body>
 
-<header class="topbar">
-  <div class="brand">
-    <img src="img/logo-pikto-ips.png" alt="Logo PIKTO-IPS" onerror="this.style.display='none'">
-    <div>
-      <h1>📖 LITERASI IPS</h1>
-      <p>Belajar memahami informasi dalam kehidupan masyarakat</p>
-    </div>
-  </div>
-  <nav class="nav">
-    <a href="index.html">🏠 Beranda</a>
-    <a href="#petualanganLokal">🗺️ Petualangan Lokal</a>
-    <a href="#latihan">✏️ Latihan</a>
-    <a href="#videoInteraktif">🎬 Video Interaktif</a>
-    <a href="numerasi.html">🔢 Numerasi</a>
-  </nav>
-</header>
-
-<main class="container">
-
-  <section class="hero">
-    <span class="badge">SITEEK-PIKTO-IPS • KELAS 4 SD</span>
-    <h2>Literasi dalam Pembelajaran IPS</h2>
-    <p>
-      Literasi IPS adalah kemampuan membaca, memahami, menemukan informasi,
-      menghubungkan fakta, dan membuat kesimpulan tentang kehidupan masyarakat.
-      Di PIKTO-IPS, kita belajar dari lingkungan yang dekat dengan kehidupan murid: <strong>Desa Ranuklindungan, Danau Ranu, dan Pasar Brandong di Desa Dawe</strong>.
-      Informasi dapat berasal dari cerita, gambar, simbol, tabel, peta, grafik, piktogram, maupun video.
-    </p>
-  </section>
-
-  <section class="adventure-map" id="petaPetualangan" aria-labelledby="judulPetualangan">
-    <div class="adventure-map-head">
-      <div>
-        <h2 id="judulPetualangan">🗺️ Peta Petualangan Literasi IPS</h2>
-        <p>Selesaikan pos secara berurutan. Setiap pos berisi materi singkat, aktivitas, dan misi kecil sebelum pos berikutnya terbuka.</p>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-title">
+        <span>P</span><span>I</span><span>K</span><span>T</span><span>O</span><span>-IPS</span>
       </div>
-      <div class="adventure-stats">
-        <span class="adv-stat" id="advProgress">📖 Progres 0/8</span>
-        <span class="adv-stat" id="advStars">⭐ Bintang 0</span>
-        <span class="adv-stat" id="advBadge">🏅 Penjelajah Baru</span>
-      </div>
-    </div>
-    <div class="adventure-route" id="adventureRoute">
-      <button class="adventure-pos" data-target="pos1"><span class="pos-icon">🔎</span><span class="pos-no">POS 1</span><span class="pos-label">Menemukan Informasi</span><span class="pos-state">⭐ MULAI</span></button>
-      <button class="adventure-pos" data-target="pos2"><span class="pos-icon">🧠</span><span class="pos-no">POS 2</span><span class="pos-label">Memahami Makna</span><span class="pos-state">🔒 TERKUNCI</span></button>
-      <button class="adventure-pos" data-target="pos3"><span class="pos-icon">💡</span><span class="pos-no">POS 3</span><span class="pos-label">Ide Pokok</span><span class="pos-state">🔒 TERKUNCI</span></button>
-      <button class="adventure-pos" data-target="pos4"><span class="pos-icon">🖼️</span><span class="pos-no">POS 4</span><span class="pos-label">Informasi Visual</span><span class="pos-state">🔒 TERKUNCI</span></button>
-      <button class="adventure-pos" data-target="pos5"><span class="pos-icon">📊</span><span class="pos-no">POS 5</span><span class="pos-label">Tabel & Piktogram</span><span class="pos-state">🔒 TERKUNCI</span></button>
-      <button class="adventure-pos" data-target="pos6"><span class="pos-icon">🔗</span><span class="pos-no">POS 6</span><span class="pos-label">Menghubungkan Informasi</span><span class="pos-state">🔒 TERKUNCI</span></button>
-      <button class="adventure-pos" data-target="pos7"><span class="pos-icon">🕵️</span><span class="pos-no">POS 7</span><span class="pos-label">Menafsirkan</span><span class="pos-state">🔒 TERKUNCI</span></button>
-      <button class="adventure-pos" data-target="pos8"><span class="pos-icon">🎯</span><span class="pos-no">POS 8</span><span class="pos-label">Menyimpulkan</span><span class="pos-state">🔒 TERKUNCI</span></button>
-    </div>
-    <div class="badge-shelf" id="badgeShelf">
-      <span class="earned-badge locked" data-badge="1">🔍 Pemburu Informasi</span>
-      <span class="earned-badge locked" data-badge="3">💡 Penemu Ide Pokok</span>
-      <span class="earned-badge locked" data-badge="5">📊 Detektif Data</span>
-      <span class="earned-badge locked" data-badge="8">🏆 Ahli Literasi IPS</span>
-    </div>
-  </section>
-
-  <section class="card local-journey learning-pos" id="pos1" data-pos="1">
-    <div class="pos-heading"><strong>🔎 POS 1 • Menemukan Informasi</strong><span>🏡 Ranuklindungan • Danau Ranu • Pasar Brandong</span></div>
-    <div class="journey-head">
-      <div class="journey-icon">🗺️</div>
-      <div>
-        <h2>Petualangan Literasi di Sekitarku</h2>
-        <p>Mulai dari tempat yang kamu kenal, lalu baca informasi, hubungkan fakta, dan buat kesimpulan.</p>
-      </div>
+      <div class="brand-sub">Belajar IPS Jadi Seru dan Mudah!</div>
     </div>
 
-    <div class="place-route">
-      <article class="place-card home">
-        <div class="place-no">1</div>
-        <div class="place-emoji">🏡</div>
-        <h3>Desa Ranuklindungan</h3>
-        <p>Titik awal petualangan. Kita belajar mengamati lingkungan tempat tinggal dan menemukan informasi IPS dari kehidupan sehari-hari.</p>
-      </article>
-      <article class="place-card lake">
-        <div class="place-no">2</div>
-        <div class="place-emoji">🌊</div>
-        <h3>Danau Ranu</h3>
-        <p>Digunakan sebagai konteks belajar untuk mengenali lingkungan, bentang alam, serta hubungan manusia dengan ruang di sekitarnya.</p>
-      </article>
-      <article class="place-card market">
-        <div class="place-no">3</div>
-        <div class="place-emoji">🏪</div>
-        <h3>Pasar Brandong • Desa Dawe</h3>
-        <p>Menjadi konteks belajar kegiatan ekonomi: memahami peran penjual dan pembeli serta hubungan produksi, distribusi, dan konsumsi.</p>
-      </article>
-    </div>
+    <nav class="nav-menu">
+      <a class="nav-link active" href="#beranda"><span class="nav-icon">🏠</span>Beranda</a>
+      <a class="nav-link" href="literasi.html"><span class="nav-icon">📖</span>Literasi</a>
+      <a class="nav-link" href="numerasi.html"><span class="nav-icon">📊</span>Numerasi</a>
+      <a class="nav-link" href="#tantangan"><span class="nav-icon">🏆</span>Tantangan</a>
+      <a class="nav-link" href="#progres"><span class="nav-icon">⭐</span>Progres</a>
+    </nav>
 
-    <div class="mission-box">
-      <h3>🎯 Misi Literasimu</h3>
-      <div class="mission-steps">
-        <div class="mission-step"><span>👀</span>Amati</div>
-        <div class="mission-step"><span>🔎</span>Temukan Informasi</div>
-        <div class="mission-step"><span>🧩</span>Hubungkan</div>
-        <div class="mission-step"><span>💡</span>Tafsirkan</div>
-        <div class="mission-step"><span>✅</span>Simpulkan</div>
-      </div>
-    </div>
-    <div class="mini-mission" data-mission="1">
-      <h3>🎯 Misi Pos 1</h3><p>Manakah tiga tempat yang menjadi konteks petualangan literasi kita?</p>
-      <div class="mission-options"><button class="mission-option" data-correct="1">Desa Ranuklindungan, Danau Ranu, dan Pasar Brandong</button><button class="mission-option">Terminal, bandara, dan pelabuhan</button><button class="mission-option">Kebun binatang, museum, dan stadion</button></div><div class="mission-feedback"></div>
-    </div>
-  </section>
+    <img
+      src="img/logo-pikto-ips.png"
+      alt="Logo SITEEk-PIKTO-IPS"
+      class="top-logo"
+      onerror="this.style.visibility='hidden';"
+    >
+  </header>
 
-  <section class="card learning-pos" id="pos2" data-pos="2">
-    <div class="pos-heading"><strong>🧠 POS 2 • Memahami Makna</strong><span>Literasi bukan sekadar membaca</span></div>
-    <h2>📚 Apa Itu Literasi?</h2>
-    <p class="subtitle">
-      Literasi bukan hanya kemampuan membaca tulisan. Murid juga perlu memahami makna informasi
-      dan menggunakannya untuk menjawab pertanyaan atau mengambil keputusan.
-    </p>
-    <div class="info-grid">
-      <div class="info-box">
-        <div class="icon">🔎</div>
-        <h3>Menemukan Informasi</h3>
-        <p>Mencari fakta penting seperti siapa, apa, kapan, di mana, mengapa, dan bagaimana.</p>
-      </div>
-      <div class="info-box">
-        <div class="icon">🧠</div>
-        <h3>Memahami Makna</h3>
-        <p>Menghubungkan informasi yang tertulis dengan pengetahuan dan situasi kehidupan sehari-hari.</p>
-      </div>
-      <div class="info-box">
-        <div class="icon">💡</div>
-        <h3>Membuat Kesimpulan</h3>
-        <p>Menentukan pesan atau keputusan yang masuk akal berdasarkan informasi yang tersedia.</p>
-      </div>
-    </div>
-    <div class="mini-mission" data-mission="2"><h3>🎯 Misi Pos 2</h3><p>Literasi IPS yang baik berarti...</p><div class="mission-options"><button class="mission-option">hanya membaca teks dengan cepat</button><button class="mission-option" data-correct="1">memahami informasi dan menggunakannya untuk menjawab atau mengambil keputusan</button><button class="mission-option">menghafalkan semua kalimat</button></div><div class="mission-feedback"></div></div>
-  </section>
-
-  <section class="card learning-pos" id="pos3" data-pos="3">
-    <div class="pos-heading"><strong>💡 POS 3 • Menemukan Ide Pokok</strong><span>Dari informasi menuju gagasan utama</span></div>
-    <h2>🌍 Literasi dalam Pelajaran IPS</h2>
-    <p class="subtitle">
-      Pada pelajaran IPS, literasi membantu kita memahami kegiatan manusia dalam memenuhi kebutuhan,
-      bekerja, berinteraksi, menjaga lingkungan, dan melakukan kegiatan ekonomi.
-    </p>
-    <div class="highlight">
-      Contoh sumber literasi IPS: cerita tentang pasar, peta wilayah, tabel hasil panen,
-      piktogram barang dagangan, poster budaya, dan video kegiatan masyarakat.
-    </div>
-
-    <div class="highlight" style="background:#eef8ff;border-color:#b9dcf7;border-left:5px solid #0b5ed7;">
-      <h3 style="margin:0 0 10px;color:#0b4fa3;">🎯 Tujuan Pembelajaran Literasi Membaca dan Informasi IPS</h3>
-      <p style="margin:0;line-height:1.75;color:#294b6b;">
-        Melalui teks dan informasi visual kontekstual, peserta didik mampu
-        <strong>mengidentifikasi, memahami, menginterpretasikan, menghubungkan, dan menyimpulkan informasi tentang aktivitas ekonomi masyarakat yang berkaitan dengan pemanfaatan sumber daya alam lokal, meliputi kegiatan produksi, distribusi, dan konsumsi.</strong>
-      </p>
-    </div>
-    <div class="mini-mission" data-mission="3"><h3>🎯 Misi Pos 3</h3><p>Kalimat manakah yang paling tepat menjadi ide pokok tentang literasi IPS?</p><div class="mission-options"><button class="mission-option" data-correct="1">Literasi IPS membantu memahami kehidupan masyarakat melalui berbagai informasi.</button><button class="mission-option">Semua informasi harus berbentuk angka.</button><button class="mission-option">IPS hanya mempelajari nama tempat.</button></div><div class="mission-feedback"></div></div>
-  </section>
-
-  <section class="card story learning-pos" id="pos4" data-pos="4">
-    <div class="pos-heading"><strong>🖼️ POS 4 • Membaca Informasi Kontekstual</strong><span>🏪 Misi Pasar Brandong</span></div>
-    <div class="local-story-badge">📍 Konteks Lokal PIKTO-IPS</div>
-    <h2>🏪 Cerita IPS: Petualangan ke Pasar Brandong</h2>
-    <p>
-      Pada pembelajaran IPS, murid kelas IV memulai petualangan literasi dari lingkungan yang mereka kenal, yaitu
-      <strong>Desa Ranuklindungan</strong>. Mereka kemudian mempelajari <strong>Danau Ranu</strong> sebagai bagian dari
-      lingkungan sekitar dan <strong>Pasar Brandong yang terletak di Desa Dawe</strong> sebagai konteks untuk memahami
-      kegiatan ekonomi. Melalui cerita, gambar, dan data latihan, murid mengenali peran penjual dan pembeli serta
-      menghubungkan kegiatan produksi, distribusi, dan konsumsi. Dari informasi tersebut, murid belajar bahwa
-      memahami kehidupan masyarakat memerlukan kemampuan membaca informasi dengan teliti dan membuat kesimpulan.
-    </p>
-
-    <div class="learning-pictogram-title">📊 Contoh piktogram untuk latihan membaca informasi</div>
-    <div class="pictogram">
-      <div class="pic-label">Tomat</div><div class="pics">🧺 🧺 🧺 🧺</div>
-      <div class="pic-label">Jagung</div><div class="pics">🧺 🧺 🧺</div>
-      <div class="pic-label">Cabai</div><div class="pics">🧺 🧺 🧺 🧺 🧺</div>
-      <div class="pic-label">Singkong</div><div class="pics">🧺 🧺</div>
-    </div>
-    <div class="legend">Keterangan latihan: 1 🧺 = 2 keranjang barang.</div>
-    <div class="fact-note">
-      ℹ️ <strong>Catatan:</strong> Desa Ranuklindungan, Danau Ranu, serta lokasi Pasar Brandong di Desa Dawe digunakan sebagai konteks lokal.
-      Nama dan jumlah komoditas pada piktogram di atas adalah <strong>data simulasi pembelajaran</strong>, bukan data resmi Pasar Brandong.
-    </div>
-    <div class="mini-mission" data-mission="4"><h3>🎯 Misi Pos 4</h3><p>Dari cerita Pasar Brandong, hubungan utama antara penjual dan pembeli adalah...</p><div class="mission-options"><button class="mission-option" data-correct="1">penjual menawarkan barang dan pembeli memperoleh barang yang dibutuhkan</button><button class="mission-option">keduanya tidak memiliki hubungan dalam kegiatan ekonomi</button><button class="mission-option">pembeli selalu menjadi produsen</button></div><div class="mission-feedback"></div></div>
-  </section>
-
-  <section class="card learning-pos" id="pos5" data-pos="5">
-    <div class="pos-heading"><strong>📊 POS 5 • Tabel & Piktogram</strong><span>Ubah informasi menjadi data visual</span></div>
-    <h2>🎯 Menemukan Ide Pokok</h2>
-    <p class="subtitle">
-      Ide pokok adalah gagasan utama yang dibicarakan dalam sebuah paragraf atau cerita.
-    </p>
-    <div class="highlight">
-      Ide pokok cerita adalah: <strong>belajar memahami kehidupan masyarakat melalui informasi tentang lingkungan sekitar dan kegiatan ekonomi dengan konteks Ranuklindungan, Danau Ranu, dan Pasar Brandong.</strong>
-    </div>
-    <div class="mini-mission" data-mission="5"><h3>🎯 Misi Pos 5</h3><p>Saat membaca piktogram, langkah pertama yang paling penting adalah...</p><div class="mission-options"><button class="mission-option" data-correct="1">membaca keterangan nilai setiap simbol</button><button class="mission-option">langsung menjumlah tanpa melihat keterangan</button><button class="mission-option">memilih gambar yang paling menarik</button></div><div class="mission-feedback"></div></div>
-  </section>
-
-  <section class="card learning-pos" id="pos6" data-pos="6">
-    <div class="pos-heading"><strong>🔗 POS 6 • Menghubungkan Informasi</strong><span>Tersurat + tersirat + bukti</span></div>
-    <h2>📝 Informasi Tersurat dan Tersirat</h2>
-    <div class="info-grid">
-      <div class="info-box">
-        <div class="icon">📌</div>
-        <h3>Tersurat</h3>
-        <p>Informasi yang disebutkan langsung. Contoh: Pasar Brandong terletak di Desa Dawe.</p>
-      </div>
-      <div class="info-box">
-        <div class="icon">💭</div>
-        <h3>Tersirat</h3>
-        <p>Informasi yang disimpulkan. Contoh: dari kegiatan jual beli kita dapat menyimpulkan bahwa penjual dan pembeli saling berhubungan dalam kegiatan ekonomi.</p>
-      </div>
-      <div class="info-box">
-        <div class="icon">🔗</div>
-        <h3>Menghubungkan Data</h3>
-        <p>Cerita dapat dihubungkan dengan piktogram untuk memahami jumlah barang dagangan.</p>
-      </div>
-    </div>
-    <div class="mini-mission" data-mission="6"><h3>🎯 Misi Pos 6</h3><p>Informasi tersirat diperoleh dengan cara...</p><div class="mission-options"><button class="mission-option">menyalin kalimat tanpa berpikir</button><button class="mission-option" data-correct="1">menghubungkan petunjuk dalam teks untuk memperoleh makna yang tidak ditulis langsung</button><button class="mission-option">mengabaikan bukti dari teks</button></div><div class="mission-feedback"></div></div>
-  </section>
-
-  <section class="card learning-pos" id="pos7" data-pos="7">
-    <div class="pos-heading"><strong>🕵️ POS 7 • Menafsirkan Informasi</strong><span>📊 Piktogram + latihan</span></div>
-    <h2>📊 Cara Membaca Piktogram</h2>
-    <div class="steps">
-      <div class="step">Baca judul atau konteks data yang ditampilkan.</div>
-      <div class="step">Perhatikan keterangan nilai setiap simbol.</div>
-      <div class="step">Hitung banyak simbol pada setiap kategori.</div>
-      <div class="step">Hubungkan data dengan informasi dalam cerita.</div>
-      <div class="step">Gunakan informasi tersebut untuk membuat kesimpulan.</div>
-    </div>
-    <div class="mini-mission" data-mission="7"><h3>🎯 Misi Pos 7</h3><p>Jika 1 simbol mewakili 5 barang dan ada 4 simbol, jumlah barang adalah...</p><div class="mission-options"><button class="mission-option">9 barang</button><button class="mission-option" data-correct="1">20 barang</button><button class="mission-option">25 barang</button></div><div class="mission-feedback"></div></div>
-  </section>
-
-    <section class="card" id="latihan">
-    <h2>✏️ Latihan Literasi</h2>
-    <p class="subtitle">
-      Jawablah berdasarkan cerita petualangan literasi lokal dan informasi pada halaman. Ketik jawaban pada kotak
-      yang tersedia lalu tekan tombol <strong>Simpan</strong>. Jika jawaban benar tombol berubah
-      <strong style="color:#198754">hijau</strong>, sedangkan jika salah berubah
-      <strong style="color:#dc3545">merah</strong>.
-    </p>
-    <div class="exercise-list">
-      <div class="exercise">
-        <strong>1.</strong> Apa ide pokok cerita petualangan literasi lokal di atas?
-        <div class="answer-area">
-          <input class="answer-input" id="jawaban-literasi-1" type="text"
-                 placeholder="Ketik jawaban..." autocomplete="off">
-          <button class="btn save-answer" id="simpan-literasi-1" type="button"
-                  onclick="simpanJawabanLiterasi(1)">💾 Simpan</button>
-          <div class="answer-feedback" id="feedback-literasi-1"></div>
-        </div>
-      </div>
-      <div class="exercise">
-        <strong>2.</strong> Pasar Brandong terletak di desa apa?
-        <div class="answer-area">
-          <input class="answer-input" id="jawaban-literasi-2" type="text"
-                 placeholder="Ketik nama desa..." autocomplete="off">
-          <button class="btn save-answer" id="simpan-literasi-2" type="button"
-                  onclick="simpanJawabanLiterasi(2)">💾 Simpan</button>
-          <div class="answer-feedback" id="feedback-literasi-2"></div>
-        </div>
-      </div>
-      <div class="exercise">
-        <strong>3.</strong> Tempat apa yang digunakan sebagai konteks untuk mengenali lingkungan dan bentang alam?
-        <div class="answer-area">
-          <input class="answer-input" id="jawaban-literasi-3" type="text"
-                 placeholder="Ketik jawaban..." autocomplete="off">
-          <button class="btn save-answer" id="simpan-literasi-3" type="button"
-                  onclick="simpanJawabanLiterasi(3)">💾 Simpan</button>
-          <div class="answer-feedback" id="feedback-literasi-3"></div>
-        </div>
-      </div>
-      <div class="exercise">
-        <strong>4.</strong> Apa hubungan antara penjual dan pembeli dalam kegiatan ekonomi?
-        <div class="answer-area">
-          <input class="answer-input" id="jawaban-literasi-4" type="text"
-                 placeholder="Ketik jawaban..." autocomplete="off">
-          <button class="btn save-answer" id="simpan-literasi-4" type="button"
-                  onclick="simpanJawabanLiterasi(4)">💾 Simpan</button>
-          <div class="answer-feedback" id="feedback-literasi-4"></div>
-        </div>
-      </div>
-      <div class="exercise">
-        <strong>5.</strong> Mengapa piktogram membantu kita memahami informasi IPS?
-        <div class="answer-area">
-          <input class="answer-input" id="jawaban-literasi-5" type="text"
-                 placeholder="Ketik jawaban..." autocomplete="off">
-          <button class="btn save-answer" id="simpan-literasi-5" type="button"
-                  onclick="simpanJawabanLiterasi(5)">💾 Simpan</button>
-          <div class="answer-feedback" id="feedback-literasi-5"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================================================
-       VIDEO INTERAKTIF - DILETAKKAN DI BAWAH LATIHAN LITERASI
-  ======================================================= -->
-  <span id="videoInteraktif" style="display:block;position:relative;top:-95px"></span>
-  <section class="card video-section learning-pos" id="pos8" data-pos="8">
-    <div class="pos-heading"><strong>🎯 POS 8 • Menyimpulkan & Membuktikan</strong><span>🎬 Video Interaktif</span></div>
-    <div class="video-title-row">
-      <div class="video-title-icon">▶</div>
-      <div>
-        <h2 style="margin:0">Video Literasi IPS Interaktif</h2>
-        <p class="subtitle" style="margin:4px 0 0">
-          Materi Kegiatan Ekonomi: produksi, distribusi, konsumsi, dan jual beli.
+  <!-- IDENTITAS -->
+  <section class="identity-wrap" id="identityCard">
+    <div class="identity-card">
+      <div class="identity-head">
+        <img src="img/logo-pikto-ips.png" alt="Logo SITEEk-PIKTO-IPS" class="identity-logo" onerror="this.style.display='none'">
+        <h2>👋 Selamat Datang di SITEEk-PIKTO-IPS!</h2>
+        <p>
+          Masukkan identitasmu terlebih dahulu. Progres dan jawaban akan disimpan
+          agar kamu dapat melanjutkan belajar meskipun sempat berhenti atau jaringan terputus.
         </p>
       </div>
-    </div>
 
-    <div class="video-intro">
-      <strong>📌 Aturan belajar:</strong> setiap video harus ditonton sampai selesai.
-      Setelah video selesai akan muncul pertanyaan <strong>“Apakah kamu paham?”</strong>.
-      Jika memilih <strong>Ya</strong>, video diputar ulang dalam mode interaktif dan akan berhenti
-      sebanyak <strong>4 kali</strong> untuk memberikan pertanyaan. Jawaban benar membuat video
-      lanjut; jawaban salah membuat video kembali dari awal.
-    </div>
-
-    <div class="video-grid">
-
-      <!-- VIDEO 1 -->
-      <article class="video-card" data-video-index="0">
-        <div class="video-card-head">
-          <div>
-            <h3>🎬 Video 1 — Kegiatan Ekonomi</h3>
-            <div class="video-source">Produksi • Distribusi • Konsumsi</div>
-          </div>
-          <span class="watch-status" id="status-video-0">BELUM DITONTON</span>
+      <div class="form-grid">
+        <div>
+          <label class="field-label" for="nama">Nama Lengkap</label>
+          <input id="nama" type="text" placeholder="Contoh: Budi Santoso">
         </div>
-
-        <div class="player-shell">
-          <div id="player-0" class="yt-player"></div>
-          <div class="player-lock" id="lock-0">
-            <div class="player-lock-inner">
-              <div class="play-icon">▶️</div>
-              <h4>Siap menonton?</h4>
-              <p>Tonton video sampai selesai. Kontrol melompat durasi dinonaktifkan agar pembelajaran utuh.</p>
-              <button class="btn btn-blue" type="button" onclick="startRequiredVideo(0)">Mulai Menonton</button>
-            </div>
-          </div>
+        <div>
+          <label class="field-label" for="kelas">Kelas</label>
+          <select id="kelas">
+            <option value="">Pilih kelas</option>
+            <option>Kelas 4A</option>
+            <option>Kelas 4B</option>
+            <option>Kelas 4C</option>
+          </select>
         </div>
+      </div>
 
-        <div class="progress-wrap">
-          <div class="progress-label">
-            <span>Progres menonton</span>
-            <span id="watch-percent-0">0%</span>
-          </div>
-          <div class="progress-track"><div class="progress-fill" id="watch-progress-0"></div></div>
-        </div>
-
-        <div class="storyline">
-          <h4>📖 Alur cerita video</h4>
-          <ol>
-            <li>Murid dikenalkan pada kegiatan ekonomi yang terjadi dalam kehidupan sehari-hari.</li>
-            <li>Dijelaskan kegiatan <strong>produksi</strong>, yaitu menghasilkan barang atau jasa.</li>
-            <li>Dijelaskan kegiatan <strong>distribusi</strong>, yaitu menyalurkan barang dari produsen kepada konsumen.</li>
-            <li>Dijelaskan kegiatan <strong>konsumsi</strong>, yaitu menggunakan barang atau jasa untuk memenuhi kebutuhan.</li>
-            <li>Ketiga kegiatan dihubungkan dengan contoh kehidupan masyarakat dan aktivitas jual beli.</li>
-          </ol>
-        </div>
-
-        <div class="understanding hidden" id="understanding-0">
-          <h4>🤔 Apakah kamu paham?</h4>
-          <p>Pilih Ya untuk mengikuti video interaktif. Pilih Tidak untuk menonton ulang dari awal.</p>
-          <div class="btn-row">
-            <button class="btn btn-green" type="button" onclick="confirmUnderstand(0,true)">✅ Ya, saya paham</button>
-            <button class="btn btn-red" type="button" onclick="confirmUnderstand(0,false)">🔁 Belum, tonton lagi</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- VIDEO 2 -->
-      <article class="video-card" data-video-index="1">
-        <div class="video-card-head">
-          <div>
-            <h3>🎬 Video 2 — Kegiatan Ekonomi di Indonesia</h3>
-            <div class="video-source">Produksi • Distribusi • Konsumsi dalam masyarakat</div>
-          </div>
-          <span class="watch-status" id="status-video-1">BELUM DITONTON</span>
-        </div>
-
-        <div class="player-shell">
-          <div id="player-1" class="yt-player"></div>
-          <div class="player-lock" id="lock-1">
-            <div class="player-lock-inner">
-              <div class="play-icon">▶️</div>
-              <h4>Siap menonton?</h4>
-              <p>Perhatikan hubungan antara orang yang menghasilkan, menyalurkan, dan menggunakan barang.</p>
-              <button class="btn btn-blue" type="button" onclick="startRequiredVideo(1)">Mulai Menonton</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="progress-wrap">
-          <div class="progress-label">
-            <span>Progres menonton</span>
-            <span id="watch-percent-1">0%</span>
-          </div>
-          <div class="progress-track"><div class="progress-fill" id="watch-progress-1"></div></div>
-        </div>
-
-        <div class="storyline">
-          <h4>📖 Alur cerita video</h4>
-          <ol>
-            <li>Video mengajak murid melihat kegiatan ekonomi yang ada di lingkungan masyarakat.</li>
-            <li>Murid mengenali peran <strong>produsen</strong> sebagai pihak yang menghasilkan barang.</li>
-            <li>Murid memahami peran <strong>distributor</strong> sebagai pihak yang menyalurkan barang.</li>
-            <li>Murid memahami peran <strong>konsumen</strong> sebagai pihak yang menggunakan atau membeli barang.</li>
-            <li>Alur tersebut dikaitkan dengan pasar dan proses jual beli untuk memenuhi kebutuhan manusia.</li>
-          </ol>
-        </div>
-
-        <div class="understanding hidden" id="understanding-1">
-          <h4>🤔 Apakah kamu paham?</h4>
-          <p>Pilih Ya untuk mengikuti video interaktif. Pilih Tidak untuk menonton ulang dari awal.</p>
-          <div class="btn-row">
-            <button class="btn btn-green" type="button" onclick="confirmUnderstand(1,true)">✅ Ya, saya paham</button>
-            <button class="btn btn-red" type="button" onclick="confirmUnderstand(1,false)">🔁 Belum, tonton lagi</button>
-          </div>
-        </div>
-      </article>
-
-    </div>
-
-    <div class="video-complete">
-      <strong>🏁 Status Penyelesaian Video</strong>
-      <p id="videoSummary">Selesaikan kedua video dan 4 pertanyaan interaktif pada masing-masing video.</p>
-      <div class="complete-bar"><div class="complete-fill" id="completeFill"></div></div>
-    </div>
-
-    <div class="next-lock">
-      <p id="nextMessage">🔒 Materi Numerasi terbuka setelah kedua video interaktif selesai.</p>
-      <a id="nextNumerasi" class="btn btn-light" href="javascript:void(0)" aria-disabled="true">🔢 Lanjut ke Numerasi</a>
+      <div class="btn-row">
+        <button class="btn btn-primary btn-block" onclick="masukAplikasi()">🚀 Masuk ke Aplikasi</button>
+      </div>
     </div>
   </section>
 
-  <section class="card">
-    <h2>💡 Pesan Penting</h2>
-    <p class="subtitle" style="margin-bottom:0">
-      Murid yang memiliki kemampuan literasi yang baik tidak hanya membaca,
-      tetapi juga memahami informasi, memeriksa bukti, menghubungkan data,
-      dan membuat kesimpulan yang masuk akal.
-    </p>
-  </section>
+  <!-- AREA APLIKASI -->
+  <main id="appArea" class="hidden">
+    <div class="page">
 
-  <div class="btn-row" style="margin-top:20px">
-    <a class="btn btn-light" href="index.html">← Kembali ke Beranda</a>
-    <a class="btn btn-blue" href="#videoInteraktif">🎬 Ke Video Interaktif</a>
-  </div>
-
-  
-<section class="profile6" id="profilLulusan">
-<h2>🌟 Profil Lulusan yang Dilatih di Literasi</h2>
-<p>Aktivitas literasi bukan hanya membaca teks. Murid menemukan informasi, menafsirkan konteks masyarakat, menyampaikan alasan, dan menyiapkan gagasan untuk Misi Profil Lulusan.</p>
-<div class="p6grid">
-<div class="p6item"><div class="p6icon">🧠</div><b>Penalaran Kritis</b><span>Menemukan, menghubungkan, menafsirkan, dan menyimpulkan informasi.</span></div>
-<div class="p6item"><div class="p6icon">🎯</div><b>Kemandirian</b><span>Menyelesaikan pos belajar dan latihan sesuai progres sendiri.</span></div>
-<div class="p6item"><div class="p6icon">💬</div><b>Komunikasi</b><span>Menjelaskan pemahaman dan alasan melalui jawaban tertulis.</span></div>
-<div class="p6item"><div class="p6icon">💡</div><b>Kreativitas</b><span>Mengembangkan gagasan dari informasi tentang kehidupan masyarakat.</span></div>
-<div class="p6item"><div class="p6icon">🇮🇩</div><b>Kewargaan</b><span>Mengenali tindakan bertanggung jawab dalam lingkungan dan masyarakat.</span></div>
-<div class="p6item"><div class="p6icon">🤝</div><b>Kolaborasi</b><span>Membawa hasil pemahaman ke diskusi kelompok pada Misi Profil Lulusan.</span></div>
-</div>
-<div class="note"><strong>🌱 Jembatan ke Misi:</strong> setelah Literasi dan Numerasi, kembali ke halaman utama untuk mengerjakan Misi Kreativitas, Kewargaan, dan Kolaborasi.</div>
-</section>
-
-<footer>
-    <strong>SITEEK-PIKTO-IPS</strong><br>
-    Media Pembelajaran IPS Berbasis Literasi, Numerasi, Piktogram, dan Video Interaktif
-    <div class="developer-info">👨‍💻 Pembuat &amp; Pengembang Aplikasi SiTeek: <strong>Sugeng Hidayat</strong><br>📱 WhatsApp: <a href="https://wa.me/6283862505875" target="_blank" rel="noopener">083862505875</a></div>
-  </footer>
-</main>
-
-<!-- POPUP VIDEO INTERAKTIF -->
-<div class="modal hidden" id="interactiveModal" role="dialog" aria-modal="true" aria-labelledby="interactiveTitle">
-  <div class="modal-box">
-    <div class="modal-head">
-      <div>
-        <h3 id="interactiveTitle">🎬 Video Interaktif</h3>
-        <p id="interactiveSubtitle">Video akan berhenti 4 kali untuk memberikan pertanyaan.</p>
+      <section class="home-stage" id="beranda">
+        <div class="home-welcome">
+          <div class="teacher-zone">
+            <div class="speech-bubble">Ayo belajar IPS bersama SITEEk-PIKTO-IPS!</div>
+            <img src="img/guru-capaian.png" alt="Guru SITEEk-PIKTO-IPS" class="teacher-img" onerror="this.style.display='none'">
+          </div>
+          <div class="welcome-card">
+            <div class="welcome-eyebrow">👋 Halo, selamat datang!</div>
+            <h1>Selamat Datang di <span class="brand-accent">SITEEk-PIKTO-IPS</span></h1>
+            <p class="hero-copy">Jelajahi IPS melalui literasi, numerasi, piktogram, dan tantangan bertingkat dengan cara yang lebih seru, kontekstual, dan bermakna.</p>
+            <div class="home-chips"><span class="home-chip">📖 Literasi IPS</span><span class="home-chip">🔢 Numerasi IPS</span><span class="home-chip">🎯 Tantangan</span><span class="home-chip">🏆 Papan Nilai</span></div>
+            <div class="profile-panel" style="margin-top:18px;min-height:auto;padding:14px 16px;grid-template-columns:54px 1fr">
+              <div class="avatar" style="width:50px;height:50px;font-size:27px">🧑‍🎓</div>
+              <div class="profile-data">
+                <div class="profile-field"><label>Nama</label><strong id="profileName">Murid PIKTO</strong></div>
+                <div class="profile-field"><label>Kelas</label><strong id="profileClass">-</strong></div>
+                <div class="profile-field id"><label>ID Murid</label><strong class="profile-id" id="profileId">-</strong></div>
+                <div id="networkStatus" class="network online">🟢 Terhubung</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section class="cp-card" aria-labelledby="cpTitle">
+          <div class="cp-head"><div class="cp-title" id="cpTitle">🎯 Capaian Pembelajaran</div><div class="cp-badge">🎓 Kelas 4 • Fase B • IPS</div></div>
+          <div class="cp-body">
+            <div class="cp-visual" aria-hidden="true">🌍🗺️</div>
+            <p class="cp-text">Menjelaskan peran, tugas, dan tanggung jawab serta interaksi sosial yang terjadi di sekitar tempat tinggal dan sekolah; mengenali letak kabupaten/kota dan provinsi tempat tinggalnya dengan menggunakan peta konvensional/digital; mengklasifikasikan ragam bentang alam dan keterkaitannya dengan profesi masyarakat, ragam budaya serta upaya untuk melestarikannya.</p>
+          </div>
+        </section>
+      </section>
+      <div class="quick-cards">
+        <a class="quick-card blue" href="literasi.html"><div><div class="qc-icon">📖</div><strong>Literasi IPS</strong><p>Baca materi, pahami informasi, dan latih kemampuan literasimu.</p></div></a>
+        <a class="quick-card green" href="numerasi.html"><div><div class="qc-icon">📊</div><strong>Numerasi IPS</strong><p>Pelajari data, piktogram, grafik, dan soal numerasi kontekstual.</p></div></a>
+        <a class="quick-card orange" href="#tantangan"><div><div class="qc-icon">🏆</div><strong>Tantangan</strong><p>Uji kemampuanmu melalui Level Awal, Cakap, dan Mahir.</p></div></a>
+        <a class="quick-card purple" href="#leaderboard"><div><div class="qc-icon">⭐</div><strong>Papan Nilai</strong><p>Lihat hasil terbaik dan perkembangan belajar.</p></div></a>
       </div>
-      <button class="close-btn" type="button" onclick="closeInteractiveModal()" aria-label="Tutup">✕</button>
-    </div>
 
-    <div class="interactive-player-wrap">
-      <div id="interactivePlayer"></div>
+      <div class="kid-section-title" aria-label="Belajar dari lingkungan sekitar">
+        <div class="kid-title-icon">🗺️</div>
+        <div><h2>Belajar dari Lingkungan Sekitar</h2><p>SITEEk-PIKTO-IPS mengajakmu memahami IPS dari tempat yang kamu kenal.</p></div>
+      </div>
+      <section class="local-journey" aria-label="Konteks lokal SITEEk-PIKTO-IPS">
+        <article class="local-card"><div class="local-icon">🏘️</div><strong>Desa Ranuklindungan</strong><p>Lingkungan tempat belajar memahami kehidupan masyarakat, peran, tanggung jawab, dan interaksi sosial.</p></article>
+        <article class="local-card"><div class="local-icon">🌊</div><strong>Danau Ranu</strong><p>Konteks lingkungan sekitar untuk mengamati bentang alam dan keterkaitannya dengan kehidupan masyarakat.</p></article>
+        <article class="local-card"><div class="local-icon">🛍️</div><strong>Pasar Brandong • Desa Dawe</strong><p>Konteks nyata untuk belajar membaca informasi dan data tentang aktivitas masyarakat.</p></article>
+      </section>
 
-      <div class="question-overlay hidden" id="questionOverlay">
-        <div class="question-card">
-          <span class="question-number" id="questionNumber">PERTANYAAN 1 DARI 4</span>
-          <h4 id="questionText">Pertanyaan</h4>
-          <div class="quiz-options" id="quizOptions"></div>
-          <div class="quiz-feedback" id="quizFeedback" aria-live="polite"></div>
+      <div class="kid-section-title" aria-label="Petualangan belajar">
+        <div class="kid-title-icon">🚀</div>
+        <div><h2>Petualangan Belajarmu</h2><p>Mulai tantangan, pantau progres, dan lihat pencapaianmu.</p></div>
+      </div>
+
+      <section class="profile6-section" id="profilLulusan">
+        <div class="profile6-head">
+          <h2>🌟 6 Dimensi Profil Lulusan dalam SITEEk–PIKTO-IPS</h2>
+          <p>Setiap dimensi dihubungkan dengan aktivitas nyata. Tiga dimensi sudah melekat pada proses belajar, sedangkan Kreativitas, Kewargaan, dan Kolaborasi diperkuat melalui Misi Profil Lulusan.</p>
+        </div>
+        <div class="profile6-grid">
+          <article class="profile6-card"><div class="dicon">🧠</div><strong>Penalaran Kritis</strong><p>Membaca teks dan data, menafsirkan piktogram, membandingkan informasi, lalu menarik kesimpulan.</p></article>
+          <article class="profile6-card"><div class="dicon">🎯</div><strong>Kemandirian</strong><p>Mengelola progres belajar, menyelesaikan level, belajar ulang, dan melakukan refleksi diri.</p></article>
+          <article class="profile6-card"><div class="dicon">💬</div><strong>Komunikasi</strong><p>Menyampaikan pemahaman, alasan, kesimpulan, dan refleksi melalui jawaban tertulis.</p></article>
+          <article class="profile6-card active-mission"><div class="dicon">💡</div><strong>Kreativitas</strong><p>Menciptakan gagasan atau solusi kontekstual berdasarkan informasi dan data IPS.</p></article>
+          <article class="profile6-card active-mission"><div class="dicon">🇮🇩</div><strong>Kewargaan</strong><p>Memilih tindakan bertanggung jawab terhadap lingkungan dan kehidupan masyarakat sekitar.</p></article>
+          <article class="profile6-card active-mission"><div class="dicon">🤝</div><strong>Kolaborasi</strong><p>Berdiskusi, membagi peran, dan menuliskan keputusan yang disepakati bersama kelompok.</p></article>
+        </div>
+
+        <div class="mission-shell" id="misiProfil">
+          <h3>🚀 Misi Profil Lulusan</h3>
+          <p>Kerjakan setelah mempelajari Literasi dan Numerasi. Gunakan konteks yang sudah dipelajari di SITEEk–PIKTO-IPS. Jawaban misi akan disimpan sebagai bukti aktivitas belajar.</p>
+          <div class="mission-grid">
+            <article class="mission-card">
+              <h4>💡 Misi Kreativitas</h4>
+              <p>Buat satu gagasan sederhana untuk membantu kegiatan ekonomi atau menjaga lingkungan masyarakat berdasarkan informasi/data yang kamu pelajari.</p>
+              <label for="misiKreativitas">Gagasanmu</label>
+              <textarea id="misiKreativitas" placeholder="Tuliskan gagasan dan alasan singkat..."></textarea>
+            </article>
+            <article class="mission-card">
+              <h4>🇮🇩 Misi Kewargaan</h4>
+              <p>Pilih tindakan yang menurutmu paling bertanggung jawab, lalu jelaskan alasannya.</p>
+              <label for="misiKewargaanPilihan">Tindakan</label>
+              <select id="misiKewargaanPilihan">
+                <option value="">-- Pilih tindakan --</option>
+                <option>Menjaga kebersihan lingkungan bersama</option>
+                <option>Menggunakan sumber daya secara bijak</option>
+                <option>Mendukung kegiatan ekonomi masyarakat secara bertanggung jawab</option>
+                <option>Menyampaikan informasi yang benar kepada orang lain</option>
+              </select>
+              <label for="misiKewargaanAlasan">Alasan</label>
+              <textarea id="misiKewargaanAlasan" placeholder="Mengapa tindakan itu penting?"></textarea>
+            </article>
+            <article class="mission-card">
+              <h4>🤝 Misi Kolaborasi</h4>
+              <p>Diskusikan satu masalah dari materi bersama teman. Tuliskan anggota kelompok dan keputusan yang kalian sepakati.</p>
+              <label for="misiAnggota">Anggota kelompok</label>
+              <input id="misiAnggota" type="text" placeholder="Contoh: Ani, Budi, Raka">
+              <label for="misiKolaborasi">Keputusan kelompok</label>
+              <textarea id="misiKolaborasi" placeholder="Tuliskan hasil kesepakatan kelompok..."></textarea>
+            </article>
+          </div>
+          <div class="mission-actions">
+            <button class="btn primary" id="btnSimpanMisi" type="button" onclick="simpanMisiProfil()">💾 Simpan Misi Profil</button>
+            <span class="mission-status" id="misiProfilStatus">Belum disimpan.</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="dashboard-grid">
+        <!-- TANTANGAN -->
+        <section class="panel" id="tantangan">
+          <div class="panel-head">
+            <div class="panel-icon blue-circle">🎯</div>
+            <div>
+              <h2>Tantangan SITEEk-PIKTO-IPS</h2>
+              <p>Mulai dengan mengukur kemampuanmu, lalu lanjutkan ke tantangan berikutnya.</p>
+            </div>
+          </div>
+
+          <div class="challenge-split">
+            <!-- LEVEL AWAL DIPISAHKAN -->
+            <div class="ability-card diagnostic">
+              <div class="ability-title">
+                <div class="icon">🧠</div>
+                <div>
+                  <h3>Coba Kemampuan Kamu</h3>
+                  <p>Kenali kemampuan literasi dan numerasimu sebelum melanjutkan.</p>
+                </div>
+              </div>
+
+              <div class="awal-standalone">
+                <div class="emoji">🌱</div>
+                <div>
+                  <h4>Level Awal</h4>
+                  <p>20 soal: 10 soal Literasi membaca dan informasi IPS serta 10 soal Numerasi.</p>
+                  <div class="ability-chips">
+                    <span class="ability-chip lit">📖 10 Literasi</span>
+                    <span class="ability-chip num">🔢 10 Numerasi</span>
+                    <span class="availability available" id="previewAwal" style="width:auto;margin:0">TERSEDIA</span>
+                  </div>
+                </div>
+              </div>
+
+              <button class="btn diagnostic-btn" onclick="mulaiLevelAwal()">🌱 Mulai Level Awal</button>
+            </div>
+
+            <!-- LEVEL CAKAP & MAHIR -->
+            <div class="ability-card">
+              <div class="ability-title">
+                <div class="icon" style="background:#e8f0ff">🏆</div>
+                <div>
+                  <h3 style="color:#135eae">Tantangan Lanjutan</h3>
+                  <p>Level Cakap dan Mahir dibuka sesuai progres belajarmu.</p>
+                </div>
+              </div>
+
+              <div class="advanced-levels">
+                <article class="level-preview cakap">
+                  <div class="lock-badge" id="lockCakap">🔒</div>
+                  <div class="emoji">🚀</div>
+                  <h3>CAKAP</h3>
+                  <p>Kompetensi Menengah</p>
+                  <div class="availability locked" id="previewCakap">TERKUNCI</div>
+                  <p class="level-note">Selesaikan Level Awal dengan nilai minimal <span class="kkm-level-text">70</span>.</p>
+                </article>
+
+                <article class="level-preview mahir">
+                  <div class="lock-badge" id="lockMahir">🔒</div>
+                  <div class="emoji">🏆</div>
+                  <h3>MAHIR</h3>
+                  <p>Kompetensi Tinggi</p>
+                  <div class="availability locked" id="previewMahir">TERKUNCI</div>
+                  <p class="level-note">Selesaikan Level Cakap dengan nilai minimal <span class="kkm-level-text">70</span>.</p>
+                </article>
+              </div>
+
+              <button class="btn advanced-btn" onclick="bukaPemilihanLevel()">🚀 Pilih Level Cakap / Mahir</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- PROGRES -->
+        <section class="panel" id="progres">
+          <div class="panel-head">
+            <div class="panel-icon green-circle">🌱</div>
+            <div>
+              <h2 style="color:#168b3d">Progres Belajarmu</h2>
+              <p>Pantau perkembangan dan pencapaianmu di setiap level.</p>
+            </div>
+          </div>
+
+          <div class="progress-list">
+            <div class="progress-row">
+              <div class="round-icon awal">🌱</div>
+              <div class="progress-name"><strong style="color:#14943a">AWAL</strong><small>Kompetensi Dasar</small></div>
+              <div class="status-col"><small>Status</small><span class="status-pill st-belum" id="statusAwal">BELUM</span></div>
+              <div class="score-col"><small>Nilai Level</small><div class="score-value" id="scoreAwal">-</div><small class="awal-score-detail" id="scoreAwalDetail">Lit - • Num -</small></div>
+              <div class="ring active" id="ringAwal">0/20</div>
+            </div>
+
+            <div class="progress-row">
+              <div class="round-icon cakap">🚀</div>
+              <div class="progress-name"><strong style="color:#0a64ce">CAKAP</strong><small>Kompetensi Menengah</small></div>
+              <div class="status-col"><small>Status</small><span class="status-pill st-terkunci" id="statusCakap">TERKUNCI</span></div>
+              <div class="score-col"><small>Nilai</small><div class="score-value" id="scoreCakap">-</div></div>
+              <div class="ring" id="ringCakap">0/12</div>
+            </div>
+
+            <div class="progress-row">
+              <div class="round-icon mahir">🏆</div>
+              <div class="progress-name"><strong style="color:#8241d6">MAHIR</strong><small>Kompetensi Tinggi</small></div>
+              <div class="status-col"><small>Status</small><span class="status-pill st-terkunci" id="statusMahir">TERKUNCI</span></div>
+              <div class="score-col"><small>Nilai</small><div class="score-value" id="scoreMahir">-</div></div>
+              <div class="ring" id="ringMahir">0/12</div>
+            </div>
+          </div>
+
+          <div class="detail-progress">📊 Lihat Detail Progres</div>
+        </section>
+
+        <!-- PAPAN PERINGKAT -->
+        <aside class="panel leaderboard-panel" id="leaderboard">
+          <div class="leaderboard-head">
+            <div class="leaderboard-trophy">🏆</div>
+            <div>
+              <h2>Papan Peringkat</h2>
+              <p>Nilai terbaik diprioritaskan, lalu waktu tercepat.</p>
+            </div>
+          </div>
+
+          <div class="leaderboard-list" id="leaderboardList">
+            <div class="leaderboard-empty">
+              <div class="spinner"></div>
+              Memuat hasil tantangan...
+            </div>
+          </div>
+
+          <div class="leaderboard-note">
+            ⭐ Setiap murid hanya ditampilkan satu kali berdasarkan hasil terbaiknya.
+          </div>
+        </aside>
+      </div>
+
+      <div class="info-strip">
+        <div class="info-icon">i</div>
+        <div>
+          <strong>Informasi</strong>
+          <p>
+            Level Awal terdiri dari 10 soal Literasi dan 10 soal Numerasi. Masing-masing nilai dihitung dari jumlah jawaban benar ÷ 10 × 100. Nilai level tetap digunakan untuk progres dan pembukaan Level Cakap.
+          </p>
         </div>
       </div>
+
+      <!-- AREA TANTANGAN DINAMIS -->
+      <section id="challengeArea" class="challenge-shell hidden">
+        <div class="card challenge-header">
+          <div class="challenge-top">
+            <div>
+              <h2 id="challengeTitle">🏆 Tantangan</h2>
+              <p class="subtitle" id="challengeDescription" style="margin-bottom:0">Jawab dengan teliti.</p>
+            </div>
+            <div class="level-badge" id="currentLevelBadge">LEVEL AWAL</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="progress-info">
+            <span>Progres Jawaban</span>
+            <span id="questionProgressText">0 dari 0 soal</span>
+          </div>
+          <div class="progress-track"><div class="progress-bar" id="questionProgressBar"></div></div>
+          <div class="sync-message" id="syncMessage">Jawaban akan disimpan otomatis.</div>
+        </div>
+
+        <div class="card" id="questionsCard">
+          <div class="loading"><div class="spinner"></div>Memuat soal...</div>
+        </div>
+
+        <div class="card hidden" id="resultCard"></div>
+      </section>
+
     </div>
 
-    <div class="interactive-status">
-      <span id="interactiveCheckpoint">Checkpoint: 0/4</span>
-      <span id="interactiveRule">✅ Benar = lanjut • ❌ Salah = kembali ke awal</span>
+
+    <nav class="kid-bottom-nav" aria-label="Navigasi cepat SITEEk-PIKTO-IPS">
+      <a href="#beranda"><span>🏠</span>Beranda</a>
+      <a href="literasi.html"><span>📖</span>Literasi</a>
+      <a href="numerasi.html"><span>🔢</span>Numerasi</a>
+      <a href="#tantangan"><span>🎯</span>Tantangan</a>
+      <a href="#progres"><span>⭐</span>Progres</a>
+    </nav>
+    <footer>
+      <div>© 2026 SITEEk-PIKTO-IPS - Baca Informasinya • Olah Datanya • Pahami Masyarakatnya</div>
+      <div class="developer-info">👨‍💻 Pembuat &amp; Pengembang Aplikasi SiTeek: <strong>Sugeng Hidayat</strong> &nbsp;•&nbsp; 📱 WhatsApp: <a href="https://wa.me/6283862505875" target="_blank" rel="noopener">083862505875</a></div>
+    </footer>
+  </main>
+
+  <!-- MODAL LEVEL LANJUTAN -->
+  <div class="modal hidden" id="levelModal">
+    <div class="modal-box">
+      <div class="modal-head">
+        <div>
+          <h2>🏆 Pilih Level Lanjutan</h2>
+          <p class="subtitle" style="margin:5px 0 0">
+            Level Cakap terbuka setelah Level Awal lulus. Level Mahir terbuka setelah Level Cakap lulus.
+          </p>
+        </div>
+        <button class="close" onclick="tutupPemilihanLevel()">✕</button>
+      </div>
+
+      <div class="level-grid" style="grid-template-columns:repeat(2,1fr)">
+        <button class="level-option" id="levelCakapBtn" onclick="pilihLevel('CAKAP')">
+          <div class="level-icon">🚀</div>
+          <h3>Level Cakap</h3>
+          <p>Menghitung total, selisih, sisa barang, uang, dan menggunakan data untuk menyelesaikan masalah.</p>
+          <div class="level-meta" id="modalCakapMeta">Terkunci</div>
+        </button>
+
+        <button class="level-option" id="levelMahirBtn" onclick="pilihLevel('MAHIR')">
+          <div class="level-icon">🏆</div>
+          <h3>Level Mahir</h3>
+          <p>Soal multi-langkah, analisis ekonomi, perubahan data, dan pengambilan keputusan berdasarkan informasi.</p>
+          <div class="level-meta" id="modalMahirMeta">Terkunci</div>
+        </button>
+      </div>
     </div>
   </div>
-</div>
 
-<script src="https://www.youtube.com/iframe_api"></script>
 <script>
+/* ============================================================
+   KONFIGURASI
+============================================================ */
 
-  const KUNCI_LATIHAN_LITERASI = {
-    1:[
-      'belajar memahami kehidupan masyarakat dari lingkungan sekitar',
-      'memahami kehidupan masyarakat melalui informasi lingkungan dan kegiatan ekonomi',
-      'petualangan literasi dari ranuklindungan danau ranu dan pasar brandong',
-      'membaca informasi lingkungan sekitar dan kegiatan ekonomi'
-    ],
-    2:[
-      'desa dawe',
-      'dawe'
-    ],
-    3:[
-      'danau ranu',
-      'ranu',
-      'danau ranu untuk mengenali lingkungan dan bentang alam'
-    ],
-    4:[
-      'penjual menjual barang dan pembeli membeli barang',
-      'penjual menjual dan pembeli membeli',
-      'penjual menyediakan barang dan pembeli membeli',
-      'penjual dan pembeli melakukan jual beli',
-      'saling membutuhkan dalam kegiatan jual beli'
-    ],
-    5:[
-      'piktogram membantu membaca data',
-      'piktogram membantu memahami data',
-      'piktogram memudahkan memahami jumlah barang',
-      'piktogram memudahkan membandingkan informasi',
-      'piktogram mengubah informasi menjadi gambar dan data',
-      'untuk membaca dan membandingkan data dengan mudah'
-    ]
+// GANTI dengan URL Web App Google Apps Script berakhiran /exec
+const APP_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx42nnGeJnV0DVNT3HnhE5bVsFp-sPmY-qD4St9EScmN1Uml6CLKS690aWTxEl0ZsyFDg/exec';
+
+let KKM = 70; // fallback lokal; nilai utama dibaca dari PENGATURAN > KKM_LEVEL
+
+let currentLevel = '';
+let currentQuestions = [];
+let currentAnswers = {};
+let currentSessionId = '';
+let currentStartTime = '';
+let progressData = null;
+let leaderboardData = [];
+
+/* ============================================================
+   LOCAL STORAGE KEYS
+============================================================ */
+
+const LS = {
+  ID: 'pikto_id_murid',
+  NAME: 'pikto_nama',
+  CLASS: 'pikto_kelas',
+  DEVICE: 'pikto_device_id',
+  KKM: 'pikto_kkm_level',
+  PROGRESS: 'pikto_progress_cache',
+  QUEUE: 'pikto_sync_queue'
+};
+
+function answerKey(level){
+  return 'pikto_answers_' + level;
+}
+
+function questionsKey(level){
+  return 'pikto_questions_' + level;
+}
+
+function sessionKey(level){
+  return 'pikto_session_' + level;
+}
+
+
+/* ============================================================
+   RESET OTOMATIS IDENTITAS MURID
+   Jika ID murid sudah dihapus dari database, browser kembali
+   ke layar awal Nama + Kelas dan data tantangan lokal dibersihkan.
+============================================================ */
+
+function isStudentNotFoundResponse(res){
+  if(!res) return false;
+
+  const code = String(res.code || '').toUpperCase();
+  const message = String(res.message || '').toLowerCase();
+
+  return (
+    code === 'STUDENT_NOT_FOUND' ||
+    message.includes('data murid tidak ditemukan') ||
+    message.includes('data progres murid tidak ditemukan') ||
+    message.includes('murid tidak ditemukan')
+  );
+}
+
+function bersihkanDataMuridLokal(){
+  const oldStudentId = localStorage.getItem(LS.ID) || 'lokal';
+  ['AWAL','CAKAP','MAHIR'].forEach(level=>localStorage.removeItem(`pikto_refleksi_${oldStudentId}_${level}`));
+
+  // Identitas murid
+  localStorage.removeItem(LS.ID);
+  localStorage.removeItem(LS.NAME);
+  localStorage.removeItem(LS.CLASS);
+
+  // Progres & antrean sinkronisasi
+  localStorage.removeItem(LS.PROGRESS);
+  localStorage.removeItem(LS.QUEUE);
+
+  // Jawaban, cache soal, dan sesi tantangan tiap level
+  ['AWAL','CAKAP','MAHIR'].forEach(level=>{
+    localStorage.removeItem(answerKey(level));
+    localStorage.removeItem(questionsKey(level));
+    localStorage.removeItem(sessionKey(level));
+  });
+
+  // Device ID sengaja dipertahankan supaya perangkat tetap dikenali,
+  // tetapi murid harus memasukkan Nama dan Kelas kembali.
+}
+
+function kembaliKeHalamanIdentitas(pesan){
+  bersihkanDataMuridLokal();
+
+  currentLevel = '';
+  currentQuestions = [];
+  currentAnswers = {};
+  currentSessionId = '';
+  currentStartTime = '';
+  progressData = null;
+
+  const namaInput = document.getElementById('nama');
+  const kelasInput = document.getElementById('kelas');
+
+  if(namaInput) namaInput.value = '';
+  if(kelasInput) kelasInput.value = '';
+
+  const identityCard = document.getElementById('identityCard');
+  const appArea = document.getElementById('appArea');
+  const challengeArea = document.getElementById('challengeArea');
+  const levelModal = document.getElementById('levelModal');
+
+  if(identityCard) identityCard.classList.remove('hidden');
+  if(appArea) appArea.classList.add('hidden');
+  if(challengeArea) challengeArea.classList.add('hidden');
+  if(levelModal) levelModal.classList.add('hidden');
+
+  window.scrollTo({top:0,behavior:'smooth'});
+
+  if(pesan){
+    setTimeout(()=>alert(pesan),120);
+  }
+}
+
+async function validasiMuridDatabase(idMurid){
+  if(!idMurid || !apiConfigured() || !navigator.onLine){
+    return {valid:true, skipped:true};
+  }
+
+  const res = await api({
+    action:'getProgress',
+    id_murid:idMurid
+  });
+
+  if(isStudentNotFoundResponse(res)){
+    kembaliKeHalamanIdentitas(
+      'Data murid sudah tidak ditemukan di Database SITEEk-PIKTO-IPS. Silakan tulis nama dan pilih kelas kembali.'
+    );
+    return {valid:false, reset:true};
+  }
+
+  if(!res.success){
+    throw new Error(res.message || 'Gagal memeriksa data murid.');
+  }
+
+  return {valid:true, progress:res.progress};
+}
+
+
+
+/* ============================================================
+   PENGATURAN DINAMIS
+   KKM dibaca dari sheet PENGATURAN -> KKM_LEVEL
+============================================================ */
+
+function terapkanKKM(nilai){
+  const parsed = Number(nilai);
+  if(!Number.isFinite(parsed) || parsed < 0 || parsed > 100) return false;
+
+  KKM = parsed;
+  localStorage.setItem(LS.KKM,String(KKM));
+
+  document.querySelectorAll('.kkm-level-text').forEach(el=>{
+    el.textContent = String(KKM);
+  });
+
+  return true;
+}
+
+function muatKKMLokal(){
+  const cached = Number(localStorage.getItem(LS.KKM));
+  if(Number.isFinite(cached) && cached >= 0 && cached <= 100){
+    KKM = cached;
+  }
+  document.querySelectorAll('.kkm-level-text').forEach(el=>{
+    el.textContent = String(KKM);
+  });
+}
+
+async function muatPengaturan(){
+  muatKKMLokal();
+
+  if(!apiConfigured() || !navigator.onLine){
+    return {success:false, offline:true, kkm_level:KKM};
+  }
+
+  const res = await api({action:'getSettings'});
+  if(!res || !res.success){
+    throw new Error((res && res.message) || 'Gagal membaca pengaturan aplikasi.');
+  }
+
+  const nilaiKKM =
+    res.kkm_level !== undefined ? res.kkm_level :
+    (res.settings && res.settings.KKM_LEVEL !== undefined
+      ? res.settings.KKM_LEVEL
+      : null);
+
+  if(!terapkanKKM(nilaiKKM)){
+    throw new Error('Nilai KKM_LEVEL dari server tidak valid.');
+  }
+
+  return {success:true, kkm_level:KKM};
+}
+
+/* ============================================================
+   START / IDENTITY
+============================================================ */
+
+async function masukAplikasi(){
+  const nama = document.getElementById('nama').value.trim();
+  const kelas = document.getElementById('kelas').value;
+
+  if(!nama){
+    alert('Tuliskan nama terlebih dahulu.');
+    return;
+  }
+
+  if(!kelas){
+    alert('Pilih kelas terlebih dahulu.');
+    return;
+  }
+
+  localStorage.setItem(LS.NAME,nama);
+  localStorage.setItem(LS.CLASS,kelas);
+
+  const deviceId = getDeviceId();
+  let idMurid = localStorage.getItem(LS.ID) || '';
+
+  document.getElementById('identityCard').classList.add('hidden');
+  document.getElementById('appArea').classList.remove('hidden');
+
+  tampilkanProfil();
+
+  if(apiConfigured() && navigator.onLine){
+    try{
+      const res = await api({
+        action:'initUser',
+        id_murid:idMurid,
+        nama:nama,
+        kelas:kelas,
+        device_id:deviceId
+      });
+
+      if(!res.success) throw new Error(res.message || 'Gagal masuk.');
+
+      idMurid = res.id_murid;
+      if(res.kkm_level !== undefined) terapkanKKM(res.kkm_level);
+      localStorage.setItem(LS.ID,idMurid);
+      tampilkanProfil();
+
+      progressData = res.progress;
+      cacheProgress(progressData);
+      renderProgress();
+      await syncQueue();
+      await loadLeaderboard();
+
+    }catch(err){
+      loadProgressCache();
+      renderProgress();
+      showSync('Data lokal aktif. Server belum dapat dihubungi: ' + err.message, false);
+    }
+  }else{
+    loadProgressCache();
+    renderProgress();
+
+    if(!apiConfigured()){
+      showSync('URL Apps Script belum dipasang pada index.html.', false);
+    }
+  }
+}
+
+function tampilkanProfil(){
+  document.getElementById('profileName').textContent =
+    localStorage.getItem(LS.NAME) || 'Murid';
+
+  document.getElementById('profileClass').textContent =
+    localStorage.getItem(LS.CLASS) || '-';
+
+  const profileId = document.getElementById('profileId');
+  if(profileId){
+    profileId.textContent = localStorage.getItem(LS.ID) || 'Belum tersinkron';
+  }
+}
+
+function getDeviceId(){
+  let id = localStorage.getItem(LS.DEVICE);
+
+  if(!id){
+    id = 'DEV-' + cryptoRandom();
+    localStorage.setItem(LS.DEVICE,id);
+  }
+
+  return id;
+}
+
+function cryptoRandom(){
+  if(window.crypto && crypto.randomUUID){
+    return crypto.randomUUID();
+  }
+  return Date.now() + '-' + Math.random().toString(36).slice(2);
+}
+
+/* ============================================================
+   LEVEL MODAL
+============================================================ */
+
+async function mulaiLevelAwal(){
+  if(!localStorage.getItem(LS.ID) && apiConfigured() && navigator.onLine){
+    await masukAplikasi();
+  }
+  if(!localStorage.getItem(LS.ID)) return;
+
+  if(apiConfigured() && navigator.onLine){
+    try{
+      const res = await api({action:'getProgress', id_murid:localStorage.getItem(LS.ID)});
+      if(isStudentNotFoundResponse(res)){
+        kembaliKeHalamanIdentitas('Data murid sudah tidak ditemukan di Database SITEEk-PIKTO-IPS. Silakan masuk kembali.');
+        return;
+      }
+      if(res.success){
+        progressData = res.progress;
+        cacheProgress(progressData);
+      }
+    }catch(err){
+      loadProgressCache();
+    }
+  }
+  pilihLevel('AWAL');
+}
+
+async function bukaPemilihanLevel(){
+  if(!localStorage.getItem(LS.ID) && apiConfigured() && navigator.onLine){
+    await masukAplikasi();
+  }
+
+  if(apiConfigured() && navigator.onLine && localStorage.getItem(LS.ID)){
+    try{
+      const res = await api({
+        action:'getProgress',
+        id_murid:localStorage.getItem(LS.ID)
+      });
+
+      if(isStudentNotFoundResponse(res)){
+        kembaliKeHalamanIdentitas(
+          'Data murid sudah tidak ditemukan di Database SITEEk-PIKTO-IPS. Silakan masuk kembali.'
+        );
+        return;
+      }
+
+      if(res.success){
+        progressData = res.progress;
+        cacheProgress(progressData);
+      }else{
+        throw new Error(res.message || 'Gagal memuat progres.');
+      }
+    }catch(err){
+      loadProgressCache();
+    }
+  }else{
+    loadProgressCache();
+  }
+
+  renderProgress();
+  renderLevelModal();
+  document.getElementById('levelModal').classList.remove('hidden');
+}
+
+function tutupPemilihanLevel(){
+  document.getElementById('levelModal').classList.add('hidden');
+}
+
+function renderLevelModal(){
+  const p = progressData || defaultProgress();
+
+  const cakapOpen =
+    p.awal.status === 'LULUS' &&
+    Number(p.awal.nilai || 0) >= KKM;
+
+  setLevelButton('CAKAP', cakapOpen, p.cakap);
+
+  const mahirOpen =
+    p.cakap.status === 'LULUS' &&
+    Number(p.cakap.nilai || 0) >= KKM;
+
+  setLevelButton('MAHIR', mahirOpen, p.mahir);
+}
+
+function setLevelButton(level,open,data){
+  const map = {
+    CAKAP:['levelCakapBtn','modalCakapMeta'],
+    MAHIR:['levelMahirBtn','modalMahirMeta']
   };
 
-  function normalisasiJawabanLiterasi(value){
-    return String(value || '')
-      .toLowerCase()
-      .trim()
-      .replace(/[.,!?;:]/g,'')
-      .replace(/\s+/g,' ');
+  const [btnId,metaId] = map[level];
+  const btn = document.getElementById(btnId);
+  const meta = document.getElementById(metaId);
+
+  btn.disabled = !open;
+
+  if(!open){
+    meta.textContent = '🔒 Terkunci';
+    return;
   }
 
-  function cekKemiripanLiterasi(jawaban, daftarBenar){
-    const j = normalisasiJawabanLiterasi(jawaban);
-    if(!j) return false;
-
-    return daftarBenar.some(kunci=>{
-      const k = normalisasiJawabanLiterasi(kunci);
-      if(j === k) return true;
-      if(j.length >= 10 && (j.includes(k) || k.includes(j))) return true;
-
-      const kataJ = j.split(' ').filter(x=>x.length > 2);
-      const kataK = k.split(' ').filter(x=>x.length > 2);
-      if(!kataK.length) return false;
-
-      const cocok = kataK.filter(kata=>kataJ.includes(kata)).length;
-      return cocok / kataK.length >= 0.7;
-    });
+  if(data && data.nilai !== null && data.nilai !== undefined){
+    meta.textContent = data.status + ' • Nilai ' + data.nilai;
+  }else{
+    meta.textContent = '✅ Terbuka';
   }
+}
 
-  function simpanJawabanLiterasi(no){
-    const input = document.getElementById('jawaban-literasi-' + no);
-    const button = document.getElementById('simpan-literasi-' + no);
-    const feedback = document.getElementById('feedback-literasi-' + no);
+/* ============================================================
+   LOAD LEVEL
+============================================================ */
 
-    const value = normalisasiJawabanLiterasi(input.value);
+async function pilihLevel(level){
+  currentLevel = level;
+  currentSessionId = loadOrCreateSession(level);
+  currentStartTime = currentSessionId.start_time;
 
-    input.classList.remove('correct','wrong');
-    button.classList.remove('correct','wrong');
-    feedback.classList.remove('correct','wrong');
+  tutupPemilihanLevel();
 
-    if(!value){
-      feedback.textContent = '⚠️ Isi jawaban terlebih dahulu.';
-      feedback.classList.add('wrong');
-      input.focus();
+  document.getElementById('challengeArea').classList.remove('hidden');
+  document.getElementById('resultCard').classList.add('hidden');
+  document.getElementById('resultCard').innerHTML = '';
+
+  setLevelHeader(level);
+
+  document.getElementById('questionsCard').innerHTML = `
+    <div class="loading">
+      <div class="spinner"></div>
+      Memuat soal Level ${level}...
+    </div>
+  `;
+
+  document.getElementById('challengeArea').scrollIntoView({behavior:'smooth'});
+
+  const localQuestions = readJSON(questionsKey(level),[]);
+  const localAnswers = readJSON(answerKey(level),{});
+
+  currentQuestions = localQuestions;
+  currentAnswers = localAnswers;
+
+  if(apiConfigured() && navigator.onLine){
+    try{
+      await syncQueue();
+
+      const res = await api({
+        action:'getQuestions',
+        id_murid:localStorage.getItem(LS.ID),
+        level:level
+      });
+
+      if(!res.success) throw new Error(res.message || 'Gagal mengambil soal.');
+
+      currentQuestions = res.questions || [];
+
+      // Jawaban lokal dianggap paling baru jika masih ada antrean offline.
+      currentAnswers = {
+        ...(res.saved_answers || {}),
+        ...localAnswers
+      };
+
+      writeJSON(questionsKey(level),currentQuestions);
+      writeJSON(answerKey(level),currentAnswers);
+
+      renderQuestions();
+      return;
+
+    }catch(err){
+      if(localQuestions.length){
+        currentQuestions = localQuestions;
+        currentAnswers = localAnswers;
+        renderQuestions();
+        showSync('Mode offline. Soal dan jawaban terakhir dipulihkan dari perangkat.', false);
+        return;
+      }
+
+      document.getElementById('questionsCard').innerHTML =
+        `<div class="remedial-box">
+          <strong>Soal belum dapat dibuka.</strong><br>
+          ${escapeHtml(err.message)}<br><br>
+          Sambungkan internet lalu pilih level kembali.
+        </div>`;
       return;
     }
-
-    const benar = cekKemiripanLiterasi(value, KUNCI_LATIHAN_LITERASI[no]);
-
-    localStorage.setItem('pikto_literasi_latihan_' + no, input.value.trim());
-    localStorage.setItem(
-      'pikto_literasi_latihan_' + no + '_status',
-      benar ? 'benar' : 'salah'
-    );
-
-    if(benar){
-      input.classList.add('correct');
-      button.classList.add('correct');
-      feedback.classList.add('correct');
-      button.textContent = '✅ Benar';
-      feedback.textContent = 'Hebat! Jawabanmu benar.';
-    }else{
-      input.classList.add('wrong');
-      button.classList.add('wrong');
-      feedback.classList.add('wrong');
-      button.textContent = '❌ Salah';
-      feedback.textContent = 'Jawaban belum tepat. Baca kembali cerita dan informasi pada halaman.';
-    }
   }
 
-  function pulihkanLatihanLiterasi(){
-    for(let no=1; no<=5; no++){
-      const saved = localStorage.getItem('pikto_literasi_latihan_' + no);
-      const status = localStorage.getItem('pikto_literasi_latihan_' + no + '_status');
-
-      if(saved === null) continue;
-
-      const input = document.getElementById('jawaban-literasi-' + no);
-      const button = document.getElementById('simpan-literasi-' + no);
-      const feedback = document.getElementById('feedback-literasi-' + no);
-
-      input.value = saved;
-
-      if(status === 'benar'){
-        input.classList.add('correct');
-        button.classList.add('correct');
-        feedback.classList.add('correct');
-        button.textContent = '✅ Benar';
-        feedback.textContent = 'Hebat! Jawabanmu benar.';
-      }else if(status === 'salah'){
-        input.classList.add('wrong');
-        button.classList.add('wrong');
-        feedback.classList.add('wrong');
-        button.textContent = '❌ Salah';
-        feedback.textContent = 'Jawaban belum tepat. Baca kembali cerita dan informasi pada halaman.';
-      }
-    }
+  if(localQuestions.length){
+    currentQuestions = localQuestions;
+    currentAnswers = localAnswers;
+    renderQuestions();
+    showSync('Mode offline. Jawaban tetap tersimpan di perangkat.', false);
+  }else{
+    document.getElementById('questionsCard').innerHTML =
+      `<div class="remedial-box">
+        Level ini belum pernah dibuka pada perangkat ini.
+        Sambungkan internet untuk mengambil soal pertama kali.
+      </div>`;
   }
+}
 
-  document.addEventListener('DOMContentLoaded',()=>{
-    pulihkanLatihanLiterasi();
-
-    for(let no=1; no<=5; no++){
-      const input = document.getElementById('jawaban-literasi-' + no);
-      if(!input) continue;
-
-      input.addEventListener('keydown',event=>{
-        if(event.key === 'Enter'){
-          event.preventDefault();
-          simpanJawabanLiterasi(no);
-        }
-      });
-
-      input.addEventListener('input',()=>{
-        const button = document.getElementById('simpan-literasi-' + no);
-        const feedback = document.getElementById('feedback-literasi-' + no);
-
-        input.classList.remove('correct','wrong');
-        button.classList.remove('correct','wrong');
-        button.textContent = '💾 Simpan';
-        feedback.textContent = '';
-        feedback.classList.remove('correct','wrong');
-      });
-    }
-  });
-
-  const VIDEO_DATA = [
-    {
-      id: 'yA1Ftjg0JKI',
-      title: 'Video 1 — Kegiatan Ekonomi',
-      questions: [
-        {
-          q: 'Kegiatan menghasilkan barang atau jasa disebut ...',
-          options: ['Konsumsi','Distribusi','Produksi','Promosi'],
-          answer: 2
-        },
-        {
-          q: 'Orang yang menyalurkan barang dari produsen menuju konsumen berperan dalam kegiatan ...',
-          options: ['Distribusi','Produksi','Konsumsi','Menabung'],
-          answer: 0
-        },
-        {
-          q: 'Membeli sayur di pasar untuk dimasak di rumah termasuk kegiatan ...',
-          options: ['Produksi','Konsumsi','Distribusi','Ekspor'],
-          answer: 1
-        },
-        {
-          q: 'Urutan kegiatan ekonomi yang paling tepat adalah ...',
-          options: [
-            'Konsumsi → Produksi → Distribusi',
-            'Distribusi → Konsumsi → Produksi',
-            'Produksi → Distribusi → Konsumsi',
-            'Produksi → Konsumsi → Distribusi'
-          ],
-          answer: 2
-        }
-      ]
+function setLevelHeader(level){
+  const info = {
+    AWAL:{
+      title:'🌱 Tantangan Level Awal',
+      desc:'Coba kemampuan kamu: 10 soal Literasi membaca dan informasi IPS serta 10 soal Numerasi.'
     },
-    {
-      id: 'C2S7OhHM31Y',
-      title: 'Video 2 — Kegiatan Ekonomi di Indonesia',
-      questions: [
-        {
-          q: 'Petani yang menanam dan memanen sayur termasuk ...',
-          options: ['Konsumen','Distributor','Produsen','Pembeli'],
-          answer: 2
-        },
-        {
-          q: 'Pedagang yang membawa hasil panen ke pasar membantu proses ...',
-          options: ['Distribusi','Konsumsi','Produksi','Menabung'],
-          answer: 0
-        },
-        {
-          q: 'Mengapa masyarakat melakukan kegiatan ekonomi?',
-          options: [
-            'Untuk memenuhi kebutuhan hidup',
-            'Agar semua barang disimpan',
-            'Agar tidak ada jual beli',
-            'Untuk mengurangi pekerjaan'
-          ],
-          answer: 0
-        },
-        {
-          q: 'Dalam kegiatan jual beli di pasar, pembeli biasanya berperan sebagai ...',
-          options: ['Produsen','Konsumen','Distributor','Pengangkut'],
-          answer: 1
-        }
-      ]
+    CAKAP:{
+      title:'🚀 Tantangan Level Cakap',
+      desc:'Menghitung total, selisih, uang, sisa barang, dan kebutuhan.'
+    },
+    MAHIR:{
+      title:'🏆 Tantangan Level Mahir',
+      desc:'Penalaran multi-langkah dan pengambilan keputusan berdasarkan data.'
     }
-  ];
+  };
 
-  const requiredPlayers = [];
-  const requiredState = VIDEO_DATA.map(() => ({
-    ready:false,
-    started:false,
-    ended:false,
-    interactiveDone:false,
-    maxTime:0,
-    monitor:null
-  }));
+  document.getElementById('challengeTitle').textContent = info[level].title;
+  document.getElementById('challengeDescription').textContent = info[level].desc;
+  document.getElementById('currentLevelBadge').textContent = 'LEVEL ' + level;
+}
 
-  let interactivePlayer = null;
-  let interactiveReady = false;
-  let activeVideoIndex = null;
-  let currentCheckpoint = 0;
-  let checkpoints = [];
-  let interactiveMonitor = null;
-  let questionShowing = false;
-  let restartingFromWrong = false;
+/* ============================================================
+   RENDER QUESTIONS
+============================================================ */
 
-  function onYouTubeIframeAPIReady(){
-    VIDEO_DATA.forEach((video,index)=>{
-      requiredPlayers[index] = new YT.Player('player-' + index,{
-        videoId:video.id,
-        playerVars:{
-          controls:0,
-          disablekb:1,
-          rel:0,
-          modestbranding:1,
-          playsinline:1,
-          fs:0,
-          iv_load_policy:3
-        },
-        events:{
-          onReady:()=>{ requiredState[index].ready = true; },
-          onStateChange:(event)=>handleRequiredState(index,event)
-        }
-      });
-    });
+function normalizeQuestionImageUrl(rawUrl){
+  const url = String(rawUrl || '').trim();
+  if(!url) return '';
 
-    interactivePlayer = new YT.Player('interactivePlayer',{
-      height:'100%',
-      width:'100%',
-      videoId:VIDEO_DATA[0].id,
-      playerVars:{
-        controls:0,
-        disablekb:1,
-        rel:0,
-        modestbranding:1,
-        playsinline:1,
-        fs:0,
-        iv_load_policy:3
-      },
-      events:{
-        onReady:()=>{ interactiveReady = true; },
-        onStateChange:handleInteractiveState
-      }
-    });
+  // Mendukung URL langsung PNG/JPG/WebP dan link berbagi Google Drive.
+  // Jadi guru cukup mengganti kolom gambar_url pada BANK_SOAL.
+  const driveFile = url.match(/drive\.google\.com\/file\/d\/([^/]+)/i);
+  if(driveFile && driveFile[1]){
+    return `https://drive.google.com/uc?export=view&id=${driveFile[1]}`;
+  }
+  const driveId = url.match(/[?&]id=([^&]+)/i);
+  if(/drive\.google\.com/i.test(url) && driveId && driveId[1]){
+    return `https://drive.google.com/uc?export=view&id=${driveId[1]}`;
+  }
+  return url;
+}
 
-    restoreCompletionState();
+function renderQuestionVisual(q,index){
+  const imageUrl = normalizeQuestionImageUrl(q.gambar_url);
+
+  // Fallback hanya dipakai jika kolom gambar_url kosong.
+  // Begitu URL di Spreadsheet diisi/diganti, gambar dari URL selalu diprioritaskan.
+  if(!imageUrl && q.id_soal === 'AWAL-011'){
+    return `
+      <div class="inline-pictogram" role="img" aria-label="Piktogram hasil panen jagung Pak Hasan. Satu simbol jagung sama dengan tiga keranjang. Pak Hasan memiliki empat simbol jagung.">
+        <div class="chart-title">🌽 Hasil Panen Jagung Pak Hasan</div>
+        <div style="display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0;font-weight:900;color:#173f5f">
+          <span style="font-size:34px">🌽</span><span>= 3 keranjang</span>
+        </div>
+        <div style="background:#f2fff0;border:2px solid #9bdc8c;border-radius:14px;padding:14px;text-align:center">
+          <strong>Pak Hasan:</strong>
+          <div style="font-size:42px;letter-spacing:8px;margin-top:8px">🌽🌽🌽🌽</div>
+        </div>
+      </div>`;
   }
 
-  function startRequiredVideo(index){
-    const player = requiredPlayers[index];
-    const state = requiredState[index];
-    if(!player || !state.ready){
-      alert('Pemutar video masih disiapkan. Tunggu sebentar lalu coba lagi.');
-      return;
-    }
-
-    state.started = true;
-    state.ended = false;
-    document.getElementById('lock-' + index).classList.add('hidden');
-    document.getElementById('understanding-' + index).classList.add('hidden');
-
-    player.seekTo(0,true);
-    player.playVideo();
-    startRequiredMonitor(index);
-  }
-
-  function startRequiredMonitor(index){
-    clearInterval(requiredState[index].monitor);
-
-    requiredState[index].monitor = setInterval(()=>{
-      const player = requiredPlayers[index];
-      if(!player || typeof player.getDuration !== 'function') return;
-
-      const duration = Number(player.getDuration() || 0);
-      const current = Number(player.getCurrentTime() || 0);
-
-      if(duration > 0){
-        requiredState[index].maxTime = Math.max(requiredState[index].maxTime,current);
-        const percent = Math.min(100,Math.round((current/duration)*100));
-        updateWatchProgress(index,percent);
-      }
-    },500);
-  }
-
-  function handleRequiredState(index,event){
-    if(event.data === YT.PlayerState.ENDED){
-      clearInterval(requiredState[index].monitor);
-      requiredState[index].ended = true;
-      updateWatchProgress(index,100);
-
-      const status = document.getElementById('status-video-' + index);
-      status.textContent = 'SUDAH DITONTON';
-      status.classList.add('done');
-
-      document.getElementById('understanding-' + index).classList.remove('hidden');
-      document.getElementById('understanding-' + index).scrollIntoView({behavior:'smooth',block:'center'});
-    }
-  }
-
-  function updateWatchProgress(index,percent){
-    document.getElementById('watch-percent-' + index).textContent = percent + '%';
-    document.getElementById('watch-progress-' + index).style.width = percent + '%';
-  }
-
-  function confirmUnderstand(index,understands){
-    if(!requiredState[index].ended){
-      alert('Video harus ditonton sampai selesai terlebih dahulu.');
-      return;
-    }
-
-    if(!understands){
-      document.getElementById('understanding-' + index).classList.add('hidden');
-      requiredState[index].ended = false;
-      startRequiredVideo(index);
-      return;
-    }
-
-    openInteractiveModal(index);
-  }
-
-  function openInteractiveModal(index){
-    if(!interactiveReady){
-      alert('Pemutar video interaktif masih disiapkan. Tunggu sebentar lalu coba lagi.');
-      return;
-    }
-
-    activeVideoIndex = index;
-    currentCheckpoint = 0;
-    questionShowing = false;
-    restartingFromWrong = false;
-
-    const modal = document.getElementById('interactiveModal');
-    modal.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-
-    document.getElementById('interactiveTitle').textContent =
-      '🎬 ' + VIDEO_DATA[index].title + ' — Mode Interaktif';
-    document.getElementById('interactiveCheckpoint').textContent = 'Checkpoint: 0/4';
-    document.getElementById('questionOverlay').classList.add('hidden');
-    document.getElementById('quizFeedback').textContent = '';
-
-    interactivePlayer.loadVideoById(VIDEO_DATA[index].id);
-
-    setTimeout(()=>{
-      const duration = Number(interactivePlayer.getDuration() || 0);
-      makeCheckpoints(duration);
-      interactivePlayer.seekTo(0,true);
-      interactivePlayer.playVideo();
-      startInteractiveMonitor();
-    },900);
-  }
-
-  function makeCheckpoints(duration){
-    const safeDuration = duration > 20 ? duration : 120;
-    checkpoints = [
-      Math.max(5,safeDuration * .20),
-      Math.max(10,safeDuration * .40),
-      Math.max(15,safeDuration * .60),
-      Math.max(20,safeDuration * .80)
+  if(!imageUrl && q.id_soal === 'AWAL-012'){
+    const data = [
+      ['Tomat',8,80],
+      ['Jagung',6,60],
+      ['Cabai',10,100],
+      ['Singkong',4,40]
     ];
+    return `
+      <div class="inline-bar-chart" role="img" aria-label="Diagram batang hasil pertanian: tomat 8, jagung 6, cabai 10, singkong 4 keranjang">
+        <div class="chart-title">📊 Hasil Pertanian yang Dijual di Pasar Desa</div>
+        ${data.map(item=>`
+          <div class="bar-row">
+            <div class="bar-label">${item[0]}</div>
+            <div class="bar-track"><div class="bar-fill" style="width:${item[2]}%"></div></div>
+            <div class="bar-value">${item[1]}</div>
+          </div>
+        `).join('')}
+        <div style="font-size:11px;color:#65798e;text-align:center;margin-top:10px">Satuan: keranjang</div>
+      </div>`;
   }
 
-  function startInteractiveMonitor(){
-    clearInterval(interactiveMonitor);
+  if(!imageUrl) return '';
 
-    interactiveMonitor = setInterval(()=>{
-      if(activeVideoIndex === null || questionShowing || !interactivePlayer) return;
+  return `
+    <div class="question-image-wrap">
+      <div class="question-image-label">🖼️ Amati gambar berikut</div>
+      <img
+        class="question-image"
+        src="${escapeHtml(imageUrl)}"
+        alt="Gambar stimulus soal ${index + 1}"
+        loading="lazy"
+        referrerpolicy="no-referrer"
+        onerror="this.closest('.question-image-wrap').innerHTML='<div class=&quot;remedial-box&quot;>⚠️ Gambar belum dapat dimuat. Periksa kolom gambar_url pada BANK_SOAL.</div>'"
+      >
+    </div>`;
+}
 
-      const duration = Number(interactivePlayer.getDuration() || 0);
-      if(duration > 0 && (!checkpoints.length || checkpoints[3] > duration)){
-        makeCheckpoints(duration);
-      }
-
-      const current = Number(interactivePlayer.getCurrentTime() || 0);
-      const checkpoint = checkpoints[currentCheckpoint];
-
-      if(currentCheckpoint < 4 && checkpoint && current >= checkpoint){
-        pauseForQuestion();
-      }
-    },250);
+function renderQuestions(){
+  if(!currentQuestions.length){
+    document.getElementById('questionsCard').innerHTML =
+      '<div class="loading">Soal tidak tersedia.</div>';
+    return;
   }
 
-  function handleInteractiveState(event){
-    if(event.data === YT.PlayerState.ENDED && activeVideoIndex !== null){
-      if(currentCheckpoint >= 4){
-        finishInteractiveVideo();
-      }
-    }
-  }
+  let html = `
+    <h2>🧠 Soal ${escapeHtml(currentLevel)}</h2>
+    <p class="subtitle">
+      Jawaban disimpan otomatis setiap kali kamu memilih pilihan.
+    </p>
+  `;
 
-  function pauseForQuestion(){
-    if(questionShowing || currentCheckpoint >= 4) return;
+  currentQuestions.forEach((q,index)=>{
+    html += `
+      <div class="question" id="qbox-${escapeHtml(q.id_soal)}">
+        <div class="q-meta">
+          SOAL ${index + 1}${q.kemampuan ? ' • ' + escapeHtml(q.kemampuan.toUpperCase()) : ''} • ${escapeHtml(q.domain || '')}
+        </div>
 
-    questionShowing = true;
-    interactivePlayer.pauseVideo();
+        ${q.stimulus ? `
+          <div class="stimulus">
+            ${escapeHtml(q.stimulus)}
+          </div>
+        ` : ''}
 
-    const question = VIDEO_DATA[activeVideoIndex].questions[currentCheckpoint];
-    document.getElementById('questionNumber').textContent =
-      'PERTANYAAN ' + (currentCheckpoint + 1) + ' DARI 4';
-    document.getElementById('questionText').textContent = question.q;
-    document.getElementById('quizFeedback').textContent = '';
-    document.getElementById('quizFeedback').className = 'quiz-feedback';
+        ${renderQuestionVisual(q,index)}
 
-    const options = document.getElementById('quizOptions');
-    options.innerHTML = '';
+        <div class="q-text">
+          ${escapeHtml(q.pertanyaan)}
+        </div>
 
-    question.options.forEach((option,optIndex)=>{
-      const btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'quiz-option';
-      btn.textContent = String.fromCharCode(65 + optIndex) + '. ' + option;
-      btn.addEventListener('click',()=>answerInteractiveQuestion(optIndex));
-      options.appendChild(btn);
-    });
+        ${['A','B','C','D'].map(letter=>{
+          const checked = currentAnswers[q.id_soal] === letter;
+          return `
+            <label class="option ${checked ? 'selected' : ''}" id="opt-${escapeHtml(q.id_soal)}-${letter}">
+              <input
+                type="radio"
+                name="q-${escapeHtml(q.id_soal)}"
+                value="${letter}"
+                ${checked ? 'checked' : ''}
+                onchange="pilihJawaban('${jsSafe(q.id_soal)}','${letter}')"
+              >
+              <span>
+                <strong>${letter}.</strong>
+                ${escapeHtml(q.pilihan[letter] || '')}
+              </span>
+            </label>
+          `;
+        }).join('')}
 
-    document.getElementById('questionOverlay').classList.remove('hidden');
-  }
+        <div id="feedback-${escapeHtml(q.id_soal)}"></div>
+      </div>
+    `;
+  });
 
-  function answerInteractiveQuestion(selected){
-    const question = VIDEO_DATA[activeVideoIndex].questions[currentCheckpoint];
-    const feedback = document.getElementById('quizFeedback');
-    const buttons = [...document.querySelectorAll('#quizOptions .quiz-option')];
-    buttons.forEach(btn=>btn.disabled = true);
+  html += `
+    <div class="btn-row">
+      <button class="btn btn-green" onclick="selesaikanLevel()">
+        ✅ Selesaikan Level
+      </button>
 
-    if(selected === question.answer){
-      feedback.textContent = '✅ Benar! Video akan dilanjutkan.';
-      feedback.className = 'quiz-feedback feedback-ok';
+      <button class="btn btn-light" onclick="bukaPemilihanLevel()">
+        🔄 Pilih Level
+      </button>
+    </div>
+  `;
 
-      setTimeout(()=>{
-        currentCheckpoint++;
-        document.getElementById('interactiveCheckpoint').textContent =
-          'Checkpoint: ' + currentCheckpoint + '/4';
-        document.getElementById('questionOverlay').classList.add('hidden');
-        questionShowing = false;
-        interactivePlayer.playVideo();
-      },850);
-    }else{
-      feedback.textContent = '❌ Jawaban belum tepat. Sesuai aturan, video diputar kembali dari awal.';
-      feedback.className = 'quiz-feedback feedback-bad';
+  document.getElementById('questionsCard').innerHTML = html;
 
-      setTimeout(()=>{
-        currentCheckpoint = 0;
-        document.getElementById('interactiveCheckpoint').textContent = 'Checkpoint: 0/4';
-        document.getElementById('questionOverlay').classList.add('hidden');
-        questionShowing = false;
-        restartingFromWrong = true;
-        interactivePlayer.seekTo(0,true);
-        interactivePlayer.playVideo();
+  updateQuestionProgress();
+}
 
-        setTimeout(()=>{ restartingFromWrong = false; },900);
-      },1300);
-    }
-  }
+/* ============================================================
+   SAVE ANSWER - LOCAL FIRST, SERVER SECOND
+============================================================ */
 
-  function finishInteractiveVideo(){
-    clearInterval(interactiveMonitor);
+function pilihJawaban(idSoal,jawaban){
+  currentAnswers[idSoal] = jawaban;
+  writeJSON(answerKey(currentLevel),currentAnswers);
 
-    const index = activeVideoIndex;
-    requiredState[index].interactiveDone = true;
-    localStorage.setItem('pikto_literasi_video_' + index + '_done','1');
-
-    const status = document.getElementById('status-video-' + index);
-    status.textContent = 'SELESAI ✅';
-    status.classList.add('done');
-
-    updateOverallCompletion();
-
-    setTimeout(()=>{
-      alert('🎉 Hebat! Kamu telah menyelesaikan video interaktif dan 4 pertanyaan.');
-      closeInteractiveModal();
-    },300);
-  }
-
-  function closeInteractiveModal(){
-    clearInterval(interactiveMonitor);
-    if(interactivePlayer && typeof interactivePlayer.pauseVideo === 'function'){
-      interactivePlayer.pauseVideo();
-    }
-    document.getElementById('interactiveModal').classList.add('hidden');
-    document.getElementById('questionOverlay').classList.add('hidden');
-    document.body.style.overflow = '';
-    activeVideoIndex = null;
-    questionShowing = false;
-  }
-
-  function restoreCompletionState(){
-    VIDEO_DATA.forEach((_,index)=>{
-      const done = localStorage.getItem('pikto_literasi_video_' + index + '_done') === '1';
-      if(done){
-        requiredState[index].ended = true;
-        requiredState[index].interactiveDone = true;
-        updateWatchProgress(index,100);
-        const status = document.getElementById('status-video-' + index);
-        status.textContent = 'SELESAI ✅';
-        status.classList.add('done');
-        document.getElementById('understanding-' + index).classList.remove('hidden');
-      }
-    });
-
-    updateOverallCompletion();
-  }
-
-  function updateOverallCompletion(){
-    const completed = requiredState.filter(item=>item.interactiveDone).length;
-    const percent = Math.round((completed / VIDEO_DATA.length) * 100);
-
-    document.getElementById('completeFill').style.width = percent + '%';
-    document.getElementById('videoSummary').textContent =
-      completed + ' dari ' + VIDEO_DATA.length + ' video interaktif telah selesai.';
-
-    const link = document.getElementById('nextNumerasi');
-    const message = document.getElementById('nextMessage');
-
-    if(completed === VIDEO_DATA.length){
-      link.href = 'numerasi.html';
-      link.className = 'btn btn-green';
-      link.setAttribute('aria-disabled','false');
-      link.textContent = '✅ Lanjut ke Materi Numerasi';
-      message.textContent = '🎉 Semua video selesai. Kamu sudah boleh melanjutkan ke materi Numerasi.';
-      if(typeof completeAdventurePos === 'function') completeAdventurePos(8);
-    }else{
-      link.href = 'javascript:void(0)';
-      link.className = 'btn btn-light';
-      link.setAttribute('aria-disabled','true');
-      link.textContent = '🔒 Lanjut ke Numerasi';
-      message.textContent = '🔒 Selesaikan kedua video interaktif terlebih dahulu.';
-    }
-  }
-
-  document.getElementById('nextNumerasi').addEventListener('click',function(event){
-    const completed = requiredState.filter(item=>item.interactiveDone).length;
-    if(completed !== VIDEO_DATA.length){
-      event.preventDefault();
-      alert('Selesaikan kedua video interaktif terlebih dahulu.');
+  currentQuestions.forEach(q=>{
+    if(q.id_soal === idSoal){
+      ['A','B','C','D'].forEach(letter=>{
+        const el = document.getElementById(`opt-${q.id_soal}-${letter}`);
+        if(el) el.classList.toggle('selected',letter === jawaban);
+      });
     }
   });
 
-  document.getElementById('interactiveModal').addEventListener('click',function(event){
-    if(event.target === this){
-      closeInteractiveModal();
-    }
-  });
+  const queue = readJSON(LS.QUEUE,[]);
+  const item = {
+    level:currentLevel,
+    id_soal:idSoal,
+    jawaban:jawaban,
+    session_id:currentSessionId.id,
+    saved_at:new Date().toISOString()
+  };
 
+  const filtered = queue.filter(x =>
+    !(x.level === item.level && x.id_soal === item.id_soal)
+  );
 
-  /* ===== PETA PETUALANGAN LITERASI PROGRESIF ===== */
-  const ADV_KEY = 'pikto_literasi_adventure_v1';
-  const ADV_TOTAL = 8;
+  filtered.push(item);
+  writeJSON(LS.QUEUE,filtered);
 
-  function getAdventureState(){
+  updateQuestionProgress();
+  showSync('💾 Jawaban aman di perangkat. Menyinkronkan...', true);
+
+  syncQueue();
+}
+
+async function syncQueue(){
+  if(!apiConfigured() || !navigator.onLine) return;
+
+  const idMurid = localStorage.getItem(LS.ID);
+  if(!idMurid) return;
+
+  let queue = readJSON(LS.QUEUE,[]);
+  if(!queue.length){
+    showSync('✅ Semua jawaban sudah tersimpan di Spreadsheet.', true);
+    return;
+  }
+
+  const remaining = [];
+
+  for(const item of queue){
     try{
-      const raw = JSON.parse(localStorage.getItem(ADV_KEY) || '{}');
-      const completed = Array.isArray(raw.completed) ? raw.completed.filter(n=>Number.isInteger(n) && n>=1 && n<=ADV_TOTAL) : [];
-      return {completed:[...new Set(completed)].sort((a,b)=>a-b)};
-    }catch(e){ return {completed:[]}; }
+      const res = await api({
+        action:'saveAnswer',
+        id_murid:idMurid,
+        level:item.level,
+        id_soal:item.id_soal,
+        jawaban:item.jawaban,
+        session_id:item.session_id
+      });
+
+      if(!res.success){
+        remaining.push(item);
+      }
+    }catch(err){
+      remaining.push(item);
+    }
   }
-  function saveAdventureState(state){ localStorage.setItem(ADV_KEY, JSON.stringify(state)); }
-  function isPosUnlocked(no,state){ return no===1 || state.completed.includes(no-1) || state.completed.includes(no); }
-  function highestBadge(done){
-    if(done>=8) return '🏆 Ahli Literasi IPS';
-    if(done>=5) return '📊 Detektif Data';
-    if(done>=3) return '💡 Penemu Ide Pokok';
-    if(done>=1) return '🔍 Pemburu Informasi';
-    return '🏅 Penjelajah Baru';
+
+  writeJSON(LS.QUEUE,remaining);
+
+  if(remaining.length){
+    showSync(
+      `📱 ${remaining.length} jawaban masih aman di perangkat dan menunggu internet.`,
+      false
+    );
+  }else{
+    showSync('✅ Semua jawaban sudah tersimpan di Spreadsheet.', true);
   }
-  function renderAdventure(){
-    const state=getAdventureState();
-    const done=state.completed.length;
-    const progress=document.getElementById('advProgress'); if(progress) progress.textContent=`📖 Progres ${done}/${ADV_TOTAL}`;
-    const stars=document.getElementById('advStars'); if(stars) stars.textContent=`⭐ Bintang ${done*3}`;
-    const badge=document.getElementById('advBadge'); if(badge) badge.textContent=highestBadge(done);
-    document.querySelectorAll('.adventure-pos').forEach((btn,i)=>{
-      const no=i+1, complete=state.completed.includes(no), unlocked=isPosUnlocked(no,state);
-      btn.disabled=!unlocked; btn.classList.toggle('done',complete); btn.classList.toggle('active',unlocked&&!complete);
-      const st=btn.querySelector('.pos-state'); if(st) st.textContent=complete?'✅ SELESAI':(unlocked?'⭐ TERBUKA':'🔒 TERKUNCI');
+}
+
+function updateQuestionProgress(){
+  const total = currentQuestions.length;
+  let answered = 0;
+
+  currentQuestions.forEach(q=>{
+    if(currentAnswers[q.id_soal]) answered++;
+  });
+
+  const percent = total ? (answered / total) * 100 : 0;
+
+  document.getElementById('questionProgressText').textContent =
+    `${answered} dari ${total} soal`;
+
+  document.getElementById('questionProgressBar').style.width =
+    percent + '%';
+}
+
+/* ============================================================
+   SUBMIT / RESULT
+============================================================ */
+
+async function selesaikanLevel(){
+  const belum = currentQuestions.filter(q => !currentAnswers[q.id_soal]);
+
+  if(belum.length){
+    alert(`Masih ada ${belum.length} soal yang belum dijawab.`);
+    return;
+  }
+
+  if(!navigator.onLine){
+    showSync(
+      '📱 Semua jawaban sudah aman di perangkat. Sambungkan internet untuk mendapatkan nilai.',
+      false
+    );
+    alert(
+      'Koneksi internet sedang terputus. Jawabanmu tidak hilang. Sambungkan internet lalu tekan "Selesaikan Level" kembali.'
+    );
+    return;
+  }
+
+  if(!apiConfigured()){
+    alert('APP_SCRIPT_URL belum diatur pada index.html.');
+    return;
+  }
+
+  const btns = document.querySelectorAll('#questionsCard button');
+  btns.forEach(b=>b.disabled=true);
+
+  try{
+    await syncQueue();
+
+    const queue = readJSON(LS.QUEUE,[]).filter(x => x.level === currentLevel);
+
+    if(queue.length){
+      throw new Error(
+        'Masih ada jawaban yang belum berhasil dikirim. Periksa koneksi internet.'
+      );
+    }
+
+    showSync('⏳ Mengirim hasil level ke server...',true);
+
+    const res = await api({
+      action:'submitLevel',
+      id_murid:localStorage.getItem(LS.ID),
+      level:currentLevel,
+      session_id:currentSessionId.id,
+      waktu_mulai:currentStartTime,
+      // Kirim ulang seluruh jawaban lokal ketika level diselesaikan.
+      // Backend melakukan upsert, sehingga retry aman dan tidak menghilangkan jawaban.
+      answers: currentQuestions.map(q => ({
+        id_soal:q.id_soal,
+        jawaban:currentAnswers[q.id_soal] || ''
+      }))
+    },{
+      maxAttempts:3,
+      baseDelay:1000,
+      onRetry:(attempt,maxAttempts,delay,err)=>{
+        const nextAttempt = attempt + 1;
+        showSync(
+          `⚠️ Server belum merespons (${err.message}). Mencoba lagi otomatis ${nextAttempt}/${maxAttempts}...`,
+          false
+        );
+      }
     });
-    document.querySelectorAll('.learning-pos').forEach(sec=>{
-      const no=Number(sec.dataset.pos); sec.classList.toggle('pos-unlocked',isPosUnlocked(no,state)); sec.classList.toggle('pos-completed',state.completed.includes(no));
+
+    showSync('✅ Hasil level berhasil tersimpan di server.',true);
+
+    if(!res.success){
+      throw new Error(res.message || 'Gagal menghitung nilai.');
+    }
+
+    progressData = res.progress;
+    cacheProgress(progressData);
+    renderProgress();
+
+    tampilkanFeedback(res.feedback || []);
+    tampilkanHasil(res);
+    await loadLeaderboard();
+
+    // Jika level selesai, session lama ditutup.
+    localStorage.removeItem(sessionKey(currentLevel));
+
+  }catch(err){
+    showSync(
+      '⚠️ Server belum dapat dihubungi setelah beberapa percobaan. Jawaban tetap aman di perangkat. Silakan tekan "Selesaikan Level" lagi tanpa mengulang soal.',
+      false
+    );
+    alert(
+      (err && err.message ? err.message : 'Server belum dapat dihubungi.') +
+      '\n\nJawabanmu tetap aman di perangkat. Tidak perlu mengulang soal.'
+    );
+  }finally{
+    btns.forEach(b=>b.disabled=false);
+  }
+}
+
+function tampilkanFeedback(feedback){
+  feedback.forEach(item=>{
+    const el = document.getElementById('feedback-' + item.id_soal);
+    if(!el) return;
+
+    el.innerHTML = `
+      <div class="feedback ${item.benar ? 'good' : 'bad'}">
+        <strong>${item.benar ? '✅ Benar' : '❌ Belum tepat'}</strong><br>
+        ${escapeHtml(item.pembahasan || '')}
+      </div>
+    `;
+  });
+}
+
+
+function reflectionKey(level){
+  const id = localStorage.getItem(LS.ID) || 'lokal';
+  return `pikto_refleksi_${id}_${level}`;
+}
+
+function getDiagnosisAwal(res){
+  const lit = Number(res.nilai_literasi || 0);
+  const num = Number(res.nilai_numerasi || 0);
+  const label = v => v >= 75 ? 'kuat' : (v >= 60 ? 'berkembang' : 'perlu dikuatkan');
+
+  let strength = '';
+  let focus = '';
+  let recommendation = '';
+  let targetUrl = '';
+  let targetLabel = '';
+
+  if(lit >= num){
+    strength = `Literasimu ${label(lit)}. Kamu lebih siap dalam memahami dan menggunakan informasi IPS.`;
+  }else{
+    strength = `Numerasimu ${label(num)}. Kamu lebih siap dalam membaca dan menggunakan data untuk menyelesaikan masalah.`;
+  }
+
+  if(lit < num){
+    focus = `Prioritas berikutnya adalah Literasi IPS (nilai ${lit}). Latih kembali kemampuan menemukan, menghubungkan, dan menyimpulkan informasi.`;
+    recommendation = 'Kembali ke materi Literasi IPS, baca stimulus dengan teliti, lalu coba latihan sebelum mengulang tantangan.';
+    targetUrl = 'literasi.html';
+    targetLabel = '📖 Belajar Literasi Lagi';
+  }else if(num < lit){
+    focus = `Prioritas berikutnya adalah Numerasi IPS (nilai ${num}). Latih kembali kemampuan membaca piktogram, membandingkan, dan mengolah data.`;
+    recommendation = 'Kembali ke materi Numerasi IPS, pelajari piktogram dan diagram, lalu coba latihan sebelum mengulang tantangan.';
+    targetUrl = 'numerasi.html';
+    targetLabel = '🔢 Belajar Numerasi Lagi';
+  }else{
+    focus = `Nilai Literasi dan Numerasimu seimbang (${lit}). Pertahankan keduanya dan terus latih penalaranmu.`;
+    recommendation = lit >= KKM ? 'Kamu siap melanjutkan petualangan ke Level Cakap.' : 'Pelajari kembali Literasi dan Numerasi, lalu coba Level Awal sekali lagi.';
+    targetUrl = lit >= KKM ? '#tantangan' : 'literasi.html';
+    targetLabel = lit >= KKM ? '🚀 Lanjutkan Petualangan' : '📚 Belajar Kembali';
+  }
+
+  return {strength,focus,recommendation,targetUrl,targetLabel};
+}
+
+function muatRefleksi(level){
+  return readJSON(reflectionKey(level),{paham:'',sulit:'',rencana:'',saved_at:''});
+}
+
+async function simpanRefleksi(level){
+  const paham = (document.getElementById('refPaham')?.value || '').trim();
+  const sulit = (document.getElementById('refSulit')?.value || '').trim();
+  const rencana = (document.getElementById('refRencana')?.value || '').trim();
+  const status = document.getElementById('reflectionStatus');
+  const idMurid = localStorage.getItem(LS.ID) || '';
+  const btn = document.getElementById('btnSimpanRefleksi');
+
+  if(!paham && !sulit && !rencana){
+    if(status){ status.textContent='⚠️ Tulis minimal satu jawaban refleksi.'; status.style.color='#b26a00'; }
+    return;
+  }
+
+  if(!idMurid){
+    if(status){ status.textContent='❌ ID murid tidak ditemukan. Silakan masuk kembali.'; status.style.color='#b42318'; }
+    return;
+  }
+
+  // Simpan salinan lokal terlebih dahulu agar tulisan murid tidak hilang.
+  const localData={paham,sulit,rencana,saved_at:new Date().toISOString(),synced:false};
+  writeJSON(reflectionKey(level),localData);
+
+  if(!apiConfigured()){
+    if(status){ status.textContent='⚠️ Refleksi tersimpan di perangkat, tetapi API belum dikonfigurasi.'; status.style.color='#b26a00'; }
+    return;
+  }
+
+  if(!navigator.onLine){
+    if(status){ status.textContent='⚠️ Refleksi tersimpan di perangkat. Sambungkan internet lalu tekan Simpan Refleksi lagi.'; status.style.color='#b26a00'; }
+    return;
+  }
+
+  const oldText = btn ? btn.innerHTML : '';
+  if(btn){ btn.disabled=true; btn.innerHTML='⏳ Menyimpan...'; }
+  if(status){ status.textContent='⏳ Menyimpan refleksi ke database...'; status.style.color='#0b61c3'; }
+
+  try{
+    const res = await api({
+      action:'saveReflection',
+      id_murid:idMurid,
+      level:String(level || currentLevel || 'AWAL').toUpperCase(),
+      paham:paham,
+      sulit:sulit,
+      rencana:rencana
     });
-    document.querySelectorAll('[data-badge]').forEach(el=>{
-      el.classList.toggle('locked',done < Number(el.dataset.badge));
+
+    if(!res || !res.success){
+      if(isStudentNotFoundResponse(res)){
+        bersihkanDataMuridLokal();
+        return;
+      }
+      throw new Error((res && res.message) || 'Refleksi belum berhasil disimpan ke database.');
+    }
+
+    writeJSON(reflectionKey(level),{
+      paham,sulit,rencana,
+      saved_at:res.waktu_refleksi || new Date().toISOString(),
+      synced:true,
+      id_refleksi:res.id_refleksi || ''
     });
+
+    if(status){ status.textContent='✅ Refleksimu berhasil tersimpan di database.'; status.style.color='#198754'; }
+  }catch(err){
+    console.error('Gagal menyimpan refleksi:',err);
+    if(status){
+      status.textContent='⚠️ Refleksi tersimpan di perangkat, tetapi belum masuk ke sheet REFLEKSI. ' + (err.message || 'Coba lagi.');
+      status.style.color='#b42318';
+    }
+  }finally{
+    if(btn){ btn.disabled=false; btn.innerHTML=oldText || '💾 Simpan Refleksi'; }
   }
-  function showAdventureToast(msg){
-    const t=document.getElementById('adventureToast'); if(!t) return; t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2200);
+}
+
+function tampilkanHasil(res){
+  const card = document.getElementById('resultCard');
+  card.classList.remove('hidden');
+  card.className = 'card result-box';
+
+  const lulus = !!res.lulus;
+  const isAwal = currentLevel === 'AWAL';
+  const refleksi = muatRefleksi(currentLevel);
+  const diagnosis = isAwal ? getDiagnosisAwal(res) : null;
+
+  let actions = '';
+  if(lulus){
+    if(currentLevel === 'AWAL'){
+      actions = `<button class="btn btn-green" onclick="pilihLevel('CAKAP')">🚀 Lanjut Level Cakap</button>`;
+    }else if(currentLevel === 'CAKAP'){
+      actions = `<button class="btn btn-purple" onclick="pilihLevel('MAHIR')">🏆 Lanjut Level Mahir</button>`;
+    }else{
+      actions = `<button class="btn btn-orange" onclick="bukaPemilihanLevel()">🏅 Lihat Semua Level</button>`;
+    }
+  }else{
+    actions = `
+      <a class="btn btn-primary" href="literasi.html">📖 Belajar Literasi Lagi</a>
+      <a class="btn btn-green" href="numerasi.html">🔢 Belajar Numerasi Lagi</a>
+      <button class="btn btn-orange" onclick="pilihLevel('${currentLevel}')">🔄 Coba Lagi</button>`;
   }
-  function completeAdventurePos(no){
-    const state=getAdventureState(); if(!state.completed.includes(no)) state.completed.push(no); state.completed.sort((a,b)=>a-b); saveAdventureState(state); renderAdventure();
-    showAdventureToast(no===8?'🏆 Hebat! Semua Pos Literasi selesai!':`⭐ Pos ${no} selesai. Pos berikutnya terbuka!`);
+
+  const diagnosisHtml = isAwal ? `
+    <div class="diagnosis-grid">
+      <div class="diagnosis-card strength">
+        <h3>💪 Kekuatan Belajarmu</h3>
+        <p>${escapeHtml(diagnosis.strength)}</p>
+      </div>
+      <div class="diagnosis-card focus">
+        <h3>🎯 Fokus Berikutnya</h3>
+        <p>${escapeHtml(diagnosis.focus)}</p>
+      </div>
+    </div>
+    <div class="recommend-box">
+      <h3>🧭 Rekomendasi SITEEk-PIKTO-IPS</h3>
+      <p>${escapeHtml(diagnosis.recommendation)}</p>
+      <div class="btn-row" style="margin-top:12px">
+        <a class="btn btn-purple" href="${escapeHtml(diagnosis.targetUrl)}">${escapeHtml(diagnosis.targetLabel)}</a>
+      </div>
+    </div>` : '';
+
+  card.innerHTML = `
+    <div class="result-hero">
+      <h2>${lulus ? '🎉 Hebat! Petualanganmu Selesai' : '🌱 Kamu Sudah Berusaha dengan Baik'}</h2>
+      <p>${lulus ? 'Lihat hasilmu, kenali kekuatanmu, lalu tentukan petualangan belajar berikutnya.' : 'Hasil ini membantu kita mengetahui bagian yang perlu dilatih lagi. Kamu bisa belajar dan mencoba kembali.'}</p>
+    </div>
+
+    <div class="score-circle">${Number(res.nilai || 0)}</div>
+
+    ${isAwal ? `
+      <div class="score-breakdown">
+        <div class="score-mini"><span>📖 Nilai Literasi</span><strong>${Number(res.nilai_literasi || 0)}</strong><small>${Number(res.benar_literasi || 0)}/${Number(res.total_literasi || 10)} benar</small></div>
+        <div class="score-mini"><span>🔢 Nilai Numerasi</span><strong>${Number(res.nilai_numerasi || 0)}</strong><small>${Number(res.benar_numerasi || 0)}/${Number(res.total_numerasi || 10)} benar</small></div>
+        <div class="score-mini"><span>🌱 Nilai Level Awal</span><strong>${Number(res.nilai || 0)}</strong><small>${escapeHtml(res.jumlah_benar)} dari ${escapeHtml(res.total_soal)} benar</small></div>
+      </div>
+    ` : `<h3>${escapeHtml(res.jumlah_benar)} dari ${escapeHtml(res.total_soal)} soal benar</h3>`}
+
+    <div class="${lulus ? 'pass-box' : 'remedial-box'}" style="max-width:820px;margin:14px auto;text-align:left">
+      <strong>${lulus ? '✅ LULUS' : '📚 MASIH PERLU LATIHAN'}</strong><br>
+      ${escapeHtml(res.message || '')}<br><br>
+      Nilai minimum untuk membuka level berikutnya adalah <strong>${KKM}</strong>.
+    </div>
+
+    ${diagnosisHtml}
+
+    <div class="reflection-box">
+      <div class="reflection-head">
+        <div class="bubble-icon">💭</div>
+        <div><h3>Refleksi Belajarku</h3><p>Tulis dengan bahasamu sendiri. Tidak ada jawaban salah.</p></div>
+      </div>
+      <div class="reflection-grid">
+        <div class="reflection-item"><label for="refPaham">1. Apa yang sudah kamu pahami?</label><textarea id="refPaham" placeholder="Contoh: Saya sudah bisa membaca piktogram.">${escapeHtml(refleksi.paham || '')}</textarea></div>
+        <div class="reflection-item"><label for="refSulit">2. Bagian apa yang masih terasa sulit?</label><textarea id="refSulit" placeholder="Contoh: Saya masih bingung membandingkan data.">${escapeHtml(refleksi.sulit || '')}</textarea></div>
+        <div class="reflection-item"><label for="refRencana">3. Apa yang akan kamu lakukan agar lebih paham?</label><textarea id="refRencana" placeholder="Contoh: Saya akan belajar Numerasi lagi dan mencoba latihan.">${escapeHtml(refleksi.rencana || '')}</textarea></div>
+      </div>
+      <div class="reflection-save">
+        <button class="btn btn-orange" id="btnSimpanRefleksi" onclick="simpanRefleksi('${currentLevel}')">💾 Simpan Refleksi</button>
+        <span class="reflection-status" id="reflectionStatus">${refleksi.saved_at ? (refleksi.synced ? '✅ Refleksi sebelumnya sudah tersimpan di database.' : '⚠️ Refleksi sebelumnya baru tersimpan di perangkat.') : ''}</span>
+      </div>
+    </div>
+
+    <div class="btn-row result-actions">${actions}</div>
+  `;
+
+  card.scrollIntoView({behavior:'smooth'});
+}
+
+/* ============================================================
+   PROGRESS DISPLAY
+============================================================ */
+
+function renderProgress(){
+  const p = progressData || defaultProgress();
+
+  renderProgressItem('Awal',p.awal);
+  const awalDetail = document.getElementById('scoreAwalDetail');
+  if(awalDetail){
+    const lit = p.awal && p.awal.nilai_literasi !== null && p.awal.nilai_literasi !== undefined ? p.awal.nilai_literasi : '-';
+    const num = p.awal && p.awal.nilai_numerasi !== null && p.awal.nilai_numerasi !== undefined ? p.awal.nilai_numerasi : '-';
+    awalDetail.textContent = `Lit ${lit} • Num ${num}`;
   }
-  function setupAdventureMissions(){
-    document.querySelectorAll('.mini-mission').forEach(box=>{
-      const no=Number(box.dataset.mission), feedback=box.querySelector('.mission-feedback');
-      box.querySelectorAll('.mission-option').forEach(btn=>btn.addEventListener('click',()=>{
-        box.querySelectorAll('.mission-option').forEach(b=>b.classList.remove('good','bad'));
-        if(btn.dataset.correct==='1'){
-          btn.classList.add('good'); if(feedback){feedback.textContent='✅ Tepat! Kamu berhasil menyelesaikan misi pos ini.';feedback.className='mission-feedback ok';}
-          completeAdventurePos(no);
-        }else{
-          btn.classList.add('bad'); if(feedback){feedback.textContent='🔁 Belum tepat. Baca kembali materi pada pos ini lalu coba lagi.';feedback.className='mission-feedback no';}
+  renderProgressItem('Cakap',p.cakap);
+  renderProgressItem('Mahir',p.mahir);
+  updateDashboardLocks(p);
+}
+
+function updateDashboardLocks(p){
+  const cakapOpen =
+    p.awal.status === 'LULUS' &&
+    Number(p.awal.nilai || 0) >= KKM;
+
+  const mahirOpen =
+    p.cakap.status === 'LULUS' &&
+    Number(p.cakap.nilai || 0) >= KKM;
+
+  setPreviewAvailability('previewCakap','lockCakap',cakapOpen);
+  setPreviewAvailability('previewMahir','lockMahir',mahirOpen);
+
+  updateRing('ringAwal',p.awal,p.level_aktif === 'AWAL',p,20);
+  updateRing('ringCakap',p.cakap,p.level_aktif === 'CAKAP',p,12);
+  updateRing('ringMahir',p.mahir,p.level_aktif === 'MAHIR',p,12);
+}
+
+function setPreviewAvailability(labelId,lockId,open){
+  const label = document.getElementById(labelId);
+  const lock = document.getElementById(lockId);
+
+  if(label){
+    label.textContent = open ? 'TERSEDIA' : 'TERKUNCI';
+    label.className = 'availability ' + (open ? 'available' : 'locked');
+  }
+
+  if(lock){
+    lock.style.display = open ? 'none' : 'flex';
+  }
+}
+
+function updateRing(id,data,isActive,p,defaultTotal){
+  const el = document.getElementById(id);
+  if(!el) return;
+
+  const fallbackTotal = Number(defaultTotal || 12);
+
+  if(data && data.status === 'LULUS'){
+    el.textContent = fallbackTotal + '/' + fallbackTotal;
+    el.classList.add('active');
+    return;
+  }
+
+  if(isActive){
+    const total = Number(p.total_soal || fallbackTotal);
+    const answered = Math.min(Number(p.jumlah_terjawab || 0),total);
+    el.textContent = answered + '/' + total;
+    el.classList.add('active');
+  }else{
+    el.textContent = '0/' + fallbackTotal;
+    el.classList.remove('active');
+  }
+}
+
+function renderProgressItem(label,data){
+  const score = document.getElementById('score' + label);
+  const status = document.getElementById('status' + label);
+
+  score.textContent =
+    data && data.nilai !== null && data.nilai !== undefined
+      ? data.nilai
+      : '-';
+
+  const st = (data && data.status) ? data.status : 'BELUM';
+  status.textContent = st;
+
+  status.className = 'status-pill ' + statusClass(st);
+}
+
+function statusClass(status){
+  const s = String(status || '').toUpperCase();
+
+  if(s === 'LULUS') return 'st-lulus';
+  if(s === 'REMEDIAL') return 'st-remedial';
+  if(s === 'PROSES') return 'st-proses';
+  if(s === 'TERKUNCI') return 'st-terkunci';
+  return 'st-belum';
+}
+
+/* ============================================================
+   LEADERBOARD
+============================================================ */
+
+async function loadLeaderboard(){
+  const list = document.getElementById('leaderboardList');
+  if(!list) return;
+
+  if(!apiConfigured() || !navigator.onLine){
+    renderLeaderboard([]);
+    return;
+  }
+
+  try{
+    const res = await api({
+      action:'getLeaderboard',
+      limit:10
+    });
+
+    if(!res.success){
+      throw new Error(res.message || 'Gagal mengambil papan peringkat.');
+    }
+
+    leaderboardData = Array.isArray(res.leaderboard) ? res.leaderboard : [];
+    renderLeaderboard(leaderboardData);
+  }catch(err){
+    list.innerHTML = `
+      <div class="leaderboard-empty">
+        Papan peringkat belum dapat dimuat.<br>
+        <small>${escapeHtml(err.message || '')}</small>
+      </div>
+    `;
+  }
+}
+
+function renderLeaderboard(rows){
+  const list = document.getElementById('leaderboardList');
+  if(!list) return;
+
+  if(!rows || !rows.length){
+    list.innerHTML = `
+      <div class="leaderboard-empty">
+        🏁 Belum ada hasil tantangan.<br>
+        Jadilah murid pertama yang masuk papan peringkat!
+      </div>
+    `;
+    return;
+  }
+
+  const myId = localStorage.getItem(LS.ID) || '';
+
+  list.innerHTML = rows.map((item,index)=>{
+    const rank = Number(item.peringkat || (index + 1));
+    const rankClass =
+      rank === 1 ? 'rank-1' :
+      rank === 2 ? 'rank-2' :
+      rank === 3 ? 'rank-3' : '';
+
+    const medal =
+      rank === 1 ? '🥇' :
+      rank === 2 ? '🥈' :
+      rank === 3 ? '🥉' : rank;
+
+    const isMe = myId && String(item.id_murid || '') === myId;
+
+    return `
+      <div class="leader-row ${isMe ? 'me' : ''}">
+        <div class="rank-medal ${rankClass}">${medal}</div>
+
+        <div class="leader-main">
+          <span class="leader-name">
+            ${escapeHtml(item.nama || 'Murid')} ${isMe ? '⭐' : ''}
+          </span>
+          <div class="leader-meta">
+            <span>${escapeHtml(item.kelas || '-')}</span>
+            <span>•</span>
+            <span class="mini-level">${escapeHtml(item.level || 'AWAL')}</span>
+            <span>•</span>
+            <span>⏱ ${escapeHtml(formatDuration(item.durasi_detik))}</span>
+          </div>
+        </div>
+
+        <div class="leader-score">
+          <strong>${Number(item.nilai || 0)}</strong>
+          <small>nilai</small>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function formatDuration(seconds){
+  const total = Math.max(0,Number(seconds || 0));
+  const minutes = Math.floor(total / 60);
+  const secs = total % 60;
+
+  if(minutes >= 60){
+    const hours = Math.floor(minutes / 60);
+    const remainMinutes = minutes % 60;
+    return hours + 'j ' + remainMinutes + 'm';
+  }
+
+  return minutes + 'm ' + String(secs).padStart(2,'0') + 'd';
+}
+
+function defaultProgress(){
+  return {
+    awal:{status:'BELUM',nilai:null,nilai_literasi:null,nilai_numerasi:null},
+    cakap:{status:'TERKUNCI',nilai:null},
+    mahir:{status:'TERKUNCI',nilai:null}
+  };
+}
+
+function cacheProgress(p){
+  progressData = p;
+  writeJSON(LS.PROGRESS,p);
+}
+
+function loadProgressCache(){
+  progressData = readJSON(LS.PROGRESS,defaultProgress());
+}
+
+/* ============================================================
+   SESSION
+============================================================ */
+
+function loadOrCreateSession(level){
+  let session = readJSON(sessionKey(level),null);
+
+  if(!session || !session.id){
+    session = {
+      id:'SES-' + cryptoRandom(),
+      start_time:new Date().toISOString()
+    };
+    writeJSON(sessionKey(level),session);
+  }
+
+  return session;
+}
+
+/* ============================================================
+   API
+============================================================ */
+
+function apiConfigured(){
+  return (
+    APP_SCRIPT_URL &&
+    APP_SCRIPT_URL.startsWith('https://') &&
+    !APP_SCRIPT_URL.includes('GANTI_DENGAN')
+  );
+}
+
+function tunggu(ms){
+  return new Promise(resolve => setTimeout(resolve,ms));
+}
+
+function apiBolehRetry(status){
+  // Retry hanya untuk kegagalan sementara / gateway / deployment yang sesekali belum terjangkau.
+  return status === 0 || status === 404 || status === 408 || status === 429 || status >= 500;
+}
+
+async function api(payload,options={}){
+  const maxAttempts = Math.max(1,Number(options.maxAttempts || 3));
+  const baseDelay = Math.max(300,Number(options.baseDelay || 900));
+  let lastError = null;
+
+  for(let attempt=1; attempt<=maxAttempts; attempt++){
+    try{
+      const response = await fetch(APP_SCRIPT_URL,{
+        method:'POST',
+        headers:{
+          'Content-Type':'text/plain;charset=utf-8'
+        },
+        body:JSON.stringify(payload),
+        redirect:'follow',
+        cache:'no-store'
+      });
+
+      if(!response.ok){
+        const err = new Error('Server merespons HTTP ' + response.status);
+        err.httpStatus = response.status;
+        err.retryable = apiBolehRetry(response.status);
+        throw err;
+      }
+
+      const data = await response.json();
+      return data;
+
+    }catch(err){
+      lastError = err;
+
+      const status = Number(err && err.httpStatus || 0);
+      const retryable =
+        err && err.retryable === true ||
+        status === 0 ||
+        apiBolehRetry(status) ||
+        err instanceof TypeError;
+
+      if(!retryable || attempt >= maxAttempts){
+        break;
+      }
+
+      const delay = baseDelay * attempt;
+      if(options.onRetry){
+        try{
+          options.onRetry(attempt,maxAttempts,delay,err);
+        }catch(_){}
+      }
+
+      await tunggu(delay);
+    }
+  }
+
+  throw lastError || new Error('Server belum dapat dihubungi.');
+}
+
+/* ============================================================
+   NETWORK
+============================================================ */
+
+function updateNetworkStatus(){
+  const el = document.getElementById('networkStatus');
+  if(!el) return;
+
+  if(navigator.onLine){
+    el.className = 'network online';
+    el.textContent = '🟢 Online';
+  }else{
+    el.className = 'network offline';
+    el.textContent = '🔴 Offline • Jawaban tetap aman';
+  }
+}
+
+function showSync(message,success){
+  const el = document.getElementById('syncMessage');
+  if(!el) return;
+
+  el.textContent = message;
+  el.style.background = success ? '#e8f5e9' : '#fff3e0';
+  el.style.color = success ? '#1b5e20' : '#e65100';
+}
+
+window.addEventListener('online',async()=>{
+  updateNetworkStatus();
+  showSync('🌐 Internet kembali. Menyinkronkan jawaban...',true);
+
+  try{
+    await muatPengaturan();
+  }catch(err){
+    console.warn('KKM server belum dapat dimuat:',err);
+  }
+
+  await syncQueue();
+
+  if(localStorage.getItem(LS.ID) && apiConfigured()){
+    try{
+      const res = await api({
+        action:'getProgress',
+        id_murid:localStorage.getItem(LS.ID)
+      });
+      if(isStudentNotFoundResponse(res)){
+        kembaliKeHalamanIdentitas(
+          'Data murid sudah dihapus dari Database SITEEk-PIKTO-IPS. Silakan tulis nama dan pilih kelas kembali.'
+        );
+        return;
+      }
+
+      if(res.success){
+        progressData = res.progress;
+        cacheProgress(progressData);
+        renderProgress();
+      }
+      await loadLeaderboard();
+    }catch(err){}
+  }
+});
+
+window.addEventListener('offline',()=>{
+  updateNetworkStatus();
+  showSync('📱 Offline. Jawaban baru akan disimpan di perangkat dan dikirim saat internet kembali.',false);
+});
+
+/* ============================================================
+   JSON / ESCAPE HELPERS
+============================================================ */
+
+function writeJSON(key,value){
+  localStorage.setItem(key,JSON.stringify(value));
+}
+
+function readJSON(key,fallback){
+  try{
+    const raw = localStorage.getItem(key);
+    return raw ? JSON.parse(raw) : fallback;
+  }catch(err){
+    return fallback;
+  }
+}
+
+function escapeHtml(value){
+  return String(value === undefined || value === null ? '' : value)
+    .replaceAll('&','&amp;')
+    .replaceAll('<','&lt;')
+    .replaceAll('>','&gt;')
+    .replaceAll('"','&quot;')
+    .replaceAll("'","&#039;");
+}
+
+function jsSafe(value){
+  return String(value).replaceAll("\\","\\\\").replaceAll("'","\\'");
+}
+
+/* ============================================================
+   PAGE LOAD
+============================================================ */
+
+
+/* ============================================================
+   V9 - MISI 6 DIMENSI PROFIL LULUSAN
+============================================================ */
+const PROFILE_MISSION_KEY = 'pikto_profile_mission';
+
+function muatMisiProfilLokal(){
+  let data = {};
+  try{ data = JSON.parse(localStorage.getItem(PROFILE_MISSION_KEY) || '{}'); }catch(_){}
+  const map = {
+    misiKreativitas:data.kreativitas || '',
+    misiKewargaanPilihan:data.kewargaan_pilihan || '',
+    misiKewargaanAlasan:data.kewargaan_alasan || '',
+    misiAnggota:data.anggota || '',
+    misiKolaborasi:data.kolaborasi || ''
+  };
+  Object.entries(map).forEach(([id,val])=>{
+    const el=document.getElementById(id); if(el) el.value=val;
+  });
+  const st=document.getElementById('misiProfilStatus');
+  if(st && data.saved_at){
+    st.textContent = data.synced ? '✅ Misi sudah tersimpan di database.' : '📱 Misi tersimpan di perangkat.';
+  }
+}
+
+async function simpanMisiProfil(){
+  const status=document.getElementById('misiProfilStatus');
+  const btn=document.getElementById('btnSimpanMisi');
+  const idMurid=localStorage.getItem(LS.ID) || '';
+  const data={
+    kreativitas:(document.getElementById('misiKreativitas')?.value || '').trim(),
+    kewargaan_pilihan:(document.getElementById('misiKewargaanPilihan')?.value || '').trim(),
+    kewargaan_alasan:(document.getElementById('misiKewargaanAlasan')?.value || '').trim(),
+    anggota:(document.getElementById('misiAnggota')?.value || '').trim(),
+    kolaborasi:(document.getElementById('misiKolaborasi')?.value || '').trim(),
+    saved_at:new Date().toISOString(),
+    synced:false
+  };
+
+  if(!data.kreativitas || !data.kewargaan_pilihan || !data.kewargaan_alasan || !data.anggota || !data.kolaborasi){
+    if(status) status.textContent='⚠️ Lengkapi ketiga misi terlebih dahulu.';
+    return;
+  }
+
+  localStorage.setItem(PROFILE_MISSION_KEY,JSON.stringify(data));
+
+  if(!idMurid){
+    if(status) status.textContent='📱 Tersimpan lokal. Masuk sebagai murid agar dapat dikirim ke database.';
+    return;
+  }
+  if(!apiConfigured() || !navigator.onLine){
+    if(status) status.textContent='📱 Tersimpan di perangkat. Saat internet tersedia, tekan Simpan Misi Profil lagi.';
+    return;
+  }
+
+  if(btn){ btn.disabled=true; btn.textContent='⏳ Menyimpan...'; }
+  try{
+    const res=await api({
+      action:'saveProfileMission',
+      id_murid:idMurid,
+      kreativitas:data.kreativitas,
+      kewargaan_pilihan:data.kewargaan_pilihan,
+      kewargaan_alasan:data.kewargaan_alasan,
+      anggota:data.anggota,
+      kolaborasi:data.kolaborasi
+    },{maxAttempts:3,baseDelay:1000});
+
+    if(!res || !res.success) throw new Error((res && res.message) || 'Misi belum berhasil disimpan.');
+    data.synced=true;
+    data.id_misi=res.id_misi || '';
+    localStorage.setItem(PROFILE_MISSION_KEY,JSON.stringify(data));
+    if(status) status.textContent='✅ Ketiga misi berhasil tersimpan di database.';
+  }catch(err){
+    if(status) status.textContent='⚠️ Misi aman di perangkat, tetapi belum masuk database. Tekan Simpan lagi saat koneksi stabil.';
+  }finally{
+    if(btn){ btn.disabled=false; btn.textContent='💾 Simpan Misi Profil'; }
+  }
+}
+
+window.addEventListener('load',async()=>{
+  updateNetworkStatus();
+  muatKKMLokal();
+  muatMisiProfilLokal();
+
+  if(apiConfigured() && navigator.onLine){
+    try{
+      await muatPengaturan();
+    }catch(err){
+      console.warn('KKM server belum dapat dimuat:',err);
+    }
+  }
+
+  const nama = localStorage.getItem(LS.NAME) || '';
+  const kelas = localStorage.getItem(LS.CLASS) || '';
+  const idMurid = localStorage.getItem(LS.ID) || '';
+
+  document.getElementById('nama').value = nama;
+  document.getElementById('kelas').value = kelas;
+
+  loadProgressCache();
+
+  if(nama && kelas && idMurid){
+    /*
+      Saat online, database menjadi sumber kebenaran.
+      Dashboard baru dipertahankan jika ID murid masih ada di database.
+    */
+    if(apiConfigured() && navigator.onLine){
+      try{
+        const validasi = await validasiMuridDatabase(idMurid);
+
+        if(!validasi.valid){
+          return;
         }
-      }));
-    });
-    document.querySelectorAll('.adventure-pos').forEach(btn=>btn.addEventListener('click',()=>{
-      if(btn.disabled) return; const id=btn.dataset.target; const el=document.getElementById(id); if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
-    }));
-  }
-  function syncFinalAdventureFromVideo(){
-    try{
-      if(typeof requiredState!=='undefined' && Array.isArray(requiredState) && requiredState.length && requiredState.every(x=>x.interactiveDone)) completeAdventurePos(8);
-    }catch(e){}
-  }
-  document.addEventListener('DOMContentLoaded',()=>{renderAdventure();setupAdventureMissions();});
 
+        if(validasi.progress){
+          progressData = validasi.progress;
+          cacheProgress(progressData);
+        }
+
+        document.getElementById('identityCard').classList.add('hidden');
+        document.getElementById('appArea').classList.remove('hidden');
+
+        tampilkanProfil();
+        renderProgress();
+        renderLeaderboard([]);
+
+        await syncQueue();
+        await loadLeaderboard();
+
+      }catch(err){
+        /*
+          Jika hanya internet/server bermasalah, data lokal TIDAK dihapus.
+          Murid tetap dapat memakai mode lokal/offline.
+        */
+        document.getElementById('identityCard').classList.add('hidden');
+        document.getElementById('appArea').classList.remove('hidden');
+
+        tampilkanProfil();
+        renderProgress();
+        renderLeaderboard([]);
+
+        showSync(
+          'Data lokal aktif. Database belum dapat diperiksa: ' + err.message,
+          false
+        );
+      }
+    }else{
+      // Mode offline: pertahankan identitas lokal.
+      document.getElementById('identityCard').classList.add('hidden');
+      document.getElementById('appArea').classList.remove('hidden');
+
+      tampilkanProfil();
+      renderProgress();
+      renderLeaderboard([]);
+    }
+  }else{
+    // Identitas tidak lengkap = selalu tampilkan halaman awal.
+    document.getElementById('identityCard').classList.remove('hidden');
+    document.getElementById('appArea').classList.add('hidden');
+  }
+});
 </script>
-<div class="adventure-toast" id="adventureToast">⭐ Pos selesai!</div>
+
 </body>
 </html>
