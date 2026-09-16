@@ -97,12 +97,53 @@
 #pos1-mengenal-data .pos1-feedback.bad{display:block;background:#fff0f1;color:#b02a37;border:1px solid #efb1b8}
 @keyframes pos1Shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
 
+
+/* ===== V13: KONSEP NUMERASI + 8 POS BERJENJANG ===== */
+.num-concept{margin:18px 0;padding:22px;border-radius:20px;background:linear-gradient(135deg,#effaff,#f4fff6);border:2px solid #d7e9ef}
+.num-concept h2{margin:0 0 8px;color:#145f43}.num-concept p,.num-concept li{line-height:1.7;color:#405b6d}.num-concept ul{padding-left:20px}
+.pos-nav{display:grid;grid-template-columns:repeat(8,1fr);gap:7px;margin:18px 0}.pos-chip{padding:9px 5px;border-radius:11px;border:1px solid #d9e4eb;background:#eef2f5;color:#7a8b98;font-size:11px;font-weight:900;text-align:center}.pos-chip.open{background:#e8f7ee;color:#167447;border-color:#a8d7ba}.pos-chip.done{background:#198754;color:#fff;border-color:#198754}
+.learning-pos{display:none}.learning-pos.active{display:block;animation:posFade .25s ease}.learning-pos.locked{display:none}
+@keyframes posFade{from{opacity:.3;transform:translateY(5px)}to{opacity:1;transform:none}}
+.pos-intro{padding:14px 16px;border-radius:14px;background:#f7fbff;border-left:5px solid #0d6efd;line-height:1.65;margin:12px 0}
+.pos-visual{margin:14px 0;padding:17px;border-radius:16px;background:#fff;border:2px solid #dce8ef}
+.pos-question{margin-top:14px;padding:15px;border-radius:15px;background:#fffaf0;border:1px solid #ead8a8}
+.pos-options{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}.pos-options button{padding:11px;border-radius:11px;border:2px solid #d8e4ea;background:#fff;font-weight:800;cursor:pointer}.pos-options button.v13-ok{background:#198754!important;color:#fff!important;border-color:#146c43!important}.pos-options button.v13-bad{background:#dc3545!important;color:#fff!important;border-color:#b02a37!important;animation:pos1Shake .28s linear 1}
+.v13-feedback{margin-top:10px;padding:11px 13px;border-radius:11px;font-weight:900;display:none}.v13-feedback.ok{display:block;background:#e9f8ef;color:#146c43}.v13-feedback.bad{display:block;background:#fff0f1;color:#b02a37}
+.next-pos{display:none;margin-top:12px}.next-pos.show{display:inline-flex}
+.mini-bars{display:grid;gap:8px}.mini-bar{display:grid;grid-template-columns:100px 1fr 40px;gap:8px;align-items:center}.mini-bar-track{height:20px;background:#e9eef2;border-radius:7px;overflow:hidden}.mini-bar-fill{height:100%;background:#56a675}
+@media(max-width:800px){.pos-nav{grid-template-columns:repeat(4,1fr)}.pos-options{grid-template-columns:1fr}} 
+
 </style>
 </head>
 <body>
 <header class="topbar"><div class="brand"><img src="img/logo-pikto-ips.png" alt="Logo PIKTO-IPS"><div><h1>🔢 NUMERASI IPS</h1><p>Menggunakan angka dan data untuk memahami kehidupan masyarakat</p></div></div><nav class="nav"><a href="index.html">🏠 Beranda</a><a href="literasi.html">📖 Literasi</a><a href="#latihan">✏️ Latihan</a><a href="#videoInteraktif">🎬 Video</a></nav></header>
 <main class="container">
-<section class="card" id="pos1-mengenal-data">
+
+<section class="num-concept" id="konsepNumerasiIPS">
+<h2>🔢 Apa Itu Numerasi IPS?</h2>
+<p><strong>Numerasi IPS</strong> adalah kemampuan menggunakan angka, data, tabel, piktogram, diagram, dan perhitungan sederhana untuk memahami peristiwa serta kehidupan masyarakat. Dalam SITEEk–PIKTO-IPS, murid tidak berhenti pada menghitung. Murid belajar <strong>membaca data → mengolah data → memahami arti data → menyelesaikan masalah → mengambil keputusan berdasarkan data</strong>.</p>
+<p>Contohnya, ketika murid membaca jumlah barang pada piktogram, membandingkan hasil pengamatan, menghitung pendapatan simulasi, atau menentukan kebutuhan berdasarkan data, murid sedang menggunakan numerasi dalam konteks IPS.</p>
+<h2 style="margin-top:18px">🎯 Tujuan Pembelajaran Numerasi IPS</h2>
+<p>Melalui data dan informasi visual kontekstual seperti tabel, piktogram, dan diagram, peserta didik mampu <strong>membaca, menginterpretasikan, membandingkan, dan mengolah data kuantitatif</strong> tentang kondisi lingkungan, bentang alam, profesi, serta aktivitas masyarakat di lingkungan sekitar untuk <strong>menyelesaikan masalah dan menarik kesimpulan berdasarkan data</strong>.</p>
+<ul>
+<li>Mengenali data dan informasi kuantitatif di lingkungan sekitar.</li>
+<li>Membaca tabel, piktogram, dan diagram dengan benar.</li>
+<li>Menghitung dan membandingkan data.</li>
+<li>Menggunakan numerasi dalam konteks kegiatan ekonomi.</li>
+<li>Menyelesaikan masalah bertahap dan mengambil keputusan berdasarkan data.</li>
+</ul>
+</section>
+<div class="pos-nav" id="posNavNumerasi">
+<div class="pos-chip open" data-chip="1">Pos 1<br>Data</div>
+<div class="pos-chip" data-chip="2">Pos 2<br>Piktogram</div>
+<div class="pos-chip" data-chip="3">Pos 3<br>Menghitung</div>
+<div class="pos-chip" data-chip="4">Pos 4<br>Tabel</div>
+<div class="pos-chip" data-chip="5">Pos 5<br>Diagram</div>
+<div class="pos-chip" data-chip="6">Pos 6<br>Ekonomi</div>
+<div class="pos-chip" data-chip="7">Pos 7<br>Multilangkah</div>
+<div class="pos-chip" data-chip="8">Pos 8<br>Keputusan</div>
+</div>
+<section class="card learning-pos active" id="pos1-mengenal-data" data-pos="1">
 <h2>🧭 Pos 1 — Mengenal Data</h2>
 <p class="subtitle">Sebelum membaca tabel, piktogram, atau diagram, kita perlu memahami apa yang disebut <strong>data lengkap</strong>. Data lengkap menyebutkan <strong>jumlah</strong> dan <strong>objek yang dihitung</strong>.</p>
 
@@ -131,7 +172,57 @@
 </div>
 
 <div class="reading-guide"><strong>Kesimpulan Pos 1:</strong> untuk membaca data dengan benar, murid perlu mengetahui <strong>apa yang dihitung</strong>, <strong>berapa jumlahnya</strong>, dan jika menggunakan piktogram, <strong>berapa nilai yang diwakili setiap simbol</strong>. Dengan tiga informasi tersebut, data dapat dibaca secara utuh.</div>
+<button class="btn green next-pos" id="nextPos1" onclick="bukaPosNumerasi(2)">Lanjut ke Pos 2 ➜</button>
 </section>
+<section class="card learning-pos locked" id="pos2-numerasi" data-pos="2">
+<h2>🖼️ Pos 2 — Membaca Piktogram</h2>
+<div class="pos-intro"><strong>Piktogram</strong> menyajikan data menggunakan gambar atau simbol. Kunci utamanya adalah membaca <strong>keterangan nilai setiap simbol</strong> sebelum menghitung.</div>
+<div class="pos-visual"><div class="picto-legend">Keterangan: 🐟 = 2 ekor ikan patin</div><div style="font-size:38px;margin:13px 0">🐟 🐟 🐟 🐟</div><strong>Data simulasi pembelajaran.</strong> Empat simbol ikan tidak berarti 4 ekor karena setiap simbol mewakili 2 ekor.</div>
+<div class="pos-question"><strong>🎯 Misi Pos 2:</strong><p>Berapa jumlah ikan patin yang ditunjukkan piktogram?</p><div class="pos-options"><button onclick="jawabPosV13(this,2,false)">4 ekor</button><button onclick="jawabPosV13(this,2,true)">8 ekor</button><button onclick="jawabPosV13(this,2,false)">6 ekor</button><button onclick="jawabPosV13(this,2,false)">10 ekor</button></div><div class="v13-feedback"></div><button class="btn green next-pos" id="nextPos2" onclick="bukaPosNumerasi(3)">Lanjut ke Pos 3 ➜</button></div>
+</section>
+
+<section class="card learning-pos locked" id="pos3-numerasi" data-pos="3">
+<h2>➕ Pos 3 — Menghitung Data</h2>
+<div class="pos-intro">Setelah data dapat dibaca, kita dapat <strong>menjumlahkan, mengurangi, dan mencari selisih</strong>. Hasil perhitungan harus tetap dikaitkan dengan objek yang sedang diamati.</div>
+<div class="pos-visual"><strong>Data simulasi:</strong> Kelompok A mencatat 10 ikan patin dan Kelompok B mencatat 6 ikan patin.</div>
+<div class="pos-question"><strong>🎯 Misi Pos 3:</strong><p>Berapa selisih jumlah ikan patin Kelompok A dan B?</p><div class="pos-options"><button onclick="jawabPosV13(this,3,false)">2 ekor</button><button onclick="jawabPosV13(this,3,true)">4 ekor</button><button onclick="jawabPosV13(this,3,false)">6 ekor</button><button onclick="jawabPosV13(this,3,false)">16 ekor</button></div><div class="v13-feedback"></div><button class="btn green next-pos" id="nextPos3" onclick="bukaPosNumerasi(4)">Lanjut ke Pos 4 ➜</button></div>
+</section>
+
+<section class="card learning-pos locked" id="pos4-numerasi" data-pos="4">
+<h2>📋 Pos 4 — Membaca Tabel</h2>
+<div class="pos-intro">Tabel menyusun data dalam <strong>baris dan kolom</strong>. Baca judul kolom terlebih dahulu, kemudian cocokkan baris dengan angka yang ingin diketahui.</div>
+<div class="pos-visual"><table class="demo-table"><thead><tr><th>Kelompok</th><th>Jumlah (ekor)</th></tr></thead><tbody><tr><td>A</td><td>10</td></tr><tr><td>B</td><td>6</td></tr><tr><td>C</td><td>8</td></tr><tr><td>D</td><td>4</td></tr></tbody></table><small>Data simulasi pembelajaran.</small></div>
+<div class="pos-question"><strong>🎯 Misi Pos 4:</strong><p>Kelompok manakah yang memiliki data 8 ekor?</p><div class="pos-options"><button onclick="jawabPosV13(this,4,false)">Kelompok A</button><button onclick="jawabPosV13(this,4,false)">Kelompok B</button><button onclick="jawabPosV13(this,4,true)">Kelompok C</button><button onclick="jawabPosV13(this,4,false)">Kelompok D</button></div><div class="v13-feedback"></div><button class="btn green next-pos" id="nextPos4" onclick="bukaPosNumerasi(5)">Lanjut ke Pos 5 ➜</button></div>
+</section>
+
+<section class="card learning-pos locked" id="pos5-numerasi" data-pos="5">
+<h2>📊 Pos 5 — Membaca Diagram</h2>
+<div class="pos-intro">Diagram batang membantu melihat <strong>perbandingan data secara visual</strong>. Batang yang lebih panjang menunjukkan nilai yang lebih besar.</div>
+<div class="pos-visual"><div class="mini-bars"><div class="mini-bar"><b>A</b><div class="mini-bar-track"><div class="mini-bar-fill" style="width:100%"></div></div><strong>10</strong></div><div class="mini-bar"><b>B</b><div class="mini-bar-track"><div class="mini-bar-fill" style="width:60%"></div></div><strong>6</strong></div><div class="mini-bar"><b>C</b><div class="mini-bar-track"><div class="mini-bar-fill" style="width:80%"></div></div><strong>8</strong></div><div class="mini-bar"><b>D</b><div class="mini-bar-track"><div class="mini-bar-fill" style="width:40%"></div></div><strong>4</strong></div></div><small>Data simulasi pembelajaran.</small></div>
+<div class="pos-question"><strong>🎯 Misi Pos 5:</strong><p>Batang terpanjang menunjukkan kelompok dengan jumlah terbanyak. Kelompok mana?</p><div class="pos-options"><button onclick="jawabPosV13(this,5,true)">Kelompok A</button><button onclick="jawabPosV13(this,5,false)">Kelompok B</button><button onclick="jawabPosV13(this,5,false)">Kelompok C</button><button onclick="jawabPosV13(this,5,false)">Kelompok D</button></div><div class="v13-feedback"></div><button class="btn green next-pos" id="nextPos5" onclick="bukaPosNumerasi(6)">Lanjut ke Pos 6 ➜</button></div>
+</section>
+
+<section class="card learning-pos locked" id="pos6-numerasi" data-pos="6">
+<h2>💰 Pos 6 — Numerasi Ekonomi</h2>
+<div class="pos-intro">Dalam kegiatan ekonomi, perhitungan membantu memahami pendapatan, persediaan, kebutuhan, dan menentukan tindakan. Angka harus dibaca bersama konteksnya.</div>
+<div class="pos-visual"><strong>Data simulasi:</strong> 4 keranjang sayur terjual. Harga setiap keranjang Rp10.000.</div>
+<div class="pos-question"><strong>🎯 Misi Pos 6:</strong><p>Berapa pendapatan dari penjualan tersebut?</p><div class="pos-options"><button onclick="jawabPosV13(this,6,false)">Rp14.000</button><button onclick="jawabPosV13(this,6,false)">Rp20.000</button><button onclick="jawabPosV13(this,6,true)">Rp40.000</button><button onclick="jawabPosV13(this,6,false)">Rp50.000</button></div><div class="v13-feedback"></div><button class="btn green next-pos" id="nextPos6" onclick="bukaPosNumerasi(7)">Lanjut ke Pos 7 ➜</button></div>
+</section>
+
+<section class="card learning-pos locked" id="pos7-numerasi" data-pos="7">
+<h2>🧩 Pos 7 — Masalah Multilangkah</h2>
+<div class="pos-intro">Masalah multilangkah diselesaikan melalui <strong>lebih dari satu operasi</strong>. Baca informasi, tentukan langkah pertama, lalu gunakan hasilnya untuk langkah berikutnya.</div>
+<div class="pos-visual"><strong>Data simulasi:</strong> tersedia 12 keranjang sayur. Pagi hari terjual 4 keranjang dan siang hari terjual 3 keranjang.</div>
+<div class="pos-question"><strong>🎯 Misi Pos 7:</strong><p>Berapa keranjang yang masih tersisa?</p><div class="pos-options"><button onclick="jawabPosV13(this,7,false)">3 keranjang</button><button onclick="jawabPosV13(this,7,true)">5 keranjang</button><button onclick="jawabPosV13(this,7,false)">7 keranjang</button><button onclick="jawabPosV13(this,7,false)">9 keranjang</button></div><div class="v13-feedback"></div><button class="btn green next-pos" id="nextPos7" onclick="bukaPosNumerasi(8)">Lanjut ke Pos 8 ➜</button></div>
+</section>
+
+<section class="card learning-pos locked" id="pos8-numerasi" data-pos="8">
+<h2>🧭 Pos 8 — Keputusan Berdasarkan Data</h2>
+<div class="pos-intro">Numerasi menjadi bermakna ketika data digunakan untuk membuat <strong>keputusan yang masuk akal</strong>. Keputusan harus sesuai dengan informasi yang tersedia, bukan sekadar tebakan.</div>
+<div class="pos-visual"><strong>Data simulasi:</strong> kebutuhan untuk kegiatan besok adalah 12 keranjang. Persediaan saat ini hanya 9 keranjang. Kekurangannya adalah 3 keranjang.</div>
+<div class="pos-question"><strong>🎯 Misi Pos 8:</strong><p>Keputusan yang paling sesuai berdasarkan data tersebut adalah...</p><div class="pos-options"><button onclick="jawabPosV13(this,8,false)">Mengurangi catatan persediaan</button><button onclick="jawabPosV13(this,8,true)">Menyiapkan tambahan 3 keranjang</button><button onclick="jawabPosV13(this,8,false)">Menambah 12 keranjang lagi</button><button onclick="jawabPosV13(this,8,false)">Tidak perlu melakukan apa pun</button></div><div class="v13-feedback"></div><div class="next-pos" id="nextPos8"><strong>🏆 Hebat! Kamu telah menyelesaikan Pos 1 sampai Pos 8 Numerasi IPS.</strong></div></div>
+</section>
+
 <div class="num-library-title"><h2>📚 Materi Pendalaman Numerasi</h2><p>Setelah menjelajahi peta petualangan, gunakan materi berikut untuk memperdalam piktogram, operasi data, konteks ekonomi, latihan, dan video interaktif.</p></div>
 
 <section class="card local-journey">
@@ -258,6 +349,71 @@
 <div class="modal hidden" id="interactiveModal"><div class="modalbox"><div class="mhead"><div><h3 id="interactiveTitle">🎬 Video Numerasi Interaktif</h3><p class="source">Video akan berhenti 4 kali untuk memberikan pertanyaan.</p></div><button class="close" onclick="closeInteractiveModal()">✕</button></div><div class="ipwrap"><div id="interactivePlayer"></div><div class="qoverlay hidden" id="questionOverlay"><div class="qcard"><span class="qnum" id="questionNumber">PERTANYAAN 1 DARI 4</span><h4 id="questionText">Pertanyaan</h4><div class="opts" id="quizOptions"></div><div class="feedback" id="quizFeedback"></div></div></div></div><div class="istatus"><span id="interactiveCheckpoint">Checkpoint: 0/4</span><span>✅ Benar = lanjut • ❌ Salah = kembali ke awal</span></div></div></div>
 
 <script>
+
+/* ===== V13: 8 POS NUMERASI BERJENJANG ===== */
+const NUM_POS_KEY='pikto_numerasi_pos_selesai';
+
+function getPosSelesaiV13(){
+  try{return JSON.parse(localStorage.getItem(NUM_POS_KEY)||'[]').map(Number).filter(n=>n>=1&&n<=8)}catch(_){return []}
+}
+function setPosSelesaiV13(pos){
+  const done=getPosSelesaiV13();
+  if(!done.includes(pos)) done.push(pos);
+  localStorage.setItem(NUM_POS_KEY,JSON.stringify(done.sort((a,b)=>a-b)));
+  renderPosNavV13();
+}
+function renderPosNavV13(){
+  const done=getPosSelesaiV13();
+  document.querySelectorAll('#posNavNumerasi .pos-chip').forEach(ch=>{
+    const p=Number(ch.dataset.chip);
+    ch.classList.remove('done','open');
+    if(done.includes(p)) ch.classList.add('done');
+    else if(p===1 || done.includes(p-1)) ch.classList.add('open');
+  });
+}
+function bukaPosNumerasi(pos){
+  const done=getPosSelesaiV13();
+  if(pos>1 && !done.includes(pos-1)) return;
+  document.querySelectorAll('.learning-pos').forEach(s=>{s.classList.remove('active');s.classList.add('locked')});
+  const target=document.querySelector('.learning-pos[data-pos="'+pos+'"]');
+  if(target){
+    target.classList.remove('locked');target.classList.add('active');
+    target.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+}
+function jawabPosV13(btn,pos,benar){
+  const section=btn.closest('.learning-pos');
+  const feedback=section?.querySelector('.v13-feedback');
+  section?.querySelectorAll('.pos-options button').forEach(b=>b.classList.remove('v13-ok','v13-bad'));
+  if(benar){
+    btn.classList.add('v13-ok');
+    if(feedback){feedback.className='v13-feedback ok';feedback.textContent='🎉 Selamat, Adik sudah benar dan hebat! Pos '+pos+' berhasil diselesaikan.'}
+    bicaraPos1('Selamat, Adik sudah benar dan hebat!');
+    setPosSelesaiV13(pos);
+    const next=document.getElementById('nextPos'+pos); if(next) next.classList.add('show');
+  }else{
+    btn.classList.add('v13-bad');
+    if(feedback){feedback.className='v13-feedback bad';feedback.textContent='😊 Mohon maaf, Adik. Jawaban belum tepat. Ayo baca dengan teliti lagi petunjuk dan datanya.'}
+    bicaraPos1('Mohon maaf, Adik. Jawaban belum tepat. Ayo baca dengan teliti lagi.');
+  }
+}
+
+// Hubungkan Pos 1 lama dengan sistem progres V13 tanpa menghilangkan suara/warna V12.
+const _jawabPos1V12 = jawabPos1;
+jawabPos1 = function(btn,benar){
+  _jawabPos1V12(btn,benar);
+  if(benar){
+    setPosSelesaiV13(1);
+    const next=document.getElementById('nextPos1'); if(next) next.classList.add('show');
+  }
+};
+
+document.addEventListener('DOMContentLoaded',()=>{
+  renderPosNavV13();
+  const done=getPosSelesaiV13();
+  done.forEach(p=>{const n=document.getElementById('nextPos'+p);if(n)n.classList.add('show')});
+});
+
 
 /* ===== V12: Umpan balik Pos 1 ===== */
 function bicaraPos1(teks){
