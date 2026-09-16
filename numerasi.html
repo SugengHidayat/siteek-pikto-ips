@@ -751,4 +751,5 @@ function restore(){VIDEO_DATA.forEach((_,i)=>{if(localStorage.getItem('pikto_num
 function updateOverall(){let n=state.filter(x=>x.done).length,p=Math.round(n/2*100);document.getElementById('completeFill').style.width=p+'%';document.getElementById('videoSummary').textContent=n+' dari 2 video interaktif telah selesai.';let a=document.getElementById('nextChallenge'),m=document.getElementById('nextMessage');if(n===2){a.href='index.html#tantangan';a.className='btn orange';a.textContent='🏆 Buka Tantangan PIKTO-IPS';m.textContent='🎉 Semua video selesai. Kamu siap kembali ke Tantangan.'}else{a.href='javascript:void(0)';a.className='btn light';a.textContent='🔒 Kembali ke Tantangan';m.textContent='🔒 Selesaikan kedua video interaktif terlebih dahulu.'}}
 document.getElementById('nextChallenge').onclick=function(e){if(state.filter(x=>x.done).length!==2){e.preventDefault();alert('Selesaikan kedua video interaktif terlebih dahulu.')}};
 </script>
-</body></html>
+</body>
+</html>
