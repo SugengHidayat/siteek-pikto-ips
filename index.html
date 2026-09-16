@@ -853,7 +853,19 @@
     @media (max-width:1100px){
       #tantangan,#progres,.leaderboard-panel{grid-column:auto;grid-row:auto;}
     }
-</style>
+
+    /* ===== V9: 6 DIMENSI PROFIL LULUSAN ===== */
+    .profile6-section{margin:22px 0;padding:22px;border-radius:24px;background:linear-gradient(135deg,#f4f9ff,#f4fff8);border:2px solid #dbe9f3;box-shadow:0 10px 24px rgba(27,76,112,.08)}
+    .profile6-head{text-align:center;max-width:820px;margin:0 auto 18px}.profile6-head h2{color:#123f75;font-size:25px;margin:0 0 7px}.profile6-head p{color:#5d7287;font-size:13px;line-height:1.6;margin:0}
+    .profile6-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.profile6-card{background:#fff;border:2px solid #e1ebf2;border-radius:18px;padding:16px;min-height:145px}.profile6-card .dicon{font-size:30px}.profile6-card strong{display:block;color:#173f68;font-size:16px;margin:7px 0 5px}.profile6-card p{margin:0;color:#60758b;font-size:12px;line-height:1.5}
+    .profile6-card.active-mission{border-color:#bcd9ff;background:#f8fbff}.profile6-card.active-mission strong:after{content:" • Misi";font-size:10px;color:#0d6efd;background:#e7f1ff;border-radius:999px;padding:3px 6px;margin-left:5px}
+    .mission-shell{margin:18px 0 0;padding:20px;border-radius:22px;background:#fff;border:2px solid #dce9f3}.mission-shell h3{margin:0;color:#123f75;font-size:21px}.mission-shell>p{color:#5e7389;font-size:13px;line-height:1.6}
+    .mission-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}.mission-card{padding:16px;border-radius:18px;border:2px solid #e0eaf2;background:#fbfdff}.mission-card h4{margin:0 0 6px;color:#17456f}.mission-card p{font-size:12px;line-height:1.5;color:#60758b;min-height:54px}
+    .mission-card textarea,.mission-card input,.mission-card select{width:100%;border:2px solid #dbe6ee;border-radius:11px;padding:10px;margin-top:8px;font:inherit;background:#fff}.mission-card textarea{min-height:92px;resize:vertical}.mission-card label{display:block;font-size:11px;font-weight:900;color:#48647d;margin-top:9px}
+    .mission-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:14px}.mission-status{font-size:12px;font-weight:900;color:#527087}
+    @media(max-width:900px){.profile6-grid,.mission-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.profile6-grid,.mission-grid{grid-template-columns:1fr}.profile6-section{padding:16px}.mission-card p{min-height:auto}}
+
+  </style>
 </head>
 
 <body>
@@ -971,6 +983,61 @@
         <div class="kid-title-icon">🚀</div>
         <div><h2>Petualangan Belajarmu</h2><p>Mulai tantangan, pantau progres, dan lihat pencapaianmu.</p></div>
       </div>
+
+      <section class="profile6-section" id="profilLulusan">
+        <div class="profile6-head">
+          <h2>🌟 6 Dimensi Profil Lulusan dalam SITEEk–PIKTO-IPS</h2>
+          <p>Setiap dimensi dihubungkan dengan aktivitas nyata. Tiga dimensi sudah melekat pada proses belajar, sedangkan Kreativitas, Kewargaan, dan Kolaborasi diperkuat melalui Misi Profil Lulusan.</p>
+        </div>
+        <div class="profile6-grid">
+          <article class="profile6-card"><div class="dicon">🧠</div><strong>Penalaran Kritis</strong><p>Membaca teks dan data, menafsirkan piktogram, membandingkan informasi, lalu menarik kesimpulan.</p></article>
+          <article class="profile6-card"><div class="dicon">🎯</div><strong>Kemandirian</strong><p>Mengelola progres belajar, menyelesaikan level, belajar ulang, dan melakukan refleksi diri.</p></article>
+          <article class="profile6-card"><div class="dicon">💬</div><strong>Komunikasi</strong><p>Menyampaikan pemahaman, alasan, kesimpulan, dan refleksi melalui jawaban tertulis.</p></article>
+          <article class="profile6-card active-mission"><div class="dicon">💡</div><strong>Kreativitas</strong><p>Menciptakan gagasan atau solusi kontekstual berdasarkan informasi dan data IPS.</p></article>
+          <article class="profile6-card active-mission"><div class="dicon">🇮🇩</div><strong>Kewargaan</strong><p>Memilih tindakan bertanggung jawab terhadap lingkungan dan kehidupan masyarakat sekitar.</p></article>
+          <article class="profile6-card active-mission"><div class="dicon">🤝</div><strong>Kolaborasi</strong><p>Berdiskusi, membagi peran, dan menuliskan keputusan yang disepakati bersama kelompok.</p></article>
+        </div>
+
+        <div class="mission-shell" id="misiProfil">
+          <h3>🚀 Misi Profil Lulusan</h3>
+          <p>Kerjakan setelah mempelajari Literasi dan Numerasi. Gunakan konteks yang sudah dipelajari di SITEEk–PIKTO-IPS. Jawaban misi akan disimpan sebagai bukti aktivitas belajar.</p>
+          <div class="mission-grid">
+            <article class="mission-card">
+              <h4>💡 Misi Kreativitas</h4>
+              <p>Buat satu gagasan sederhana untuk membantu kegiatan ekonomi atau menjaga lingkungan masyarakat berdasarkan informasi/data yang kamu pelajari.</p>
+              <label for="misiKreativitas">Gagasanmu</label>
+              <textarea id="misiKreativitas" placeholder="Tuliskan gagasan dan alasan singkat..."></textarea>
+            </article>
+            <article class="mission-card">
+              <h4>🇮🇩 Misi Kewargaan</h4>
+              <p>Pilih tindakan yang menurutmu paling bertanggung jawab, lalu jelaskan alasannya.</p>
+              <label for="misiKewargaanPilihan">Tindakan</label>
+              <select id="misiKewargaanPilihan">
+                <option value="">-- Pilih tindakan --</option>
+                <option>Menjaga kebersihan lingkungan bersama</option>
+                <option>Menggunakan sumber daya secara bijak</option>
+                <option>Mendukung kegiatan ekonomi masyarakat secara bertanggung jawab</option>
+                <option>Menyampaikan informasi yang benar kepada orang lain</option>
+              </select>
+              <label for="misiKewargaanAlasan">Alasan</label>
+              <textarea id="misiKewargaanAlasan" placeholder="Mengapa tindakan itu penting?"></textarea>
+            </article>
+            <article class="mission-card">
+              <h4>🤝 Misi Kolaborasi</h4>
+              <p>Diskusikan satu masalah dari materi bersama teman. Tuliskan anggota kelompok dan keputusan yang kalian sepakati.</p>
+              <label for="misiAnggota">Anggota kelompok</label>
+              <input id="misiAnggota" type="text" placeholder="Contoh: Ani, Budi, Raka">
+              <label for="misiKolaborasi">Keputusan kelompok</label>
+              <textarea id="misiKolaborasi" placeholder="Tuliskan hasil kesepakatan kelompok..."></textarea>
+            </article>
+          </div>
+          <div class="mission-actions">
+            <button class="btn primary" id="btnSimpanMisi" type="button" onclick="simpanMisiProfil()">💾 Simpan Misi Profil</button>
+            <span class="mission-status" id="misiProfilStatus">Belum disimpan.</span>
+          </div>
+        </div>
+      </section>
+
       <div class="dashboard-grid">
         <!-- TANTANGAN -->
         <section class="panel" id="tantangan">
@@ -2702,9 +2769,89 @@ function jsSafe(value){
    PAGE LOAD
 ============================================================ */
 
+
+/* ============================================================
+   V9 - MISI 6 DIMENSI PROFIL LULUSAN
+============================================================ */
+const PROFILE_MISSION_KEY = 'pikto_profile_mission';
+
+function muatMisiProfilLokal(){
+  let data = {};
+  try{ data = JSON.parse(localStorage.getItem(PROFILE_MISSION_KEY) || '{}'); }catch(_){}
+  const map = {
+    misiKreativitas:data.kreativitas || '',
+    misiKewargaanPilihan:data.kewargaan_pilihan || '',
+    misiKewargaanAlasan:data.kewargaan_alasan || '',
+    misiAnggota:data.anggota || '',
+    misiKolaborasi:data.kolaborasi || ''
+  };
+  Object.entries(map).forEach(([id,val])=>{
+    const el=document.getElementById(id); if(el) el.value=val;
+  });
+  const st=document.getElementById('misiProfilStatus');
+  if(st && data.saved_at){
+    st.textContent = data.synced ? '✅ Misi sudah tersimpan di database.' : '📱 Misi tersimpan di perangkat.';
+  }
+}
+
+async function simpanMisiProfil(){
+  const status=document.getElementById('misiProfilStatus');
+  const btn=document.getElementById('btnSimpanMisi');
+  const idMurid=localStorage.getItem(LS.ID) || '';
+  const data={
+    kreativitas:(document.getElementById('misiKreativitas')?.value || '').trim(),
+    kewargaan_pilihan:(document.getElementById('misiKewargaanPilihan')?.value || '').trim(),
+    kewargaan_alasan:(document.getElementById('misiKewargaanAlasan')?.value || '').trim(),
+    anggota:(document.getElementById('misiAnggota')?.value || '').trim(),
+    kolaborasi:(document.getElementById('misiKolaborasi')?.value || '').trim(),
+    saved_at:new Date().toISOString(),
+    synced:false
+  };
+
+  if(!data.kreativitas || !data.kewargaan_pilihan || !data.kewargaan_alasan || !data.anggota || !data.kolaborasi){
+    if(status) status.textContent='⚠️ Lengkapi ketiga misi terlebih dahulu.';
+    return;
+  }
+
+  localStorage.setItem(PROFILE_MISSION_KEY,JSON.stringify(data));
+
+  if(!idMurid){
+    if(status) status.textContent='📱 Tersimpan lokal. Masuk sebagai murid agar dapat dikirim ke database.';
+    return;
+  }
+  if(!apiConfigured() || !navigator.onLine){
+    if(status) status.textContent='📱 Tersimpan di perangkat. Saat internet tersedia, tekan Simpan Misi Profil lagi.';
+    return;
+  }
+
+  if(btn){ btn.disabled=true; btn.textContent='⏳ Menyimpan...'; }
+  try{
+    const res=await api({
+      action:'saveProfileMission',
+      id_murid:idMurid,
+      kreativitas:data.kreativitas,
+      kewargaan_pilihan:data.kewargaan_pilihan,
+      kewargaan_alasan:data.kewargaan_alasan,
+      anggota:data.anggota,
+      kolaborasi:data.kolaborasi
+    },{maxAttempts:3,baseDelay:1000});
+
+    if(!res || !res.success) throw new Error((res && res.message) || 'Misi belum berhasil disimpan.');
+    data.synced=true;
+    data.id_misi=res.id_misi || '';
+    localStorage.setItem(PROFILE_MISSION_KEY,JSON.stringify(data));
+    if(status) status.textContent='✅ Ketiga misi berhasil tersimpan di database.';
+  }catch(err){
+    if(status) status.textContent='⚠️ Misi aman di perangkat, tetapi belum masuk database. Tekan Simpan lagi saat koneksi stabil.';
+  }finally{
+    if(btn){ btn.disabled=false; btn.textContent='💾 Simpan Misi Profil'; }
+  }
+}
+
 window.addEventListener('load',async()=>{
   updateNetworkStatus();
   muatKKMLokal();
+  muatMisiProfilLokal();
 
   if(apiConfigured() && navigator.onLine){
     try{
