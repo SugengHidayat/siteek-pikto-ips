@@ -196,6 +196,68 @@ header{background:rgba(236,248,255,.96)!important;border-bottom:3px solid #c6e5f
 @media(max-width:900px){.v15-concept-grid{grid-template-columns:1fr 1fr}.v15-concept-card.scene{grid-column:1/-1;min-height:260px}.v14-hero h1{font-size:48px!important}}
 @media(max-width:650px){.v15-concept-grid{grid-template-columns:1fr}.v15-concept-card.scene{grid-column:auto}.v14-hero h1{font-size:38px!important}.v14-hero-copy{padding:22px!important}#pos1-mengenal-data .explain-box{grid-template-columns:1fr}}
 
+
+/* ==========================================================
+   V16 — 3D ADVENTURE UI
+   Rebuild visual mengikuti mockup Petualangan Numerasi IPS
+========================================================== */
+body{background:#eaf7ff!important;background-image:linear-gradient(#eaf7ff 0,#f9fff5 40%,#edf9ff 100%)!important}
+.container{max-width:1160px!important}
+header{position:sticky!important;top:0;z-index:1000;background:linear-gradient(180deg,#e8f7ff,#d9f1ff)!important;border-bottom:3px solid #b9dff1!important}
+header .wrap{max-width:1160px!important}.brand{gap:11px!important}.brand h1{font-size:20px!important;color:#124184!important}.brand p{font-size:10px!important;color:#55728b!important}
+.nav{gap:8px!important}.nav a{background:#edf5ff!important;border:1px solid #cfe0ef!important;padding:9px 13px!important}.nav a.active{background:#1fa85c!important;color:#fff!important}
+
+.v14-hero{min-height:470px!important;border-radius:30px!important;margin-top:20px!important;background-position:center 16%!important;background-size:cover!important;border:6px solid #fff!important;box-shadow:0 18px 42px rgba(24,81,116,.22)!important}
+.v14-hero:after{background:linear-gradient(90deg,rgba(5,57,99,.68) 0%,rgba(5,57,99,.34) 42%,rgba(5,57,99,.04) 70%)!important}
+.v14-hero-copy{padding:58px 44px!important;max-width:620px!important}
+.v14-badge{background:#f4fbff!important;color:#0d5da5!important;border:2px solid #fff!important}
+.v15-ribbon{margin-top:12px!important;background:linear-gradient(#2684dc,#0d58ad)!important;border:2px solid rgba(255,255,255,.7)!important}
+.v14-hero h1{font-size:62px!important;letter-spacing:-2px!important;line-height:.98!important;margin-top:18px!important}.v14-hero h1 span{color:#ffdb48!important}
+.v14-hero p{font-size:16px!important}.v14-hero-steps span{font-size:11px!important;border:1px solid rgba(255,255,255,.9)!important}
+
+.v14-adventure-map{margin:22px 0!important;padding:22px 26px 28px!important;background:linear-gradient(180deg,#f5fcff,#e1f7ff)!important;border:5px solid #fff!important;border-radius:28px!important;position:relative!important}
+.v14-adventure-map:before{content:"PETUALANGAN 8 POS";position:absolute;left:50%;top:-15px;transform:translateX(-50%);background:linear-gradient(#1b73c6,#0d529d);color:#fff;padding:7px 22px;border-radius:12px;font-weight:1000;font-size:12px;box-shadow:0 5px 10px rgba(18,73,121,.22)}
+.v14-map-title{margin-top:10px!important}.v14-map-title h2{font-size:25px!important;color:#124d8b!important}
+#posNavNumerasi{gap:13px!important;padding-top:20px!important}
+#posNavNumerasi:before{top:58%!important;border-top:5px dashed #1b557d!important}
+#posNavNumerasi .pos-chip{min-height:122px!important;border-radius:50% 50% 22px 22px!important;border:4px solid #fff!important;outline:2px solid #c8dce7!important;box-shadow:0 8px 16px rgba(27,80,106,.13)!important;background:linear-gradient(#fff,#eef8fc)!important}
+#posNavNumerasi .pos-chip:before{font-size:37px!important;filter:drop-shadow(0 4px 3px rgba(0,0,0,.13))}
+#posNavNumerasi .pos-chip.open{outline-color:#62ca87!important;background:linear-gradient(#f4fff6,#dff8e8)!important}
+#posNavNumerasi .pos-chip.done{outline-color:#11894a!important;background:linear-gradient(#35c975,#15924f)!important}
+
+.v15-concept-grid{grid-template-columns:1fr 1.45fr .92fr!important;gap:18px!important;margin:25px 0!important}
+.v15-concept-card{border:5px solid #fff!important;border-radius:28px!important;box-shadow:0 13px 27px rgba(25,80,111,.14)!important;padding:25px!important}
+.v15-concept-card:first-child{background:linear-gradient(135deg,#e9f8ff,#fff)!important}
+.v15-concept-card.goal{background:linear-gradient(135deg,#f2fff5,#fff)!important}
+.v15-concept-card h2{font-size:25px!important}.v15-concept-card.scene{padding:0!important;border-radius:28px!important;background-position:83% 36%!important;background-size:315% auto!important}
+.v15-scene-caption{font-size:12px!important;border:2px solid #fff!important;box-shadow:0 5px 12px rgba(0,0,0,.1)!important}
+
+.card.learning-pos{border:6px solid #fff!important;border-radius:30px!important;background:linear-gradient(180deg,#fff,#f8fdff)!important;padding:27px!important;box-shadow:0 17px 36px rgba(25,77,107,.16)!important}
+.card.learning-pos h2{background:linear-gradient(90deg,#dff8e7,#f7fff9)!important;border:2px solid #b8e2c7!important;color:#164e8b!important;border-radius:18px!important;box-shadow:0 6px 13px rgba(26,90,78,.08)!important}
+.pos-intro{font-size:14px!important;background:linear-gradient(90deg,#eaf8ff,#f6fff7)!important;border:3px solid #cce9d7!important;border-left:9px solid #24a95f!important}
+.pos-visual{background:linear-gradient(180deg,#fffdf6,#fff)!important;border:3px solid #eadba8!important;border-radius:22px!important}
+.pos-question{background:linear-gradient(180deg,#fffdf8,#fff6df)!important;border:4px solid #efd07a!important;border-radius:23px!important}
+.pos-question:before{background:#fbdce3!important;border:1px solid #f1b7c4!important}
+.pos-options button{background:#fff!important;border:3px solid #d8e6ed!important;border-radius:17px!important;box-shadow:0 6px 11px rgba(32,76,99,.08)!important}
+.pos-options button:hover{border-color:#69b7df!important;transform:translateY(-3px)!important}
+#pos1-mengenal-data .explain-box{background:linear-gradient(135deg,#fff8de,#fff)!important;border:4px solid #f0cf7c!important;border-radius:23px!important}
+#pos1-mengenal-data .picto-legend{font-size:15px!important;background:#fff0b4!important;border:2px solid #e7c761!important}
+#pos1-mengenal-data .kid-tip{border:3px solid #b8def0!important;background:linear-gradient(135deg,#e9f8ff,#fff)!important}
+.v13-feedback.ok{border:2px solid #8fd2a7!important;box-shadow:0 6px 12px rgba(24,135,70,.1)!important}.v13-feedback.bad{border:2px solid #efafb6!important}
+
+.data-story{border:5px solid #fff!important;background:linear-gradient(180deg,#fff,#f8fdff)!important}
+.data-story .story-kicker{display:inline-block!important;padding:7px 13px!important;border-radius:999px!important;background:#e7f5ff!important;color:#1261a2!important;font-weight:1000!important}
+.demo-table{background:#fff!important}.demo-table th{background:#d9f5e3!important}
+.group-task{border:4px solid #f0d785!important;background:linear-gradient(135deg,#fff7d7,#f2fff6)!important}
+.group-step{border:2px solid #dce6de!important;border-radius:18px!important;box-shadow:0 5px 10px rgba(45,77,67,.07)!important}
+.upload-panel{border:4px dashed #75b7df!important;background:linear-gradient(135deg,#eff9ff,#fff)!important}
+.profile6{border:5px solid #fff!important;background:linear-gradient(135deg,#edf9ff,#f2fff5)!important}
+.p6item{border:2px solid #d7e7ef!important;border-radius:18px!important;box-shadow:0 6px 13px rgba(34,81,106,.07)!important}
+.v15-footer-adventure{min-height:240px!important;background-position:center 72%!important;border:6px solid #fff!important;border-radius:30px!important}
+footer{background:linear-gradient(180deg,#e8f7ff,#d7f0ff)!important;border-top:3px solid #b8deef!important}
+@media(max-width:920px){.v15-concept-grid{grid-template-columns:1fr 1fr!important}.v15-concept-card.scene{grid-column:1/-1!important;min-height:290px!important}#posNavNumerasi{grid-template-columns:repeat(4,1fr)!important}.v14-hero h1{font-size:50px!important}}
+@media(max-width:620px){.v14-hero{min-height:440px!important}.v14-hero h1{font-size:39px!important}.v14-hero-copy{padding:22px!important}.v15-concept-grid{grid-template-columns:1fr!important}.v15-concept-card.scene{grid-column:auto!important}#posNavNumerasi{grid-template-columns:repeat(2,1fr)!important}.v14-adventure-map{padding:20px 14px!important}}
+
 </style>
 </head>
 <body>
@@ -259,7 +321,7 @@ header{background:rgba(236,248,255,.96)!important;border-bottom:3px solid #c6e5f
 <div class="pos-chip" data-chip="8">Pos 8<br>Keputusan</div>
 </div>
 <section class="card learning-pos active" id="pos1-mengenal-data" data-pos="1">
-<h2>🧭 Pos 1 — Mengenal Data</h2>
+<div class="v15-ribbon">🧺 POS 1 • AWAL PETUALANGAN</div><br><h2>🧭 Pos 1 — Mengenal Data</h2>
 <p class="subtitle">Sebelum membaca tabel, piktogram, atau diagram, kita perlu memahami apa yang disebut <strong>data lengkap</strong>. Data lengkap menyebutkan <strong>jumlah</strong> dan <strong>objek yang dihitung</strong>.</p>
 
 <div class="explain-box">
@@ -446,6 +508,12 @@ header{background:rgba(236,248,255,.96)!important;border-bottom:3px solid #c6e5f
 <article class="video-card"><div class="video-head"><div><h3>Video 2 — Diagram Batang</h3><div class="source">Membaca dan Menafsirkan Data Kelas 4 SD • Dihubungkan dengan konteks lokal PIKTO-IPS</div></div><span class="status" id="status-video-1">BELUM DITONTON</span></div><div class="player-shell"><div id="player-1" class="yt"></div><div class="lock" id="lock-1"><div><div class="play">▶️</div><h4>Belajar membaca diagram batang</h4><p>Amati kategori, tinggi batang, skala, lalu buat kesimpulan.</p><button class="btn green" onclick="startRequiredVideo(1)">Mulai Menonton</button></div></div></div><div class="progress"><div class="prow"><span>Progres menonton</span><span id="watch-percent-1">0%</span></div><div class="ptrack"><div class="pfill" id="watch-progress-1"></div></div></div><div class="storyline"><h4>📖 Alur materi video</h4><ol><li>Mengenal diagram batang sebagai penyajian data.</li><li>Membaca judul, kategori, sumbu, dan skala.</li><li>Membaca nilai dari tinggi atau panjang batang.</li><li>Membandingkan nilai tertinggi, terendah, dan selisih.</li><li>Menafsirkan data untuk membuat kesimpulan.</li></ol></div><div class="under hidden" id="understanding-1"><h4>🤔 Apakah kamu paham?</h4><p>Pilih Ya untuk mengerjakan 4 pertanyaan interaktif.</p><div class="btnrow"><button class="btn green" onclick="confirmUnderstand(1,true)">✅ Ya</button><button class="btn red" onclick="confirmUnderstand(1,false)">🔁 Tidak</button></div></div></article>
 </div><div class="summary"><strong>🏁 Status Penyelesaian</strong><p id="videoSummary">Selesaikan kedua video dan 4 pertanyaan interaktif pada masing-masing video.</p><div class="cbar"><div class="cfill" id="completeFill"></div></div></div><div class="next"><p id="nextMessage">🔒 Tantangan terbuka setelah kedua video selesai.</p><a id="nextChallenge" class="btn light" href="javascript:void(0)">🏆 Kembali ke Tantangan</a></div></section>
 <section class="card"><h2>💡 Pesan Penting</h2><p class="subtitle" style="margin-bottom:0">Numerasi membantu kita membaca kehidupan melalui angka dan data. Dari Ranuklindungan, Danau Ranu, hingga Pasar Brandong, data dapat membantu kita memahami lingkungan, kegiatan masyarakat, dan membuat keputusan berdasarkan bukti.</p></section><div class="btnrow" style="margin-top:20px"><a class="btn light" href="literasi.html">← Kembali ke Literasi</a><a class="btn green" href="#videoInteraktif">🎬 Ke Video Interaktif</a></div>
+
+<div style="margin:26px auto;max-width:760px;padding:18px 24px;text-align:center;border-radius:22px;background:linear-gradient(135deg,#fff0ad,#e7fff0);border:4px solid #fff;box-shadow:0 10px 22px rgba(32,83,104,.12)">
+  <div style="font-size:32px">🏆 🌟 🗺️ 🌟 🏆</div>
+  <strong style="display:block;font-size:20px;color:#174d80;margin:6px 0">Jadilah Penjelajah Data yang Hebat!</strong>
+  <span style="color:#5d7386">Amati dengan teliti, hitung dengan benar, pahami maknanya, lalu buat keputusan berdasarkan data.</span>
+</div>
 <div class="v15-footer-adventure"></div>
 <div class="v14-motivation">🌟 “Data kecil hari ini bisa menjadi keputusan besar untuk masa depan.” — Teruslah menjadi penjelajah data yang hebat!</div>
 <section class="profile6" id="profilLulusan">
@@ -751,5 +819,4 @@ function restore(){VIDEO_DATA.forEach((_,i)=>{if(localStorage.getItem('pikto_num
 function updateOverall(){let n=state.filter(x=>x.done).length,p=Math.round(n/2*100);document.getElementById('completeFill').style.width=p+'%';document.getElementById('videoSummary').textContent=n+' dari 2 video interaktif telah selesai.';let a=document.getElementById('nextChallenge'),m=document.getElementById('nextMessage');if(n===2){a.href='index.html#tantangan';a.className='btn orange';a.textContent='🏆 Buka Tantangan PIKTO-IPS';m.textContent='🎉 Semua video selesai. Kamu siap kembali ke Tantangan.'}else{a.href='javascript:void(0)';a.className='btn light';a.textContent='🔒 Kembali ke Tantangan';m.textContent='🔒 Selesaikan kedua video interaktif terlebih dahulu.'}}
 document.getElementById('nextChallenge').onclick=function(e){if(state.filter(x=>x.done).length!==2){e.preventDefault();alert('Selesaikan kedua video interaktif terlebih dahulu.')}};
 </script>
-</body>
-</html>
+</body></html>
