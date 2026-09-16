@@ -85,97 +85,35 @@
 <body>
 <header class="topbar"><div class="brand"><img src="img/logo-pikto-ips.png" alt="Logo PIKTO-IPS"><div><h1>🔢 NUMERASI IPS</h1><p>Menggunakan angka dan data untuk memahami kehidupan masyarakat</p></div></div><nav class="nav"><a href="index.html">🏠 Beranda</a><a href="literasi.html">📖 Literasi</a><a href="#latihan">✏️ Latihan</a><a href="#videoInteraktif">🎬 Video</a></nav></header>
 <main class="container">
-<section class="hero"><span>PIKTO-IPS • KELAS 4 SD • PETUALANGAN LOKAL</span><h2>Petualangan Numerasi di Sekitarku</h2><p>Ayo gunakan angka, data, piktogram, dan diagram untuk memahami lingkungan sekitar kita. Pada halaman ini, kamu akan berlatih membaca data dalam konteks Desa Ranuklindungan, Danau Ranu, dan Pasar Brandong di Desa Dawe dengan cara yang seru dan mudah dipahami.</p></section>
-<section class="card"><h2>🧠 Apa Itu Numerasi?</h2><p class="subtitle">Numerasi bukan sekadar berhitung. Murid juga perlu memahami arti angka dan menggunakannya sesuai konteks kehidupan.</p><div class="grid3"><div class="box"><div class="ic">🔢</div><h3>Mengubah Data</h3><p>Mengubah gambar atau simbol menjadi jumlah yang dapat dihitung.</p></div><div class="box"><div class="ic">⚖️</div><h3>Membandingkan</h3><p>Menentukan data paling banyak, paling sedikit, dan selisih.</p></div><div class="box"><div class="ic">💡</div><h3>Mengambil Keputusan</h3><p>Menggunakan hasil perhitungan untuk menentukan tindakan yang tepat.</p></div></div></section>
-<section class="card tp-card">
-  <h2>🎯 Tujuan Pembelajaran Numerasi IPS</h2>
-  <p class="subtitle">
-    Tujuan pembelajaran ini menjadi arah kegiatan numerasi pada materi IPS yang disajikan melalui
-    data dan informasi visual kontekstual.
-  </p>
-  <div class="tp-box">
-    Melalui data dan informasi visual kontekstual seperti <strong>tabel, piktogram, dan diagram</strong>,
-    peserta didik mampu <strong>membaca, menginterpretasikan, membandingkan, dan mengolah data kuantitatif
-    tentang kondisi lingkungan, bentang alam, profesi, serta aktivitas masyarakat di lingkungan sekitar
-    untuk menyelesaikan masalah dan menarik kesimpulan berdasarkan data.</strong>
+<section class="card">
+<h2>🧭 Pos 1 — Mengenal Data</h2>
+<p class="subtitle">Sebelum membaca tabel, piktogram, atau diagram, kita perlu memahami apa yang disebut <strong>data lengkap</strong>. Data lengkap menyebutkan <strong>jumlah</strong> dan <strong>objek yang dihitung</strong>.</p>
+
+<div class="explain-box">
+<h3>📌 Petunjuk Data</h3>
+<p>Perhatikan piktogram keranjang sayur berikut. Pada kegiatan ini, <strong>1 gambar keranjang 🧺 mewakili 2 keranjang sayur</strong>.</p>
+<div class="picto-legend">Keterangan: 🧺 = 2 keranjang sayur</div>
+<div style="margin:16px 0;padding:18px;border-radius:16px;background:#fff;border:2px solid #dce8ef;text-align:center">
+  <div style="font-size:42px;letter-spacing:7px;line-height:1.5" aria-label="Enam gambar keranjang, setiap gambar mewakili dua keranjang sayur">🧺 🧺 🧺 🧺 🧺 🧺</div>
+  <div style="margin-top:9px;font-weight:900;color:#145f43">6 gambar × 2 keranjang = 12 keranjang sayur</div>
+</div>
+<p><strong>Cara berpikir:</strong> jangan hanya menghitung jumlah gambarnya. Baca dahulu keterangannya. Ada 6 gambar keranjang dan setiap gambar bernilai 2, sehingga 6 × 2 = <strong>12 keranjang sayur</strong>.</p>
+</div>
+
+<div class="kid-tip"><div class="face">🧒</div><div><strong>Apa itu data lengkap?</strong><p>Jawaban <strong>“12”</strong> hanya menunjukkan jumlah. Jawaban <strong>“keranjang sayur”</strong> hanya menunjukkan objek. Jawaban <strong>“12 keranjang sayur”</strong> menyebutkan jumlah sekaligus objek, sehingga merupakan data yang lengkap.</p></div></div>
+
+<div class="practice">
+  <div class="q"><strong>🎯 Misi 1 — Baca Piktogram</strong><p>Perhatikan piktogram dan keterangannya di atas. <strong>Manakah yang merupakan data lengkap?</strong></p></div>
+  <div class="opts">
+    <button onclick="check(this,false)">12</button>
+    <button onclick="check(this,false)">Keranjang sayur</button>
+    <button onclick="check(this,true)">12 keranjang sayur</button>
+    <button onclick="check(this,false)">6 keranjang sayur</button>
   </div>
-</section>
+  <div class="feedback"></div>
+</div>
 
-<section class="card num-adventure" id="petaPetualanganNumerasi">
-  <div class="num-adventure-head">
-    <div>
-      <h2>🗺️ Peta Petualangan Numerasi IPS</h2>
-      <p>Selesaikan setiap pos secara berurutan. Setiap pos berisi materi singkat, tiga aktivitas, dan satu mini misi. Pos berikutnya akan terbuka setelah mini misi berhasil.</p>
-    </div>
-    <div class="num-score">
-      <div class="num-score-row"><span>⭐ Bintangku</span><strong id="numStarCount">0 / 24</strong></div>
-      <div class="num-score-row"><span>📊 Progres</span><strong id="numProgressText">0 / 8 Pos</strong></div>
-      <div class="num-score-row"><span>🏅 Badge Aktif</span><strong id="numBadgeText">Penjelajah Data</strong></div>
-    </div>
-  </div>
-  <div class="num-map" id="numMap">
-    <button class="num-node active" data-num-pos="1"><span class="num-state">⭐</span><div class="nicon">🔢</div><h3>Pos 1 — Mengenal Data</h3><p>Membedakan angka, data, dan informasi.</p><div class="num-stars">⭐⭐⭐</div></button>
-    <button class="num-node locked" data-num-pos="2"><span class="num-state">🔒</span><div class="nicon">🖼️</div><h3>Pos 2 — Piktogram</h3><p>Mengubah simbol menjadi jumlah.</p><div class="num-stars">⭐⭐⭐</div></button>
-    <button class="num-node locked" data-num-pos="3"><span class="num-state">🔒</span><div class="nicon">➕</div><h3>Pos 3 — Menghitung Data</h3><p>Jumlah, selisih, dan sisa.</p><div class="num-stars">⭐⭐⭐</div></button>
-    <button class="num-node locked" data-num-pos="4"><span class="num-state">🔒</span><div class="nicon">📋</div><h3>Pos 4 — Membaca Tabel</h3><p>Menemukan dan membandingkan data.</p><div class="num-stars">⭐⭐⭐</div></button>
-    <button class="num-node locked" data-num-pos="5"><span class="num-state">🔒</span><div class="nicon">📊</div><h3>Pos 5 — Diagram</h3><p>Membaca nilai tertinggi, terendah, dan selisih.</p><div class="num-stars">⭐⭐⭐</div></button>
-    <button class="num-node locked" data-num-pos="6"><span class="num-state">🔒</span><div class="nicon">💰</div><h3>Pos 6 — Numerasi Ekonomi</h3><p>Harga, jumlah barang, dan hasil penjualan.</p><div class="num-stars">⭐⭐⭐</div></button>
-    <button class="num-node locked" data-num-pos="7"><span class="num-state">🔒</span><div class="nicon">🧩</div><h3>Pos 7 — Masalah Multilangkah</h3><p>Menyelesaikan masalah dengan lebih dari satu langkah.</p><div class="num-stars">⭐⭐⭐</div></button>
-    <button class="num-node locked" data-num-pos="8"><span class="num-state">🔒</span><div class="nicon">🧠</div><h3>Pos 8 — Keputusan Data</h3><p>Menalar dan memilih keputusan berdasarkan data.</p><div class="num-stars">⭐⭐⭐</div></button>
-  </div>
-  <div class="num-progressbar"><div class="num-progressfill" id="numProgressFill"></div></div>
-  <div class="num-badge-board">
-    <span class="num-badge" data-badge="1">🔎 Penjelajah Data</span>
-    <span class="num-badge" data-badge="2">🖼️ Pembaca Piktogram</span>
-    <span class="num-badge" data-badge="4">📋 Detektif Tabel</span>
-    <span class="num-badge" data-badge="6">💰 Ekonom Cilik</span>
-    <span class="num-badge" data-badge="8">🏆 Ahli Numerasi IPS</span>
-  </div>
-
-  <article class="num-stage show" data-num-stage="1">
-    <div class="num-stage-head"><div><h3>🔢 Pos 1 — Mengenal Data</h3><p>Mulai dari lingkungan sekitar: angka menjadi bermakna ketika menjelaskan suatu keadaan.</p></div><span class="num-level-pill">MEMAHAMI</span></div>
-    <div class="num-stage-body">
-      <div class="num-activity-grid"><div class="num-activity"><div class="aicon">👀</div><h4>Amati</h4><p>Temukan angka yang ada pada informasi sederhana tentang kehidupan masyarakat.</p></div><div class="num-activity"><div class="aicon">🏷️</div><h4>Beri Makna</h4><p>Bedakan angka tanpa konteks dengan data yang memiliki keterangan.</p></div><div class="num-activity"><div class="aicon">💬</div><h4>Ceritakan</h4><p>Ubah data menjadi kalimat informasi yang mudah dipahami.</p></div></div>
-      <div class="num-data-box"><strong>Contoh:</strong> “8 keranjang” adalah data karena angka 8 memiliki keterangan, yaitu jumlah keranjang.</div>
-      <div class="num-mission"><h4>🎯 Mini Misi Pos 1</h4><p>Manakah yang merupakan data lengkap?</p><div class="num-mission-row"><select id="numAns1"><option value="">Pilih jawaban</option><option value="a">12</option><option value="b">12 keranjang sayur</option><option value="c">banyak</option></select><button class="btn green" onclick="checkNumMission(1)">Periksa</button></div><div class="mfeedback" id="numFb1"></div></div>
-      <div class="num-next"><button class="btn green" id="numNext1" onclick="openNumPos(2)" disabled>Lanjut ke Pos 2 →</button></div>
-    </div>
-  </article>
-
-  <article class="num-stage" data-num-stage="2">
-    <div class="num-stage-head"><div><h3>🖼️ Pos 2 — Membaca Piktogram</h3><p>Piktogram mengubah gambar atau simbol menjadi data yang dapat dihitung.</p></div><span class="num-level-pill">MEMAHAMI</span></div>
-    <div class="num-stage-body"><div class="num-activity-grid"><div class="num-activity"><div class="aicon">🔍</div><h4>Baca Keterangan</h4><p>Periksa nilai setiap simbol sebelum menghitung.</p></div><div class="num-activity"><div class="aicon">✖️</div><h4>Ubah ke Angka</h4><p>Jumlah simbol × nilai tiap simbol.</p></div><div class="num-activity"><div class="aicon">🗣️</div><h4>Interpretasikan</h4><p>Jelaskan arti hasil hitungan dengan kalimat.</p></div></div><div class="num-data-box"><strong>Data simulasi:</strong> 1 🧺 = 5 kg. Jika terdapat 🧺🧺🧺🧺, maka jumlahnya 4 × 5 = 20 kg.</div><div class="num-mission"><h4>🎯 Mini Misi Pos 2</h4><p>Jika 1 🌽 mewakili 3 keranjang, berapa keranjang yang ditunjukkan oleh 🌽🌽🌽🌽?</p><div class="num-mission-row"><input id="numAns2" inputmode="numeric" placeholder="Tulis angka"><button class="btn green" onclick="checkNumMission(2)">Periksa</button></div><div class="mfeedback" id="numFb2"></div></div><div class="num-next"><button class="btn green" id="numNext2" onclick="openNumPos(3)" disabled>Lanjut ke Pos 3 →</button></div></div>
-  </article>
-
-  <article class="num-stage" data-num-stage="3">
-    <div class="num-stage-head"><div><h3>➕ Pos 3 — Menghitung Data</h3><p>Gunakan operasi hitung untuk mencari jumlah, selisih, dan sisa.</p></div><span class="num-level-pill">MENERAPKAN</span></div>
-    <div class="num-stage-body"><div class="num-activity-grid"><div class="num-activity"><div class="aicon">➕</div><h4>Jumlah</h4><p>Gabungkan dua atau lebih data.</p></div><div class="num-activity"><div class="aicon">➖</div><h4>Selisih</h4><p>Bandingkan data besar dan kecil.</p></div><div class="num-activity"><div class="aicon">📦</div><h4>Sisa</h4><p>Kurangi data awal dengan bagian yang telah digunakan atau dijual.</p></div></div><div class="num-data-box">Data simulasi: Pisang 45 kg. Sebanyak 15 kg dijual. Sisa = 45 − 15 = 30 kg.</div><div class="num-mission"><h4>🎯 Mini Misi Pos 3</h4><p>Hasil panen 35 kg mangga dan 45 kg pisang. Berapa jumlah seluruhnya?</p><div class="num-mission-row"><input id="numAns3" inputmode="numeric" placeholder="... kg"><button class="btn green" onclick="checkNumMission(3)">Periksa</button></div><div class="mfeedback" id="numFb3"></div></div><div class="num-next"><button class="btn green" id="numNext3" onclick="openNumPos(4)" disabled>Lanjut ke Pos 4 →</button></div></div>
-  </article>
-
-  <article class="num-stage" data-num-stage="4">
-    <div class="num-stage-head"><div><h3>📋 Pos 4 — Membaca Tabel</h3><p>Tabel membantu kita menemukan, membandingkan, dan merangkum data dengan cepat.</p></div><span class="num-level-pill">MENGHUBUNGKAN</span></div>
-    <div class="num-stage-body"><div class="num-activity-grid"><div class="num-activity"><div class="aicon">↔️</div><h4>Baca Baris</h4><p>Hubungkan nama objek dengan nilainya.</p></div><div class="num-activity"><div class="aicon">⬆️</div><h4>Cari Terbesar</h4><p>Temukan nilai paling tinggi pada tabel.</p></div><div class="num-activity"><div class="aicon">⚖️</div><h4>Bandingkan</h4><p>Hitung selisih dua data.</p></div></div><div class="num-data-box"><table class="num-mini-table"><tr><th>Hari</th><th>Penjualan (bungkus)</th></tr><tr><td>Senin</td><td>18</td></tr><tr><td>Selasa</td><td>25</td></tr><tr><td>Rabu</td><td>21</td></tr></table></div><div class="num-mission"><h4>🎯 Mini Misi Pos 4</h4><p>Berdasarkan tabel, berapa selisih penjualan tertinggi dan terendah?</p><div class="num-mission-row"><input id="numAns4" inputmode="numeric" placeholder="Tulis angka"><button class="btn green" onclick="checkNumMission(4)">Periksa</button></div><div class="mfeedback" id="numFb4"></div></div><div class="num-next"><button class="btn green" id="numNext4" onclick="openNumPos(5)" disabled>Lanjut ke Pos 5 →</button></div></div>
-  </article>
-
-  <article class="num-stage" data-num-stage="5">
-    <div class="num-stage-head"><div><h3>📊 Pos 5 — Membaca Diagram</h3><p>Diagram membantu melihat perbandingan data secara visual.</p></div><span class="num-level-pill">MENGINTERPRETASI</span></div>
-    <div class="num-stage-body"><div class="num-activity-grid"><div class="num-activity"><div class="aicon">📏</div><h4>Baca Skala</h4><p>Perhatikan angka pada sumbu sebelum membaca batang.</p></div><div class="num-activity"><div class="aicon">🔝</div><h4>Tertinggi & Terendah</h4><p>Temukan batang paling tinggi dan paling rendah.</p></div><div class="num-activity"><div class="aicon">🧾</div><h4>Simpulkan</h4><p>Ubah tampilan diagram menjadi kalimat informasi.</p></div></div><div class="num-data-box"><strong>Data simulasi diagram:</strong> Tomat 8, Jagung 6, Cabai 10, Singkong 4 keranjang.</div><div class="num-mission"><h4>🎯 Mini Misi Pos 5</h4><p>Berapa selisih data cabai dan singkong?</p><div class="num-mission-row"><input id="numAns5" inputmode="numeric" placeholder="Tulis angka"><button class="btn green" onclick="checkNumMission(5)">Periksa</button></div><div class="mfeedback" id="numFb5"></div></div><div class="num-next"><button class="btn green" id="numNext5" onclick="openNumPos(6)" disabled>Lanjut ke Pos 6 →</button></div></div>
-  </article>
-
-  <article class="num-stage" data-num-stage="6">
-    <div class="num-stage-head"><div><h3>💰 Pos 6 — Numerasi Ekonomi</h3><p>Gunakan perkalian dan perbandingan untuk memahami aktivitas ekonomi.</p></div><span class="num-level-pill">MENERAPKAN</span></div>
-    <div class="num-stage-body"><div class="num-activity-grid"><div class="num-activity"><div class="aicon">🏷️</div><h4>Harga × Jumlah</h4><p>Hitung nilai penjualan dari harga satuan dan jumlah barang.</p></div><div class="num-activity"><div class="aicon">💵</div><h4>Bandingkan Pendapatan</h4><p>Tentukan produk dengan hasil penjualan terbesar.</p></div><div class="num-activity"><div class="aicon">🛒</div><h4>Belanja Bijak</h4><p>Gunakan data harga untuk membuat pilihan sesuai kebutuhan.</p></div></div><div class="num-data-box">Data simulasi: 20 bungkus keripik pisang × Rp5.000 = Rp100.000.</div><div class="num-mission"><h4>🎯 Mini Misi Pos 6</h4><p>15 bungkus keripik singkong dijual Rp4.000 per bungkus. Berapa hasil penjualannya?</p><div class="num-mission-row"><input id="numAns6" inputmode="numeric" placeholder="Tulis angka tanpa titik"><button class="btn green" onclick="checkNumMission(6)">Periksa</button></div><div class="mfeedback" id="numFb6"></div></div><div class="num-next"><button class="btn green" id="numNext6" onclick="openNumPos(7)" disabled>Lanjut ke Pos 7 →</button></div></div>
-  </article>
-
-  <article class="num-stage" data-num-stage="7">
-    <div class="num-stage-head"><div><h3>🧩 Pos 7 — Masalah Multilangkah</h3><p>Masalah nyata sering membutuhkan lebih dari satu operasi hitung.</p></div><span class="num-level-pill">MENALAR</span></div>
-    <div class="num-stage-body"><div class="num-activity-grid"><div class="num-activity"><div class="aicon">1️⃣</div><h4>Tentukan Data</h4><p>Pilih angka yang diperlukan dari soal.</p></div><div class="num-activity"><div class="aicon">2️⃣</div><h4>Susun Langkah</h4><p>Tentukan operasi pertama dan kedua.</p></div><div class="num-activity"><div class="aicon">3️⃣</div><h4>Periksa Hasil</h4><p>Cocokkan jawaban dengan konteks pertanyaan.</p></div></div><div class="num-data-box">Contoh: 4 keranjang × 5 kg = 20 kg. Jika 7 kg digunakan, sisanya 13 kg.</div><div class="num-mission"><h4>🎯 Mini Misi Pos 7</h4><p>Ada 5 keranjang, tiap keranjang 4 kg. Sebanyak 6 kg dijual. Berapa kg sisanya?</p><div class="num-mission-row"><input id="numAns7" inputmode="numeric" placeholder="... kg"><button class="btn green" onclick="checkNumMission(7)">Periksa</button></div><div class="mfeedback" id="numFb7"></div></div><div class="num-next"><button class="btn green" id="numNext7" onclick="openNumPos(8)" disabled>Lanjut ke Pos 8 →</button></div></div>
-  </article>
-
-  <article class="num-stage" data-num-stage="8">
-    <div class="num-stage-head"><div><h3>🧠 Pos 8 — Mengambil Keputusan Berdasarkan Data</h3><p>Numerasi tidak berhenti pada jawaban angka. Gunakan data untuk menentukan pilihan dan memberikan alasan.</p></div><span class="num-level-pill">MENALAR & MEMUTUSKAN</span></div>
-    <div class="num-stage-body"><div class="num-activity-grid"><div class="num-activity"><div class="aicon">🔍</div><h4>Baca Bukti</h4><p>Temukan data yang mendukung keputusan.</p></div><div class="num-activity"><div class="aicon">⚖️</div><h4>Bandingkan Pilihan</h4><p>Bandingkan jumlah, harga, atau hasil.</p></div><div class="num-activity"><div class="aicon">✅</div><h4>Beri Alasan</h4><p>Jelaskan keputusan menggunakan angka yang tersedia.</p></div></div><div class="num-data-box"><table class="num-mini-table"><tr><th>Produk</th><th>Jumlah</th><th>Harga</th><th>Hasil</th></tr><tr><td>Keripik Pisang</td><td>20</td><td>Rp5.000</td><td>Rp100.000</td></tr><tr><td>Keripik Singkong</td><td>15</td><td>Rp4.000</td><td>Rp60.000</td></tr><tr><td>Keripik Ubi</td><td>10</td><td>Rp6.000</td><td>Rp60.000</td></tr></table></div><div class="num-mission"><h4>🏆 Misi Akhir Numerasi</h4><p>Produk mana yang memberikan hasil penjualan tertinggi?</p><div class="num-mission-row"><select id="numAns8"><option value="">Pilih jawaban</option><option value="pisang">Keripik Pisang</option><option value="singkong">Keripik Singkong</option><option value="ubi">Keripik Ubi</option></select><button class="btn green" onclick="checkNumMission(8)">Periksa</button></div><div class="mfeedback" id="numFb8"></div></div><div class="num-next"><a class="btn orange" id="numFinishBtn" href="#latihan" style="display:none">🏆 Lanjut ke Latihan Numerasi</a></div></div>
-  </article>
+<div class="reading-guide"><strong>Kesimpulan Pos 1:</strong> untuk membaca data dengan benar, murid perlu mengetahui <strong>apa yang dihitung</strong>, <strong>berapa jumlahnya</strong>, dan jika menggunakan piktogram, <strong>berapa nilai yang diwakili setiap simbol</strong>. Dengan tiga informasi tersebut, data dapat dibaca secara utuh.</div>
 </section>
 <div class="num-library-title"><h2>📚 Materi Pendalaman Numerasi</h2><p>Setelah menjelajahi peta petualangan, gunakan materi berikut untuk memperdalam piktogram, operasi data, konteks ekonomi, latihan, dan video interaktif.</p></div>
 
@@ -439,5 +377,4 @@ function restore(){VIDEO_DATA.forEach((_,i)=>{if(localStorage.getItem('pikto_num
 function updateOverall(){let n=state.filter(x=>x.done).length,p=Math.round(n/2*100);document.getElementById('completeFill').style.width=p+'%';document.getElementById('videoSummary').textContent=n+' dari 2 video interaktif telah selesai.';let a=document.getElementById('nextChallenge'),m=document.getElementById('nextMessage');if(n===2){a.href='index.html#tantangan';a.className='btn orange';a.textContent='🏆 Buka Tantangan PIKTO-IPS';m.textContent='🎉 Semua video selesai. Kamu siap kembali ke Tantangan.'}else{a.href='javascript:void(0)';a.className='btn light';a.textContent='🔒 Kembali ke Tantangan';m.textContent='🔒 Selesaikan kedua video interaktif terlebih dahulu.'}}
 document.getElementById('nextChallenge').onclick=function(e){if(state.filter(x=>x.done).length!==2){e.preventDefault();alert('Selesaikan kedua video interaktif terlebih dahulu.')}};
 </script>
-</body>
-</html>
+</body></html>
