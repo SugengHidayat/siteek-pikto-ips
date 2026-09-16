@@ -67,6 +67,19 @@
 
 .profile6{margin-top:20px;padding:22px;border-radius:20px;background:linear-gradient(135deg,#f4f9ff,#f4fff8);border:2px solid #dce9f2}.profile6 h2{margin:0 0 7px}.profile6>p{color:var(--m);line-height:1.6}.p6grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}.p6item{background:#fff;border:1px solid #dce7ef;border-radius:15px;padding:14px}.p6item b{display:block;margin:5px 0;color:var(--t)}.p6item span{font-size:12px;line-height:1.5;color:var(--m)}.p6icon{font-size:27px}@media(max-width:800px){.p6grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:550px){.p6grid{grid-template-columns:1fr}}
 
+
+/* ===== V10: PENJELASAN NUMERASI + PENGAMATAN KELOMPOK ===== */
+.explain-box{margin-top:14px;padding:16px 18px;border-radius:16px;background:#f7fbff;border:1px solid #d8e8f4;line-height:1.7;color:#3f5870}
+.explain-box h3{margin:0 0 8px;color:#145f43}.explain-box ul{margin:8px 0 0;padding-left:20px}.explain-box li{margin:6px 0}
+.example-title{margin:20px 0 10px;font-size:19px;color:#145f43}.data-example-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:14px}
+.demo-table{width:100%;border-collapse:collapse;font-size:14px}.demo-table th,.demo-table td{border:2px solid #34495e;padding:10px;text-align:center}.demo-table th{background:#dff4e7;color:#164b32}.demo-table td:first-child{text-align:left;font-weight:900}
+.fish-picto{display:grid;grid-template-columns:145px 1fr 75px;gap:10px;align-items:center;margin-top:10px}.fish-picto .fish{font-size:26px;letter-spacing:3px}.fish-picto strong{text-align:center}.picto-legend{display:inline-block;margin-top:12px;padding:9px 12px;border-radius:999px;background:#fff3cd;border:1px solid #f2d77d;font-weight:900}
+.demo-chart{display:grid;gap:10px;margin-top:12px}.demo-chart-row{display:grid;grid-template-columns:110px 1fr 45px;gap:10px;align-items:center}.demo-chart-track{height:24px;border-radius:8px;background:#e8eef2;overflow:hidden;border:1px solid #d3dde4}.demo-chart-fill{height:100%;background:linear-gradient(90deg,#198754,#8fd3a8)}
+.reading-guide{margin-top:12px;padding:14px;border-left:5px solid #0d6efd;background:#f2f8ff;border-radius:12px;line-height:1.7}.reading-guide strong{color:#0b5fae}
+.group-task{margin-top:18px;padding:18px;border-radius:18px;background:linear-gradient(135deg,#fff9e8,#f5fff8);border:2px solid #e8dca7}.group-task h3{margin:0 0 7px;color:#6b5500}.group-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}.group-step{padding:13px;border-radius:14px;background:#fff;border:1px solid #e3e7dd;text-align:center;font-size:12px;line-height:1.5}.group-step b{display:block;margin-top:5px;color:#36576d}
+.upload-panel{margin-top:16px;padding:18px;border-radius:18px;background:#f7fbff;border:2px dashed #9fc6e8}.upload-panel h3{margin:0 0 6px;color:#145a8d}.upload-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}.upload-field label{display:block;font-size:12px;font-weight:900;color:#45657d;margin-bottom:5px}.upload-field input,.upload-field textarea{width:100%;padding:11px 12px;border:2px solid #d8e4ed;border-radius:11px;font:inherit;background:#fff}.upload-field textarea{min-height:78px;resize:vertical}.upload-field.full{grid-column:1/-1}.upload-help{font-size:11px;color:#667b8f;margin-top:5px;line-height:1.5}.upload-status{margin-top:11px;min-height:22px;font-size:13px;font-weight:900;color:#45657d}.upload-status.ok{color:#15803d}.upload-status.bad{color:#c62828}
+@media(max-width:760px){.fish-picto{grid-template-columns:105px 1fr 50px}.group-flow,.upload-grid{grid-template-columns:1fr}.upload-field.full{grid-column:auto}.demo-chart-row{grid-template-columns:90px 1fr 38px}}
+
 </style>
 </head>
 <body>
@@ -186,9 +199,85 @@
 <section class="card"><h2>➕ Menghitung Jumlah</h2><p class="subtitle">Tomat 8, jagung 6, cabai 10, singkong 4.</p><div class="calc">8 + 6 + 10 + 4 = 28 keranjang</div></section>
 <section class="card"><h2>➖ Menghitung Selisih</h2><div class="calc">10 − 6 = 4 keranjang</div><div class="note">Selisih jumlah cabai dan jagung adalah <strong>4 keranjang</strong>.</div></section>
 <section class="card"><h2>📊 Membandingkan Data</h2><div class="bars"><div class="bar"><b>Tomat</b><div class="track"><div class="fill" style="width:80%"></div></div><b>8</b></div><div class="bar"><b>Jagung</b><div class="track"><div class="fill" style="width:60%"></div></div><b>6</b></div><div class="bar"><b>Cabai</b><div class="track"><div class="fill" style="width:100%"></div></div><b>10</b></div><div class="bar"><b>Singkong</b><div class="track"><div class="fill" style="width:40%"></div></div><b>4</b></div></div><div class="note">Cabai paling banyak (10) dan singkong paling sedikit (4).</div></section>
-<section class="card"><h2>💰 Numerasi dalam Kegiatan Ekonomi</h2><div class="grid3"><div class="box"><div class="ic">💵</div><h3>Pendapatan</h3><p>4 keranjang × Rp10.000 = <strong>Rp40.000</strong>.</p></div><div class="box"><div class="ic">📦</div><h3>Sisa Barang</h3><p>8 − 3 terjual = <strong>5 keranjang</strong>.</p></div><div class="box"><div class="ic">🛒</div><h3>Kebutuhan</h3><p>Butuh 12, tersedia 10, perlu tambahan <strong>2</strong>.</p></div></div></section>
-<section class="card data-story"><div class="story-kicker">🌊 MISI DATA 2 • DANAU RANU</div><h2>🌊 Membaca Data dari Lingkungan Sekitar</h2><p class="subtitle">Di sekitar Danau Ranu, informasi dapat dikumpulkan melalui pengamatan sederhana lalu disajikan menjadi tabel, piktogram, atau diagram. Pada tahap ini, yang kita latih adalah cara membaca dan menafsirkan data, bukan menghafal angka.</p><div class="mini-map"><div class="icon">🌊📊</div><p><strong>Contoh kegiatan kelas:</strong> murid dapat mencatat hasil pengamatan yang disepakati bersama, mengelompokkan data, lalu membuat piktogram atau diagram sederhana. Data yang digunakan sebaiknya berasal dari hasil pengamatan nyata atau simulasi yang diberi keterangan dengan jelas.</p></div></section>
-<section class="card data-story"><div class="story-kicker">🏡 MISI DATA 3 • RANUKLINDUNGAN</div><h2>🏡 Dari Lingkungan Menjadi Data</h2><p class="subtitle">Desa Ranuklindungan menjadi titik awal untuk belajar bahwa lingkungan sekitar dapat dibaca melalui data. Angka membantu kita melihat pola, perbedaan, dan hubungan secara lebih jelas.</p><div class="grid3"><div class="box"><div class="ic">👀</div><h3>Amati</h3><p>Tentukan informasi apa yang ingin diamati bersama.</p></div><div class="box"><div class="ic">📝</div><h3>Catat</h3><p>Tuliskan hasil pengamatan secara rapi dan jujur.</p></div><div class="box"><div class="ic">📊</div><h3>Sajikan</h3><p>Ubah data menjadi tabel, piktogram, atau diagram sederhana.</p></div></div></section>
+<section class="card">
+<h2>💰 Numerasi dalam Kegiatan Ekonomi</h2>
+<p class="subtitle">Dalam kegiatan ekonomi, angka membantu kita memahami apa yang terjadi saat orang menghasilkan barang, menjual, membeli, menggunakan uang, menghitung persediaan, dan memenuhi kebutuhan. Jadi, numerasi di IPS bukan hanya mencari hasil hitungan, tetapi <strong>memahami arti hasil hitungan untuk mengambil keputusan</strong>.</p>
+<div class="explain-box">
+<h3>🔎 Bagaimana cara memahaminya?</h3>
+<ul>
+<li><strong>Pendapatan:</strong> kita dapat menghitung uang yang diperoleh dari hasil penjualan. Contoh simulasi: 4 keranjang terjual dengan harga Rp10.000 per keranjang, maka pendapatan = 4 × Rp10.000 = <strong>Rp40.000</strong>.</li>
+<li><strong>Persediaan:</strong> kita dapat mengetahui barang yang masih tersedia. Jika semula ada 8 keranjang dan 3 keranjang terjual, maka sisa = 8 − 3 = <strong>5 keranjang</strong>.</li>
+<li><strong>Kebutuhan:</strong> kita dapat membandingkan jumlah yang dibutuhkan dengan jumlah yang tersedia. Jika dibutuhkan 12 dan tersedia 10, maka masih diperlukan <strong>2</strong>.</li>
+<li><strong>Keputusan:</strong> hasil perhitungan digunakan untuk menentukan tindakan, misalnya menambah persediaan, mengatur jumlah pembelian, atau memilih kebutuhan yang harus didahulukan.</li>
+</ul>
+</div>
+<div class="grid3">
+<div class="box"><div class="ic">💵</div><h3>Pendapatan</h3><p><strong>Data simulasi:</strong> 4 keranjang × Rp10.000 = <strong>Rp40.000</strong>. Artinya, hasil penjualan empat keranjang menghasilkan uang Rp40.000.</p></div>
+<div class="box"><div class="ic">📦</div><h3>Sisa Barang</h3><p><strong>Data simulasi:</strong> 8 − 3 terjual = <strong>5 keranjang</strong>. Angka 5 menunjukkan persediaan yang masih tersedia.</p></div>
+<div class="box"><div class="ic">🛒</div><h3>Kebutuhan</h3><p><strong>Data simulasi:</strong> butuh 12, tersedia 10, sehingga perlu tambahan <strong>2</strong>. Selisih data membantu menentukan tindakan.</p></div>
+</div>
+<div class="kid-tip"><div class="face">🧒</div><div><strong>Ingat!</strong><p>Setelah mendapatkan hasil hitungan, selalu tanyakan: <em>“Apa arti angka ini?”</em> dan <em>“Keputusan apa yang dapat dibuat berdasarkan angka tersebut?”</em> Itulah numerasi dalam konteks IPS.</p></div></div>
+</section>
+<section class="card data-story">
+<div class="story-kicker">🌊 MISI DATA 2 • DANAU RANU</div>
+<h2>🌊 Membaca Data dari Lingkungan Sekitar</h2>
+<p class="subtitle">Lingkungan sekitar dapat menjadi sumber data. Data hasil pengamatan dapat disusun menjadi <strong>tabel, piktogram, dan diagram</strong> agar lebih mudah dibaca, dibandingkan, dan ditafsirkan. Contoh berikut menggunakan <strong>data simulasi pembelajaran ikan patin</strong>, bukan data faktual hasil produksi Danau Ranu.</p>
+
+<h3 class="example-title">1️⃣ Contoh Tabel Data Ikan Patin</h3>
+<table class="demo-table" aria-label="Contoh tabel simulasi ikan patin">
+<thead><tr><th>Kelompok Pengamatan</th><th>Jumlah Ikan Patin (ekor)</th></tr></thead>
+<tbody><tr><td>Kelompok A</td><td>10</td></tr><tr><td>Kelompok B</td><td>6</td></tr><tr><td>Kelompok C</td><td>8</td></tr><tr><td>Kelompok D</td><td>4</td></tr></tbody>
+</table>
+<div class="reading-guide"><strong>Cara membaca tabel:</strong> lihat judul kolom, cari kelompok yang ingin diketahui, lalu baca angka pada baris yang sama. Dari tabel simulasi di atas, Kelompok A mencatat 10 ekor dan Kelompok D mencatat 4 ekor. Jumlah terbesar adalah 10, jumlah terkecil 4, dan selisihnya 10 − 4 = <strong>6 ekor</strong>.</div>
+
+<h3 class="example-title">2️⃣ Contoh Piktogram Ikan Patin</h3>
+<div class="fish-picto"><b>Kelompok A</b><div class="fish">🐟🐟🐟🐟🐟</div><strong>10</strong></div>
+<div class="fish-picto"><b>Kelompok B</b><div class="fish">🐟🐟🐟</div><strong>6</strong></div>
+<div class="fish-picto"><b>Kelompok C</b><div class="fish">🐟🐟🐟🐟</div><strong>8</strong></div>
+<div class="fish-picto"><b>Kelompok D</b><div class="fish">🐟🐟</div><strong>4</strong></div>
+<div class="picto-legend">Keterangan: 🐟 = 2 ekor ikan patin</div>
+<div class="reading-guide"><strong>Cara membaca piktogram:</strong> jangan langsung menghitung gambar sebagai satu ekor. Perhatikan dahulu keterangannya. Karena satu 🐟 mewakili 2 ekor, maka 5 gambar pada Kelompok A berarti 5 × 2 = <strong>10 ekor</strong>. Piktogram membantu kita melihat perbandingan data secara cepat.</div>
+
+<h3 class="example-title">3️⃣ Contoh Diagram Batang</h3>
+<div class="demo-chart" role="img" aria-label="Diagram batang data simulasi ikan patin: A 10, B 6, C 8, D 4">
+<div class="demo-chart-row"><b>Kelompok A</b><div class="demo-chart-track"><div class="demo-chart-fill" style="width:100%"></div></div><strong>10</strong></div>
+<div class="demo-chart-row"><b>Kelompok B</b><div class="demo-chart-track"><div class="demo-chart-fill" style="width:60%"></div></div><strong>6</strong></div>
+<div class="demo-chart-row"><b>Kelompok C</b><div class="demo-chart-track"><div class="demo-chart-fill" style="width:80%"></div></div><strong>8</strong></div>
+<div class="demo-chart-row"><b>Kelompok D</b><div class="demo-chart-track"><div class="demo-chart-fill" style="width:40%"></div></div><strong>4</strong></div>
+</div>
+<div class="reading-guide"><strong>Cara membaca diagram:</strong> bandingkan panjang batang dan angka di ujungnya. Batang terpanjang menunjukkan jumlah terbesar. Diagram memudahkan kita melihat urutan, perbedaan, dan selisih antarkelompok. Tabel memberi angka yang rinci, piktogram menyajikan data melalui simbol, sedangkan diagram memperlihatkan perbandingan secara visual.</div>
+
+<div class="mini-map"><div class="icon">🌊📊</div><p><strong>Latihan berpikir:</strong> dari data simulasi tersebut, jumlah seluruh ikan patin adalah 10 + 6 + 8 + 4 = <strong>28 ekor</strong>. Murid tidak berhenti pada hasil 28, tetapi juga belajar menjelaskan kelompok mana yang paling banyak, paling sedikit, berapa selisihnya, dan apa kesimpulan yang dapat dibuat dari data.</p></div>
+</section>
+<section class="card data-story">
+<div class="story-kicker">🏡 MISI DATA 3 • RANUKLINDUNGAN</div>
+<h2>🏡 Dari Lingkungan Menjadi Data</h2>
+<p class="subtitle">Kegiatan ini <strong>dikerjakan bersama anggota kelompok</strong>. Setiap kelompok melakukan pengamatan sederhana terhadap objek yang disepakati bersama guru, mencatat hasil secara jujur, lalu mengubahnya menjadi tabel, piktogram, atau diagram. Data harus berasal dari hasil pengamatan kelompok, bukan dibuat-buat.</p>
+<div class="group-task">
+<h3>🤝 Tugas Pengamatan Kelompok</h3>
+<p>Bagilah tugas agar semua anggota berperan. Contohnya: ada anggota yang mengamati, mencatat, menghitung, memeriksa data, dan membantu menyusun penyajian data.</p>
+<div class="group-flow">
+<div class="group-step">👀<b>1. Amati</b>Tentukan objek/informasi yang akan diamati.</div>
+<div class="group-step">📝<b>2. Catat</b>Tulis data hasil pengamatan secara rapi dan jujur.</div>
+<div class="group-step">📊<b>3. Sajikan</b>Buat tabel, piktogram, atau diagram.</div>
+<div class="group-step">💬<b>4. Simpulkan</b>Diskusikan arti data dan tuliskan kesimpulan kelompok.</div>
+</div>
+<div class="note"><strong>Contoh objek pengamatan:</strong> jenis kegiatan yang terlihat di lingkungan, jumlah objek tertentu yang aman untuk diamati, atau data lain yang ditentukan guru. Hindari mencatat data pribadi orang lain. Foto/dokumen yang diunggah harus berupa hasil tugas kelompok.</div>
+</div>
+
+<div class="upload-panel" id="unggahPengamatan">
+<h3>☁️ Unggah Hasil Pengamatan Kelompok</h3>
+<p class="subtitle">Setelah tugas selesai, unggah satu berkas hasil pengamatan. Sistem akan menyimpannya ke folder Google Drive SITEEk–PIKTO-IPS pada subfolder <strong>Hasil_Pengamatan_Numerasi</strong>.</p>
+<div class="upload-grid">
+<div class="upload-field"><label for="namaKelompokNum">Nama Kelompok</label><input id="namaKelompokNum" type="text" placeholder="Contoh: Kelompok 1"></div>
+<div class="upload-field"><label for="anggotaKelompokNum">Anggota Kelompok</label><input id="anggotaKelompokNum" type="text" placeholder="Tuliskan nama anggota dipisahkan koma"></div>
+<div class="upload-field full"><label for="kesimpulanKelompokNum">Kesimpulan Singkat</label><textarea id="kesimpulanKelompokNum" placeholder="Apa yang kelompokmu temukan dari data?"></textarea></div>
+<div class="upload-field full"><label for="filePengamatanNum">Berkas Hasil Pengamatan</label><input id="filePengamatanNum" type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png,.webp"><div class="upload-help">Format: PDF, Word, Excel, JPG, PNG, atau WEBP. Maksimal 8 MB. Jangan unggah dokumen yang berisi data pribadi yang tidak diperlukan.</div></div>
+</div>
+<button class="btn green" id="btnUploadPengamatanNum" type="button" onclick="unggahHasilPengamatanNumerasi()">☁️ Unggah Hasil Pengamatan</button>
+<div class="upload-status" id="statusUploadPengamatanNum"></div>
+</div>
+</section>
 <section class="card"><h2>🧭 Strategi Menyelesaikan Soal Numerasi</h2><div class="steps"><div class="step">Pahami cerita atau situasi yang diberikan.</div><div class="step">Perhatikan angka, simbol, tabel, piktogram, atau diagram.</div><div class="step">Tentukan apakah yang dicari jumlah, selisih, perbandingan, atau keputusan.</div><div class="step">Pilih operasi hitung yang sesuai.</div><div class="step">Periksa apakah jawaban masuk akal sesuai konteks IPS.</div></div></section>
 <section class="card" id="latihan"><h2>✏️ Latihan Numerasi</h2><p class="subtitle">Gunakan data simulasi Pasar Brandong di atas. Isi jawaban pada kotak yang tersedia lalu tekan <strong>Simpan</strong>. Jawaban benar ditandai hijau dan jawaban salah ditandai merah.</p><div class="exercise"><b>1.</b> Berapa jumlah keranjang tomat?<div class="answer-area"><input class="answer-input" id="jawaban-1" type="text" placeholder="Ketik jawaban..." autocomplete="off"><button class="btn save-answer" id="simpan-1" type="button" onclick="simpanJawabanNumerasi(1)">💾 Simpan</button><div class="answer-feedback" id="feedback-1"></div></div></div><div class="exercise"><b>2.</b> Berapa jumlah seluruh keranjang barang?<div class="answer-area"><input class="answer-input" id="jawaban-2" type="text" placeholder="Ketik jawaban..." autocomplete="off"><button class="btn save-answer" id="simpan-2" type="button" onclick="simpanJawabanNumerasi(2)">💾 Simpan</button><div class="answer-feedback" id="feedback-2"></div></div></div><div class="exercise"><b>3.</b> Berapa selisih jumlah cabai dan jagung?<div class="answer-area"><input class="answer-input" id="jawaban-3" type="text" placeholder="Ketik jawaban..." autocomplete="off"><button class="btn save-answer" id="simpan-3" type="button" onclick="simpanJawabanNumerasi(3)">💾 Simpan</button><div class="answer-feedback" id="feedback-3"></div></div></div><div class="exercise"><b>4.</b> Barang apa yang jumlahnya paling sedikit?<div class="answer-area"><input class="answer-input" id="jawaban-4" type="text" placeholder="Ketik jawaban..." autocomplete="off"><button class="btn save-answer" id="simpan-4" type="button" onclick="simpanJawabanNumerasi(4)">💾 Simpan</button><div class="answer-feedback" id="feedback-4"></div></div></div><div class="exercise"><b>5.</b> Jika kebutuhan cabai 12 dan tersedia 10, berapa tambahan yang diperlukan?<div class="answer-area"><input class="answer-input" id="jawaban-5" type="text" placeholder="Ketik jawaban..." autocomplete="off"><button class="btn save-answer" id="simpan-5" type="button" onclick="simpanJawabanNumerasi(5)">💾 Simpan</button><div class="answer-feedback" id="feedback-5"></div></div></div></section>
 <section class="card" id="videoInteraktif"><h2>🎬 Video Numerasi Interaktif</h2><div class="video-intro"><strong>Aturan:</strong> tonton video sampai selesai. Setelah muncul “Apakah kamu paham?”, pilih Ya untuk mode interaktif. Video diputar ulang dan berhenti 4 kali. Benar = lanjut, salah = kembali ke awal.</div><div class="video-grid">
@@ -214,6 +303,94 @@
 <div class="modal hidden" id="interactiveModal"><div class="modalbox"><div class="mhead"><div><h3 id="interactiveTitle">🎬 Video Numerasi Interaktif</h3><p class="source">Video akan berhenti 4 kali untuk memberikan pertanyaan.</p></div><button class="close" onclick="closeInteractiveModal()">✕</button></div><div class="ipwrap"><div id="interactivePlayer"></div><div class="qoverlay hidden" id="questionOverlay"><div class="qcard"><span class="qnum" id="questionNumber">PERTANYAAN 1 DARI 4</span><h4 id="questionText">Pertanyaan</h4><div class="opts" id="quizOptions"></div><div class="feedback" id="quizFeedback"></div></div></div></div><div class="istatus"><span id="interactiveCheckpoint">Checkpoint: 0/4</span><span>✅ Benar = lanjut • ❌ Salah = kembali ke awal</span></div></div></div>
 
 <script>
+
+const NUMERASI_API_URL = 'https://script.google.com/macros/s/AKfycbx42nnGeJnV0DVNT3HnhE5bVsFp-sPmY-qD4St9EScmN1Uml6CLKS690aWTxEl0ZsyFDg/exec';
+const MAX_PENGAMATAN_FILE = 8 * 1024 * 1024;
+
+function fileKeDataURL_(file){
+  return new Promise((resolve,reject)=>{
+    const reader=new FileReader();
+    reader.onload=()=>resolve(String(reader.result||''));
+    reader.onerror=()=>reject(new Error('Berkas tidak dapat dibaca.'));
+    reader.readAsDataURL(file);
+  });
+}
+
+async function unggahHasilPengamatanNumerasi(){
+  const namaKelompok=(document.getElementById('namaKelompokNum')?.value||'').trim();
+  const anggota=(document.getElementById('anggotaKelompokNum')?.value||'').trim();
+  const kesimpulan=(document.getElementById('kesimpulanKelompokNum')?.value||'').trim();
+  const input=document.getElementById('filePengamatanNum');
+  const file=input && input.files ? input.files[0] : null;
+  const status=document.getElementById('statusUploadPengamatanNum');
+  const btn=document.getElementById('btnUploadPengamatanNum');
+
+  status.className='upload-status';
+  if(!namaKelompok || !anggota || !kesimpulan || !file){
+    status.textContent='⚠️ Lengkapi nama kelompok, anggota, kesimpulan, dan pilih berkas.';
+    status.classList.add('bad'); return;
+  }
+  if(file.size > MAX_PENGAMATAN_FILE){
+    status.textContent='⚠️ Ukuran berkas melebihi 8 MB.';
+    status.classList.add('bad'); return;
+  }
+  if(!navigator.onLine){
+    status.textContent='⚠️ Internet tidak tersedia. Sambungkan internet lalu unggah kembali.';
+    status.classList.add('bad'); return;
+  }
+
+  btn.disabled=true; btn.textContent='⏳ Mengunggah...';
+  status.textContent='Membaca berkas dan mengirim ke Google Drive...';
+  try{
+    const dataUrl=await fileKeDataURL_(file);
+    const base64=dataUrl.includes(',') ? dataUrl.split(',')[1] : '';
+    const idMurid=localStorage.getItem('pikto_id_murid') || '';
+    const namaMurid=localStorage.getItem('pikto_nama_murid') || '';
+    const kelas=localStorage.getItem('pikto_kelas_murid') || '';
+
+    let lastErr=null;
+    for(let attempt=1;attempt<=3;attempt++){
+      try{
+        const response=await fetch(NUMERASI_API_URL,{
+          method:'POST',
+          headers:{'Content-Type':'text/plain;charset=utf-8'},
+          body:JSON.stringify({
+            action:'uploadNumeracyObservation',
+            id_murid:idMurid,nama:namaMurid,kelas:kelas,
+            nama_kelompok:namaKelompok,anggota:anggota,kesimpulan:kesimpulan,
+            file_name:file.name,mime_type:file.type || 'application/octet-stream',
+            file_base64:base64
+          }),
+          redirect:'follow',cache:'no-store'
+        });
+        if(!response.ok) throw new Error('Server merespons HTTP '+response.status);
+        const res=await response.json();
+        if(!res.success) throw new Error(res.message||'Unggah belum berhasil.');
+        status.textContent='✅ Hasil pengamatan berhasil diunggah dan tersimpan di Google Drive.';
+        status.classList.add('ok');
+        localStorage.setItem('pikto_numerasi_upload_terakhir',JSON.stringify({
+          id_upload:res.id_upload||'',file_name:res.file_name||file.name,
+          waktu:new Date().toISOString(),nama_kelompok:namaKelompok
+        }));
+        input.value='';
+        return;
+      }catch(err){
+        lastErr=err;
+        if(attempt<3){
+          status.textContent=`⚠️ Koneksi belum stabil. Mencoba lagi ${attempt+1}/3...`;
+          await new Promise(r=>setTimeout(r,attempt*1000));
+        }
+      }
+    }
+    throw lastErr || new Error('Unggah gagal.');
+  }catch(err){
+    status.textContent='❌ '+(err.message||'Berkas belum berhasil diunggah.')+' Coba kembali saat koneksi stabil.';
+    status.classList.add('bad');
+  }finally{
+    btn.disabled=false; btn.textContent='☁️ Unggah Hasil Pengamatan';
+  }
+}
+
 const NUM_KEY='pikto_numerasi_adventure_v1';
 const NUM_ANS={1:'b',2:'12',3:'80',4:'7',5:'6',6:'60000',7:'14',8:'pisang'};
 function getNumState(){try{const s=JSON.parse(localStorage.getItem(NUM_KEY)||'{}');return {done:Array.isArray(s.done)?s.done:[]};}catch(e){return {done:[]}}}
