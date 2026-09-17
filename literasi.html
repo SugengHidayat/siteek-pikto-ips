@@ -477,7 +477,7 @@
 }
 
 
-/* ===== V6 — POS 1 mengikuti acuan visual, sistem lain tetap ===== */
+/* ===== V7 — POS 1 mengikuti acuan visual, sistem lain tetap ===== */
 #pos1{
   overflow:hidden;
   padding:22px!important;
@@ -608,7 +608,7 @@
 }
 
 
-/* ===== V6 — final perubahan Pos 1, tanpa mengubah sistem ===== */
+/* ===== V7 — final perubahan Pos 1, tanpa mengubah sistem ===== */
 .lit-read-head{
   display:flex;align-items:center;justify-content:space-between;gap:12px;
   margin:-38px 0 15px -7px;
@@ -640,6 +640,126 @@
   .lit-read-head .lit-read-toolbar{justify-content:flex-start}
   .lit-reading-content{grid-template-columns:1fr!important}
   .lit-market-art{min-height:300px!important}
+}
+
+
+/* ===== V7 — POS 2 3D VISUAL, SISTEM V7 TETAP ===== */
+#pos2{
+  position:relative;overflow:hidden!important;padding:24px!important;
+  border:5px solid #fff!important;border-radius:30px!important;
+  background:
+    radial-gradient(circle at 8% 12%,rgba(255,235,129,.75),transparent 17%),
+    radial-gradient(circle at 94% 80%,rgba(191,241,186,.65),transparent 19%),
+    linear-gradient(145deg,#eaf8ff 0%,#fff 48%,#fff8e8 100%)!important;
+  box-shadow:0 18px 38px rgba(28,75,103,.17)!important;
+}
+.v7-pos2-head{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;margin-bottom:18px}
+.v7-pos2-title{display:flex;align-items:center;gap:13px}
+.v7-brain{
+  width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(145deg,#ffdc71,#ffbd45);border:4px solid #fff;
+  box-shadow:0 8px 16px rgba(157,99,14,.16);font-size:43px
+}
+.v7-pos2-title h2{
+  margin:0!important;padding:10px 20px!important;border:0!important;border-radius:18px!important;
+  background:linear-gradient(90deg,#155fc4,#0a4ba8)!important;color:#fff!important;
+  font-size:27px!important;box-shadow:0 7px 15px rgba(13,75,154,.20)!important
+}
+.v7-pos2-title p{
+  margin:5px 0 0!important;padding:7px 17px;border-radius:999px;background:#fff09a;
+  color:#694700;font-size:14px;font-weight:1000
+}
+.v7-progress{
+  min-width:270px;padding:13px 16px;border-radius:20px;background:#fff8e9;
+  border:2px solid #fff;box-shadow:0 7px 15px rgba(85,66,37,.09)
+}
+.v7-progress strong{display:block;margin-bottom:8px}
+.v7-dots{display:flex;gap:7px;align-items:center}
+.v7-dots i{width:18px;height:18px;border-radius:50%;border:3px solid #b9c1c7;background:#fff}
+.v7-dots i:nth-child(-n+2){background:#13b55b;border-color:#0c9f4e;box-shadow:0 0 0 3px #ddf8e5}
+
+.v7-pos2-layout{display:grid;grid-template-columns:220px 1fr;gap:20px;align-items:stretch}
+.v7-boy{
+  min-height:460px;border-radius:26px;position:relative;overflow:hidden;
+  background:linear-gradient(180deg,#dff6ff,#fff5d7);
+  border:3px solid #fff;box-shadow:0 10px 20px rgba(32,83,108,.12)
+}
+.v7-boy::before{
+  content:"👦🏻";position:absolute;left:22px;bottom:90px;font-size:150px;
+  filter:drop-shadow(0 8px 7px rgba(22,64,86,.16))
+}
+.v7-boy::after{
+  content:"📚 MEMBACA  •  MEMAHAMI  •  BERPIKIR";
+  position:absolute;left:13px;right:13px;bottom:18px;padding:13px 9px;
+  border-radius:14px;background:#fff;color:#0b4b91;text-align:center;font-weight:1000;
+  box-shadow:0 6px 13px rgba(31,76,104,.12)
+}
+.v7-boy-bubble{
+  position:absolute;left:12px;top:18px;right:12px;padding:13px;border-radius:50% 50% 50% 20%;
+  background:#ffe974;border:3px solid #f2c838;color:#073f89;text-align:center;font-weight:1000;font-size:17px
+}
+.v7-main{min-width:0}
+.v7-literacy-card{
+  padding:20px;border-radius:25px;background:rgba(255,255,255,.94);border:3px solid #d7ecf7;
+  box-shadow:0 10px 22px rgba(31,79,107,.11)
+}
+.v7-literacy-card h2{margin:0 0 8px!important;color:#073f89!important;font-size:28px!important}
+.v7-literacy-card>p{margin:0 0 16px!important;line-height:1.65!important;color:#173f68!important}
+.v7-concepts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.v7-concept{padding:15px;border-radius:18px;border:2px solid;min-height:155px}
+.v7-concept:nth-child(1){background:#e9f7ff;border-color:#8bd0f3}
+.v7-concept:nth-child(2){background:#ffe8f1;border-color:#f2a9c8}
+.v7-concept:nth-child(3){background:#fff6d9;border-color:#efcd68}
+.v7-concept .ico{font-size:38px}.v7-concept h3{margin:7px 0;color:#073f89;font-size:17px}
+.v7-concept p{margin:0!important;font-size:13px!important;line-height:1.45!important}
+
+#pos2 .mini-mission{
+  margin-top:16px!important;padding:18px!important;border-radius:23px!important;
+  border:2px solid #e9c987!important;background:linear-gradient(145deg,#fff7df,#fffdf8)!important;
+  box-shadow:0 8px 17px rgba(105,75,30,.08)!important
+}
+#pos2 .mini-mission h3{margin:0 0 5px!important;color:#6c3b14!important;font-size:22px!important}
+#pos2 .mini-mission h3:before{content:"🎯 ";font-size:28px}
+#pos2 .mini-mission p{font-weight:900!important;color:#173f68!important}
+#pos2 .mission-options{display:grid!important;grid-template-columns:1fr!important;gap:10px!important}
+#pos2 .mission-option{
+  min-height:55px!important;padding:12px 17px!important;border-radius:16px!important;text-align:left!important;
+  background:#ffe6eb!important;border:2px solid #f1c4ce!important;color:#153e70!important;
+  font-size:14px!important;font-weight:900!important;box-shadow:0 5px 10px rgba(89,44,52,.07)!important
+}
+#pos2 .mission-option.good{background:#caffce!important;border-color:#18aa50!important;color:#075e2d!important}
+#pos2 .mission-option.bad{background:#ffd3d8!important;border-color:#e95767!important;color:#8a2631!important}
+#pos2 .mission-feedback{margin-top:12px!important;padding:13px 16px!important;border-radius:16px!important;font-weight:900!important}
+#pos2 .mission-feedback.ok{background:#e5ffdf!important;border:2px solid #79d97c!important;color:#116034!important}
+#pos2 .mission-feedback.no{background:#ffe4e7!important;border:2px solid #ef8993!important;color:#8a2731!important}
+.v7-pos2-bottom{
+  display:grid;grid-template-columns:1fr auto;gap:14px;align-items:end;margin-top:15px
+}
+.v7-encourage{
+  min-height:115px;padding:17px 170px 17px 18px;position:relative;overflow:hidden;
+  border-radius:22px;border:2px solid #a9dcf0;background:linear-gradient(145deg,#effaff,#fff)
+}
+.v7-encourage:after{
+  content:"👧🏻";position:absolute;right:25px;bottom:-15px;font-size:120px;
+  filter:drop-shadow(0 7px 6px rgba(21,63,86,.14))
+}
+.v7-encourage strong{display:block;color:#073f89;font-size:18px;margin-bottom:5px}
+.v7-nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+.v7-nav button{
+  border:0;border-radius:999px;padding:13px 19px;color:#fff;font-weight:1000;cursor:pointer;
+  box-shadow:0 7px 14px rgba(25,70,103,.15)
+}
+.v7-back{background:linear-gradient(#2794ef,#0870d0)}
+.v7-next{background:linear-gradient(#ffad2d,#ed7c08)}
+@media(max-width:950px){
+ .v7-pos2-layout{grid-template-columns:1fr}.v7-boy{min-height:260px}
+ .v7-boy::before{font-size:120px;left:50%;transform:translateX(-50%);bottom:55px}
+ .v7-concepts{grid-template-columns:1fr}
+}
+@media(max-width:650px){
+ #pos2{padding:15px!important}.v7-pos2-head{grid-template-columns:1fr}.v7-progress{min-width:0}
+ .v7-brain{width:58px;height:58px;font-size:34px}.v7-pos2-title h2{font-size:21px!important}
+ .v7-pos2-bottom{grid-template-columns:1fr}.v7-encourage{padding-right:115px}
 }
 
 </style>
@@ -772,30 +892,50 @@
   </section>
 
   <section class="card learning-pos" id="pos2" data-pos="2">
-    <div class="pos-heading"><strong>🧠 POS 2 • Memahami Makna</strong><span>Literasi bukan sekadar membaca</span></div>
-    <h2>📚 Apa Itu Literasi?</h2>
-    <p class="subtitle">
-      Literasi bukan hanya kemampuan membaca tulisan. Murid juga perlu memahami makna informasi
-      dan menggunakannya untuk menjawab pertanyaan atau mengambil keputusan.
-    </p>
-    <div class="info-grid">
-      <div class="info-box">
-        <div class="icon">🔎</div>
-        <h3>Menemukan Informasi</h3>
-        <p>Mencari fakta penting seperti siapa, apa, kapan, di mana, mengapa, dan bagaimana.</p>
+    <div class="v7-pos2-head">
+      <div class="v7-pos2-title">
+        <div class="v7-brain">🧠</div>
+        <div>
+          <h2>Pos 2 — Memahami Makna</h2>
+          <p>Yuk, pahami makna informasi dengan lebih dalam!</p>
+        </div>
       </div>
-      <div class="info-box">
-        <div class="icon">🧠</div>
-        <h3>Memahami Makna</h3>
-        <p>Menghubungkan informasi yang tertulis dengan pengetahuan dan situasi kehidupan sehari-hari.</p>
-      </div>
-      <div class="info-box">
-        <div class="icon">💡</div>
-        <h3>Membuat Kesimpulan</h3>
-        <p>Menentukan pesan atau keputusan yang masuk akal berdasarkan informasi yang tersedia.</p>
+      <div class="v7-progress"><strong>Pos 2 dari 8</strong><div class="v7-dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+    </div>
+
+    <div class="v7-pos2-layout">
+      <aside class="v7-boy"><div class="v7-boy-bubble">Literasi itu<br>lebih dari sekadar<br>membaca!</div></aside>
+      <div class="v7-main">
+        <div class="v7-literacy-card">
+          <h2>📖 Apa Itu Literasi?</h2>
+          <p>Literasi bukan hanya kemampuan membaca tulisan. Murid juga perlu memahami makna informasi dan menggunakannya untuk menjawab pertanyaan atau mengambil keputusan.</p>
+          <div class="v7-concepts">
+            <div class="v7-concept"><div class="ico">🔎</div><h3>Menemukan Informasi</h3><p>Mencari fakta penting seperti siapa, apa, kapan, di mana, mengapa, dan bagaimana.</p></div>
+            <div class="v7-concept"><div class="ico">🧠</div><h3>Memahami Makna</h3><p>Menghubungkan informasi yang tertulis dengan pengetahuan dan situasi kehidupan sehari-hari.</p></div>
+            <div class="v7-concept"><div class="ico">💡</div><h3>Membuat Kesimpulan</h3><p>Menentukan pesan atau keputusan yang masuk akal berdasarkan informasi yang tersedia.</p></div>
+          </div>
+        </div>
+
+        <div class="mini-mission" data-mission="2">
+          <h3>Misi Pos 2</h3>
+          <p>Literasi IPS yang baik berarti...</p>
+          <div class="mission-options">
+            <button class="mission-option">A. hanya membaca teks dengan cepat</button>
+            <button class="mission-option" data-correct="1">B. memahami informasi dan menggunakannya untuk menjawab atau mengambil keputusan</button>
+            <button class="mission-option">C. menghafalkan semua kalimat</button>
+          </div>
+          <div class="mission-feedback" aria-live="polite"></div>
+        </div>
+
+        <div class="v7-pos2-bottom">
+          <div class="v7-encourage"><strong>Hebat! Kamu semakin paham makna bacaan!</strong>Setiap bacaan punya makna. Ayo membaca, memahami, lalu berpikir.</div>
+          <div class="v7-nav">
+            <button class="v7-back" type="button" onclick="document.getElementById('pos1').scrollIntoView({behavior:'smooth'})">← Kembali ke Pos 1</button>
+            <button class="v7-next" type="button" onclick="document.getElementById('pos3').scrollIntoView({behavior:'smooth'})">Lanjut ke Pos 3 →</button>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="mini-mission" data-mission="2"><h3>🎯 Misi Pos 2</h3><p>Literasi IPS yang baik berarti...</p><div class="mission-options"><button class="mission-option">hanya membaca teks dengan cepat</button><button class="mission-option" data-correct="1">memahami informasi dan menggunakannya untuk menjawab atau mengambil keputusan</button><button class="mission-option">menghafalkan semua kalimat</button></div><div class="mission-feedback"></div></div>
   </section>
 
   <section class="card learning-pos" id="pos3" data-pos="3">
@@ -1161,8 +1301,8 @@
 
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
-  /* ===== V6 SUARA POS 1 ===== */
-  function pilihVoiceIndonesiaV6(){
+  /* ===== V7 SUARA POS 1 ===== */
+  function pilihVoiceIndonesiaV7(){
     if(!('speechSynthesis' in window)) return null;
     const voices=window.speechSynthesis.getVoices() || [];
     const indo=voices.filter(v=>/^id([-_]|$)/i.test(v.lang||'') || /indonesia/i.test(v.name||''));
@@ -1170,9 +1310,9 @@
     return indo.find(v=>male.test(v.name||'')) || indo[0] || voices[0] || null;
   }
   if('speechSynthesis' in window){
-    window.speechSynthesis.onvoiceschanged=pilihVoiceIndonesiaV6;
+    window.speechSynthesis.onvoiceschanged=pilihVoiceIndonesiaV7;
   }
-  function litSpeakV6(text){
+  function litSpeakV7(text){
     if(!('speechSynthesis' in window)){
       alert('Fitur suara belum didukung oleh browser ini.');
       return;
@@ -1182,7 +1322,7 @@
       synth.cancel();
       const u=new SpeechSynthesisUtterance(String(text||''));
       u.lang='id-ID'; u.rate=.88; u.pitch=1; u.volume=1;
-      const voice=pilihVoiceIndonesiaV6();
+      const voice=pilihVoiceIndonesiaV7();
       if(voice) u.voice=voice;
       setTimeout(()=>{ try{ synth.resume(); synth.speak(u); }catch(e){console.warn(e);} },150);
     }catch(e){ console.warn(e); }
@@ -1191,7 +1331,7 @@
     const el=document.getElementById('teksBacaanPos1');
     if(!el) return;
     const teks=(el.innerText||el.textContent||'').trim();
-    if(teks) litSpeakV6(teks);
+    if(teks) litSpeakV7(teks);
   }
 
 
@@ -1831,7 +1971,7 @@
               : '✅ Tepat! Kamu berhasil menyelesaikan misi pos ini.';
             feedback.className='mission-feedback ok';
           }
-          if(no===1) litSpeakV6('Hebat jawaban kamu benar. Kamu sudah menemukan informasi penting dari teks dengan tepat.');
+          if(no===1) litSpeakV7('Hebat jawaban kamu benar. Kamu sudah menemukan informasi penting dari teks dengan tepat.');
           completeAdventurePos(no);
         }else{
           btn.classList.add('bad');
@@ -1841,7 +1981,7 @@
               : '🔁 Belum tepat. Baca kembali materi pada pos ini lalu coba lagi.';
             feedback.className='mission-feedback no';
           }
-          if(no===1) litSpeakV6('Mohon maaf Adik. Ayo kita baca dengan teliti lagi.');
+          if(no===1) litSpeakV7('Mohon maaf Adik. Ayo kita baca dengan teliti lagi.');
         }
       }));
     });
