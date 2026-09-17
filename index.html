@@ -865,7 +865,19 @@
     .mission-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:14px}.mission-status{font-size:12px;font-weight:900;color:#527087}
     @media(max-width:900px){.profile6-grid,.mission-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.profile6-grid,.mission-grid{grid-template-columns:1fr}.profile6-section{padding:16px}.mission-card p{min-height:auto}}
 
-  </style>
+  
+/* ===== V10 VIDEO AWAL ===== */
+.identity-card{width:min(980px,100%)}
+.intro-video-shell{width:min(760px,100%);margin:0 auto 22px;border-radius:22px;overflow:hidden;background:#071c31;border:4px solid #fff;box-shadow:0 14px 34px rgba(14,61,101,.20);transition:.45s ease}
+.intro-video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#071c31}
+.identity-entry-row{display:block}.identity-form-side{min-width:0}
+.identity-card.video-finished .identity-entry-row{display:grid;grid-template-columns:minmax(230px,320px) minmax(0,1fr);gap:22px;align-items:center}
+.identity-card.video-finished .intro-video-shell{width:100%;margin:0;border-radius:18px}
+.intro-video-note{text-align:center;color:#60758b;font-size:12px;font-weight:800;margin-top:8px}
+.identity-card.video-finished .intro-video-note{display:none}
+@media(max-width:760px){.identity-card.video-finished .identity-entry-row{grid-template-columns:1fr}.identity-card.video-finished .intro-video-shell{width:min(360px,100%);margin:0 auto}}
+
+</style>
 </head>
 
 <body>
@@ -906,24 +918,31 @@
         </p>
       </div>
 
-      <div class="form-grid">
-        <div>
-          <label class="field-label" for="nama">Nama Lengkap</label>
-          <input id="nama" type="text" placeholder="Contoh: Budi Santoso">
+      <div class="identity-entry-row">
+        <div class="intro-video-shell" id="introVideoShell">
+          <video id="introVideo" class="intro-video" src="video awal.mp4" autoplay muted playsinline controls preload="auto"></video>
+          <div class="intro-video-note">🎬 Video pembuka SITEEk-PIKTO-IPS</div>
         </div>
-        <div>
-          <label class="field-label" for="kelas">Kelas</label>
-          <select id="kelas">
-            <option value="">Pilih kelas</option>
-            <option>Kelas 4A</option>
-            <option>Kelas 4B</option>
-            <option>Kelas 4C</option>
-          </select>
+        <div class="identity-form-side">
+          <div class="form-grid">
+            <div>
+              <label class="field-label" for="nama">Nama Lengkap</label>
+              <input id="nama" type="text" placeholder="Contoh: Budi Santoso">
+            </div>
+            <div>
+              <label class="field-label" for="kelas">Kelas</label>
+              <select id="kelas">
+                <option value="">Pilih kelas</option>
+                <option>Kelas 4A</option>
+                <option>Kelas 4B</option>
+                <option>Kelas 4C</option>
+              </select>
+            </div>
+          </div>
+          <div class="btn-row">
+            <button class="btn btn-primary btn-block" onclick="masukAplikasi()">🚀 Masuk ke Aplikasi</button>
+          </div>
         </div>
-      </div>
-
-      <div class="btn-row">
-        <button class="btn btn-primary btn-block" onclick="masukAplikasi()">🚀 Masuk ke Aplikasi</button>
       </div>
     </div>
   </section>
@@ -1370,6 +1389,15 @@ function kembaliKeHalamanIdentitas(pesan){
 
   if(identityCard) identityCard.classList.remove('hidden');
   if(appArea) appArea.classList.add('hidden');
+  tampilkanVideoAwal();
+  const introVideoKembali=document.getElementById('introVideo');
+  if(introVideoKembali){
+    try{
+      introVideoKembali.currentTime=0;
+      introVideoKembali.muted=true;
+      introVideoKembali.play().catch(()=>{});
+    }catch(_){}
+  }
   if(challengeArea) challengeArea.classList.add('hidden');
   if(levelModal) levelModal.classList.add('hidden');
 
@@ -1460,6 +1488,27 @@ async function muatPengaturan(){
   return {success:true, kkm_level:KKM};
 }
 
+
+/* ===== V10 VIDEO AWAL ===== */
+function setupVideoAwal(){
+  const video=document.getElementById('introVideo');
+  const card=document.querySelector('#identityCard .identity-card');
+  if(!video||!card)return;
+  video.addEventListener('ended',()=>card.classList.add('video-finished'));
+}
+function sembunyikanVideoAwal(){
+  const shell=document.getElementById('introVideoShell');
+  const video=document.getElementById('introVideo');
+  if(video){try{video.pause()}catch(_){}}
+  if(shell)shell.classList.add('hidden');
+}
+function tampilkanVideoAwal(){
+  const shell=document.getElementById('introVideoShell');
+  const card=document.querySelector('#identityCard .identity-card');
+  if(shell)shell.classList.remove('hidden');
+  if(card)card.classList.remove('video-finished');
+}
+
 /* ============================================================
    START / IDENTITY
 ============================================================ */
@@ -1486,6 +1535,7 @@ async function masukAplikasi(){
 
   document.getElementById('identityCard').classList.add('hidden');
   document.getElementById('appArea').classList.remove('hidden');
+  sembunyikanVideoAwal();
 
   tampilkanProfil();
 
@@ -2849,6 +2899,20 @@ async function simpanMisiProfil(){
 }
 
 window.addEventListener('load',async()=>{
+
+  setupVideoAwal();
+  const introObserver=new MutationObserver(()=>{
+    const identity=document.getElementById('identityCard');
+    const app=document.getElementById('appArea');
+    if(identity&&app&&identity.classList.contains('hidden')&&!app.classList.contains('hidden')){
+      sembunyikanVideoAwal();
+    }
+  });
+  const introIdentity=document.getElementById('identityCard');
+  const introApp=document.getElementById('appArea');
+  if(introIdentity)introObserver.observe(introIdentity,{attributes:true,attributeFilter:['class']});
+  if(introApp)introObserver.observe(introApp,{attributes:true,attributeFilter:['class']});
+
   updateNetworkStatus();
   muatKKMLokal();
   muatMisiProfilLokal();
