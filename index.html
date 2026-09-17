@@ -920,7 +920,7 @@
 
       <div class="identity-entry-row">
         <div class="intro-video-shell" id="introVideoShell">
-          <video id="introVideo" class="intro-video" src="https://sugenghidayat.github.io/siteek-pikto-ips/awal.mp4" autoplay muted playsinline controls preload="auto"></video>
+          <video id="introVideo" class="intro-video" src="https://sugenghidayat.github.io/siteek-pikto-ips/awal.mp4" autoplay muted playsinline controls preload="auto">Browser Anda tidak mendukung pemutaran video HTML5.</video>
           <div class="intro-video-note">🎬 Video pembuka SITEEk-PIKTO-IPS</div>
         </div>
         <div class="identity-form-side">
@@ -1494,8 +1494,43 @@ function setupVideoAwal(){
   const video=document.getElementById('introVideo');
   const card=document.querySelector('#identityCard .identity-card');
   if(!video||!card)return;
+
+  const mulaiVideo=()=>{
+    video.muted=true;
+    video.defaultMuted=true;
+    video.playsInline=true;
+    const p=video.play();
+    if(p && typeof p.catch==='function'){
+      p.catch(()=>{
+        // Jika autoplay tetap diblokir browser, kontrol video tetap tersedia.
+        video.controls=true;
+      });
+    }
+  };
+
+  video.addEventListener('loadedmetadata',mulaiVideo,{once:true});
+  video.addEventListener('canplay',mulaiVideo,{once:true});
   video.addEventListener('ended',()=>card.classList.add('video-finished'));
+  video.addEventListener('error',()=>{
+    console.warn('Video awal gagal dimuat:',video.currentSrc);
+  });
+
+  if(video.readyState>=2) mulaiVideo();
 }
+function tungguVideoAwalSelesai(){
+  const video=document.getElementById('introVideo');
+  if(!video) return Promise.resolve();
+
+  // Jika video memang sudah selesai, lanjut langsung.
+  if(video.ended || (video.duration && video.currentTime >= video.duration - 0.05)){
+    return Promise.resolve();
+  }
+
+  return new Promise(resolve=>{
+    video.addEventListener('ended',resolve,{once:true});
+  });
+}
+
 function sembunyikanVideoAwal(){
   const shell=document.getElementById('introVideoShell');
   const video=document.getElementById('introVideo');
@@ -2935,6 +2970,13 @@ window.addEventListener('load',async()=>{
   loadProgressCache();
 
   if(nama && kelas && idMurid){
+    /*
+      Pengguna yang sudah pernah masuk / sudah tercatat:
+      video pembuka WAJIB selesai 100% terlebih dahulu.
+      Setelah event 'ended', barulah validasi dan dashboard dilanjutkan.
+    */
+    await tungguVideoAwalSelesai();
+
     /*
       Saat online, database menjadi sumber kebenaran.
       Dashboard baru dipertahankan jika ID murid masih ada di database.
