@@ -421,9 +421,68 @@
   
 .profile6{margin-top:20px;padding:22px;border-radius:20px;background:linear-gradient(135deg,#f4f9ff,#f4fff8);border:2px solid #dce9f2}.profile6 h2{margin:0 0 7px}.profile6>p{color:var(--m);line-height:1.6}.p6grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}.p6item{background:#fff;border:1px solid #dce7ef;border-radius:15px;padding:14px}.p6item b{display:block;margin:5px 0;color:var(--t)}.p6item span{font-size:12px;line-height:1.5;color:var(--m)}.p6icon{font-size:27px}@media(max-width:800px){.p6grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:550px){.p6grid{grid-template-columns:1fr}}
 
+
+/* ===== V3 VISUAL ONLY — sistem asli tidak diubah ===== */
+.lit-3d-header{
+  width:100%;
+  margin:0;
+  background:#dff5ff;
+  overflow:hidden;
+  border-bottom:5px solid #fff;
+  box-shadow:0 9px 24px rgba(25,76,103,.16);
+}
+.lit-3d-header img{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:16/5;
+  object-fit:cover;
+  object-position:center;
+}
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:100;
+  border-radius:0 0 18px 18px;
+  box-shadow:0 6px 16px rgba(22,67,96,.13);
+}
+.hero{
+  margin-top:18px;
+}
+.lit-learning-goal{
+  margin-top:16px;
+  padding:18px 20px;
+  border-radius:18px;
+  background:linear-gradient(135deg,#eef8ff,#f5fffa);
+  border:2px solid #b9dcf7;
+  border-left:7px solid #0b5ed7;
+  box-shadow:0 7px 16px rgba(31,86,122,.08);
+}
+.lit-learning-goal h3{
+  margin:0 0 9px;
+  color:#0b4fa3;
+  font-size:18px;
+}
+.lit-learning-goal p{
+  margin:0;
+  line-height:1.75;
+  color:#294b6b;
+}
+@media(max-width:700px){
+  .lit-3d-header img{
+    aspect-ratio:16/7;
+    object-fit:cover;
+  }
+  .lit-learning-goal{padding:15px}
+}
+
 </style>
 </head>
 <body>
+
+<div class="lit-3d-header" aria-label="Petualangan Literasi IPS">
+  <img src="Header1.png" alt="Petualangan Literasi IPS - Membaca Lingkungan, Memahami Kehidupan, Membangun Masa Depan">
+</div>
 
 <header class="topbar">
   <div class="brand">
@@ -454,6 +513,14 @@
       Informasi dapat berasal dari cerita, gambar, simbol, tabel, peta, grafik, piktogram, maupun video.
     </p>
   </section>
+  <section class="lit-learning-goal" aria-labelledby="tujuanLiterasi">
+    <h3 id="tujuanLiterasi">🎯 Tujuan Pembelajaran Literasi Membaca dan Informasi IPS</h3>
+    <p>
+      Melalui teks dan informasi visual kontekstual, peserta didik mampu
+      <strong>mengidentifikasi, memahami, menginterpretasikan, menghubungkan, dan menyimpulkan informasi tentang aktivitas ekonomi masyarakat yang berkaitan dengan pemanfaatan sumber daya alam lokal, meliputi kegiatan produksi, distribusi, dan konsumsi.</strong>
+    </p>
+  </section>
+
 
   <section class="adventure-map" id="petaPetualangan" aria-labelledby="judulPetualangan">
     <div class="adventure-map-head">
@@ -569,14 +636,6 @@
     <div class="highlight">
       Contoh sumber literasi IPS: cerita tentang pasar, peta wilayah, tabel hasil panen,
       piktogram barang dagangan, poster budaya, dan video kegiatan masyarakat.
-    </div>
-
-    <div class="highlight" style="background:#eef8ff;border-color:#b9dcf7;border-left:5px solid #0b5ed7;">
-      <h3 style="margin:0 0 10px;color:#0b4fa3;">🎯 Tujuan Pembelajaran Literasi Membaca dan Informasi IPS</h3>
-      <p style="margin:0;line-height:1.75;color:#294b6b;">
-        Melalui teks dan informasi visual kontekstual, peserta didik mampu
-        <strong>mengidentifikasi, memahami, menginterpretasikan, menghubungkan, dan menyimpulkan informasi tentang aktivitas ekonomi masyarakat yang berkaitan dengan pemanfaatan sumber daya alam lokal, meliputi kegiatan produksi, distribusi, dan konsumsi.</strong>
-      </p>
     </div>
     <div class="mini-mission" data-mission="3"><h3>🎯 Misi Pos 3</h3><p>Kalimat manakah yang paling tepat menjadi ide pokok tentang literasi IPS?</p><div class="mission-options"><button class="mission-option" data-correct="1">Literasi IPS membantu memahami kehidupan masyarakat melalui berbagai informasi.</button><button class="mission-option">Semua informasi harus berbentuk angka.</button><button class="mission-option">IPS hanya mempelajari nama tempat.</button></div><div class="mission-feedback"></div></div>
   </section>
