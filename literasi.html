@@ -476,6 +476,137 @@
   .lit-learning-goal{padding:15px}
 }
 
+
+/* ===== V4 — POS 1 mengikuti acuan visual, sistem lain tetap ===== */
+#pos1{
+  overflow:hidden;
+  padding:22px!important;
+  border:5px solid #fff!important;
+  border-radius:28px!important;
+  background:linear-gradient(145deg,#ffffff 0%,#f5fbff 62%,#f1fff7 100%)!important;
+  box-shadow:0 16px 34px rgba(22,73,105,.16)!important;
+}
+.lit-pos1-head{
+  display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;margin-bottom:20px;
+}
+.lit-pos1-icon{
+  width:78px;height:78px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(145deg,#0b9eea,#0870c9);
+  border:4px solid #fff;box-shadow:0 8px 17px rgba(12,104,171,.24);
+  font-size:46px;
+}
+.lit-pos1-title h2{
+  display:inline-block;margin:0!important;padding:9px 18px!important;
+  border-radius:16px;background:linear-gradient(90deg,#0d79ce,#0c58ad);
+  color:#fff!important;font-size:27px!important;box-shadow:0 6px 13px rgba(10,87,154,.18)
+}
+.lit-pos1-title p{
+  display:block;width:max-content;max-width:100%;margin:5px 0 0!important;
+  padding:7px 16px;border-radius:999px;background:#caffc9;border:2px solid #75dc80;
+  color:#17683a;font-size:14px;font-weight:900
+}
+.lit-pos1-progress{
+  min-width:260px;padding:13px 16px;border-radius:20px;background:#fff7e9;
+  border:2px solid #fff;box-shadow:0 7px 15px rgba(88,66,34,.08)
+}
+.lit-pos1-progress strong{display:block;margin-bottom:8px}
+.lit-progress-dots{display:flex;gap:7px;align-items:center}
+.lit-progress-dots i{display:block;width:18px;height:18px;border:3px solid #b7bec4;border-radius:50%;background:#fff}
+.lit-progress-dots i:first-child{background:#12b55b;border-color:#0b9d4d;box-shadow:0 0 0 4px #d8f7e2}
+
+.lit-pos1-grid{display:grid;grid-template-columns:1.08fr .95fr;gap:20px;align-items:start}
+.lit-reading-card{
+  position:relative;padding:20px;border:2px solid #e6b873;border-radius:20px;
+  background:linear-gradient(145deg,#fffdf7,#fff8e9);
+  box-shadow:0 8px 17px rgba(112,75,29,.08)
+}
+.lit-wood-title{
+  display:inline-block;margin:-38px 0 15px -7px;padding:8px 25px;
+  border-radius:8px;border:3px solid #d1874c;
+  background:linear-gradient(#b66d38,#7c3d1d);color:#fff;
+  font-size:20px;font-weight:1000;text-shadow:0 2px 2px rgba(0,0,0,.25);
+  box-shadow:0 5px 9px rgba(72,36,16,.22)
+}
+.lit-read-toolbar{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.lit-listen{
+  border:2px solid #f1a43b;border-radius:999px;background:#fff4df;color:#78420b;
+  padding:8px 14px;font-weight:1000;cursor:pointer
+}
+.lit-listen span{font-size:21px;margin-right:6px}
+.lit-reading-content{display:grid;grid-template-columns:155px 1fr;gap:15px;align-items:start}
+.lit-market-art{
+  min-height:230px;border-radius:15px;border:3px solid #fff;
+  background:
+    linear-gradient(rgba(255,255,255,.04),rgba(255,255,255,.04)),
+    url('lpos1.png') center/cover no-repeat;
+  box-shadow:0 5px 12px rgba(34,78,93,.12)
+}
+.lit-reading-text h3{margin:0 0 8px;color:#073f89;font-size:18px}
+.lit-reading-text p{margin:0;line-height:1.55;color:#173f68;font-size:14px}
+.lit-tip{
+  margin-top:15px;padding:14px 16px;border:2px solid #9dd9f0;border-radius:17px;
+  background:#f8fdff;color:#173f68
+}
+.lit-tip strong{display:inline-block;margin-right:8px;padding:6px 13px;border-radius:999px;background:#ffe17a;color:#7d5700}
+
+#pos1 .mini-mission{
+  margin:0!important;padding:0!important;border:0!important;background:transparent!important;
+  box-shadow:none!important
+}
+#pos1 .mini-mission h3{
+  margin:0 0 10px!important;padding:9px 15px!important;border-radius:16px!important;
+  background:#ffe0e5!important;color:#612136!important;font-size:20px!important
+}
+#pos1 .mini-mission h3:before{content:"🎯 ";font-size:26px}
+#pos1 .mini-mission p{margin:0 0 12px!important;color:#073f89!important;font-size:16px!important;font-weight:1000!important}
+#pos1 .mission-options{display:grid!important;grid-template-columns:1fr!important;gap:10px!important}
+#pos1 .mission-option{
+  min-height:55px!important;padding:11px 16px!important;text-align:left!important;
+  border:2px solid #f2c4ca!important;border-radius:16px!important;
+  background:#ffe0e4!important;color:#153e70!important;font-weight:900!important;
+  box-shadow:0 5px 10px rgba(91,42,53,.08)!important;cursor:pointer!important
+}
+#pos1 .mission-option:hover{transform:translateY(-2px);border-color:#e59ba5!important}
+#pos1 .mission-option.good{background:#bfffc3!important;border-color:#16aa4d!important;color:#075d2d!important}
+#pos1 .mission-option.bad{background:#ffd0d4!important;border-color:#e84f60!important;color:#842630!important}
+#pos1 .mission-feedback{
+  margin-top:15px!important;padding:15px 17px!important;border-radius:17px!important;
+  min-height:64px;font-size:14px!important;font-weight:800!important
+}
+#pos1 .mission-feedback.ok{background:#e1ffdc!important;border:2px solid #75d979!important;color:#116034!important}
+#pos1 .mission-feedback.no{background:#ffe4e7!important;border:2px solid #ef8993!important;color:#8a2731!important}
+
+.lit-reader-helper{
+  position:relative;min-height:270px;margin-top:14px;border-radius:23px;
+  background:linear-gradient(145deg,#effaff,#fff);border:2px solid #a9ddf1;overflow:hidden;
+}
+.lit-reader-helper::before{
+  content:"👧🏻";position:absolute;right:30px;bottom:10px;font-size:145px;
+  filter:drop-shadow(0 8px 7px rgba(22,66,91,.14))
+}
+.lit-reader-bubble{
+  position:absolute;right:20px;top:20px;z-index:2;
+  padding:13px 18px;border-radius:50% 50% 50% 20%;
+  background:#ffc64c;border:3px solid #ef9e1f;color:#073f89;
+  font-size:17px;font-weight:1000;text-align:center;transform:rotate(2deg)
+}
+.lit-pos1-feedback-note{
+  display:flex;align-items:center;gap:12px;margin-top:18px;padding:15px 18px;
+  border-radius:18px;background:#e5ffdf;border:2px solid #79da7c;color:#126234
+}
+.lit-pos1-feedback-note .speaker{font-size:30px}
+.lit-pos1-feedback-note strong{font-size:17px}
+@media(max-width:900px){
+  .lit-pos1-head{grid-template-columns:auto 1fr}.lit-pos1-progress{grid-column:1/-1}
+  .lit-pos1-grid{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+  #pos1{padding:15px!important}.lit-pos1-icon{width:60px;height:60px;font-size:36px}
+  .lit-pos1-title h2{font-size:20px!important}.lit-pos1-progress{min-width:0}
+  .lit-reading-content{grid-template-columns:1fr}.lit-market-art{min-height:210px;background-position:center 68%}
+}
+
 </style>
 </head>
 <body>
@@ -553,49 +684,51 @@
   </section>
 
   <section class="card local-journey learning-pos" id="pos1" data-pos="1">
-    <div class="pos-heading"><strong>🔎 POS 1 • Menemukan Informasi</strong><span>🏡 Ranuklindungan • Danau Ranu • Pasar Brandong</span></div>
-    <div class="journey-head">
-      <div class="journey-icon">🗺️</div>
+    <div class="lit-pos1-head">
+      <div class="lit-pos1-icon">🎒</div>
+      <div class="lit-pos1-title">
+        <h2>Pos 1 — Menemukan Informasi</h2>
+        <p>Ayo membaca dengan saksama dan temukan informasi penting!</p>
+      </div>
+      <div class="lit-pos1-progress">
+        <strong>Pos 1 dari 8</strong>
+        <div class="lit-progress-dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
+
+    <div class="lit-pos1-grid">
       <div>
-        <h2>Petualangan Literasi di Sekitarku</h2>
-        <p>Mulai dari tempat yang kamu kenal, lalu baca informasi, hubungkan fakta, dan buat kesimpulan.</p>
+        <article class="lit-reading-card">
+          <div class="lit-wood-title">Ayo Membaca!</div>
+          <div class="lit-read-toolbar">
+            <button class="lit-listen" type="button" onclick="dengarkanTeksPos1()"><span>🔊</span>Dengarkan Teks</button>
+          </div>
+          <div class="lit-reading-content">
+            <div class="lit-market-art" role="img" aria-label="Ilustrasi pasar tradisional"></div>
+            <div class="lit-reading-text">
+              <h3>Pasar di Desa Dawe Grati</h3>
+              <p id="teksBacaanPos1">Setiap pagi, pasar tradisional di Desa Dawe Grati ramai dikunjungi masyarakat. Ibu-ibu membeli sayur segar, buah-buahan, ikan, dan kebutuhan lainnya. Hasil pertanian dari desa sekitar, seperti bayam, kangkung, tomat, dan cabai, dijual di pasar ini. Pasar tradisional tidak hanya menjadi tempat jual beli, tetapi juga tempat warga bertemu, berbincang, dan menjaga kebersamaan di lingkungan sekitar.</p>
+            </div>
+          </div>
+        </article>
+        <div class="lit-tip"><strong>💡 Petunjuk</strong> Bacalah teks dengan teliti. Temukan informasi yang ditanyakan, jangan menebak ya!</div>
+        <div class="lit-pos1-feedback-note"><span class="speaker">🔊</span><div><strong>Temukan informasi penting dari bacaan.</strong><br>Jawaban yang benar akan membuka perjalanan menuju Pos 2.</div></div>
       </div>
-    </div>
 
-    <div class="place-route">
-      <article class="place-card home">
-        <div class="place-no">1</div>
-        <div class="place-emoji">🏡</div>
-        <h3>Desa Ranuklindungan</h3>
-        <p>Titik awal petualangan. Kita belajar mengamati lingkungan tempat tinggal dan menemukan informasi IPS dari kehidupan sehari-hari.</p>
-      </article>
-      <article class="place-card lake">
-        <div class="place-no">2</div>
-        <div class="place-emoji">🌊</div>
-        <h3>Danau Ranu</h3>
-        <p>Digunakan sebagai konteks belajar untuk mengenali lingkungan, bentang alam, serta hubungan manusia dengan ruang di sekitarnya.</p>
-      </article>
-      <article class="place-card market">
-        <div class="place-no">3</div>
-        <div class="place-emoji">🏪</div>
-        <h3>Pasar Brandong • Desa Dawe</h3>
-        <p>Menjadi konteks belajar kegiatan ekonomi: memahami peran penjual dan pembeli serta hubungan produksi, distribusi, dan konsumsi.</p>
-      </article>
-    </div>
-
-    <div class="mission-box">
-      <h3>🎯 Misi Literasimu</h3>
-      <div class="mission-steps">
-        <div class="mission-step"><span>👀</span>Amati</div>
-        <div class="mission-step"><span>🔎</span>Temukan Informasi</div>
-        <div class="mission-step"><span>🧩</span>Hubungkan</div>
-        <div class="mission-step"><span>💡</span>Tafsirkan</div>
-        <div class="mission-step"><span>✅</span>Simpulkan</div>
+      <div>
+        <div class="mini-mission" data-mission="1">
+          <h3>Misi 1 — Temukan Informasi!</h3>
+          <p>Apa yang terutama dijual di pasar Desa Dawe Grati?</p>
+          <div class="mission-options">
+            <button class="mission-option">A. Pakaian dan sepatu</button>
+            <button class="mission-option" data-correct="1">B. Sayur, buah, ikan, dan hasil pertanian</button>
+            <button class="mission-option">C. Buku dan alat tulis</button>
+            <button class="mission-option">D. Mainan anak-anak</button>
+          </div>
+          <div class="mission-feedback" aria-live="polite"></div>
+        </div>
+        <div class="lit-reader-helper"><div class="lit-reader-bubble">Ayo<br>jadi pembaca<br>cerdas!</div></div>
       </div>
-    </div>
-    <div class="mini-mission" data-mission="1">
-      <h3>🎯 Misi Pos 1</h3><p>Manakah tiga tempat yang menjadi konteks petualangan literasi kita?</p>
-      <div class="mission-options"><button class="mission-option" data-correct="1">Desa Ranuklindungan, Danau Ranu, dan Pasar Brandong</button><button class="mission-option">Terminal, bandara, dan pelabuhan</button><button class="mission-option">Kebun binatang, museum, dan stadion</button></div><div class="mission-feedback"></div>
     </div>
   </section>
 
@@ -989,6 +1122,24 @@
 
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
+  /* ===== V4 SUARA POS 1 ===== */
+  function litSpeakV4(text){
+    try{
+      if(!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const u=new SpeechSynthesisUtterance(text);
+      u.lang='id-ID'; u.rate=.93; u.pitch=1.08; u.volume=1;
+      const voices=window.speechSynthesis.getVoices();
+      const idVoice=voices.find(v=>/^id[-_]/i.test(v.lang)) || voices.find(v=>/Indonesia/i.test(v.name));
+      if(idVoice) u.voice=idVoice;
+      window.speechSynthesis.speak(u);
+    }catch(e){}
+  }
+  function dengarkanTeksPos1(){
+    const el=document.getElementById('teksBacaanPos1');
+    if(el) litSpeakV4(el.textContent.trim());
+  }
+
 
   const KUNCI_LATIHAN_LITERASI = {
     1:[
@@ -1619,10 +1770,24 @@
       box.querySelectorAll('.mission-option').forEach(btn=>btn.addEventListener('click',()=>{
         box.querySelectorAll('.mission-option').forEach(b=>b.classList.remove('good','bad'));
         if(btn.dataset.correct==='1'){
-          btn.classList.add('good'); if(feedback){feedback.textContent='✅ Tepat! Kamu berhasil menyelesaikan misi pos ini.';feedback.className='mission-feedback ok';}
+          btn.classList.add('good');
+          if(feedback){
+            feedback.textContent = no===1
+              ? '🔊 Hebat! Jawaban kamu benar. Kamu sudah menemukan informasi penting dari teks dengan tepat.'
+              : '✅ Tepat! Kamu berhasil menyelesaikan misi pos ini.';
+            feedback.className='mission-feedback ok';
+          }
+          if(no===1) litSpeakV4('Hebat jawaban kamu benar. Kamu sudah menemukan informasi penting dari teks dengan tepat.');
           completeAdventurePos(no);
         }else{
-          btn.classList.add('bad'); if(feedback){feedback.textContent='🔁 Belum tepat. Baca kembali materi pada pos ini lalu coba lagi.';feedback.className='mission-feedback no';}
+          btn.classList.add('bad');
+          if(feedback){
+            feedback.textContent = no===1
+              ? '🔊 Mohon maaf, Adik....! Ayo kita baca dengan teliti lagi.'
+              : '🔁 Belum tepat. Baca kembali materi pada pos ini lalu coba lagi.';
+            feedback.className='mission-feedback no';
+          }
+          if(no===1) litSpeakV4('Mohon maaf Adik. Ayo kita baca dengan teliti lagi.');
         }
       }));
     });
