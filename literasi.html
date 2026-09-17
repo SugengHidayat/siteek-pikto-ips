@@ -477,7 +477,7 @@
 }
 
 
-/* ===== V4 — POS 1 mengikuti acuan visual, sistem lain tetap ===== */
+/* ===== V5 — POS 1 mengikuti acuan visual, sistem lain tetap ===== */
 #pos1{
   overflow:hidden;
   padding:22px!important;
@@ -607,6 +607,41 @@
   .lit-reading-content{grid-template-columns:1fr}.lit-market-art{min-height:210px;background-position:center 68%}
 }
 
+
+/* ===== V5 — final perubahan Pos 1, tanpa mengubah sistem ===== */
+.lit-read-head{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  margin:-38px 0 15px -7px;
+}
+.lit-read-head .lit-wood-title{margin:0!important;flex:0 0 auto}
+.lit-read-head .lit-read-toolbar{margin:0!important;justify-content:flex-end;flex:1}
+.lit-reading-content{grid-template-columns:180px 1fr!important}
+.lit-market-art{
+  min-height:285px!important;
+  background:url('ayo baca.png') center top/contain no-repeat!important;
+  border:0!important;box-shadow:none!important;border-radius:15px!important
+}
+.lit-reader-helper{
+  min-height:0!important;
+  margin-top:14px!important;
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+  overflow:hidden!important;
+}
+.lit-reader-helper::before{display:none!important;content:none!important}
+.lit-reader-bubble{display:none!important}
+.lit-reader-img{
+  display:block;width:100%;height:auto;max-height:315px;object-fit:contain;object-position:center;
+  border-radius:22px;border:2px solid #a9ddf1;background:#f5fcff;
+}
+@media(max-width:620px){
+  .lit-read-head{align-items:stretch;flex-direction:column;margin:-34px 0 14px}
+  .lit-read-head .lit-read-toolbar{justify-content:flex-start}
+  .lit-reading-content{grid-template-columns:1fr!important}
+  .lit-market-art{min-height:300px!important}
+}
+
 </style>
 </head>
 <body>
@@ -699,9 +734,11 @@
     <div class="lit-pos1-grid">
       <div>
         <article class="lit-reading-card">
-          <div class="lit-wood-title">Ayo Membaca!</div>
-          <div class="lit-read-toolbar">
-            <button class="lit-listen" type="button" onclick="dengarkanTeksPos1()"><span>🔊</span>Dengarkan Teks</button>
+          <div class="lit-read-head">
+            <div class="lit-wood-title">Ayo Membaca!</div>
+            <div class="lit-read-toolbar">
+              <button class="lit-listen" type="button" onclick="dengarkanTeksPos1()"><span>🔊</span>Dengarkan Teks</button>
+            </div>
           </div>
           <div class="lit-reading-content">
             <div class="lit-market-art" role="img" aria-label="Ilustrasi pasar tradisional"></div>
@@ -727,7 +764,9 @@
           </div>
           <div class="mission-feedback" aria-live="polite"></div>
         </div>
-        <div class="lit-reader-helper"><div class="lit-reader-bubble">Ayo<br>jadi pembaca<br>cerdas!</div></div>
+        <div class="lit-reader-helper">
+          <img class="lit-reader-img" src="ayo jadi.png" alt="Ayo jadi pembaca cerdas">
+        </div>
       </div>
     </div>
   </section>
@@ -1122,22 +1161,25 @@
 
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
-  /* ===== V4 SUARA POS 1 ===== */
-  function litSpeakV4(text){
+  /* ===== V5 SUARA POS 1 ===== */
+  function litSpeakV5(text){
     try{
       if(!('speechSynthesis' in window)) return;
       window.speechSynthesis.cancel();
       const u=new SpeechSynthesisUtterance(text);
       u.lang='id-ID'; u.rate=.93; u.pitch=1.08; u.volume=1;
       const voices=window.speechSynthesis.getVoices();
-      const idVoice=voices.find(v=>/^id[-_]/i.test(v.lang)) || voices.find(v=>/Indonesia/i.test(v.name));
+      const idVoices=voices.filter(v=>/^id[-_]/i.test(v.lang) || /Indonesia/i.test(v.name));
+      const maleHints=/male|pria|laki|ardi|damayanti male|wavenet-b|wavenet-d/i;
+      const maleId=idVoices.find(v=>maleHints.test(v.name));
+      const idVoice=maleId || idVoices[0] || voices.find(v=>/male/i.test(v.name));
       if(idVoice) u.voice=idVoice;
       window.speechSynthesis.speak(u);
     }catch(e){}
   }
   function dengarkanTeksPos1(){
     const el=document.getElementById('teksBacaanPos1');
-    if(el) litSpeakV4(el.textContent.trim());
+    if(el) litSpeakV5(el.textContent.trim());
   }
 
 
@@ -1777,7 +1819,7 @@
               : '✅ Tepat! Kamu berhasil menyelesaikan misi pos ini.';
             feedback.className='mission-feedback ok';
           }
-          if(no===1) litSpeakV4('Hebat jawaban kamu benar. Kamu sudah menemukan informasi penting dari teks dengan tepat.');
+          if(no===1) litSpeakV5('Hebat jawaban kamu benar. Kamu sudah menemukan informasi penting dari teks dengan tepat.');
           completeAdventurePos(no);
         }else{
           btn.classList.add('bad');
@@ -1787,7 +1829,7 @@
               : '🔁 Belum tepat. Baca kembali materi pada pos ini lalu coba lagi.';
             feedback.className='mission-feedback no';
           }
-          if(no===1) litSpeakV4('Mohon maaf Adik. Ayo kita baca dengan teliti lagi.');
+          if(no===1) litSpeakV5('Mohon maaf Adik. Ayo kita baca dengan teliti lagi.');
         }
       }));
     });
