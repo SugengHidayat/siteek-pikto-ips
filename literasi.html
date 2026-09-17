@@ -2036,6 +2036,7 @@
             feedback.className='mission-feedback ok';
           }
           if(no===1) litSpeakV7('Hebat jawaban kamu benar. Kamu sudah menemukan informasi penting dari teks dengan tepat.');
+          if(no===2) litSpeakV7('Tepat! Kamu berhasil menyelesaikan misi pos ini.');
           completeAdventurePos(no);
         }else{
           btn.classList.add('bad');
@@ -2046,6 +2047,7 @@
             feedback.className='mission-feedback no';
           }
           if(no===1) litSpeakV7('Mohon maaf Adik. Ayo kita baca dengan teliti lagi.');
+          if(no===2) litSpeakV7('Belum tepat. Baca kembali materi pada pos ini lalu coba lagi.');
         }
       }));
     });
