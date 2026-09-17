@@ -762,6 +762,64 @@
  .v7-pos2-bottom{grid-template-columns:1fr}.v7-encourage{padding-right:115px}
 }
 
+
+/* ===== V7 UPDATE POS 2 — ASET 3D PENGGUNA ===== */
+#pos2 .v7-pos2-layout{
+  display:grid!important;
+  grid-template-columns:minmax(190px,245px) minmax(0,1fr) minmax(175px,225px)!important;
+  gap:18px!important;
+  align-items:stretch!important;
+}
+#pos2 .v7-boy{
+  min-height:0!important;
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  overflow:hidden!important;
+}
+#pos2 .v7-boy::before,
+#pos2 .v7-boy::after,
+#pos2 .v7-boy-bubble{display:none!important;content:none!important}
+.v7-user-left{
+  width:100%;height:100%;min-height:610px;display:block;
+  object-fit:cover;object-position:center top;border-radius:24px;
+  border:3px solid #fff;box-shadow:0 10px 22px rgba(28,74,102,.15);
+}
+.v7-right-visual{
+  display:flex;flex-direction:column;gap:14px;align-self:stretch;
+}
+.v7-user-sign,.v7-user-right{
+  display:block;width:100%;height:auto;object-fit:contain;
+  border-radius:20px;filter:drop-shadow(0 8px 9px rgba(31,75,99,.13));
+}
+.v7-user-sign{flex:0 0 auto}
+.v7-user-right{
+  flex:1 1 auto;min-height:360px;object-fit:cover;object-position:center top;
+  border:3px solid #fff;
+}
+#pos2 .v7-main{min-width:0}
+#pos2 .v7-pos2-bottom{grid-template-columns:1fr!important}
+#pos2 .v7-encourage{display:none!important}
+#pos2 .v7-nav{justify-content:space-between!important}
+@media(max-width:1050px){
+  #pos2 .v7-pos2-layout{
+    grid-template-columns:190px minmax(0,1fr)!important;
+  }
+  #pos2 .v7-right-visual{
+    grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;align-items:center;
+  }
+  .v7-user-left{min-height:560px}
+  .v7-user-right{min-height:260px}
+}
+@media(max-width:760px){
+  #pos2 .v7-pos2-layout{grid-template-columns:1fr!important}
+  .v7-user-left{height:auto;min-height:0;max-height:520px;object-fit:contain;background:#eefaff}
+  #pos2 .v7-right-visual{grid-column:auto;grid-template-columns:1fr}
+  .v7-user-sign{max-height:230px}
+  .v7-user-right{height:auto;min-height:0;max-height:440px;object-fit:contain;background:#eefaff}
+}
+
 </style>
 </head>
 <body>
@@ -904,7 +962,9 @@
     </div>
 
     <div class="v7-pos2-layout">
-      <aside class="v7-boy"><div class="v7-boy-bubble">Literasi itu<br>lebih dari sekadar<br>membaca!</div></aside>
+      <aside class="v7-boy">
+        <img class="v7-user-left" src="lpos2.png" alt="Literasi itu lebih dari sekadar membaca">
+      </aside>
       <div class="v7-main">
         <div class="v7-literacy-card">
           <h2>📖 Apa Itu Literasi?</h2>
@@ -935,6 +995,10 @@
           </div>
         </div>
       </div>
+      <aside class="v7-right-visual">
+        <img class="v7-user-sign" src="bacaan.png" alt="Setiap bacaan punya makna, ayo kita pahami bersama">
+        <img class="v7-user-right" src="lposk.png" alt="Hebat, kamu semakin paham makna bacaan">
+      </aside>
     </div>
   </section>
 
