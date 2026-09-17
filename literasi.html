@@ -904,6 +904,94 @@
  .p4-side.right{grid-column:auto}.p4-picto-wrap{grid-template-columns:1fr}.p4-nav{flex-direction:column}
 }
 
+
+/* ===== V7 POS 4 FINAL — ASET GAMBAR PENGGUNA ===== */
+#pos4{
+  background:
+    linear-gradient(rgba(238,249,255,.70),rgba(255,250,235,.74)),
+    url('pasar-pos4.png') center center / cover no-repeat!important;
+  background-attachment:local!important;
+}
+#pos4 .p4-layout{
+  grid-template-columns:minmax(180px,235px) minmax(0,1fr) minmax(180px,235px)!important;
+  gap:16px!important;
+  align-items:stretch!important;
+}
+#pos4 .p4-side{
+  min-height:0!important;
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  overflow:visible!important;
+}
+#pos4 .p4-side::before,
+#pos4 .p4-bubble,
+#pos4 .p4-side-note,
+#pos4 .p4-right-sign,
+#pos4 .p4-right-praise{
+  display:none!important;
+  content:none!important;
+}
+.p4-user-left,.p4-user-right{
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.p4-user-left{justify-content:flex-start}
+.p4-user-right{justify-content:flex-start}
+.p4-img-info{
+  display:block;width:88%;height:auto;object-fit:contain;
+  margin:0 auto -8px;position:relative;z-index:2;
+  filter:drop-shadow(0 7px 7px rgba(28,64,80,.16));
+}
+.p4-img-boy{
+  display:block;width:100%;height:auto;max-height:590px;object-fit:contain;object-position:center top;
+  margin-top:-3px;filter:drop-shadow(0 10px 9px rgba(27,62,79,.18));
+}
+.p4-img-sign{
+  display:block;width:100%;height:auto;max-height:185px;object-fit:contain;
+  margin:0 auto -3px;position:relative;z-index:2;
+  filter:drop-shadow(0 7px 7px rgba(28,64,80,.16));
+}
+.p4-img-girl{
+  display:block;width:100%;height:auto;max-height:540px;object-fit:contain;object-position:center top;
+  filter:drop-shadow(0 10px 9px rgba(27,62,79,.18));
+}
+#pos4 .p4-story,
+#pos4 .mini-mission{
+  backdrop-filter:blur(2px);
+  -webkit-backdrop-filter:blur(2px);
+}
+@media(max-width:1050px){
+  #pos4 .p4-layout{
+    grid-template-columns:minmax(150px,190px) minmax(0,1fr)!important;
+  }
+  #pos4 .p4-side.right{
+    grid-column:1/-1!important;
+    display:block!important;
+  }
+  #pos4 .p4-user-right{
+    display:grid!important;
+    grid-template-columns:minmax(180px,300px) minmax(180px,300px)!important;
+    justify-content:center!important;
+    align-items:center!important;
+    gap:14px!important;
+  }
+  .p4-img-sign,.p4-img-girl{max-height:280px!important}
+}
+@media(max-width:760px){
+  #pos4 .p4-layout{grid-template-columns:1fr!important}
+  #pos4 .p4-side.right{grid-column:auto!important}
+  #pos4 .p4-user-left,#pos4 .p4-user-right{
+    display:grid!important;grid-template-columns:1fr!important;justify-items:center!important
+  }
+  .p4-img-info{max-width:230px;margin-bottom:-12px}
+  .p4-img-boy{max-width:300px;max-height:430px}
+  .p4-img-sign{max-width:300px;max-height:190px}
+  .p4-img-girl{max-width:300px;max-height:430px}
+}
+
 </style>
 </head>
 <body>
@@ -1111,8 +1199,10 @@
 
     <div class="p4-layout">
       <aside class="p4-side left">
-        <div class="p4-bubble">Ayo baca<br>informasi di<br>sekitarmu!</div>
-        <div class="p4-side-note">Dari lingkungan kita,<br>banyak cerita dan<br>pelajaran berharga!</div>
+        <div class="p4-user-left">
+          <img class="p4-img-info" src="informasi.png" alt="Ayo baca informasi di sekitarmu">
+          <img class="p4-img-boy" src="lpos4.png" alt="Anak membaca dunia sekitarnya">
+        </div>
       </aside>
 
       <div class="p4-main">
@@ -1163,8 +1253,10 @@
       </div>
 
       <aside class="p4-side right">
-        <div class="p4-right-sign">Membaca lingkungan<br>Membuka wawasan<br>Menuju masa depan<br>lebih cerah!</div>
-        <div class="p4-right-praise">Hebat!<br>Kamu semakin<br>paham makna<br>bacaan!</div>
+        <div class="p4-user-right">
+          <img class="p4-img-sign" src="bacaan1.png" alt="Membaca lingkungan membuka wawasan menuju masa depan lebih cerah">
+          <img class="p4-img-girl" src="pos4s.png" alt="Hebat, kamu semakin paham makna bacaan">
+        </div>
       </aside>
     </div>
   </section>
