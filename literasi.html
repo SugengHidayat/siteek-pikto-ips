@@ -820,6 +820,90 @@
   .v7-user-right{height:auto;min-height:0;max-height:440px;object-fit:contain;background:#eefaff}
 }
 
+
+/* ===== V7 UPDATE — POS 4 PETUALANGAN PASAR BRANDONG 3D ===== */
+#pos4{
+  position:relative; overflow:hidden!important; padding:22px!important;
+  border:5px solid #fff!important; border-radius:30px!important;
+  background:
+    radial-gradient(circle at 7% 17%,rgba(255,224,104,.34),transparent 18%),
+    radial-gradient(circle at 94% 78%,rgba(160,238,165,.28),transparent 20%),
+    linear-gradient(145deg,#dff5ff 0%,#f8fdff 43%,#fff6df 100%)!important;
+  box-shadow:0 18px 38px rgba(24,72,102,.17)!important;
+}
+.p4-head{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start;margin-bottom:18px}
+.p4-board{
+  display:inline-block;padding:12px 24px;border-radius:12px;
+  background:linear-gradient(#a85d2d,#713716);border:4px solid #c88448;
+  box-shadow:0 8px 15px rgba(76,39,16,.24);color:#fff;text-shadow:0 2px 2px rgba(0,0,0,.28)
+}
+.p4-board strong{display:block;font-size:29px}.p4-board span{display:block;font-size:18px;font-weight:900}
+.p4-local{display:inline-block;margin:8px 0 0 28px;padding:7px 16px;border-radius:8px;background:#ffc96b;color:#6a3709;font-weight:1000}
+.p4-progress{min-width:280px;padding:13px 16px;border-radius:20px;background:#fff8e7;border:2px solid #fff;box-shadow:0 7px 15px rgba(82,62,31,.10)}
+.p4-progress strong{display:block;margin-bottom:8px}.p4-dots{display:flex;gap:7px}
+.p4-dots i{width:18px;height:18px;border:3px solid #b7bec4;border-radius:50%;background:#fff}
+.p4-dots i:nth-child(-n+4){background:#12b55b;border-color:#0b9e4d;box-shadow:0 0 0 3px #ddf8e5}
+
+.p4-layout{display:grid;grid-template-columns:190px minmax(0,1fr) 190px;gap:17px;align-items:stretch}
+.p4-side{
+  min-height:590px;border-radius:24px;border:3px solid #fff;position:relative;overflow:hidden;
+  background:linear-gradient(180deg,#bfeaff,#fff0bd);box-shadow:0 10px 22px rgba(30,78,105,.13)
+}
+.p4-side.left:before{content:"👦🏻";position:absolute;left:17px;bottom:105px;font-size:145px;filter:drop-shadow(0 8px 7px rgba(22,64,86,.16))}
+.p4-side.right:before{content:"👧🏻";position:absolute;right:15px;bottom:95px;font-size:145px;filter:drop-shadow(0 8px 7px rgba(22,64,86,.16))}
+.p4-bubble{position:absolute;left:12px;right:12px;top:18px;padding:14px 10px;border-radius:45%;background:#ffe56d;border:3px solid #eebf2d;color:#073f89;text-align:center;font-weight:1000;font-size:16px}
+.p4-side-note{position:absolute;left:10px;right:10px;bottom:18px;padding:11px;border-radius:12px;background:linear-gradient(#a65b2c,#743917);color:#fff;text-align:center;font-weight:1000;box-shadow:0 5px 10px rgba(64,33,14,.20)}
+.p4-right-sign{position:absolute;left:10px;right:10px;top:18px;padding:15px 10px;border-radius:12px;background:#fff5dc;border:4px solid #b87336;color:#643313;text-align:center;font-weight:1000;font-size:16px}
+.p4-right-praise{position:absolute;left:12px;right:12px;bottom:18px;padding:13px 8px;border-radius:12px;background:#fff1c9;border:3px solid #b87336;color:#073f89;text-align:center;font-weight:1000;font-size:18px}
+
+.p4-main{min-width:0}
+.p4-story{
+  padding:19px;border-radius:24px;background:rgba(255,255,255,.95);border:3px solid #5aa9e8;
+  box-shadow:0 10px 21px rgba(29,80,110,.12)
+}
+.p4-story h2{margin:0 0 10px!important;color:#073f89!important;font-size:26px!important}
+.p4-story>p{margin:0 0 14px!important;line-height:1.62!important;color:#173f68!important}
+.p4-picto-title{padding:8px 12px;border-radius:12px;background:#dff1ff;color:#073f89;font-weight:1000;font-size:17px}
+.p4-picto-wrap{display:grid;grid-template-columns:1fr 170px;gap:12px;margin-top:10px}
+#pos4 .pictogram{margin:0!important;padding:0!important;display:grid!important;grid-template-columns:110px 1fr!important;border-radius:15px!important;overflow:hidden!important;border:2px solid #f0d89b!important;background:#fff8dc!important}
+#pos4 .pic-label,#pos4 .pics{padding:9px 12px!important;border-bottom:1px solid #eadfbf!important}
+#pos4 .pic-label{font-weight:1000!important;color:#173f68!important;background:#fff4cf!important}
+#pos4 .pics{font-size:22px!important;letter-spacing:5px!important}
+.p4-legend{position:relative;padding:18px 12px 12px;border-radius:10px;background:#fff0b6;border:2px solid #e5bd54;color:#533d11;font-weight:1000;box-shadow:0 5px 10px rgba(89,67,23,.10)}
+.p4-legend:before{content:"📌";position:absolute;right:7px;top:-17px;font-size:30px}
+#pos4 .fact-note{margin-top:11px!important;border-radius:13px!important;background:#e5f3ff!important;border-left:5px solid #3688cb!important;color:#244d72!important}
+
+#pos4 .mini-mission{
+  margin-top:16px!important;padding:17px!important;border-radius:22px!important;border:3px solid #e7b65c!important;
+  background:linear-gradient(145deg,#fff7df,#fffdf7)!important;box-shadow:0 8px 17px rgba(104,74,28,.09)!important
+}
+#pos4 .mini-mission h3{margin:0 0 5px!important;color:#073f89!important;font-size:23px!important}
+#pos4 .mini-mission p{font-weight:900!important;color:#173f68!important}
+#pos4 .mission-options{display:grid!important;grid-template-columns:1fr!important;gap:9px!important}
+#pos4 .mission-option{
+  min-height:51px!important;padding:11px 16px!important;border-radius:15px!important;text-align:left!important;
+  background:#ffe2e9!important;border:2px solid #efb5c2!important;color:#153e70!important;font-weight:900!important;
+  box-shadow:0 4px 9px rgba(88,43,51,.07)!important
+}
+#pos4 .mission-option.good{background:#c9ffce!important;border-color:#17aa50!important;color:#075e2d!important}
+#pos4 .mission-option.bad{background:#ffd3d8!important;border-color:#e95767!important;color:#8a2631!important}
+#pos4 .mission-feedback{margin-top:11px!important;padding:12px 15px!important;border-radius:15px!important;font-weight:900!important}
+#pos4 .mission-feedback.ok{background:#e5ffdf!important;border:2px solid #79d97c!important;color:#116034!important}
+#pos4 .mission-feedback.no{background:#ffe4e7!important;border:2px solid #ef8993!important;color:#8a2731!important}
+.p4-nav{display:flex;justify-content:space-between;gap:12px;margin-top:16px}
+.p4-nav button{border:0;border-radius:999px;padding:13px 20px;color:#fff;font-weight:1000;cursor:pointer;box-shadow:0 7px 14px rgba(25,70,103,.16)}
+.p4-back{background:linear-gradient(#2997ef,#0870cf)}.p4-next{background:linear-gradient(#ffad2d,#ed7c08)}
+.p4-motto{margin:15px auto 0;max-width:420px;padding:10px 18px;border-radius:9px;background:linear-gradient(#9e572b,#713718);color:#fff;text-align:center;font-weight:1000}
+@media(max-width:1050px){
+ .p4-layout{grid-template-columns:160px minmax(0,1fr)}.p4-side.right{grid-column:1/-1;min-height:230px}
+ .p4-side.right:before{font-size:115px;right:35px;bottom:10px}.p4-right-sign{right:190px}.p4-right-praise{left:auto;width:170px;right:12px}
+}
+@media(max-width:760px){
+ #pos4{padding:14px!important}.p4-head{grid-template-columns:1fr}.p4-progress{min-width:0}
+ .p4-layout{grid-template-columns:1fr}.p4-side{min-height:235px}.p4-side.left:before{font-size:110px;left:50%;transform:translateX(-50%);bottom:35px}
+ .p4-side.right{grid-column:auto}.p4-picto-wrap{grid-template-columns:1fr}.p4-nav{flex-direction:column}
+}
+
 </style>
 </head>
 <body>
@@ -1017,31 +1101,72 @@
   </section>
 
   <section class="card story learning-pos" id="pos4" data-pos="4">
-    <div class="pos-heading"><strong>🖼️ POS 4 • Membaca Informasi Kontekstual</strong><span>🏪 Misi Pasar Brandong</span></div>
-    <div class="local-story-badge">📍 Konteks Lokal PIKTO-IPS</div>
-    <h2>🏪 Cerita IPS: Petualangan ke Pasar Brandong</h2>
-    <p>
-      Pada pembelajaran IPS, murid kelas IV memulai petualangan literasi dari lingkungan yang mereka kenal, yaitu
-      <strong>Desa Ranuklindungan</strong>. Mereka kemudian mempelajari <strong>Danau Ranu</strong> sebagai bagian dari
-      lingkungan sekitar dan <strong>Pasar Brandong yang terletak di Desa Dawe</strong> sebagai konteks untuk memahami
-      kegiatan ekonomi. Melalui cerita, gambar, dan data latihan, murid mengenali peran penjual dan pembeli serta
-      menghubungkan kegiatan produksi, distribusi, dan konsumsi. Dari informasi tersebut, murid belajar bahwa
-      memahami kehidupan masyarakat memerlukan kemampuan membaca informasi dengan teliti dan membuat kesimpulan.
-    </p>
+    <div class="p4-head">
+      <div>
+        <div class="p4-board"><strong>🗺️ POS 4</strong><span>Membaca Informasi Kontekstual</span></div>
+        <div class="p4-local">📍 Konteks Lokal PIKTO-IPS</div>
+      </div>
+      <div class="p4-progress"><strong>Pos 4 dari 8</strong><div class="p4-dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+    </div>
 
-    <div class="learning-pictogram-title">📊 Contoh piktogram untuk latihan membaca informasi</div>
-    <div class="pictogram">
-      <div class="pic-label">Tomat</div><div class="pics">🧺 🧺 🧺 🧺</div>
-      <div class="pic-label">Jagung</div><div class="pics">🧺 🧺 🧺</div>
-      <div class="pic-label">Cabai</div><div class="pics">🧺 🧺 🧺 🧺 🧺</div>
-      <div class="pic-label">Singkong</div><div class="pics">🧺 🧺</div>
+    <div class="p4-layout">
+      <aside class="p4-side left">
+        <div class="p4-bubble">Ayo baca<br>informasi di<br>sekitarmu!</div>
+        <div class="p4-side-note">Dari lingkungan kita,<br>banyak cerita dan<br>pelajaran berharga!</div>
+      </aside>
+
+      <div class="p4-main">
+        <article class="p4-story">
+          <h2>📖 Cerita IPS: Petualangan ke Pasar Brandong</h2>
+          <p>
+            Pada pembelajaran IPS, murid kelas IV memulai petualangan literasi dari lingkungan yang mereka kenal, yaitu
+            <strong>Desa Ranuklindungan</strong>. Mereka kemudian mempelajari <strong>Danau Ranu</strong> sebagai bagian dari
+            lingkungan sekitar dan <strong>Pasar Brandong yang terletak di Desa Dawe</strong> sebagai konteks untuk memahami
+            kegiatan ekonomi. Melalui cerita, gambar, dan data latihan, murid mengenali peran penjual dan pembeli serta
+            menghubungkan kegiatan produksi, distribusi, dan konsumsi. Dari informasi tersebut, murid belajar bahwa
+            memahami kehidupan masyarakat memerlukan kemampuan membaca informasi dengan teliti dan membuat kesimpulan.
+          </p>
+
+          <div class="p4-picto-title">📊 Contoh piktogram untuk latihan membaca informasi</div>
+          <div class="p4-picto-wrap">
+            <div class="pictogram">
+              <div class="pic-label">Tomat</div><div class="pics">🧺 🧺 🧺 🧺</div>
+              <div class="pic-label">Jagung</div><div class="pics">🧺 🧺 🧺</div>
+              <div class="pic-label">Cabai</div><div class="pics">🧺 🧺 🧺 🧺 🧺</div>
+              <div class="pic-label">Singkong</div><div class="pics">🧺 🧺</div>
+            </div>
+            <div class="p4-legend">Keterangan latihan:<br><br>🧺 = 2 keranjang barang.</div>
+          </div>
+
+          <div class="fact-note">
+            ℹ️ <strong>Catatan:</strong> Desa Ranuklindungan, Danau Ranu, serta lokasi Pasar Brandong di Desa Dawe digunakan sebagai konteks lokal.
+            Nama dan jumlah komoditas pada piktogram di atas adalah <strong>data simulasi pembelajaran</strong>, bukan data resmi Pasar Brandong.
+          </div>
+        </article>
+
+        <div class="mini-mission" data-mission="4">
+          <h3>🎯 Misi Pos 4</h3>
+          <p>Dari cerita Pasar Brandong, hubungan utama antara penjual dan pembeli adalah...</p>
+          <div class="mission-options">
+            <button class="mission-option" data-correct="1">A. penjual menawarkan barang dan pembeli memperoleh barang yang dibutuhkan</button>
+            <button class="mission-option">B. keduanya tidak memiliki hubungan dalam kegiatan ekonomi</button>
+            <button class="mission-option">C. pembeli selalu menjadi produsen</button>
+          </div>
+          <div class="mission-feedback" aria-live="polite"></div>
+        </div>
+
+        <div class="p4-nav">
+          <button class="p4-back" type="button" onclick="document.getElementById('pos3').scrollIntoView({behavior:'smooth'})">← Kembali ke Pos 3</button>
+          <button class="p4-next" type="button" onclick="document.getElementById('pos5').scrollIntoView({behavior:'smooth'})">Lanjut ke Pos 5 →</button>
+        </div>
+        <div class="p4-motto">Membaca Informasi, Memahami Kehidupan!</div>
+      </div>
+
+      <aside class="p4-side right">
+        <div class="p4-right-sign">Membaca lingkungan<br>Membuka wawasan<br>Menuju masa depan<br>lebih cerah!</div>
+        <div class="p4-right-praise">Hebat!<br>Kamu semakin<br>paham makna<br>bacaan!</div>
+      </aside>
     </div>
-    <div class="legend">Keterangan latihan: 1 🧺 = 2 keranjang barang.</div>
-    <div class="fact-note">
-      ℹ️ <strong>Catatan:</strong> Desa Ranuklindungan, Danau Ranu, serta lokasi Pasar Brandong di Desa Dawe digunakan sebagai konteks lokal.
-      Nama dan jumlah komoditas pada piktogram di atas adalah <strong>data simulasi pembelajaran</strong>, bukan data resmi Pasar Brandong.
-    </div>
-    <div class="mini-mission" data-mission="4"><h3>🎯 Misi Pos 4</h3><p>Dari cerita Pasar Brandong, hubungan utama antara penjual dan pembeli adalah...</p><div class="mission-options"><button class="mission-option" data-correct="1">penjual menawarkan barang dan pembeli memperoleh barang yang dibutuhkan</button><button class="mission-option">keduanya tidak memiliki hubungan dalam kegiatan ekonomi</button><button class="mission-option">pembeli selalu menjadi produsen</button></div><div class="mission-feedback"></div></div>
   </section>
 
   <section class="card learning-pos" id="pos5" data-pos="5">
