@@ -477,7 +477,7 @@
 }
 
 
-/* ===== V5 — POS 1 mengikuti acuan visual, sistem lain tetap ===== */
+/* ===== V6 — POS 1 mengikuti acuan visual, sistem lain tetap ===== */
 #pos1{
   overflow:hidden;
   padding:22px!important;
@@ -608,7 +608,7 @@
 }
 
 
-/* ===== V5 — final perubahan Pos 1, tanpa mengubah sistem ===== */
+/* ===== V6 — final perubahan Pos 1, tanpa mengubah sistem ===== */
 .lit-read-head{
   display:flex;align-items:center;justify-content:space-between;gap:12px;
   margin:-38px 0 15px -7px;
@@ -1161,25 +1161,37 @@
 
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
-  /* ===== V5 SUARA POS 1 ===== */
-  function litSpeakV5(text){
+  /* ===== V6 SUARA POS 1 ===== */
+  function pilihVoiceIndonesiaV6(){
+    if(!('speechSynthesis' in window)) return null;
+    const voices=window.speechSynthesis.getVoices() || [];
+    const indo=voices.filter(v=>/^id([-_]|$)/i.test(v.lang||'') || /indonesia/i.test(v.name||''));
+    const male=/male|pria|laki|ardi|wavenet[- ]?[bd]|neural.*male/i;
+    return indo.find(v=>male.test(v.name||'')) || indo[0] || voices[0] || null;
+  }
+  if('speechSynthesis' in window){
+    window.speechSynthesis.onvoiceschanged=pilihVoiceIndonesiaV6;
+  }
+  function litSpeakV6(text){
+    if(!('speechSynthesis' in window)){
+      alert('Fitur suara belum didukung oleh browser ini.');
+      return;
+    }
     try{
-      if(!('speechSynthesis' in window)) return;
-      window.speechSynthesis.cancel();
-      const u=new SpeechSynthesisUtterance(text);
-      u.lang='id-ID'; u.rate=.93; u.pitch=1.08; u.volume=1;
-      const voices=window.speechSynthesis.getVoices();
-      const idVoices=voices.filter(v=>/^id[-_]/i.test(v.lang) || /Indonesia/i.test(v.name));
-      const maleHints=/male|pria|laki|ardi|damayanti male|wavenet-b|wavenet-d/i;
-      const maleId=idVoices.find(v=>maleHints.test(v.name));
-      const idVoice=maleId || idVoices[0] || voices.find(v=>/male/i.test(v.name));
-      if(idVoice) u.voice=idVoice;
-      window.speechSynthesis.speak(u);
-    }catch(e){}
+      const synth=window.speechSynthesis;
+      synth.cancel();
+      const u=new SpeechSynthesisUtterance(String(text||''));
+      u.lang='id-ID'; u.rate=.88; u.pitch=1; u.volume=1;
+      const voice=pilihVoiceIndonesiaV6();
+      if(voice) u.voice=voice;
+      setTimeout(()=>{ try{ synth.resume(); synth.speak(u); }catch(e){console.warn(e);} },150);
+    }catch(e){ console.warn(e); }
   }
   function dengarkanTeksPos1(){
     const el=document.getElementById('teksBacaanPos1');
-    if(el) litSpeakV5(el.textContent.trim());
+    if(!el) return;
+    const teks=(el.innerText||el.textContent||'').trim();
+    if(teks) litSpeakV6(teks);
   }
 
 
@@ -1819,7 +1831,7 @@
               : '✅ Tepat! Kamu berhasil menyelesaikan misi pos ini.';
             feedback.className='mission-feedback ok';
           }
-          if(no===1) litSpeakV5('Hebat jawaban kamu benar. Kamu sudah menemukan informasi penting dari teks dengan tepat.');
+          if(no===1) litSpeakV6('Hebat jawaban kamu benar. Kamu sudah menemukan informasi penting dari teks dengan tepat.');
           completeAdventurePos(no);
         }else{
           btn.classList.add('bad');
@@ -1829,7 +1841,7 @@
               : '🔁 Belum tepat. Baca kembali materi pada pos ini lalu coba lagi.';
             feedback.className='mission-feedback no';
           }
-          if(no===1) litSpeakV5('Mohon maaf Adik. Ayo kita baca dengan teliti lagi.');
+          if(no===1) litSpeakV6('Mohon maaf Adik. Ayo kita baca dengan teliti lagi.');
         }
       }));
     });
