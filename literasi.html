@@ -992,6 +992,101 @@
   .p4-img-girl{max-width:300px;max-height:430px}
 }
 
+
+
+/* ===== POS 5 3D — TABEL & PIKTOGRAM ===== */
+#pos5{
+  position:relative;overflow:hidden!important;padding:24px!important;
+  border:5px solid #fff!important;border-radius:30px!important;
+  background:
+    radial-gradient(circle at 8% 25%,rgba(255,240,154,.45),transparent 18%),
+    radial-gradient(circle at 90% 75%,rgba(147,230,162,.34),transparent 20%),
+    linear-gradient(145deg,#dff4ff 0%,#f7fcff 47%,#fff3d7 100%)!important;
+  box-shadow:0 18px 38px rgba(24,72,102,.17)!important;
+}
+#pos5:before{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.34;
+  background:
+    radial-gradient(ellipse at 13% 46%,#65c6e8 0 8%,transparent 8.5%),
+    linear-gradient(180deg,transparent 0 68%,rgba(70,164,85,.18) 68% 100%);
+}
+.p5-top,.p5-data-grid,#pos5 .mini-mission{position:relative;z-index:2}
+.p5-top{margin-bottom:18px}
+#pos5 .pos-heading{
+  background:rgba(245,251,255,.94)!important;border:1px solid #cfe5f6!important;
+  box-shadow:0 5px 13px rgba(31,78,108,.08)
+}
+.p5-title{display:flex;align-items:center;gap:12px;margin:15px 0 6px}
+.p5-title .target{font-size:34px;filter:drop-shadow(0 4px 4px rgba(20,75,115,.13))}
+.p5-title h2{margin:0!important;color:#0755a5!important;font-size:29px!important}
+.p5-subtitle{margin:0;color:#526b82;font-size:16px;line-height:1.6}
+.p5-idea{
+  margin-top:15px;padding:17px 19px;border-radius:17px;
+  background:rgba(238,248,255,.95);border:1px solid #b9dcf6;
+  color:#113d67;line-height:1.65;font-size:15px;
+}
+.p5-scene{
+  display:grid;grid-template-columns:190px minmax(0,1fr);gap:18px;align-items:stretch;margin-top:18px
+}
+.p5-guide{
+  min-height:395px;border-radius:24px;position:relative;overflow:hidden;
+  border:3px solid #fff;background:linear-gradient(180deg,#bcecff 0 50%,#dff4bd 50% 100%);
+  box-shadow:0 10px 22px rgba(30,78,105,.13)
+}
+.p5-guide:before{
+  content:"👦🏻";position:absolute;left:50%;bottom:24px;transform:translateX(-50%);
+  font-size:145px;filter:drop-shadow(0 8px 7px rgba(22,64,86,.16))
+}
+.p5-bubble{
+  position:absolute;z-index:2;left:10px;right:10px;top:16px;padding:13px 10px;
+  border-radius:45% 45% 45% 18%;background:#fff;border:3px solid #2b95e8;
+  color:#073f89;text-align:center;font-weight:1000;font-size:14px;line-height:1.4;
+  box-shadow:0 6px 13px rgba(29,81,115,.12)
+}
+.p5-data-grid{display:grid;grid-template-columns:1fr 1.06fr;gap:14px}
+.p5-data-card{
+  padding:16px;border-radius:21px;background:rgba(255,255,255,.96);
+  border:3px solid #56aef0;box-shadow:0 10px 22px rgba(29,80,110,.12)
+}
+.p5-data-card h3{margin:0 0 5px;color:#073f89;font-size:18px}
+.p5-data-card>p{margin:0 0 12px;color:#526b82;font-size:12px;line-height:1.45}
+.p5-table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:12px;border:1px solid #a8d2ee}
+.p5-table th{padding:10px 8px;background:#118de1;color:#fff;font-size:13px}
+.p5-table td{padding:9px 10px;background:#eef8ff;border-top:1px solid #c6e2f4;color:#173f68;font-weight:900;font-size:13px}
+.p5-table td:last-child{text-align:center}
+.p5-picto{border:1px solid #bddbf0;border-radius:12px;overflow:hidden}
+.p5-picto-row{display:grid;grid-template-columns:75px 1fr;min-height:38px;border-bottom:1px solid #cfe3f0;align-items:center;background:#f8fcff}
+.p5-picto-row:last-child{border-bottom:0}
+.p5-picto-day{padding:8px 9px;font-weight:1000;color:#173f68;background:#eef7fd;height:100%;display:flex;align-items:center}
+.p5-picto-icons{padding:6px 9px;letter-spacing:3px;font-size:17px;white-space:nowrap}
+.p5-legend{
+  margin-top:10px;padding:10px 12px;border-radius:11px;background:#fff4bd;border:1px solid #efcf62;
+  color:#594510;font-size:12px;font-weight:1000
+}
+#pos5 .mini-mission{
+  margin-top:18px!important;padding:18px!important;border-radius:22px!important;
+  background:rgba(255,252,246,.97)!important;border:2px solid #f0cf91!important;
+  box-shadow:0 8px 18px rgba(102,75,31,.08)!important
+}
+#pos5 .mini-mission h3{margin:0 0 6px!important;color:#9a6500!important;font-size:20px!important}
+#pos5 .mini-mission p{color:#36536f!important}
+#pos5 .mission-options{grid-template-columns:1fr 1fr 1fr!important}
+#pos5 .mission-option{
+  min-height:56px!important;border-radius:14px!important;background:#fff!important;
+  border:2px solid #dfe8ef!important;color:#173f68!important
+}
+#pos5 .mission-option.good{background:#caffce!important;border-color:#18aa50!important;color:#075e2d!important}
+#pos5 .mission-option.bad{background:#ffd8dc!important;border-color:#e95767!important;color:#8a2631!important}
+@media(max-width:980px){
+  .p5-scene{grid-template-columns:1fr}.p5-guide{min-height:260px}
+  .p5-guide:before{font-size:115px}
+}
+@media(max-width:760px){
+  #pos5{padding:15px!important}.p5-data-grid{grid-template-columns:1fr}
+  #pos5 .mission-options{grid-template-columns:1fr!important}
+  .p5-title h2{font-size:23px!important}.p5-guide{min-height:245px}
+}
+
 </style>
 </head>
 <body>
@@ -1262,15 +1357,68 @@
   </section>
 
   <section class="card learning-pos" id="pos5" data-pos="5">
-    <div class="pos-heading"><strong>📊 POS 5 • Tabel & Piktogram</strong><span>Ubah informasi menjadi data visual</span></div>
-    <h2>🎯 Menemukan Ide Pokok</h2>
-    <p class="subtitle">
-      Ide pokok adalah gagasan utama yang dibicarakan dalam sebuah paragraf atau cerita.
-    </p>
-    <div class="highlight">
-      Ide pokok cerita adalah: <strong>belajar memahami kehidupan masyarakat melalui informasi tentang lingkungan sekitar dan kegiatan ekonomi dengan konteks Ranuklindungan, Danau Ranu, dan Pasar Brandong.</strong>
+    <div class="p5-top">
+      <div class="pos-heading"><strong>📊 POS 5 • Tabel &amp; Piktogram</strong><span>Ubah informasi menjadi data visual</span></div>
+
+      <div class="p5-title">
+        <span class="target">🎯</span>
+        <h2>Menemukan Ide Pokok</h2>
+      </div>
+      <p class="p5-subtitle">Ide pokok adalah gagasan utama yang dibicarakan dalam sebuah paragraf atau cerita.</p>
+
+      <div class="p5-idea">
+        Ide pokok cerita adalah: <strong>belajar memahami kehidupan masyarakat melalui informasi tentang lingkungan sekitar dan kegiatan ekonomi dengan konteks Ranuklindungan, Danau Ranu, dan Pasar Brandong.</strong>
+      </div>
+
+      <div class="p5-scene">
+        <aside class="p5-guide" aria-label="Pemandu Pos 5">
+          <div class="p5-bubble">Ayo baca tabel dan piktogram di samping untuk menemukan informasi penting!</div>
+        </aside>
+
+        <div class="p5-data-grid">
+          <article class="p5-data-card">
+            <h3>📋 Tabel Hasil Penjualan di Pasar Brandong</h3>
+            <p>Data simulasi pembelajaran tentang jumlah beberapa produk yang terjual dalam satu hari.</p>
+            <table class="p5-table">
+              <thead><tr><th>Produk</th><th>Jumlah Terjual (kg)</th></tr></thead>
+              <tbody>
+                <tr><td>🐟 Ikan</td><td>40</td></tr>
+                <tr><td>🥬 Sayur</td><td>30</td></tr>
+                <tr><td>🍌 Buah</td><td>25</td></tr>
+                <tr><td>🥚 Telur</td><td>15</td></tr>
+                <tr><td>🍱 Makanan Olahan</td><td>20</td></tr>
+              </tbody>
+            </table>
+          </article>
+
+          <article class="p5-data-card">
+            <h3>📊 Piktogram Pengunjung Ranu Grati</h3>
+            <p>Data simulasi pembelajaran tentang banyak pengunjung selama satu minggu.</p>
+            <div class="p5-picto" role="table" aria-label="Piktogram pengunjung Ranu Grati">
+              <div class="p5-picto-row"><div class="p5-picto-day">Senin</div><div class="p5-picto-icons">👤 👤 👤 👤</div></div>
+              <div class="p5-picto-row"><div class="p5-picto-day">Selasa</div><div class="p5-picto-icons">👤 👤 👤 👤 👤</div></div>
+              <div class="p5-picto-row"><div class="p5-picto-day">Rabu</div><div class="p5-picto-icons">👤 👤 👤 👤 👤 👤</div></div>
+              <div class="p5-picto-row"><div class="p5-picto-day">Kamis</div><div class="p5-picto-icons">👤 👤 👤 👤 👤</div></div>
+              <div class="p5-picto-row"><div class="p5-picto-day">Jumat</div><div class="p5-picto-icons">👤 👤 👤 👤</div></div>
+              <div class="p5-picto-row"><div class="p5-picto-day">Sabtu</div><div class="p5-picto-icons">👤 👤 👤 👤 👤 👤 👤</div></div>
+              <div class="p5-picto-row"><div class="p5-picto-day">Minggu</div><div class="p5-picto-icons">👤 👤 👤 👤 👤 👤</div></div>
+            </div>
+            <div class="p5-legend">👤 = 10 pengunjung</div>
+          </article>
+        </div>
+      </div>
     </div>
-    <div class="mini-mission" data-mission="5"><h3>🎯 Misi Pos 5</h3><p>Saat membaca piktogram, langkah pertama yang paling penting adalah...</p><div class="mission-options"><button class="mission-option" data-correct="1">membaca keterangan nilai setiap simbol</button><button class="mission-option">langsung menjumlah tanpa melihat keterangan</button><button class="mission-option">memilih gambar yang paling menarik</button></div><div class="mission-feedback"></div></div>
+
+    <div class="mini-mission" data-mission="5">
+      <h3>🎯 Misi Pos 5</h3>
+      <p>Saat membaca piktogram, langkah pertama yang paling penting adalah...</p>
+      <div class="mission-options">
+        <button class="mission-option" data-correct="1">membaca keterangan nilai setiap simbol</button>
+        <button class="mission-option">langsung menjumlah tanpa melihat keterangan</button>
+        <button class="mission-option">memilih gambar yang paling menarik</button>
+      </div>
+      <div class="mission-feedback"></div>
+    </div>
   </section>
 
   <section class="card learning-pos" id="pos6" data-pos="6">
