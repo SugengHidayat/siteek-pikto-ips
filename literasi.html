@@ -1149,6 +1149,47 @@
   content:none!important;
 }
 
+
+
+/* ===== POS 5 PENYEMPURNAAN POSISI KARAKTER ===== */
+#pos5 .p5-picto-card{
+  position:relative!important;
+  overflow:visible!important;
+  padding-right:150px!important;
+}
+#pos5 .p5-picto-teacher{
+  position:absolute!important;
+  right:-18px!important;
+  top:-62px!important;
+  width:170px!important;
+  height:auto!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  object-position:center top!important;
+  z-index:5!important;
+  pointer-events:none!important;
+  filter:drop-shadow(0 10px 10px rgba(17,63,87,.20))!important;
+}
+@media(max-width:1050px){
+  #pos5 .p5-picto-card{padding-right:125px!important}
+  #pos5 .p5-picto-teacher{
+    right:-10px!important;
+    top:-52px!important;
+    width:140px!important;
+  }
+}
+@media(max-width:800px){
+  #pos5 .p5-picto-card{
+    padding-right:100px!important;
+    margin-top:55px!important;
+  }
+  #pos5 .p5-picto-teacher{
+    right:-5px!important;
+    top:-70px!important;
+    width:115px!important;
+  }
+}
+
 </style>
 </head>
 <body>
