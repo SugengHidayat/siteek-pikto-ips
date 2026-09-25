@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dashboard Guru | PIKTO-IPS</title>
+<style>
+:root{--blue:#0867c7;--blue2:#13a2ee;--navy:#0a3158;--bg:#eef7fb;--card:#fff;--green:#19a85b;--orange:#f59e0b;--red:#e84c5b;--muted:#6b8195;--line:#dbe9f2}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#eaf7ff,#f8fbf5);color:#163b5c}
+button,select,input{font:inherit}.app{display:grid;grid-template-columns:250px 1fr;min-height:100vh}
+.sidebar{background:linear-gradient(180deg,#073b72,#07559b 58%,#0877bd);color:#fff;padding:22px 16px;position:sticky;top:0;height:100vh}
+.brand{display:flex;gap:11px;align-items:center;padding:4px 8px 22px}.brand-logo{width:50px;height:50px;border-radius:16px;background:#fff;display:grid;place-items:center;font-size:26px;box-shadow:0 8px 20px #002c5a55}.brand b{font-size:20px}.brand small{display:block;opacity:.8;margin-top:2px}
+.nav{display:grid;gap:7px}.nav button{border:0;background:transparent;color:#dff2ff;text-align:left;padding:12px 13px;border-radius:13px;font-weight:800;cursor:pointer}.nav button:hover,.nav button.active{background:#ffffff1d;color:#fff}.side-foot{position:absolute;left:16px;right:16px;bottom:18px;padding:14px;border:1px solid #ffffff2c;border-radius:16px;background:#ffffff12;font-size:12px;line-height:1.5}
+.main{min-width:0}.topbar{height:78px;background:#ffffffd9;backdrop-filter:blur(10px);border-bottom:1px solid #dcebf4;display:flex;align-items:center;justify-content:space-between;padding:0 28px;position:sticky;top:0;z-index:10}.top-title b{font-size:20px;color:#0b4f91}.top-title span{display:block;color:#71869a;font-size:12px;margin-top:3px}.top-actions{display:flex;gap:10px;align-items:center}.pill{border:1px solid #d6e6f0;background:#fff;border-radius:999px;padding:9px 13px;color:#345b78;font-weight:800}.content{padding:25px;max-width:1500px;margin:auto}
+.hero{background:linear-gradient(110deg,#0b65c4,#15a3e9 62%,#48c88a);color:#fff;border-radius:25px;padding:25px 27px;display:flex;justify-content:space-between;gap:20px;align-items:center;box-shadow:0 15px 32px #1679b52b}.hero h1{margin:0 0 7px;font-size:27px}.hero p{margin:0;max-width:700px;line-height:1.55;opacity:.93}.hero .hero-badge{font-size:64px;filter:drop-shadow(0 8px 10px #07569b66)}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.filters select,.filters input{border:1px solid #d6e6ef;background:#fff;padding:10px 13px;border-radius:12px;color:#254d6c;outline:none}.filters input{min-width:220px}.btn{border:0;border-radius:12px;padding:10px 15px;font-weight:900;cursor:pointer}.btn-primary{background:#0c78d5;color:#fff}.btn-light{background:#fff;color:#0c67b6;border:1px solid #cfe3ef}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.kpi{background:#fff;border:1px solid #dcebf3;border-radius:19px;padding:18px;box-shadow:0 8px 20px #194f6c0c}.kpi-top{display:flex;justify-content:space-between;align-items:center}.kpi .ico{width:43px;height:43px;border-radius:14px;display:grid;place-items:center;font-size:22px;background:#e9f6ff}.kpi strong{display:block;font-size:29px;color:#0a4f8d;margin-top:11px}.kpi small{color:#72869a;font-weight:700}.grid{display:grid;grid-template-columns:1.3fr .7fr;gap:15px;margin-top:15px}.card{background:#fff;border:1px solid #dceaf2;border-radius:20px;padding:19px;box-shadow:0 8px 22px #194f6c0c}.card h3{margin:0 0 4px;color:#0b4f8d}.card .sub{color:#7a8fa2;font-size:12px;margin-bottom:15px}
+.progress-row{display:grid;grid-template-columns:105px 1fr 48px;gap:10px;align-items:center;margin:13px 0;font-size:13px;font-weight:800}.track{height:11px;border-radius:99px;background:#e8f0f5;overflow:hidden}.bar{height:100%;border-radius:99px;background:linear-gradient(90deg,#168adf,#3ec686)}
+.alert{padding:12px 13px;border-radius:14px;margin:9px 0;background:#fff8e8;border:1px solid #f6d88d;font-size:13px;line-height:1.4}.alert.red{background:#fff0f1;border-color:#f2b5bb}.alert.green{background:#effcf3;border-color:#b7e9c6}
+.table-wrap{overflow:auto;border:1px solid #e0ebf2;border-radius:15px}table{border-collapse:collapse;width:100%;min-width:780px}th{background:#eff8fd;color:#285675;font-size:12px;text-align:left;padding:11px;position:sticky;top:0}td{padding:11px;border-top:1px solid #e7eff4;font-size:12px}tr:hover td{background:#f9fcfe}.status{display:inline-block;padding:5px 8px;border-radius:999px;font-size:10px;font-weight:1000}.ok{background:#dff7e8;color:#13753d}.bad{background:#ffe5e8;color:#a62b3a}.wait{background:#fff2cd;color:#8a5c00}
+.tabs{display:none}.tabs.active{display:block}.section-head{display:flex;justify-content:space-between;gap:15px;align-items:center;margin:3px 0 15px}.section-head h2{margin:0;color:#0a4e8c}.empty{padding:30px;text-align:center;color:#7890a3}.heat{display:flex;gap:4px;flex-wrap:wrap}.dot{width:25px;height:25px;border-radius:7px;display:grid;place-items:center;font-size:10px;font-weight:900}.dot.g{background:#d7f6e2;color:#14723d}.dot.y{background:#fff0bd;color:#895b00}.dot.w{background:#edf2f5;color:#8294a3}
+.modal{position:fixed;inset:0;background:#09233c99;display:none;align-items:center;justify-content:center;padding:20px;z-index:50}.modal.show{display:flex}.modal-box{background:#fff;border-radius:22px;width:min(760px,100%);max-height:88vh;overflow:auto;padding:22px}.modal-head{display:flex;justify-content:space-between;align-items:center}.close{border:0;background:#edf4f8;border-radius:10px;width:36px;height:36px;cursor:pointer}
+.notice{display:none;margin:15px 0;padding:13px 15px;border-radius:14px;background:#fff4d8;border:1px solid #f0d28a;color:#76551a;font-size:12px}
+@media(max-width:1050px){.app{grid-template-columns:80px 1fr}.sidebar{padding:20px 10px}.brand div:last-child,.nav button span,.side-foot{display:none}.brand{justify-content:center;padding-left:0;padding-right:0}.nav button{text-align:center;font-size:20px}.kpis{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr}}
+@media(max-width:650px){.app{display:block}.sidebar{height:auto;position:static;display:flex;padding:10px;align-items:center;overflow:auto}.brand{padding:0 8px}.brand-logo{width:42px;height:42px}.nav{display:flex}.nav button{white-space:nowrap}.topbar{padding:0 14px}.top-actions .pill{display:none}.content{padding:14px}.kpis{grid-template-columns:1fr}.hero{padding:20px}.hero .hero-badge{display:none}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><div class="brand-logo">📊</div><div><b>PIKTO-IPS</b><small>Dashboard Guru</small></div></div>
+  <nav class="nav">
+    <button class="active" data-tab="ringkasan">🏠 <span>Ringkasan</span></button>
+    <button data-tab="murid">👨‍🎓 <span>Data Murid</span></button>
+    <button data-tab="asesmen">🎯 <span>Asesmen</span></button>
+    <button data-tab="analisis">📈 <span>Analisis</span></button>
+    <button data-tab="refleksi">💭 <span>Refleksi</span></button>
+  </nav>
+  <div class="side-foot"><b>Sumber data</b><br>PENGGUNA • HASIL • JAWABAN • REFLEKSI • PENGATURAN</div>
+</aside>
+
+<div class="main">
+<header class="topbar">
+  <div class="top-title"><b>Pusat Kendali Pembelajaran</b><span>Literasi & Numerasi IPS</span></div>
+  <div class="top-actions"><span class="pill" id="kkmTop">KKM 70</span><button class="btn btn-primary" onclick="loadDashboard()">↻ Sinkronkan</button></div>
+</header>
+
+<main class="content">
+<div class="hero">
+  <div><h1>👋 Selamat datang, Guru!</h1><p>Pantau capaian murid, bandingkan literasi dan numerasi, temukan murid yang membutuhkan pendampingan, lalu gunakan datanya untuk menentukan tindak lanjut pembelajaran.</p></div>
+  <div class="hero-badge">📚</div>
+</div>
+
+<div id="apiNotice" class="notice"></div>
+<div class="filters">
+  <select id="filterKelas"><option value="">Semua Kelas</option></select>
+  <select id="filterLevel"><option value="">Semua Level</option><option>AWAL</option><option>CAKAP</option><option>MAHIR</option></select>
+  <input id="searchMurid" placeholder="🔎 Cari nama murid...">
+  <button class="btn btn-light" onclick="applyFilters()">Terapkan Filter</button>
+</div>
+
+<section id="ringkasan" class="tabs active">
+<div class="kpis">
+  <div class="kpi"><div class="kpi-top"><small>Jumlah Murid</small><span class="ico">👨‍🎓</span></div><strong id="kpiMurid">0</strong><small>terdaftar di PENGGUNA</small></div>
+  <div class="kpi"><div class="kpi-top"><small>Rata-rata Nilai</small><span class="ico">📈</span></div><strong id="kpiRata">0</strong><small>berdasarkan HASIL</small></div>
+  <div class="kpi"><div class="kpi-top"><small>Mencapai KKM</small><span class="ico">✅</span></div><strong id="kpiLulus">0</strong><small>hasil berstatus LULUS</small></div>
+  <div class="kpi"><div class="kpi-top"><small>Perlu Pendampingan</small><span class="ico">🧭</span></div><strong id="kpiRemedial">0</strong><small>nilai di bawah KKM</small></div>
+</div>
+<div class="grid">
+  <div class="card"><h3>📊 Capaian Literasi & Numerasi</h3><div class="sub">Rata-rata dari kolom nilai_literasi dan nilai_numerasi pada HASIL.</div>
+    <div class="progress-row"><span>Literasi</span><div class="track"><div class="bar" id="barLit" style="width:0%"></div></div><b id="valLit">0%</b></div>
+    <div class="progress-row"><span>Numerasi</span><div class="track"><div class="bar" id="barNum" style="width:0%"></div></div><b id="valNum">0%</b></div>
+    <div class="progress-row"><span>Ketuntasan</span><div class="track"><div class="bar" id="barTuntas" style="width:0%"></div></div><b id="valTuntas">0%</b></div>
+  </div>
+  <div class="card"><h3>🧭 Perlu Perhatian Guru</h3><div class="sub">Ringkasan otomatis dari hasil belajar dan refleksi.</div><div id="attention"></div></div>
+</div>
+<div class="card" style="margin-top:15px"><div class="section-head"><div><h3>👀 Aktivitas Hasil Terbaru</h3><div class="sub">Riwayat penyelesaian level terbaru.</div></div></div><div class="table-wrap"><table><thead><tr><th>Nama</th><th>Kelas</th><th>Level</th><th>Nilai</th><th>Literasi</th><th>Numerasi</th><th>Status</th></tr></thead><tbody id="latestBody"></tbody></table></div></div>
+</section>
+
+<section id="murid" class="tabs">
+<div class="section-head"><div><h2>👨‍🎓 Data Murid</h2><div class="sub">Mengacu pada sheet PENGGUNA dan hasil terakhir tiap murid.</div></div></div>
+<div class="card"><div class="table-wrap"><table><thead><tr><th>Nama</th><th>Kelas</th><th>Level Terakhir</th><th>Nilai</th><th>Literasi</th><th>Numerasi</th><th>Status</th><th></th></tr></thead><tbody id="studentBody"></tbody></table></div></div>
+</section>
+
+<section id="asesmen" class="tabs">
+<div class="section-head"><div><h2>🎯 Hasil Asesmen</h2><div class="sub">AWAL → CAKAP → MAHIR berdasarkan riwayat pada sheet HASIL.</div></div></div>
+<div class="card"><div class="table-wrap"><table><thead><tr><th>Nama</th><th>Kelas</th><th>AWAL</th><th>CAKAP</th><th>MAHIR</th><th>Literasi Terakhir</th><th>Numerasi Terakhir</th></tr></thead><tbody id="assessmentBody"></tbody></table></div></div>
+</section>
+
+<section id="analisis" class="tabs">
+<div class="section-head"><div><h2>📈 Analisis Kelas</h2><div class="sub">Membantu guru melihat domain yang perlu diperkuat.</div></div></div>
+<div class="grid">
+  <div class="card"><h3>Ketuntasan per Level</h3><div id="levelBars"></div></div>
+  <div class="card"><h3>Ringkasan Kelas</h3><div id="classSummary"></div></div>
+</div>
+</section>
+
+<section id="refleksi" class="tabs">
+<div class="section-head"><div><h2>💭 Refleksi Murid</h2><div class="sub">Kolom paham, sulit, dan rencana dari sheet REFLEKSI.</div></div></div>
+<div class="card"><div class="table-wrap"><table><thead><tr><th>Nama</th><th>Kelas</th><th>Level</th><th>Yang Dipahami</th><th>Kesulitan</th><th>Rencana</th></tr></thead><tbody id="reflectionBody"></tbody></table></div></div>
+</section>
+</main>
+</div>
+</div>
+
+<div class="modal" id="studentModal"><div class="modal-box"><div class="modal-head"><h2 id="modalName">Profil Murid</h2><button class="close" onclick="closeStudent()">✕</button></div><div id="modalContent"></div></div></div>
+
+<script>
+const API_URL='https://script.google.com/macros/s/AKfycbx42nnGeJnV0DVNT3HnhE5bVsFp-sPmY-qD4St9EScmN1Uml6CLKS690aWTxEl0ZsyFDg/exec';
+const DB_SCHEMA={
+  PENGGUNA:['id_murid','nama','kelas','device_id','tanggal_daftar','terakhir_aktif'],
+  HASIL:['id_hasil','id_murid','nama','kelas','level','nilai','jumlah_benar','total_soal','status','waktu_mulai','waktu_selesai','durasi_detik','nilai_literasi','nilai_numerasi'],
+  REFLEKSI:['id_refleksi','id_murid','nama','kelas','level','nilai','nilai_literasi','nilai_numerasi','paham','sulit','rencana','waktu_refleksi']
+};
+let state={pengguna:[],hasil:[],refleksi:[],kkm:70};
+let filtered={...state};
+
+document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>{
+ document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('active')); b.classList.add('active');
+ document.querySelectorAll('.tabs').forEach(x=>x.classList.remove('active')); document.getElementById(b.dataset.tab).classList.add('active');
+});
+const n=v=>Number(v)||0, avg=a=>a.length?a.reduce((x,y)=>x+n(y),0)/a.length:0;
+const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
+const statusBadge=s=>`<span class="status ${String(s).toUpperCase()==='LULUS'?'ok':'bad'}">${esc(s||'-')}</span>`;
+
+async function loadDashboard(){
+ const note=document.getElementById('apiNotice'); note.style.display='none';
+ try{
+   const r=await fetch(API_URL+'?action=dashboardGuru&_='+Date.now(),{cache:'no-store'});
+   if(!r.ok) throw new Error('HTTP '+r.status);
+   const j=await r.json();
+   if(j.success===false) throw new Error(j.message||'API menolak permintaan');
+   const d=j.data||j;
+   state.pengguna=Array.isArray(d.pengguna)?d.pengguna:[];
+   state.hasil=Array.isArray(d.hasil)?d.hasil:[];
+   state.refleksi=Array.isArray(d.refleksi)?d.refleksi:[];
+   state.kkm=n(d.kkm||d.KKM_LEVEL||70);
+   document.getElementById('kkmTop').textContent='KKM '+state.kkm;
+   populateKelas(); applyFilters();
+ }catch(e){
+   note.style.display='block';
+   note.innerHTML='<b>Dashboard sudah siap, tetapi endpoint guru belum tersedia.</b> Frontend ini membutuhkan <code>?action=dashboardGuru</code> yang mengirim data PENGGUNA, HASIL, REFLEKSI dan KKM. Database Anda sudah dipetakan; backend dapat ditambahkan tanpa mengubah desain dashboard.';
+   state={pengguna:[],hasil:[],refleksi:[],kkm:70}; filtered={...state}; renderAll();
+ }
+}
+function populateKelas(){
+ const sel=document.getElementById('filterKelas'), cur=sel.value;
+ const kelas=[...new Set(state.pengguna.map(x=>x.kelas).filter(Boolean))].sort();
+ sel.innerHTML='<option value="">Semua Kelas</option>'+kelas.map(x=>`<option>${esc(x)}</option>`).join(''); sel.value=cur;
+}
+function applyFilters(){
+ const k=document.getElementById('filterKelas').value, l=document.getElementById('filterLevel').value, q=document.getElementById('searchMurid').value.toLowerCase().trim();
+ const ids=new Set(state.pengguna.filter(x=>(!k||x.kelas===k)&&(!q||String(x.nama).toLowerCase().includes(q))).map(x=>x.id_murid));
+ filtered={
+  pengguna:state.pengguna.filter(x=>ids.has(x.id_murid)),
+  hasil:state.hasil.filter(x=>ids.has(x.id_murid)&&(!l||x.level===l)),
+  refleksi:state.refleksi.filter(x=>ids.has(x.id_murid)&&(!l||x.level===l)),kkm:state.kkm
+ }; renderAll();
+}
+document.getElementById('searchMurid').addEventListener('input',applyFilters);
+function latestByStudent(){
+ const m={}; filtered.hasil.forEach(h=>{m[h.id_murid]=h}); return m;
+}
+function renderAll(){renderKPIs();renderLatest();renderStudents();renderAssessment();renderAnalysis();renderReflections()}
+function renderKPIs(){
+ const h=filtered.hasil, latest=Object.values(latestByStudent()), k=filtered.kkm;
+ const rata=avg(latest.map(x=>x.nilai)), lit=avg(latest.map(x=>x.nilai_literasi)), num=avg(latest.map(x=>x.nilai_numerasi));
+ const lulus=latest.filter(x=>n(x.nilai)>=k).length, rem=latest.filter(x=>n(x.nilai)<k).length, tuntas=latest.length?lulus/latest.length*100:0;
+ kpiMurid.textContent=filtered.pengguna.length; kpiRata.textContent=rata.toFixed(1); kpiLulus.textContent=lulus; kpiRemedial.textContent=rem;
+ setBar('Lit',lit);setBar('Num',num);setBar('Tuntas',tuntas);
+ const sulit=filtered.refleksi.map(x=>String(x.sulit||'').trim()).filter(Boolean);
+ const freq={}; sulit.forEach(x=>freq[x]=(freq[x]||0)+1); const top=Object.entries(freq).sort((a,b)=>b[1]-a[1])[0];
+ attention.innerHTML=`<div class="alert ${rem?'red':'green'}"><b>${rem} murid</b> pada hasil terakhir berada di bawah KKM ${k}.</div>`+
+ (top?`<div class="alert"><b>${top[1]} refleksi</b> menyebut kesulitan: “${esc(top[0])}”.</div>`:'<div class="alert">Belum ada data refleksi pada filter ini.</div>');
+}
+function setBar(id,v){v=Math.max(0,Math.min(100,v||0));document.getElementById('bar'+id).style.width=v+'%';document.getElementById('val'+id).textContent=v.toFixed(0)+'%'}
+function renderLatest(){
+ const rows=[...filtered.hasil].slice(-10).reverse();
+ latestBody.innerHTML=rows.length?rows.map(h=>`<tr><td><b>${esc(h.nama)}</b></td><td>${esc(h.kelas)}</td><td>${esc(h.level)}</td><td><b>${n(h.nilai).toFixed(1)}</b></td><td>${n(h.nilai_literasi).toFixed(1)}</td><td>${n(h.nilai_numerasi).toFixed(1)}</td><td>${statusBadge(h.status)}</td></tr>`).join(''):'<tr><td colspan="7" class="empty">Belum ada data.</td></tr>';
+}
+function renderStudents(){
+ const last=latestByStudent();
+ studentBody.innerHTML=filtered.pengguna.length?filtered.pengguna.map(p=>{const h=last[p.id_murid]||{};return `<tr><td><b>${esc(p.nama)}</b></td><td>${esc(p.kelas)}</td><td>${esc(h.level||'-')}</td><td>${h.nilai==null?'-':n(h.nilai).toFixed(1)}</td><td>${h.nilai_literasi==null?'-':n(h.nilai_literasi).toFixed(1)}</td><td>${h.nilai_numerasi==null?'-':n(h.nilai_numerasi).toFixed(1)}</td><td>${h.status?statusBadge(h.status):'<span class="status wait">BELUM</span>'}</td><td><button class="btn btn-light" onclick="openStudent('${esc(p.id_murid)}')">Lihat</button></td></tr>`}).join(''):'<tr><td colspan="8" class="empty">Belum ada data murid.</td></tr>';
+}
+function renderAssessment(){
+ const map={}; filtered.pengguna.forEach(p=>map[p.id_murid]={p,levels:{},last:null});
+ filtered.hasil.forEach(h=>{if(!map[h.id_murid])return;map[h.id_murid].levels[h.level]=h;map[h.id_murid].last=h});
+ assessmentBody.innerHTML=Object.values(map).map(x=>`<tr><td><b>${esc(x.p.nama)}</b></td><td>${esc(x.p.kelas)}</td>${['AWAL','CAKAP','MAHIR'].map(l=>`<td>${x.levels[l]?n(x.levels[l].nilai).toFixed(1):'-'}</td>`).join('')}<td>${x.last?n(x.last.nilai_literasi).toFixed(1):'-'}</td><td>${x.last?n(x.last.nilai_numerasi).toFixed(1):'-'}</td></tr>`).join('')||'<tr><td colspan="7" class="empty">Belum ada data.</td></tr>';
+}
+function renderAnalysis(){
+ const levels=['AWAL','CAKAP','MAHIR'];
+ levelBars.innerHTML=levels.map(l=>{const a=filtered.hasil.filter(x=>x.level===l);const pct=a.length?a.filter(x=>n(x.nilai)>=filtered.kkm).length/a.length*100:0;return `<div class="progress-row"><span>${l}</span><div class="track"><div class="bar" style="width:${pct}%"></div></div><b>${pct.toFixed(0)}%</b></div>`}).join('');
+ const kelas=[...new Set(filtered.pengguna.map(x=>x.kelas).filter(Boolean))];
+ classSummary.innerHTML=kelas.length?kelas.map(k=>{const ids=new Set(filtered.pengguna.filter(p=>p.kelas===k).map(p=>p.id_murid));const a=filtered.hasil.filter(h=>ids.has(h.id_murid));return `<div class="alert"><b>${esc(k)}</b><br>${ids.size} murid • ${a.length} riwayat hasil</div>`}).join(''):'<div class="empty">Belum ada data kelas.</div>';
+}
+function renderReflections(){
+ reflectionBody.innerHTML=filtered.refleksi.length?[...filtered.refleksi].reverse().map(r=>`<tr><td><b>${esc(r.nama)}</b></td><td>${esc(r.kelas)}</td><td>${esc(r.level)}</td><td>${esc(r.paham)}</td><td>${esc(r.sulit)}</td><td>${esc(r.rencana)}</td></tr>`).join(''):'<tr><td colspan="6" class="empty">Belum ada refleksi.</td></tr>';
+}
+function openStudent(id){
+ const p=state.pengguna.find(x=>x.id_murid===id);if(!p)return;
+ const hs=state.hasil.filter(x=>x.id_murid===id), rs=state.refleksi.filter(x=>x.id_murid===id), last=hs[hs.length-1]||{};
+ modalName.textContent=p.nama;
+ modalContent.innerHTML=`<p><b>Kelas:</b> ${esc(p.kelas)}</p><div class="kpis" style="grid-template-columns:repeat(3,1fr)"><div class="kpi"><small>Nilai Terakhir</small><strong>${last.nilai==null?'-':n(last.nilai).toFixed(1)}</strong></div><div class="kpi"><small>Literasi</small><strong>${last.nilai_literasi==null?'-':n(last.nilai_literasi).toFixed(1)}</strong></div><div class="kpi"><small>Numerasi</small><strong>${last.nilai_numerasi==null?'-':n(last.nilai_numerasi).toFixed(1)}</strong></div></div><div class="card" style="margin-top:15px"><h3>Riwayat Level</h3>${hs.map(h=>`<div class="alert"><b>${esc(h.level)}</b> — ${n(h.nilai).toFixed(1)} • ${esc(h.status)}</div>`).join('')||'<div class="empty">Belum ada hasil.</div>'}</div><div class="card" style="margin-top:15px"><h3>Refleksi Terakhir</h3>${rs.length?`<p><b>Dipahami:</b> ${esc(rs.at(-1).paham)}</p><p><b>Kesulitan:</b> ${esc(rs.at(-1).sulit)}</p><p><b>Rencana:</b> ${esc(rs.at(-1).rencana)}</p>`:'<div class="empty">Belum ada refleksi.</div>'}</div>`;
+ studentModal.classList.add('show');
+}
+function closeStudent(){studentModal.classList.remove('show')}
+studentModal.addEventListener('click',e=>{if(e.target===studentModal)closeStudent()});
+loadDashboard();
+</script>
+</body>
+</html>
