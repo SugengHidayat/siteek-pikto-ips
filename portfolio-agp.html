@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Portofolio AGP 2026 | PIKTO-IPS</title>
+  <title>Portofolio AGP 2026 | PIKTO-IPS — Sugeng Hidayat, S.Pd.</title>
 
   <meta
     name="description"
@@ -997,6 +997,41 @@
         font-size: 28px;
       }
     }
+  
+
+    /* =========================
+       PORTFOLIO ENHANCEMENTS
+    ========================= */
+    body::before{
+      content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
+      background:
+        radial-gradient(circle at 8% 18%,rgba(8,119,220,.07),transparent 25%),
+        radial-gradient(circle at 92% 78%,rgba(34,182,92,.07),transparent 28%);
+    }
+    .nav{position:relative}.mobile-toggle{display:none;margin-left:auto;border:1px solid var(--line);background:#fff;width:44px;height:44px;border-radius:12px;font-size:21px;cursor:pointer;color:var(--navy)}
+    .section-number{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--navy));color:#fff;font-size:12px;font-weight:1000;margin-bottom:8px;box-shadow:0 7px 18px rgba(8,119,220,.2)}
+    .hero-badges{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0 6px;max-width:690px}
+    .hero-badge{background:rgba(255,255,255,.88);border:1px solid rgba(8,119,220,.13);border-radius:14px;padding:11px 12px;box-shadow:0 8px 20px rgba(17,85,145,.08)}
+    .hero-badge strong{display:block;color:var(--navy);font-size:18px;line-height:1.1}.hero-badge small{font-size:10px;color:var(--muted);font-weight:800}
+    .guide{padding:25px 0 8px;background:#fff}.guide-box{background:linear-gradient(135deg,#073f86,#0877dc);color:#fff;border-radius:24px;padding:26px;box-shadow:0 18px 38px rgba(7,63,134,.18)}
+    .guide-box h2{margin:0 0 8px;font-size:25px}.guide-box>p{margin:0 0 18px;color:#dbeeff}.guide-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .guide-item{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:15px}.guide-item b{display:block;font-size:12px;color:#bfe4ff;margin-bottom:4px}.guide-item strong{display:block;font-size:14px;margin-bottom:3px}.guide-item span{font-size:11px;color:#e9f6ff}
+    .level-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}.level-card{position:relative;overflow:hidden;border-radius:18px;padding:21px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
+    .level-card::after{content:"";position:absolute;width:100px;height:100px;border-radius:50%;right:-40px;top:-45px;opacity:.13}.level-card:nth-child(1)::after{background:var(--blue)}.level-card:nth-child(2)::after{background:var(--orange)}.level-card:nth-child(3)::after{background:var(--green)}
+    .level-tag{display:inline-block;border-radius:999px;padding:5px 10px;font-size:10px;font-weight:1000;color:#fff;margin-bottom:8px}.level-card:nth-child(1) .level-tag{background:var(--blue)}.level-card:nth-child(2) .level-tag{background:var(--orange)}.level-card:nth-child(3) .level-tag{background:var(--green)}
+    .level-card h3{margin:2px 0 7px}.level-card p{font-size:13px;color:var(--muted);margin:0}
+    .impact-cta{margin-top:22px;border-radius:20px;padding:22px;background:linear-gradient(135deg,#ecfff4,#f5fbff);border:1px solid #ccebd8;display:flex;justify-content:space-between;gap:18px;align-items:center}
+    .impact-cta h3{margin:0 0 4px}.impact-cta p{margin:0;color:var(--muted);font-size:13px}.impact-cta .btn{flex:0 0 auto}
+    .privacy-badge{display:inline-flex;align-items:center;gap:7px;margin-top:10px;padding:7px 11px;border-radius:999px;background:#eef8ff;color:#0b6bb7;font-size:11px;font-weight:900}
+    .doc{transition:.2s ease}.doc:hover{transform:translateY(-2px);border-color:#b8ddf7;box-shadow:0 10px 24px rgba(17,85,145,.10)}
+    .doc a{display:inline-flex;align-items:center;gap:5px;background:#eaf5ff;border-radius:9px;padding:7px 10px}.doc a:hover{background:#dcedff}
+    .qcard,.card,.phase,.level-card{transition:transform .2s ease,box-shadow .2s ease}.qcard:hover,.card:hover,.phase:hover,.level-card:hover{transform:translateY(-4px);box-shadow:0 18px 35px rgba(17,85,145,.15)}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}.reveal.visible{opacity:1;transform:none}
+    .back-top{position:fixed;right:20px;bottom:20px;width:46px;height:46px;border:0;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--navy));color:#fff;font-size:20px;box-shadow:0 10px 24px rgba(7,63,134,.25);cursor:pointer;opacity:0;visibility:hidden;transition:.2s;z-index:90}.back-top.show{opacity:1;visibility:visible}
+    .footer-note{font-size:11px;opacity:.86;margin-top:5px}
+    @media(max-width:960px){.mobile-toggle{display:grid;place-items:center}.links{position:absolute;top:62px;right:3%;left:3%;display:none!important;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px;box-shadow:var(--shadow)}.links.open{display:flex!important}.links a{font-size:12px;padding:11px}.hero-badges,.guide-grid{grid-template-columns:repeat(2,1fr)}.level-grid{grid-template-columns:1fr}.impact-cta{align-items:flex-start;flex-direction:column}}
+    @media(max-width:620px){.hero-badges,.guide-grid{grid-template-columns:1fr}.guide-box{padding:20px}.impact-cta .btn{width:100%}.back-top{right:14px;bottom:14px}}
+
   </style>
 </head>
 
@@ -1028,7 +1063,9 @@
 
     </div>
 
-    <nav class="links">
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Buka menu" aria-expanded="false">☰</button>
+
+    <nav class="links" id="mainNav">
       <a href="#beranda">⌂ Beranda</a>
       <a href="#tentang">Tentang</a>
       <a href="#inovasi">Inovasi</a>
@@ -1104,6 +1141,13 @@
       <div class="quote">
         “Petualangan Literasi dan Numerasi
         dalam Kehidupan Masyarakat”
+      </div>
+
+      <div class="hero-badges" aria-label="Ringkasan dampak PIKTO-IPS">
+        <div class="hero-badge"><strong>11</strong><small>pasangan data pretest–posttest</small></div>
+        <div class="hero-badge"><strong>+11,11</strong><small>perubahan rata-rata keseluruhan</small></div>
+        <div class="hero-badge"><strong>81,8%</strong><small>murid mengalami peningkatan skor</small></div>
+        <div class="hero-badge"><strong>3 Level</strong><small>AWAL • CAKAP • MAHIR</small></div>
       </div>
 
 
@@ -1273,6 +1317,21 @@
 
   </div>
 
+</section>
+
+<section class="guide" id="panduan">
+  <div class="wrap">
+    <div class="guide-box">
+      <h2>🧭 Cara Membaca Portofolio Ini</h2>
+      <p>Portofolio disusun agar alur inovasi mudah dipahami: mulai dari kebutuhan, solusi, pelaksanaan, sampai bukti perubahan.</p>
+      <div class="guide-grid">
+        <div class="guide-item"><b>01</b><strong>Pahami Masalah</strong><span>Lihat kebutuhan pembelajaran yang melatarbelakangi PIKTO-IPS.</span></div>
+        <div class="guide-item"><b>02</b><strong>Lihat Solusinya</strong><span>Pelajari alur pedagogis, teknologi, koding, AI, dan asesmen bertingkat.</span></div>
+        <div class="guide-item"><b>03</b><strong>Cermati Implementasi</strong><span>Lihat bagaimana PIKTO-IPS digunakan bersama murid kelas IV.</span></div>
+        <div class="guide-item"><b>04</b><strong>Periksa Dampak</strong><span>Buka grafik, data anonim, refleksi, dan dokumentasi praktik baik.</span></div>
+      </div>
+    </div>
+  </div>
 </section>
 
 
@@ -1546,6 +1605,24 @@
         Refleksi
       </div>
 
+    </div>
+
+    <div class="level-grid" aria-label="Asesmen bertingkat PIKTO-IPS">
+      <article class="level-card">
+        <span class="level-tag">LEVEL AWAL</span>
+        <h3>🧭 Penjelajah Data</h3>
+        <p>Murid mengenali informasi utama, membaca data sederhana, dan membangun pemahaman awal terhadap konteks IPS.</p>
+      </article>
+      <article class="level-card">
+        <span class="level-tag">LEVEL CAKAP</span>
+        <h3>🔎 Penganalisis Data</h3>
+        <p>Murid membandingkan informasi, mengolah data, melakukan perhitungan, dan menjelaskan alasan berdasarkan bukti.</p>
+      </article>
+      <article class="level-card">
+        <span class="level-tag">LEVEL MAHIR</span>
+        <h3>🏆 Ahli Data IPS</h3>
+        <p>Murid mengintegrasikan literasi dan numerasi untuk menalar serta mengambil keputusan pada masalah kontekstual.</p>
+      </article>
     </div>
 
   </div>
@@ -2223,6 +2300,15 @@
 
     </div>
 
+    <div class="impact-cta">
+      <div>
+        <h3>📊 Bukti Data Dampak — Rekap Anonim</h3>
+        <p>Rekap pretest–posttest disediakan sebagai bukti pendukung. Identitas murid telah dianonimkan untuk menjaga privasi.</p>
+        <span class="privacy-badge">🔒 Data murid dianonimkan</span>
+      </div>
+      <a class="btn green" href="docs/Rekap_Pretest_Posttest_PIKTO_IPS_Anonim.xlsx" target="_blank" rel="noopener">⬇ Buka Data Dampak</a>
+    </div>
+
   </div>
 
 </section>
@@ -2373,10 +2459,9 @@
       </h2>
 
       <p>
-        Dokumen utama pengembangan
-        PIKTO-IPS disajikan dalam satu
-        pusat akses agar proses penelusuran
-        bukti menjadi lebih mudah.
+        Laporan, storyboard, algoritma, video, dan data dampak
+        disajikan dalam satu pusat akses agar bukti inovasi
+        dapat ditelusuri dengan mudah dan transparan.
       </p>
 
     </div>
@@ -2455,14 +2540,16 @@
       <div class="doc">
 
         <span>
-          📊 Data Dampak
+          📊 Data Dampak Anonim
         </span>
 
-        <div class="status">
-          Rekap pretest–posttest
-          anonim tersedia sebagai
-          bukti pendukung.
-        </div>
+        <a
+          href="docs/Rekap_Pretest_Posttest_PIKTO_IPS_Anonim.xlsx"
+          target="_blank"
+          rel="noopener"
+        >
+          Buka Data
+        </a>
 
       </div>
 
@@ -2554,11 +2641,41 @@
       </strong>
       <br>
       PIKTO-IPS
+      <div class="footer-note">Media pembelajaran digital interaktif berbasis literasi, numerasi, data, dan refleksi.</div>
     </div>
 
   </div>
 
 </footer>
+
+
+
+<button class="back-top" id="backTop" aria-label="Kembali ke atas">↑</button>
+<script>
+(function(){
+  const toggle=document.getElementById('mobileToggle');
+  const nav=document.getElementById('mainNav');
+  if(toggle && nav){
+    toggle.addEventListener('click',()=>{
+      const open=nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded',open?'true':'false');
+      toggle.textContent=open?'✕':'☰';
+    });
+    nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+      nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰';
+    }));
+  }
+  const sections=document.querySelectorAll('.content,.quick,.guide');
+  sections.forEach(s=>s.classList.add('reveal'));
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+  },{threshold:.08});
+  sections.forEach(s=>observer.observe(s));
+  const back=document.getElementById('backTop');
+  window.addEventListener('scroll',()=>back.classList.toggle('show',window.scrollY>550));
+  back.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+})();
+</script>
 
 </body>
 </html>
