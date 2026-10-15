@@ -877,6 +877,43 @@
 .identity-card.video-finished .intro-video-note{display:none}
 @media(max-width:760px){.identity-card.video-finished .identity-entry-row{grid-template-columns:1fr}.identity-card.video-finished .intro-video-shell{width:min(360px,100%);margin:0 auto}}
 
+
+    /* Optimasi Chromebook dan Android: perubahan visual saja */
+    :focus-visible{outline:3px solid #ffb300;outline-offset:3px}
+    .quick-card,.kid-bottom-nav a{touch-action:manipulation}
+    .quick-card{min-height:144px;justify-content:center;gap:8px}
+    .quick-card strong{font-size:18px}
+    .quick-card p{font-size:13px;line-height:1.5}
+    .mission-card label,.mission-shell>p{font-size:14px;line-height:1.6}
+    .mission-card textarea,.mission-card input,.mission-card select{font-size:16px;min-height:48px}
+    .btn,.diagnostic-btn,.advanced-btn{min-height:48px}
+    @media(min-width:761px) and (max-width:1199px){
+      .topbar{padding:8px 16px;gap:8px}
+      .brand{width:225px}.brand-title{font-size:25px}
+      .nav-menu{gap:3px}.nav-link{min-width:86px;font-size:13px}
+      .top-logo{width:110px}
+      .quick-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media(max-width:760px){
+      body{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
+      .quick-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .quick-card{min-height:132px;padding:14px 12px}
+      .quick-card strong{font-size:16px}
+      .quick-card p{display:block;font-size:12px;line-height:1.35}
+      .quick-card .qc-icon{font-size:30px}
+      .kid-bottom-nav{bottom:calc(6px + env(safe-area-inset-bottom,0px));left:6px;right:6px;padding:7px 3px}
+      .kid-bottom-nav a{font-size:11px;min-height:51px;justify-content:center;line-height:1.2}
+      .kid-bottom-nav a span{font-size:23px}
+      .mission-card p{font-size:13px}
+      .mission-card label{font-size:14px}
+      .profile6-card p{font-size:13px}
+      .cp-text{font-size:15px;line-height:1.65}
+    }
+    @media(max-width:390px){
+      .quick-cards{gap:8px}.quick-card{padding:11px 9px}
+      .quick-card strong{font-size:15px}.quick-card p{font-size:11px}
+      .kid-bottom-nav a{font-size:10px}
+    }
 </style>
 </head>
 
@@ -981,7 +1018,7 @@
           </div>
         </section>
       </section>
-      <div class="quick-cards">
+      <div class="quick-cards" aria-label="Pilih kegiatan belajar: Literasi, Numerasi, Tantangan, atau Papan Nilai">
         <a class="quick-card blue" href="literasi.html"><div><div class="qc-icon">📖</div><strong>Literasi IPS</strong><p>Baca materi, pahami informasi, dan latih kemampuan literasimu.</p></div></a>
         <a class="quick-card green" href="numerasi.html"><div><div class="qc-icon">📊</div><strong>Numerasi IPS</strong><p>Pelajari data, piktogram, grafik, dan soal numerasi kontekstual.</p></div></a>
         <a class="quick-card orange" href="#tantangan"><div><div class="qc-icon">🏆</div><strong>Tantangan</strong><p>Uji kemampuanmu melalui Level Awal, Cakap, dan Mahir.</p></div></a>
