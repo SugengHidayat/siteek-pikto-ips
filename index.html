@@ -866,6 +866,35 @@
     @media(max-width:900px){.profile6-grid,.mission-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.profile6-grid,.mission-grid{grid-template-columns:1fr}.profile6-section{padding:16px}.mission-card p{min-height:auto}}
 
   
+/* Video pembuka: suara otomatis dicoba, namun browser dapat menolaknya. */
+function tampilkanTombolSuaraAwal(tampil){
+  const tombol=document.getElementById('introSoundButton');
+  if(tombol) tombol.classList.toggle('hidden',!tampil);
+}
+function aktifkanSuaraVideoAwal(){
+  const video=document.getElementById('introVideo');
+  if(!video)return;
+  video.muted=false;
+  video.defaultMuted=false;
+  video.volume=1;
+  tampilkanTombolSuaraAwal(false);
+  const p=video.play();
+  if(p&&typeof p.catch==='function')p.catch(()=>tampilkanTombolSuaraAwal(true));
+}
+function mulaiVideoAwalDenganSuara(){
+  const video=document.getElementById('introVideo');
+  if(!video)return;
+  video.muted=false;
+  video.defaultMuted=false;
+  video.volume=1;
+  const p=video.play();
+  if(p&&typeof p.catch==='function')p.catch(()=>{
+    // Kebanyakan Chrome/Android melarang autoplay bersuara tanpa interaksi.
+    video.muted=true;
+    video.play().catch(()=>{});
+    // Autoplay bersuara ditolak browser; lanjutkan video tanpa suara.
+  });
+}
 /* ===== V10 VIDEO AWAL ===== */
 .identity-card{width:min(980px,100%)}
 .intro-video-shell{width:min(760px,100%);margin:0 auto 22px;border-radius:22px;overflow:hidden;background:#071c31;border:4px solid #fff;box-shadow:0 14px 34px rgba(14,61,101,.20);transition:.45s ease}
@@ -914,6 +943,10 @@
       .quick-card strong{font-size:15px}.quick-card p{font-size:11px}
       .kid-bottom-nav a{font-size:10px}
     }
+
+/* Tombol suara mudah disentuh pada Chromebook maupun Android */
+.intro-sound-button{display:block;width:100%;margin-top:9px;min-height:48px;padding:11px 14px;border:0;border-radius:12px;background:#0d6efd;color:white;font-size:15px;font-weight:900;cursor:pointer;box-shadow:0 5px 14px rgba(13,110,253,.2)}
+.intro-sound-button:focus-visible{outline:3px solid #ffc328;outline-offset:3px}
 </style>
 </head>
 
@@ -957,7 +990,7 @@
 
       <div class="identity-entry-row">
         <div class="intro-video-shell" id="introVideoShell">
-          <video id="introVideo" class="intro-video" src="https://sugenghidayat.github.io/siteek-pikto-ips/awal.mp4" autoplay muted playsinline controls preload="auto">Browser Anda tidak mendukung pemutaran video HTML5.</video>
+          <video id="introVideo" class="intro-video" src="https://sugenghidayat.github.io/siteek-pikto-ips/awal.mp4" autoplay playsinline controls preload="auto">Browser Anda tidak mendukung pemutaran video HTML5.</video>
           <div class="intro-video-note">🎬 Video pembuka SITEEk-PIKTO-IPS</div>
         </div>
         <div class="identity-form-side">
@@ -972,7 +1005,7 @@
                 <option value="">Pilih kelas</option>
                 <option>Kelas 4A</option>
                 <option>Kelas 4B</option>
-                <option>Kelas 4C</option>
+                <option>Kelas 5</option>
               </select>
             </div>
           </div>
@@ -1431,8 +1464,7 @@ function kembaliKeHalamanIdentitas(pesan){
   if(introVideoKembali){
     try{
       introVideoKembali.currentTime=0;
-      introVideoKembali.muted=true;
-      introVideoKembali.play().catch(()=>{});
+      mulaiVideoAwalDenganSuara();
     }catch(_){}
   }
   if(challengeArea) challengeArea.classList.add('hidden');
@@ -1526,24 +1558,42 @@ async function muatPengaturan(){
 }
 
 
+/* Video pembuka: suara otomatis dicoba, namun browser dapat menolaknya. */
+function tampilkanTombolSuaraAwal(tampil){
+  const tombol=document.getElementById('introSoundButton');
+  if(tombol) tombol.classList.toggle('hidden',!tampil);
+}
+function aktifkanSuaraVideoAwal(){
+  const video=document.getElementById('introVideo');
+  if(!video)return;
+  video.muted=false;
+  video.defaultMuted=false;
+  video.volume=1;
+  tampilkanTombolSuaraAwal(false);
+  const p=video.play();
+  if(p&&typeof p.catch==='function')p.catch(()=>tampilkanTombolSuaraAwal(true));
+}
+function mulaiVideoAwalDenganSuara(){
+  const video=document.getElementById('introVideo');
+  if(!video)return;
+  video.muted=false;
+  video.defaultMuted=false;
+  video.volume=1;
+  const p=video.play();
+  if(p&&typeof p.catch==='function')p.catch(()=>{
+    // Kebanyakan Chrome/Android melarang autoplay bersuara tanpa interaksi.
+    video.muted=true;
+    video.play().catch(()=>{});
+    // Autoplay bersuara ditolak browser; lanjutkan video tanpa suara.
+  });
+}
 /* ===== V10 VIDEO AWAL ===== */
 function setupVideoAwal(){
   const video=document.getElementById('introVideo');
   const card=document.querySelector('#identityCard .identity-card');
   if(!video||!card)return;
 
-  const mulaiVideo=()=>{
-    video.muted=true;
-    video.defaultMuted=true;
-    video.playsInline=true;
-    const p=video.play();
-    if(p && typeof p.catch==='function'){
-      p.catch(()=>{
-        // Jika autoplay tetap diblokir browser, kontrol video tetap tersedia.
-        video.controls=true;
-      });
-    }
-  };
+  const mulaiVideo=()=>mulaiVideoAwalDenganSuara();
 
   video.addEventListener('loadedmetadata',mulaiVideo,{once:true});
   video.addEventListener('canplay',mulaiVideo,{once:true});
@@ -1579,6 +1629,7 @@ function tampilkanVideoAwal(){
   const card=document.querySelector('#identityCard .identity-card');
   if(shell)shell.classList.remove('hidden');
   if(card)card.classList.remove('video-finished');
+  mulaiVideoAwalDenganSuara();
 }
 
 /* ============================================================
