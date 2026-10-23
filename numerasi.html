@@ -646,49 +646,10 @@ footer{background:#e8f6ff!important;border-radius:24px 24px 0 0!important}
 @media(max-width:950px){#posNavNumerasi{grid-template-columns:repeat(4,1fr)!important}#posNavNumerasi:before{display:none}.v22-p1-grid{grid-template-columns:1fr 1fr}.v22-helper{grid-column:1/-1;min-height:260px}.v22-p1-head{grid-template-columns:auto 1fr}.v22-p1-progress{grid-column:1/-1}}
 @media(max-width:620px){#posNavNumerasi{grid-template-columns:repeat(2,1fr)!important}.v22-map-head{align-items:flex-start;flex-direction:column}.v22-trophy{width:auto}.v22-p1-grid{grid-template-columns:1fr}.v22-helper{grid-column:auto}.v22-p1-icon{width:64px;height:64px;font-size:38px}.v22-p1-title h2{font-size:21px!important}.v22-p1-progress{min-width:0}}
 
-
-/* === Optimasi responsif Chromebook & Android; tidak mengubah logika === */
-html{-webkit-text-size-adjust:100%;scroll-padding-top:105px}
-button,a,input,select,textarea{touch-action:manipulation}
-button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #ffb300;outline-offset:3px}
-img,video,iframe{max-width:100%}
-@media (min-width:761px) and (max-width:1366px){
- .container{width:min(1180px,96%)}
- .topbar{gap:12px;padding:12px 18px}
- .nav{gap:6px}.nav a{padding:11px 10px}
- .adventure-route{grid-template-columns:repeat(4,minmax(0,1fr))}
- .num-map{grid-template-columns:repeat(2,minmax(0,1fr))}
-}
-@media (max-width:760px){
- body{overflow-x:hidden}
- .container{width:94%;margin:16px auto 30px}
- .topbar{min-height:76px;padding:10px 12px;gap:10px}
- .brand{min-width:0}.brand img{width:54px;height:54px;flex-shrink:0}
- .brand h1{font-size:clamp(19px,5vw,24px);overflow-wrap:anywhere}
- .brand p{font-size:11px;line-height:1.35}
- .hero,.card{padding:17px;border-radius:18px}
- .hero h2{font-size:clamp(24px,6vw,30px);line-height:1.2}
- .card h2{font-size:clamp(21px,5.5vw,26px)}
- .hero p,.subtitle,.story p,.note,.reading-guide{line-height:1.65}
- .btn,.nav a,.quiz-option,.mission-option,.opt,.pos-options button,.num-node,.adventure-pos{min-height:44px}
- .btnrow,.btn-row,.answer-area{gap:10px}
- .answer-input{min-width:0;width:100%;font-size:16px}
- .answer-area .btn,.answer-area button{min-height:44px}
- .adventure-route{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
- .adventure-pos{min-width:0;padding:12px 7px}
- .num-map{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
- .num-node{min-width:0;min-height:130px;padding:13px 10px}
- .num-node h3{overflow-wrap:anywhere}
- .pictogram,.fish-picto{overflow-x:auto}
- .video-grid,.info-grid,.grid3,.local-route,.place-route,.num-activity-grid{grid-template-columns:1fr}
- .modalbox,.modal-box{max-height:94dvh;overflow-y:auto}
- .qcard,.question-card{max-height:75dvh;overflow-y:auto}
- .pos-nav{grid-template-columns:repeat(4,minmax(0,1fr))}
- .pos-chip{min-height:42px}
-}
-@media (max-width:380px){.num-map{grid-template-columns:1fr}.brand img{width:46px;height:46px}}
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
-
+</style>
+<style id="siteek-bottom-nav-style">
+.siteek-bottom-nav{display:none}
+@media(max-width:760px){body{padding-bottom:92px!important}.siteek-bottom-nav{position:fixed;bottom:8px;left:8px;right:8px;z-index:99999;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;background:rgba(255,255,255,.97);border:1px solid #dce8f2;border-radius:18px;padding:8px 5px;box-shadow:0 10px 30px rgba(12,55,86,.20)}.siteek-bottom-nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;text-align:center;color:#47627a;text-decoration:none;font-size:10px;font-weight:800;min-height:51px;border-radius:11px}.siteek-bottom-nav a span{font-size:22px;line-height:1.1}.siteek-bottom-nav a[aria-current="page"]{background:#e9f4ff;color:#075cbd}.siteek-bottom-nav a:focus-visible{outline:3px solid #ffb400;outline-offset:1px}}
 </style>
 </head>
 <body>
@@ -1267,4 +1228,5 @@ function restore(){VIDEO_DATA.forEach((_,i)=>{if(localStorage.getItem('pikto_num
 function updateOverall(){let n=state.filter(x=>x.done).length,p=Math.round(n/2*100);document.getElementById('completeFill').style.width=p+'%';document.getElementById('videoSummary').textContent=n+' dari 2 video interaktif telah selesai.';let a=document.getElementById('nextChallenge'),m=document.getElementById('nextMessage');if(n===2){a.href='index.html#tantangan';a.className='btn orange';a.textContent='🏆 Buka Tantangan PIKTO-IPS';m.textContent='🎉 Semua video selesai. Kamu siap kembali ke Tantangan.'}else{a.href='javascript:void(0)';a.className='btn light';a.textContent='🔒 Kembali ke Tantangan';m.textContent='🔒 Selesaikan kedua video interaktif terlebih dahulu.'}}
 document.getElementById('nextChallenge').onclick=function(e){if(state.filter(x=>x.done).length!==2){e.preventDefault();alert('Selesaikan kedua video interaktif terlebih dahulu.')}};
 </script>
+<nav class="siteek-bottom-nav" aria-label="Navigasi utama murid"><a href="index.html"><span aria-hidden="true">🏠</span>Beranda</a><a href="literasi.html"><span aria-hidden="true">📖</span>Literasi</a><a href="numerasi.html" aria-current="page"><span aria-hidden="true">🔢</span>Numerasi</a><a href="index.html#tantangan"><span aria-hidden="true">🎯</span>Tantangan</a><a href="index.html#progres"><span aria-hidden="true">⭐</span>Progres</a></nav>
 </body></html>
