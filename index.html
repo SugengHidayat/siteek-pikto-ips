@@ -578,15 +578,54 @@
     .question{border:1px solid var(--line);border-radius:18px;padding:20px;margin-bottom:18px}
     .q-meta{color:#e97400;font-size:13px;font-weight:900;margin-bottom:8px}
     .stimulus{background:#fff8e1;border-left:5px solid #ff9800;padding:14px;border-radius:12px;margin-bottom:13px;line-height:1.65}
-    .question-image-wrap{
-      margin:12px 0 15px;padding:10px;border:1px solid #dce7ef;border-radius:16px;
-      background:linear-gradient(145deg,#f8fbff,#ffffff);text-align:center;
-    }
-    .question-image-label{font-size:12px;font-weight:900;color:#526b82;margin-bottom:8px}
-    .question-image{
-      width:min(100%,620px);max-height:350px;object-fit:cover;border-radius:12px;
-      display:block;margin:0 auto;box-shadow:0 8px 20px rgba(13,64,111,.12);
-    }
+    
+/* FRAME GAMBAR SOAL */
+.question-image-wrap {
+  width: 100%;
+  max-width: 800px;
+  box-sizing: border-box;
+  margin: 16px auto 20px;
+  padding: 14px;
+  border: 1px solid #dce7ef;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #f8fbff, #ffffff);
+  text-align: center;
+}
+
+/* LABEL DI ATAS GAMBAR */
+.question-image-label {
+  font-size: 13px;
+  font-weight: 900;
+  color: #526b82;
+  margin-bottom: 10px;
+}
+
+/* GAMBAR DI DALAM FRAME */
+.question-image {
+  display: block;
+  width: 100%;
+  max-width: 760px;
+  height: 420px;
+  max-height: 60vh;
+  object-fit: contain;
+  border-radius: 12px;
+  margin: 0 auto;
+  box-shadow: 0 8px 20px rgba(13, 64, 111, 0.12);
+}
+
+/* PENYESUAIAN UNTUK LAYAR HP */
+@media (max-width: 600px) {
+  .question-image-wrap {
+    padding: 8px;
+    margin: 12px auto 16px;
+  }
+
+  .question-image {
+    height: 280px;
+    max-height: 50vh;
+  }
+}
+
     .q-text{font-weight:900;font-size:17px;line-height:1.6;margin-bottom:14px}
     .option{display:flex;align-items:flex-start;gap:10px;border:2px solid #eceff1;border-radius:12px;padding:12px;margin-bottom:9px;cursor:pointer;transition:.2s}
     .option:hover{border-color:#90caf9;background:#f7fcff}
