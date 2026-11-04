@@ -1918,7 +1918,8 @@ async function pilihLevel(level){
       const res = await api({
         action:'getQuestions',
         id_murid:localStorage.getItem(LS.ID),
-        level:level
+        level:level,
+        session_id:currentSessionId.id
       });
 
       if(!res.success) throw new Error(res.message || 'Gagal mengambil soal.');
@@ -2169,7 +2170,7 @@ function pilihJawaban(idSoal,jawaban){
   };
 
   const filtered = queue.filter(x =>
-    !(x.level === item.level && x.id_soal === item.id_soal)
+    !(x.level === item.level && x.id_soal === item.id_soal && x.session_id === item.session_id)
   );
 
   filtered.push(item);
@@ -2327,6 +2328,12 @@ async function selesaikanLevel(){
 
     // Jika level selesai, session lama ditutup.
     localStorage.removeItem(sessionKey(currentLevel));
+    localStorage.removeItem(answerKey(currentLevel));
+    currentAnswers = {};
+    // Antrean lama untuk sesi selesai tidak boleh masuk ke percobaan berikutnya.
+    writeJSON(LS.QUEUE,readJSON(LS.QUEUE,[]).filter(x =>
+      !(x.level === currentLevel && x.session_id === currentSessionId.id)
+    ));
 
   }catch(err){
     showSync(
@@ -2795,6 +2802,8 @@ function loadOrCreateSession(level){
   let session = readJSON(sessionKey(level),null);
 
   if(!session || !session.id){
+    // Percobaan baru: jangan mengisi soal dari jawaban percobaan sebelumnya.
+    localStorage.removeItem(answerKey(level));
     session = {
       id:'SES-' + cryptoRandom(),
       start_time:new Date().toISOString()
